@@ -14,7 +14,7 @@ The key to this process is hooking into the scripted install process. For Debian
 You can override the options in the file with some passed on the command line of the Packer boot process. This will allow you to use a dynamic root password instead of a hash stored in a file.
 
 First update your Packer JSON file to prompt for the root password by adding it to the [variables section](http://www.packer.io/docs/templates/user-variables.html):
-{% highlight json %}
+{% highlight javascript %}
 "variables": {
     "root_password": null
   }
@@ -23,19 +23,20 @@ Now, when you run the Packer install, you will be prompted for a root password. 
 
 The next step is to replace static SSH credentials with your new root ones. Change the ```ssh_username``` and ```ssh_password``` lines in your builder section to:
 
-{% highlight json %}
+{% highlight javascript %}
 "ssh_username": "root",
 "ssh_password": "{{user `root_password`}}",
 {% endhighlight %}
 
 All that is left is ensuring that your distribution sets the root password on install. This is done by modifying the ```boot_command``` property in the builder section of your Packer file.
-{% highlight json %}
+{% highlight javascript %}
+[
   "passwd/root-password=\"{{user `root_password`}}\" passwd/root-password-again=\"{{user `root_password`}}\" ",
 ]
 {% endhighlight %}
 
 My full Ubuntu ```boot_command``` looks like this:
-{% highlight json %}
+{% highlight javascript %}
 "boot_command": [
   "",
   "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
