@@ -1,0 +1,15 @@
+# Site settings
+title: Jon Johnson
+email: jon.johnson@ucsf.edu
+description: > # this means to ignore newlines until "baseurl:"
+  Personal site and playground for Jonathan Johnson a web developer working
+  on the Ilios Project at the UC San Francisco Library in the Center
+  for Knowledge Management and Living in Pacifica, CA
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://jrjohnson.giothub.io"
+twitter_username: iam_jrjohnson
+github_username:  jrjohnson
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
