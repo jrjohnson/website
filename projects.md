@@ -14,3 +14,23 @@ permalink: /projects/
 
 - [PHP Doctrine Backed Application](https://github.com/Jazzee/Jazzee)
 - [PHP Framework](https://github.com/jazzee/foundation)
+
+
+**Open Source Work**
+
+I've contributed documentation, code, and support to several open source projects.  Some pull requests I'm proud of:
+
+*Javascript*
+- [ember-cli](https://github.com/ember-cli/ember-cli/pull/3703)
+- [ember-try](https://github.com/kategengler/ember-try/pull/18)
+- [ember-cli-blanket](https://github.com/sglanzer/ember-cli-blanket/pull/67)
+- [heroku-buildpack-ember-cli](https://github.com/tonycoco/heroku-buildpack-ember-cli/pull/82)
+
+*PHP*
+- [Doctrine DBAL](https://github.com/doctrine/dbal/pull/278)
+- [TdnPilotBundle](https://github.com/TheDevNetwork/TdnPilotBundle/pull/4)
+- [Symfony Docs](https://github.com/symfony/symfony-docs/pull/4218)
+
+*Puppet*
+- [Puppet PHPMyAdmin](https://github.com/justicel/puppet-phpmyadmin/pull/24)
+- [Puppet Deploy](https://github.com/doctrine/dbal/pull/278)
