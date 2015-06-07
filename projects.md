@@ -25,6 +25,9 @@ I've contributed documentation, code, and support to several open source project
 - [ember-try](https://github.com/kategengler/ember-try/pull/18)
 - [ember-cli-blanket](https://github.com/sglanzer/ember-cli-blanket/pull/67)
 - [heroku-buildpack-ember-cli](https://github.com/tonycoco/heroku-buildpack-ember-cli/pull/82)
+- [liquid-fire](https://github.com/ef4/liquid-fire/pull/291)
+- [ember-cli-flash](https://github.com/poteto/ember-cli-flash/pull/67)
+
 
 *PHP*
 - [Doctrine DBAL](https://github.com/doctrine/dbal/pull/278)
