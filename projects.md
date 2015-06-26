@@ -28,7 +28,7 @@ I've contributed documentation, code, and support to several open source project
 - [heroku-buildpack-ember-cli](https://github.com/tonycoco/heroku-buildpack-ember-cli/pull/82)
 - [liquid-fire](https://github.com/ef4/liquid-fire/pull/291)
 - [ember-cli-flash](https://github.com/poteto/ember-cli-flash/pull/67)
-
+- [javascript-test-reporter](https://github.com/codeclimate/javascript-test-reporter/pull/20)
 
 *PHP*
 
