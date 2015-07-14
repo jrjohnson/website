@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testing in Ember.js</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+# It Takes a Village to Raise an App
+
+## How to Get Started Writing Tests Right Now
+
+### Jon Johnson
+![Jon's avatar](http://0.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c)
+
+<i class="fa fa-github"></i>jrjohnson  
+<i class="fa fa-twitter"></i>iam_jrjohnson
+
+---
+# Who am I?
+
+- Technical lead for the Ilios Project open source curriculum management system
+for health science education. (https://github.com/ilios/frontend)
+- Author of the ember-noscript addon
+- Minor contributor to:
+  - ember-cli
+  - ember-try
+  - ember-cli-blanket
+  - heroku-buildpack-ember-cli
+  - coveralls javascript-test-reporter
+- Working with ember for about a year 
+    - aka: I have no idea what sprout core is
+
+???
+- We're not hiring (but you can contribute!)
+
+---
+
+# What we will talk about?
+- coverage (ember-cli-blanket)
+- data fixtures (ember-cli-mirage)
+- multiple browsers (ember-cli-sauce)
+- future versions (ember-try)
+- human testing (heroku deploy)
+
+???
+- Why am I standing up here?
+    - We're currently at 83% code coverage!
+    - We all know we should be testing, but getting started is a pain
+    - A lot of that pain goes away when you have good infrastructure
+    - Conference Driven Development
+
+---
+# Our Personal Yak Shaver **Ember CLI**
+.center[![bugs bunny shaving not a yak](media/bugs-shaving.gif)]
+
+```bash
+$ ember new sandbox
+version: 1.13.1
+installing app
+  ...
+  create testem.json
+  create tests/.jshintrc
+  create tests/helpers/resolver.js
+  create tests/helpers/start-app.js
+  create tests/index.html
+  create tests/test-helper.js
+  create tests/unit/.gitkeep
+``` 
+???
+- Test structure imposed by ember-cli takes a lot of bike shedding off the table
+- Addons take us even further, not just not reinventing the wheel, but providing the
+  self driving car.
+
+---
+# Ember tests in the browser
+```bash
+$ember server
+```
+![sample test coverage](media/test-screen.png)
+
+???
+- great for TDD
+- Can stop tests use pauseTest() and look at app state
+
+---
+
+# Always *generate* with ember-cli
+
+```bash
+$ ember generate component playground-sandbox
+version: 1.13.1
+installing component
+  create app/components/playground-sandbox.js
+  create app/templates/components/playground-sandbox.hbs
+installing component-test
+  create tests/integration/components/playground-sandbox-test.js
+```
+
+###  Congrats you now have a test!
+
+???
+- generating creates test structure even if you don't use it
+- gives the next developer something to work from
+
+---
+class: center, middle
+# Test coverage with ember-cli-blanket 
+
+## OR
+
+### How to shame your team by adding coverage stats to pull requests
+
+---
+# Adding coverage as simple as...
+
+```bash
+$ember install ember-cli-blanket
+$ember server
+```
+![blanket.js coverage](media/blanket-stats.png)
+
+---
+# Generating statistics
+```bash
+$ember test
+$cat coverage.json
+```
+
+```javascript
+{
+  "coverage": {
+    "total": {
+      "statementsTotal": 46,
+      "statementsCovered": 32,
+      "percentage": 69.57
+    },
+    "files": [
+      {
+        "name": "playground/router",
+        "statementsTotal": 5,
+        "statementsCovered": 5,
+        "percentage": 100
+      },
+      {
+        "name": "playground/components/playground-sandbox",
+        "statementsTotal": 3,
+        "statementsCovered": 3,
+        "percentage": 100
+      },
+    ]
+  }
+```
+
+???
+- You can also generate lcov files for use in something like code climate
+- The file name is suposed to be a path, but it is acutally a broccoli module name
+  to deal with this blanket can rename the modules to paths until a better long
+  term solution is found.
+
+---
+# Data for tests
+
+Test data is usually one of:
+- Fixtures
+- Factories
+- Real Data
+
+We use it in:
+- Development
+- Click around testing
+- Acceptance Tests
+
+---
+# A few of the things we've tried for data
+
+- POJO's in Route::model()
+- Ember-cli Mocks
+- Pretender
+
+and.....
+
+???
+- POJO is inflexiable and doesn't handle updates well
+- CLI mocks require writing a lot of boiler plate
+- CLI mocks don't reset between test runs so you can't depend on constant data
+- Pretender can be hard to setup and takes a lot of work to share common data for tests
+
+---
+
+# Let mirage handle your data
+```bash
+$ember install ember-cli-mirage
+```
+
+- Sits on top of **trek/pretender** to organize test data
+- Replaces custom express configuration created with ember generate mock
+- Handles data for automated and manual testing through factories and fixtures
+- Has an internal database concept that makes it easier to write portable data handers
+
+---
+# Add data routes 
+
+Setup a route for each of your API endpoints
+
+*app/mirage/config.js*
+
+```javascript
+export default function() {
+  this.get('/api/toys');
+  this.get('/api/toys/:id');
+  this.post('/api/toys');
+  this.put('/api/toys/:id');
+  this.del('/api/toys/:id');
+}
+```
+
+---
+# Use factories to define data types
+
+*app/mirage/factories/tool.js*
+```javascript
+import Mirage, {faker} from 'ember-cli-mirage';
+
+export default Mirage.Factory.extend({
+  name: function(i) {
+    return 'tool ' + i + '';
+  },
+  type: faker.list.random('Hammer', 'Wrench'),
+  weight: faker.list.cycle(1, 8, 11, 42),
+  color: faker.commerce.color,
+});
+```
+
+---
+# Build data on demand
+
+*server* becomes a global which we can call from acceptance tests
+```javascript
+
+test('List all the tools', function() {
+    //create a whole bunch of tools
+    server.createList('tool', 10);
+
+    //create a single tool overriding the factory properties
+    server.create('tool', {
+        name: 'green hammer',
+        type: 'Hammer',
+        color: 'green'
+    });
+
+    visit('/tools');
+
+    andThen(function() {
+        equal( find('.tool').length, 11 );
+        equal( find('.tool').eq(10).text(), 'green hammer');
+    });
+});
+```
+
+---
+# Browser testing made convenient
+```bash
+$ember install ember-cli-sauce
+$ember sauce --browser 'chrome'
+```
+
+
+```bash
+$ember test --launch='Chrome40'
+ok 1 Chrome 40.0 - JSHint - .: app.js
+...
+# tests 12
+# pass  11
+# fail  1
+$ember sauce:disconnect
+```
+???
+```bash
+$export SAUCE_USERNAME=your_user_name
+$export SAUCE_ACCESS_KEY=your_access_key
+$ember sauce:connect
+```
+---
+# Testing for the future
+```bash
+$ember install ember-try
+$ember try ember-beta serve
+```
+
+???
+- You now have no excuse for not testing your app against beta Ember releases
+and reporting any bugs you find.
+
+---
+# Sometimes you just need Dave
+
+```hbs
+<div>
+    <label>{{t "general.end"}}:</label>
+    <div>{{inplace-date value=course.endDate save='changeStartDate'}}</div>
+</div>
+```
+
+## Deploy your app to heroku
+```bash
+$heroku create --buildpack https://github.com/tonycoco/heroku-buildpack-ember-cli.git
+...
+https://stormy-lake-4610.herokuapp.com/
+$heroku config:set EMBER_ENV=development
+$git push heroku master
+#npm install; bower install; ember build --env=development
+```
+
+### Heroku Review Apps (beta)
+
+---
+class: center, middle
+
+### Questions?
+![Jon's avatar](http://0.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c)
+
+<i class="fa fa-github"></i>jrjohnson  
+<i class="fa fa-twitter"></i>iam_jrjohnson
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
