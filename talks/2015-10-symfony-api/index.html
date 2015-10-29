@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Building a Symfony API</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .floatright {
+          float: right;
+      }
+      .floatleft {
+          float: left;
+      }
+      .halfwidth {
+          width: 45%;
+      }
+      .clear {
+          clear: both;
+          display: block;
+      }
+      a, a:visited {
+          color: blue;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+        class: center, middle
+        # Building a Symfony API to support Ember.js 
+
+        ## (or anything else)
+
+        ### (especially single page apps)
+
+        #### Jon Johnson
+        ![Jons avatar](media/jonsavatar.jpeg)
+
+        <i class="fa fa-github"></i>jrjohnson  
+        <i class="fa fa-twitter"></i>iam_jrjohnson
+
+        ---
+        # Who am I?
+
+        .center[![github contributions](media/contributions.png)]
+
+        ???
+        - Working as a PHP pro for 10 years
+        - Get Paid to write open source
+        - Small Team (CKM) in a huge organization UCSF 40K Jobs in SF 
+
+        ---
+        # Who am I to you?
+
+        .center[![symfony badges](media/badges.png)]
+        .center[![noob badge](media/noobbadge.png)]
+
+        ???
+        - A relative symfony newbie
+        - Worked with Doctrine for a long time
+
+        ---
+        class: center
+        # What is Ilios?
+        .center[![ilios logo](media/ilioslogo.png)]
+
+        ???
+        - Curriculum Management for medical education
+        - In production for more than a decade
+        - Dozens of medical schools on 5 continents
+
+        ---
+        class: center
+        # The Ilios API Team
+        .clear[.floatleft[![victor avatar](media/victoravatar.png)]
+        .floatright[![stefan avatar](media/stefanavatar.png)]]
+        .clear[.floatleft[![sascha avatar](media/saschaavatar.png)]
+        .floatright[![jason avatar](media/jasonavatar.png)]]
+
+        ---
+        # Where we were last year
+        - Code Igniter
+        - YUI 2
+        - Very limited test coverage
+        - *MySQL Triggers*
+        - HTML/JS/CSS mess
+        - Stuck
+
+        ---
+        # Where we will be tomorrow (well, next week at least)
+
+        - Complete REST API
+        - Tests
+        - Documentation
+        - Complete seperation of Web Assets
+        - Ready to expand
+
+        ???
+
+        - Limited production use of the API right now
+        - Wrapping up the web app and deploying to customers next saturday
+
+        ---
+        # Why Symfony?
+        .center[Our Complex Data]
+        .center[![ilios data sample](media/ilios-noise.png)]
+
+        - Run old and new at the same time if necessary
+        - Great docs to point contributors to
+        - Stable core and excellent bundles
+
+        ???
+
+        - Our Data model is a proven winner
+        - PHP experience
+        - We will live with this decision for at least 5 years
+
+        ---
+        # What is a single page app?
+
+        > A single-page application (SPA) is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In a SPA, either all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load,[1] or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
+
+        .left[https://en.wikipedia.org/wiki/Single-page_application]
+        ---
+        # No.  Seriously.
+
+        ...** all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load **...** The page does not reload at any point ** ... ** dynamic communication with the web server behind the scenes. **
+
+        ---
+        # No.  Seriously.
+
+        ...** all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load **...** The page does not reload at any point ** ... ** dynamic communication with the web server behind the scenes. **
+
+        .center[## All Javascript, all the time]
+
+        ---
+        # All Symfony has to do is REST
+
+        > REST or RESTfull APIs deliver stateless data based on URL and allow for authorized CRUD operations on that data.
+
+        .right[--Jon Johnson, Symfony Live SF, Just Now]
+
+        ### Two awesome resources on REST and Symfony
+        - http://williamdurand.fr/2012/08/02/rest-apis-with-symfony2-the-right-way/
+        - http://welcometothebundle.com/symfony2-rest-api-the-best-2013-way/
+
+        ---
+        class: center
+        # Anatomy of a REST request
+        .center[![simple REST GET request](media/simpleflow.png)]
+
+        ---
+        class: center
+        # Breaking it down further
+        .center[![Full map of REST GET request](media/fullrequest.png)]
+
+        ---
+        class: center
+        # Don't forget Problems
+        .center[![Failures in REST GET request](media/failrequest.png)]
+
+        ---
+        class: center
+        # For free with Symfony and Doctrine
+        .center[![free parts included in symfony](media/freefromsymfony.png)]
+
+        ---
+        class: center
+        # Symfony + a **little bit** of effort
+        .center[![heavy lifting REST from symfony](media/heavyliftingfromsymfony.png)]
+
+        ---
+        class: center
+        # FriendsOfSymfony/FOSRestBundle && jms/serializer-bundle
+        .center[![free REST from bundles](media/freewithbundles.png)]
+
+        ---
+        class: center, middle
+        ## We don't have a lot to do
+
+        ???
+        Which is lucky since we're running out of time....
+
+        ---
+        # Authentication (our problem)
+        - Support different methods (LDAP, Shibboleth, Form, AD)
+
+        ???
+        - Extremly configurable security system is a big draw of symfony
+        - Lots of Bundles which focus on authentication
+        - Too many options and too much configuration
+        - Hard to write documentation authentication is ever changing
+        - Schema creep
+        - Complicated frontend requests with so much uncertanty
+        ---
+
+        # Authentication (our solution)
+        .halfwidth[.floatleft[
+        - Symfony Security based on JSON Web Token (JWT)
+        - Anonymous Access to
+            - /auth/config
+            - /auth/login
+        ]]
+
+        .halfwidth[.floatleft[![authentication flow](media/authenticationrequest.png)]]
+
+        ---
+        # Authentication (Shibboleth Example)
+
+        .center[![authentication flow](media/authenticationrequestshib.png)]
+
+        ???
+
+        - More complicated client side flow
+
+        ---
+
+        # What is JWT?
+
+        ### Signed Token Base64 Encoded
+        ```html
+        eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+        eyJpc3MiOiJpbGlvcyIsImF1ZCI6ImlsaW9zIiwiaWF0IjoiMTQ0NjA2MDU4NCIsImV4cCI6IjE0NDYwODkzODQiLCJ1c2VyX2lkIjoyMDAwfQ.
+        khdJqxEbXZwudOjjUr8_fs4BJmespfb8qAx2v_zIleU
+        ```
+
+        ### Payload
+        ```javascript
+        {
+          "iss": "ilios",
+          "aud": "ilios",
+          "iat": "1446060584",
+          "exp": "1446089384",
+          "user_id": 2000
+        }
+        ```
+
+        ---
+        # Security via JWT (sample)
+
+        ```php
+        class JsonWebTokenAuthenticator implements SimplePreAuthenticatorInterface
+        {
+            public function authenticateToken(TokenInterface $token, UserProviderInterface $userProvider, $providerKey)
+            {
+                $jwt = $token->getCredentials();
+                $username = $this->jwtManager->getUserIdFromToken($jwt);
+                $issuedAt = $this->jwtManager->getIssuedAtFromToken($jwt);
+                
+                $user = $userProvider->loadUserByUsername($username);
+                $authenticatedToken = new PreAuthenticatedToken(
+                    $user,
+                    $jwt,
+                    $providerKey
+                );
+                $authenticatedToken->setAuthenticated(true);
+                
+                return $authenticatedToken;
+            }
+        }
+        ```
+
+        ???
+        - No database lookup without a signed token
+        - No session storage
+        - Token lifetime is under your control and easily observable on the client
+        - We store a invalidateTokensIssuedBefore value for each user
+        - Token can be generated anywhere the key is known
+
+        ---
+        class: center, middle
+        ![authentication complete](media/authenticationdone.png)
+
+        ???
+        With the user authenticated we can now fetch some data
+        ---
+        # Authorization using Voters
+        ```php
+        public function getAction($id)
+        {
+            $course = $this->getCourseOr404($id);
+
+        *    $authChecker = $this->get('security.authorization_checker');
+        *    if (! $authChecker->isGranted('view', $course)) {
+        *        throw $this->createAccessDeniedException('Unauthorized access!');
+        *    }
+
+            $answer['courses'][] = $course;
+
+            return $answer;
+        }
+        ```
+        ---
+        # The Course Voter (sample)
+
+        ```php
+        protected function isGranted($attribute, $course, $user = null)
+        {
+            return (
+                $course->getSchool() === $user->getSchool()
+                || $user->hasReadPermissionToSchool($course->getSchool())
+                || $user->hasReadPermissionToCourse($$course)
+            );
+        }
+        ```
+
+        ???
+
+        - No sanity checking
+        - Usually a switch statement for $attribute for VIEW/WRITE/DELETE
+        - We can get into very complex permissions in a graduated way that is easily customized for every type of data
+
+        ---
+        class: center, middle
+        .center[![authentication complete](media/authorizationdone.png)]
+
+        ???
+
+        With the user authorized we can now display data
+
+        ---
+        class: middle
+        ```php
+        public function getAction($id)
+        {
+             $course = $this->getCourseOr404($id);
+
+             $authChecker = $this->get('security.authorization_checker');
+             if (! $authChecker->isGranted('view', $course)) {
+                 throw $this->createAccessDeniedException('Unauthorized access!');
+             }
+
+        *     $answer['courses'][] = $course;
+        * 
+        *     return $answer;
+        }
+         ```
+         
+        ???
+         - $course is a doctrine entity.  A complex data object containing data and references to other data.
+         - There is no explicit transformer in the controller
+         - FOSRest handles choosing a format XML, JSON, HTML
+         - We nest all of our responses under a pluralized key
+
+        ---
+        # Transformation
+        ## What a JSON Response looks like
+
+        GET => `/api/v1/courses/619`
+
+        ```json
+        "courses":[
+          {
+          "id":619,
+          "title": "PRIME 2014-15",
+          "startDate": "2014-08-23T00:00:00+00:00",
+          "deleted": false,
+          "school": "1",
+          "directors": ["3625", "3906"],
+          "topics": [],
+          "objectives": [],
+          "sessions": ["17713", "17714", "17715"]
+          }
+        ]
+        ```
+
+        ---
+        # Transformation
+        ## What a XML Response looks like
+
+        GET => `/api/v1/courses/619.xml`
+
+        ```xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <result>
+          <entry>
+            <entry>
+              <id>619</id>
+              <title><![CDATA[PRIME 2014-15]]></title>
+              <startDate><![CDATA[2014-08-23T00:00:00+00:00]]></startDate>
+              <deleted>false</deleted>
+              <locked>false</locked>
+              <school><![CDATA[1]]></school>
+              <directors>
+                <entry><![CDATA[3625]]></entry>
+                <entry><![CDATA[3906]]></entry>
+              </directors>
+              <sessions>
+                <entry><![CDATA[17713]]></entry>
+                <entry><![CDATA[17714]]></entry>
+                <entry><![CDATA[17715]]></entry>
+              </sessions>
+            </entry>
+          </entry>
+        </result>
+
+        ```
+        ---
+        #TADA!
+        .center[![rabit out of a hat](media/rabitoutofhat.gif)]
+
+        ---
+        #Almost Magic
+
+        Our Course Entity
+        ```php
+        class Course
+        {
+            /**
+            *
+        *   * @ORM\Column(type="string", length=200, nullable=true)
+            *
+        *   * @JMS\Type("string")
+            */
+            protected $title;
+
+            /**
+        *    * @ORM\ManyToOne(targetEntity="School", inversedBy="courses")
+             *
+        *    * @JMS\Type("string")
+             */
+            protected $school;
+        ```
+        ---
+        class: middle
+        ```json
+        "courses": [
+          {
+          "id":619,
+          "title": "PRIME 2014-15",
+          "startDate": "2014-08-23T00:00:00+00:00",
+          "deleted": false,
+        * "school": "1",
+          "directors": ["3625", "3906"],
+          "topics": [],
+          "objectives": [],
+          "sessions": ["17713", "17714", "17715"]
+          }
+        ]
+        ```
+        ---
+
+        # More advanced serialization
+        ## Use Plain Old PHP Objects created by a factory service
+
+        ```php
+        /**
+         * @JMS\Type("string")
+         * @JMS\SerializedName("absolutePath")
+         */
+        protected $absolutePath;
+
+        public function __construct(Course $learningMaterial, Router $router)
+        {
+            if ($token = $course->getToken()) {
+                $this->absolutePath = $router->generate(
+                    'ilios_core_download',
+                    ['token' => $token],
+                    true
+                );
+            }
+            $this->id = $course->getId();
+            $this->title = $course->getTitle();
+        }
+        ```
+
+        ---
+        # Is Everything the Same?
+        .center[![puppies all the same](media/puppies.gif)]
+
+        ### Why not generate it?
+
+        ???
+        - Generate Boilerplate vs Inheritance / Traits
+        - We're still not sure what our controllers will look like, thats ok
+        - Several easy buisness rules were slipped into controlelrs because we could
+
+        ---
+        # Help With Generating
+
+        ### https://github.com/voryx/restgeneratorbundle
+
+        ### https://github.com/jrjohnson/TdnPilotBundle
+
+        ### https://github.com/vpassapera/TdnForgeBundle
+
+        ???
+        - You will probably end up writing custom twig templates
+        - Tests!
+
+        ---
+        # Functional Tests
+        ```php
+        public function testGetCourse()
+        {
+            $courseData = $this->container->get('ilioscore.dataloader.course')->getOne();
+            $this->createJsonRequest('GET', '/api/v1/courses/' . $courseData['id']);
+            $response = $this->client->getResponse();
+            $this->assertEquals(
+                $courseData,
+                json_decode($response->getContent(), true)['courses'][0]
+            );
+        }
+        ```
+
+        ## Brought to you by:
+        ### liip/LiipFunctionalTestBundle
+
+        ???
+        - Uses doctrine fixtures and SQLite to constantly reset the database
+        - We use a DataLoader pattern to provide data to both the fixtures and our tests
+
+        ---
+        # Documentation
+        ## https://github.com/nelmio/NelmioApiDocBundle
+
+        ```php
+        /**
+         * @ApiDoc(
+         *   section = "Course",
+         *   description = "Get a Course.",
+         *   resource = true,
+         *   requirements={
+         *     {
+         *        "name"="id",
+         *        "dataType"="integer",
+         *        "requirement"="\d+",
+         *        "description"="Course identifier."
+         *     }
+         *   },
+        * *   output="Ilios\CoreBundle\Entity\Course",
+         *   statusCodes={
+         *     200 = "Course.",
+         *     404 = "Not Found."
+         *   }
+         * )
+         */
+        public function getAction($id)
+        ```
+        ---
+        class: center, middle
+        ![summary api docs screenshot](media/apidoc-summary.png)
+
+        ---
+        class: center, middle
+        ![single course api docs screenshot](media/apidoc-course.png)
+
+        ---
+        # Delivering the page
+
+        .center[![surpise delivery](media/delivery.gif)]
+
+        ---
+        # Delivering the page (things that didn't work)
+        - Same repository, use assetic
+        - Same repository, static export
+        - Two Repositories, bundle or include in distribution
+
+        ---
+        # Delivering the page (our solution)
+        ## Proxy app through Symfony
+        - Build webapp with fingerprinted assets
+        - Store javascript, css, media assets in CDN
+        - Store index.html by git hash
+        - Catchall route serves index.html
+
+        ???
+        - Much faster deployment of our frontend code which will change must faster
+
+        ---
+        ```yaml
+        ilios_web:
+            environment: production
+            version: 2012de2 
+        ```
+
+        ```yaml
+        ilios_web_homepage:
+            pattern:     /{url}
+            defaults:
+                url: null
+                _controller: IliosWebBundle:Index:index
+            requirements:
+                url: ".+"
+        ```
+        ```php
+        public function indexAction()
+        {
+            $file = $this->get('iliosweb.assets')->getIndex();
+            $response = new Response($file);
+            $response->headers->set('Content-Type', 'text/html');
+            return $response;
+        }
+        ```
+        ---
+        # Future 
+        - Automatically release app when tests pass
+        - Redis store for index.html which maps releases against API versions
+        - WebRTC indication of new app versions
+        - Push notifications of updates to clients
+
+        .center[![asset architecture](media/mikenorthhtml5devconf.png)]
+
+        ---
+        # Things I left off
+        - Validation of POST / PUT data
+        - Improving Performance
+        - JSON API 1.0
+
+
+        ---
+        class: center, middle
+
+        # <i class="fa fa-github"></i>https://github.com/ilios/ilios
+
+        ### Questions?
+        ![Jons avatar](media/jonsavatar.jpeg)
+
+        <i class="fa fa-github"></i>jrjohnson  
+        <i class="fa fa-twitter"></i>iam_jrjohnson
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: true
+      },
+      highlightLines: true
+    });
+    </script>
+  </body>
+</html>
