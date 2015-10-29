@@ -29,6 +29,9 @@
       a, a:visited {
           color: blue;
       }
+      .grey {
+          color: lightgrey;
+      }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
   </head>
@@ -114,12 +117,14 @@
 
         ---
         # Why Symfony?
-        .center[Our Complex Data]
-        .center[![ilios data sample](media/ilios-noise.png)]
-
         - Run old and new at the same time if necessary
         - Great docs to point contributors to
         - Stable core and excellent bundles
+        
+        .center[Our Complex Data]
+        .center[![ilios data sample](media/ilios-noise.png)]
+
+        
 
         ???
 
@@ -139,12 +144,25 @@
         ...** all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load **...** The page does not reload at any point ** ... ** dynamic communication with the web server behind the scenes. **
 
         ---
+        .grey[
         # No.  Seriously.
 
         ...** all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load **...** The page does not reload at any point ** ... ** dynamic communication with the web server behind the scenes. **
-
+        ]
         .center[## All Javascript, all the time]
 
+        ---
+        # All Symfony has to do is REST
+
+        > REST or RESTfull APIs deliver stateless data based on URL and allow for authorized CRUD operations on that data.
+        
+        ---
+        # All Symfony has to do is REST
+
+        > REST or RESTfull APIs deliver stateless data based on URL and allow for authorized CRUD operations on that data.
+
+        .right[--Jon Johnson, Symfony Live SF, Just Now]
+        
         ---
         # All Symfony has to do is REST
 
@@ -246,6 +264,22 @@
           "user_id": 2000
         }
         ```
+    
+        ---
+
+        # All your payloads are belong to you
+        
+        ```javascript
+        {
+          "iss": "ilios",
+          "aud": "ilios",
+          "iat": "1446060584",
+          "exp": "1446089384",
+        * "user_id": 2000,
+        * "roles": ['user', 'admin'],
+        * "favoriteTypeOfBacon": 'smoked applewood'
+        }
+        ```
 
         ---
         # Security via JWT (sample)
@@ -297,7 +331,7 @@
         *        throw $this->createAccessDeniedException('Unauthorized access!');
         *    }
 
-            $answer['courses'][] = $course;
+            $answer['courses'] = [$course];
 
             return $answer;
         }
@@ -342,7 +376,7 @@
                  throw $this->createAccessDeniedException('Unauthorized access!');
              }
 
-        *     $answer['courses'][] = $course;
+        *     $answer['courses'] = [$course];
         * 
         *     return $answer;
         }
@@ -355,8 +389,7 @@
          - We nest all of our responses under a pluralized key
 
         ---
-        # Transformation
-        ## What a JSON Response looks like
+        # Transformation to JSON
 
         GET => `/api/v1/courses/619`
 
@@ -377,8 +410,7 @@
         ```
 
         ---
-        # Transformation
-        ## What a XML Response looks like
+        # Transformation to XML
 
         GET => `/api/v1/courses/619.xml`
 
@@ -408,8 +440,9 @@
 
         ```
         ---
+        class: center
         #TADA!
-        .center[![rabit out of a hat](media/rabitoutofhat.gif)]
+        ![rabit out of a hat](media/rabitoutofhat.gif)
 
         ---
         #Almost Magic
@@ -435,6 +468,7 @@
         ```
         ---
         class: middle
+        # Look Ma, School is a string!
         ```json
         "courses": [
           {
@@ -540,7 +574,7 @@
          *        "description"="Course identifier."
          *     }
          *   },
-        * *   output="Ilios\CoreBundle\Entity\Course",
+        *    output="Ilios\CoreBundle\Entity\Course",
          *   statusCodes={
          *     200 = "Course.",
          *     404 = "Not Found."
