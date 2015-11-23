@@ -7,7 +7,6 @@ originalURI: http://blogs.library.ucsf.edu/ckm/2015/04/24/testing-in-ember-js-pa
 ---
 
 ## The Big Picture
-
 The goal of automated testing is to find problems before your users do. Good tests do this by preventing bad code from being merged. A great continuous integration (CI) setup can catch problems in beta browsers and libraries in time to report them to their authors or fix your code before a release happens. By the end of this three part series you will have a great CI setup. Tests will automatically run against any browser you support and any future version of your dependencies.
 
 Requirements for this guide are [Ember.js](http://emberjs.com/) > 1.10 and [Ember CLI](http://www.ember-cli.com/) > 0.2.3\. It may be entirely possible to do this without Ember CLI, but I wouldn't know how. In Part One, we will cover using Sauce Labs and Travis CI to create your test matrix.
