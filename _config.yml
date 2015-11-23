@@ -12,3 +12,6 @@ github_username:  jrjohnson
 
 # Build settings
 markdown: kramdown
+collections:
+  talks:
+    output: true

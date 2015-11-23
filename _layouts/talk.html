@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="talk">
+
+  <header class="talk-header">
+    <h1 class="talk-title">{{ page.title }}</h1>
+    <h5>{{ page.date | date: "%b %-d, %Y" }}</h5>
+  </header>
+
+  <h2>Abstract:</h2>
+  <article class="talk-content">
+    {{ content }}
+  </article>
+  
+  <p>
+  {% if page.eventURI %}
+    <strong>Original Event Page:</strong> <a href='{{ page.eventURI }}'>{{ page.eventURI }}</a>
+  {% endif %}
+  </p>
+  
+  <p>
+  {% if page.videoURI %}
+    <strong>Video:</strong> <a href='{{ page.videoURI }}'>{{ page.videoURI }}</a>
+  {% endif %}
+  </p>
+  
+  <p>
+  {% if page.slidesURI %}
+    <strong>Slides:</strong> <a href='{{ page.slidesURI }}'>{{ page.slidesURI }}</a>
+  {% endif %}
+  </p>
+
+  
+</div>
