@@ -9,6 +9,7 @@ permalink: /projects/
 
 - [Javascript EmberJS Web App](https://github.com/ilios/frontend)
 - [PHP Symfony Backend API Server](https://github.com/ilios/ilios)
+- [Jekyll Website](https://github.com/ilios/ilios.github.io)
 
 **Jazzee Open Application Platform**
 
@@ -27,15 +28,18 @@ I've contributed documentation, code, and support to several open source project
 - [ember-cli-blanket](https://github.com/sglanzer/ember-cli-blanket/pull/67)
 - [heroku-buildpack-ember-cli](https://github.com/tonycoco/heroku-buildpack-ember-cli/pull/82)
 - [liquid-fire](https://github.com/ef4/liquid-fire/pull/291)
+- [liquid-fire](https://github.com/ef4/liquid-fire/pull/371)
 - [ember-cli-flash](https://github.com/poteto/ember-cli-flash/pull/67)
 - [javascript-test-reporter](https://github.com/codeclimate/javascript-test-reporter/pull/20)
+- [ember-froala](https://github.com/froala/ember-froala/pull/3)
 
 *PHP*
 
 - [Doctrine DBAL](https://github.com/doctrine/dbal/pull/278)
 - [TdnPilotBundle](https://github.com/TheDevNetwork/TdnPilotBundle/pull/4)
 - [Symfony Docs](https://github.com/symfony/symfony-docs/pull/4218)
-
+- [eluceo—iCal](https://github.com/markuspoerschke/iCal/pull/53)
+- 
 *Puppet*
 
 - [Puppet PHPMyAdmin](https://github.com/justicel/puppet-phpmyadmin/pull/24)
