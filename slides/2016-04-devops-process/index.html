@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Putting the dev back into devops</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+      body { font-family: 'Droid Serif'; }
+      a, a:hover, a:visited {
+        color: grey;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .footnote {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        font-style: italic;
+        font-size: .8em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+# Put the dev back into devops
+
+### a cheap and easy guide to getting your changes into production
+
+### Jon Johnson
+![Jon's avatar](http://0.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c)
+
+<i class="fa fa-github"></i>jrjohnson <br />
+<i class="fa fa-twitter"></i>iam_jrjohnson
+
+---
+# Who am I?
+
+- Full stack web developer
+- Technical lead for the Ilios Project open source curriculum management system
+for health science education. (http://iliosproject.org)
+- Ardently lazy about repeating tasks
+
+.center[![github contributions](media/contributions.png)]
+
+---
+# Lets GIT cracking
+- What is git and why does it play such a critical role?
+- Distributed version control primer
+- client vs server
+- Git for humans (https://abookapart.com/products/git-for-humans)
+
+---
+# Everything lives in the `.git` directory
+
+.center[DEMO TIME!]
+.center[![Rollar Coaster Demolotiion](media/demo.gif)]
+
+.footnote[http://giphy.com/gifs/demo-rollercoaster-wooden-r9CT85ZJah3Ik]
+
+???
+
+``` bash
+cd ~/Desktop/gitdemo
+git init
+echo "Please Read me" > README
+git add README
+git commit
+```
+
+Open in finder and look at the file
+
+``` bash
+git checkout -b edit-readme
+echo "Please Do NOT Read me" >> README
+git commit -a -m 'Better readme'
+```
+
+Open in finder and look at the file
+
+``` bash
+git checkout -b delete-readme
+git rm README
+git commit -a -m 'Remove readme'
+```
+
+Switch between branches and look at the file in the finder
+
+---
+# Remotes and Forks and Branches, oh My!
+- What to share and when / **Keep your crappy ideas private**
+
+---
+# Why Fork and Pull?
+- Limited authority to make commits
+- Everyone has their own playground
+- Only master matters
+- short lived branches
+
+---
+# Up to date forking
+- Never touch your master branch
+- `git pull --rebase upstream master`
+
+.center[![example branches](media/branches.png)]
+
+---
+# Github FTW!
+- The repository is **in the *cloud***
+- Public / Private repositories
+- Common tool makes onboarding easier
+
+.center[![blues brothers celebration](media/blues_brothers.gif)]
+
+
+---
+# GitHub 2000:  Pull Requests
+- Validate every change:
+  - Unit tests
+  - Code Style
+  - Manual Validation
+      - Checkout and review
+      - Build and deploy the PR
+- Discussion on small features, screen shots, etc.
+
+.center[![All Checks Passed!](media/all-checks-passed.png)]
+
+---
+# What can the internets do for you?
+
+.center[![Cats in a musical](media/lolcat-musical.jpg)]
+.footnote[https://laughingsquid.com/i-can-has-cheezburger-the-musiclol/]
+
+---
+# What can the internets do for you?
+- Github
+- Travis
+- Saucelabs (test in ALL THE BROWSERS)
+- Code Climate (code quality)
+- Coveralls (test coverage)
+- Heroku (deploy PRs for testing)
+
+---
+# Travis for Continuous Integration
+- Free for open source
+- Configurable virtual testing dashboard
+-
+
+---
+# AWS for continous delivery
+- S3 bucket stores files
+- Cloudfront serves assets
+- S3 stores a JSON description of index
+
+```json
+{
+  link: [
+    {
+      rel: "stylesheet",
+      href: "https://d26vzvixg52o0d.cloudfront.net/assets/vendor-fda2f842da2dc4fa03daaa1bd5411c9e.css"
+    },
+    {
+      rel: "stylesheet",
+      href: "https://d26vzvixg52o0d.cloudfront.net/assets/ilios-ce71609f3b7baec15ff33a847fbe8f66.css"
+    }
+  ],
+  script: [
+    {
+      src: "https://d26vzvixg52o0d.cloudfront.net/assets/vendor-9c5092b47123cf8fa27e436e8e8fc608.js"
+    },
+    {
+      src: "https://d26vzvixg52o0d.cloudfront.net/assets/ilios-ca247ee9a3b36d2dce3689bc7edcab77.js"
+    },
+  ]
+}
+```
+
+---
+class: center, middle
+
+### Questions?
+![Jon's avatar](http://0.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c)
+
+<i class="fa fa-github"></i>jrjohnson <br />
+<i class="fa fa-twitter"></i>iam_jrjohnson
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: true
+      },
+    });
+    </script>
+  </body>
+</html>
