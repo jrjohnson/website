@@ -2,6 +2,8 @@
 layout: talk
 title:  "Putting the dev back in devops"
 date:   2014-04-28 11:30:00
+eventURI:
+videoURI:
 slidesURI: /slides/2016-04-devops-process
 ---
 
