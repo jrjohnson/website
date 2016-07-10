@@ -1,0 +1,12 @@
+---
+layout: talk
+title:  "Microapps FTW"
+date:   2016-07-12 09:15:00
+eventURI:
+videoURI:
+slidesURI: /slides/2016-07-microappsmini
+---
+
+Deploying and maintaining standard compliant APIs around our internal systems 
+allows for a flexibility and an agility to respond to complex needs in a much more
+timely and lower cost manner than has been typical in the past.
