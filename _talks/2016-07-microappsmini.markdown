@@ -1,6 +1,6 @@
 ---
 layout: talk
-title:  "Microapps FTW"
+title:  Microapps FTW
 date:   2016-07-12 09:15:00
 eventURI: http://uccsc.ucsc.edu/sessions/schedule.html
 videoURI:
