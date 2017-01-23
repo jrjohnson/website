@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Microapplications &amp; API First Development</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+      body { font-family: 'Droid Serif'; }
+      a, a:hover, a:visited {
+        color: grey;
+      }
+      h1, h2, h3 {
+        color: #c60;
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      h1 {
+        color: #c60;
+      }
+      h2, h3, h4, h5 {
+        color: #00617f;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .footnote {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        font-style: italic;
+        font-size: .8em;
+      }
+      .box {
+        display: block;
+        float: left;
+        font-size: 2em;
+        font-weight: bold;
+        padding: 1em 0;
+        width: 50%;
+      }
+      .smallbox {
+        display: block;
+        float: left;
+        font-size: 1.5em;
+        margin: 0;
+        padding: 1em;
+        width: 35%;
+      }
+      .minibox {
+        display: block;
+        float: left;
+        font-size: 2em;
+        font-weight: bold;
+        padding: 1em 0;
+        width: 25%;
+      }
+      .left-column {
+        color: #777;
+        width: 25%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type {
+        color: #000;
+      }
+      .left-column ul {
+        color: #000;
+      }
+      .right-column {
+        width: 70%;
+        float: right;
+        padding-top: 1em;
+      }
+      .full-column {
+        width: 100%;
+        clear: both;
+        padding-top: 1em;
+      }
+      .strike {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+# Microapplications & API First Development
+
+### Deliver Awesome Stuff Fast
+
+### Jon Johnson
+![Jon's avatar](http://0.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c)
+
+Slides at: https://jrjohnson.github.io/talks/2017-01-apifirst-microapps.html
+
+<i class="fa fa-github"></i>jrjohnson <br />
+<i class="fa fa-twitter"></i>iam_jrjohnson <br />
+<i class="fa fa-slack"></i>jrjohnson https://symfony-devs.slack.com/ <br />
+
+---
+# Who am I?
+
+- Full stack web developer (PHP, Javascript)
+- Technical lead for the Ilios Project open source curriculum management system
+for health science education. (http://iliosproject.org)
+
+.center[![github contributions](media/contributions.png)]
+
+---
+
+# Who am I?
+
+- Full stack web developer (PHP, Javascript)
+- Technical lead for the Ilios Project open source curriculum management system
+for health science education. (http://iliosproject.org)
+
+.center[![github contributions with time off in green](media/contributions-are-work.png)]
+
+---
+
+# A brief history of Ilios
+
+- Curriculum management system for health science education. (http://iliosproject.org)
+- Deployed at dozens of medical schools on 5 continents
+- A product of UCSF School of Medicine and the MedBiquitous Consortium
+
+.center[![map of international Ilios schools](media/ilios-map.png)]
+
+
+???
+- Other Campuses that didn't make the map
+  - Ireland
+  - Nigeria
+  - Qatar
+  - the Netherlands
+  - Australia
+---
+
+.left-column[
+  ## A brief history of Ilios
+  ## The Boom!
+]
+.right-column[
+- Ilios was born a few years after the web
+- A bunch of faculty got together and built something that "Just worked"
+- MS Access Database
+- Served through Citrix
+]
+
+![Buffy playing with a stake](media/buffy.gif)
+
+???
+- AKA The Nineties!
+- The Babycenter opened for business
+
+---
+
+.left-column[
+  ## A brief history of Ilios (v1)
+  ## The Bust!
+]
+.right-column[
+- Woot!  The Web!
+- ASP application using SQL Server 2000
+- Was (according to faculty) **"much more functional"** than what we have now
+]
+
+![Bubble Bursting in slow motion](media/bubble.gif)
+
+???
+
+Credit: Daniel M. Harris et al, American Physical Society
+
+---
+
+.left-column[
+  ## A brief history of Ilios (v2)
+  ## The Rewrite!
+]
+.right-column[
+- In 2009 Ilios was re-written in PHP
+- CodeIgniter
+- YUI
+- Lots of Stored Procedures
+- No Tests
+- Basically a perfect example of good design from 2009
+]
+
+???
+
+- Spent 18 months designing a new system and wrote no code
+- Then threw out all of the design and built the whole thing in about 8 months
+- A single Developer / Mathematician
+
+---
+
+# deepCloneAssociativeArray
+
+```javascript
+/**
+ * Written because slice() is dysfunctional with associative arrays.
+ *
+ * @return a deep copy of the associative array (the returned array is its own unique
+ * 				Array instance, and the objects in the array have clone() called on them -
+ * 				so they must implement that). If originalArray is null, null is returned.
+ */
+ilios.utilities.deepCloneAssociativeArray = function (originalArray) {
+	var rhett = null;
+
+	if (originalArray != null) {
+		rhett = new Array();
+
+		for (var key in originalArray) {
+			rhett[key] = originalArray[key].clone();
+
+			rhett.length++;
+		}
+	}
+
+	return rhett;
+};
+```
+
+???
+- Javascript doesn't have associative arrays -> it has objects
+- We can laugh (and sometimes we do) but this is a great lesson in
+the inevitable result of a truly talented developer hunkering down to
+get it done in a vacuum.
+
+---
+
+.left-column[
+  ## A brief history of Ilios (v3)
+  ## The (second) Rewrite!
+]
+.right-column[
+- In 2015 we embarked on this journey
+- Open API
+- Ease community contributions:
+  - Good framework docs
+  - Standardization of tools
+  - Fork and Pull Development Model
+  - Automated Tests and Code Style Checking
+- SO MANY TESTS!!!
+]
+???
+
+- Open API
+  - We interconnect with a lot of other systems on campuses and with organizations
+  like the American Association of Medical Colleges so having an open
+  and well documented API allows data to flow
+- Community
+  - We provide Ilios for Free to other medical schools around the world
+  - Sometimes they have some developer time to give us back a few weeks or a few months
+  - It is critical that work done outside our core team be of high quality and
+  that we have clear expectations.
+
+---
+
+# Our path to success
+
+- Split Ilios
+- Release independently
+- Build the API within the existing PHP codebase
+- Release constantly
+- Write as little code as possible
+
+???
+
+- Split Ilios
+  - API in PHP
+  - Single Page App User interface
+- Test
+  - Never a bug fix without a test
+  - Test Reminder Development
+- Inside Codebase
+  - Talk about /sfi directory and handing off routing to Symfony
+- Release constantly
+  - Constantly not continuously so we can be clear about new features
+  - 3.0.0 Dec 14, 2015
+  - Since then we've tagged 68 releases
+  - We've tagged 28 backend releases
+  - We've tagged 41 frontend releases
+- Write No Code
+  - Had to be done Fast, Good, and Cheap
+  - Very small team with only a few developers (1.5 - 4)
+
+--
+
+.box[![symfony logo](media/symfony-logo.png)]
+.box[![emberjs logo](media/ember-logo.png)]
+
+
+---
+
+# Why Symfony?
+- Run old and new at the same time if necessary
+- Great docs to point contributors to
+- Stable core and excellent bundles
+
+--
+.center[Our Complex Data]
+.center[![ilios data sample](media/ilios-noise.png)]
+
+
+
+???
+- Our Data model is a proven winner
+- In house PHP experience
+- Semantic Versioning
+- We will live with this decision for at least 5 years
+- api-platform
+
+---
+
+# Why Ember?
+- Integrated Build System (ember-cli)
+- URL based state
+- Great docs to point contributors to
+- Stable core and excellent addons
+
+
+
+???
+
+- Stability without stagnation
+- Semantic Versioning
+- We will live with this decision for at least 5 years
+
+---
+# What is a single page app?
+
+> A single-page application (SPA) is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In a SPA, either all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load,[1] or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
+
+.left[https://en.wikipedia.org/wiki/Single-page_application]
+---
+# No.  Seriously.
+
+...** all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load **...** The page does not reload at any point ** ... ** dynamic communication with the web server behind the scenes. **
+
+--
+
+.center[## All Javascript, all the time]
+
+---
+# All PHP has to do is REST
+
+> REST or RESTfull APIs deliver stateless data based on URL and allow for authorized CRUD operations on that data.
+
+--
+
+.right[--Jon Johnson, SFPHP Meetup, Just Now]
+
+---
+class: center
+# Anatomy of a REST request
+.center[![simple REST GET request](media/simpleflow.png)]
+
+---
+class: center
+# Breaking it down further
+.center[![Full map of REST GET request](media/fullrequest.png)]
+
+---
+class: center
+# What we get from Symfony and Friends
+.center[![free REST from bundles](media/freewithbundles.png)]
+
+---
+class: center, middle
+## We don't have a lot to do
+
+---
+
+# Support Many Configurable Authentication Solutions
+
+
+.box[Shibboleth]
+.box[LDAP]
+.box[Form Based]
+.box[Active Directory]
+
+???
+- Extremely configurable security system is a big draw of Symfony
+- Lots of Bundles which focus on authentication
+- Too many options and too much configuration
+- Hard to write documentation authentication is ever changing
+- Schema creep
+- Complicated frontend requests with so much uncertainty
+---
+class: center, middle
+# Authenticate with JSON Web Token (JWT)
+
+---
+
+# What is JWT?
+
+### Signed Token Base64 Encoded
+```html
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+eyJpc3MiOiJpbGlvcyIsImF1ZCI6ImlsaW9zIiwiaWF0IjoiMTQ0NjA2MDU4NCIsImV4cCI6IjE0NDYwODkzODQiLCJ1c2VyX2lkIjoyMDAwfQ.
+khdJqxEbXZwudOjjUr8_fs4BJmespfb8qAx2v_zIleU
+```
+
+### Payload
+```javascript
+{
+  "iss": "ilios",
+  "aud": "ilios",
+  "iat": "1446060584",
+  "exp": "1446089384",
+  "user_id": 2000
+}
+```
+
+???
+- Customizable signing / encryption
+
+---
+
+# All your payloads are belong to you
+
+```javascript
+{
+  "iss": "ilios",
+  "aud": "ilios",
+  "iat": "1446060584",
+  "exp": "1446089384",
+* "user_id": 2000,
+* "roles": ['user', 'admin'],
+* "favoriteTypeOfBacon": 'smoked applewood'
+}
+```
+
+???
+- No database lookup without a signed token
+- No session storage
+- Token lifetime is under your control and easily observable on the client
+- We store a invalidateTokensIssuedBefore value for each user
+- Token can be generated anywhere the key is known
+
+---
+class: center, middle
+![authentication complete](media/authenticationdone.png)
+
+???
+With the user authenticated we can now fetch some data
+---
+
+class: center, middle
+.center[![authorization complete](media/authorizationdone.png)]
+
+???
+
+With the user authorized we can now display data
+
+---
+# Light Controllers
+```php
+public function getAction($id)
+{
+  $manager = $this->get('course.manager');
+  $course = $manager->findBy(['id' => $id]);
+
+  $authChecker = $this->get('security.authorization_checker');
+  if (! $authChecker->isGranted('view', $course)) {
+  	throw $this->createAccessDeniedException('Unauthorized access!');
+  }
+  $answer['courses'][] = $course;
+
+  return $answer;
+}
+
+ ```
+
+???
+ - $course can be a doctrine entity or a Plain Object
+ - There is no explicit transformer in the controller
+
+ ---
+ # Transformation to JSON
+
+ GET => `/api/v1/courses/619`
+
+ ```json
+ "courses":[
+   {
+   "id":619,
+   "title": "PRIME 2014-15",
+   "startDate": "2014-08-23T00:00:00+00:00",
+   "deleted": false,
+   "school": "1",
+   "directors": ["3625", "3906"],
+   "topics": [],
+   "objectives": [],
+   "sessions": ["17713", "17714", "17715"]
+   }
+ ]
+ ```
+
+---
+class: center
+# TADA!
+![rabit out of a hat](media/rabitoutofhat.gif)
+
+---
+#Almost Magic
+
+Our Course Entity
+```php
+class Course
+{
+  /**
+   * @Type("string")
+   */
+  public $title;
+```
+
+```bash
+composer require jms/serializer
+```
+
+???
+ - A shrinking of annotation serializes the data from Object to JSON
+ - No need to implement toJson() or any other method
+ - You could also convert to XML or even HTML
+
+---
+# Tests
+```php
+public function testGetCourse()
+{
+    $course = $this->container->get('dataloader.course');
+    $this->createJsonRequest('GET', '/api/v1/courses/' . $course['id']);
+
+    $response = $this->client->getResponse();
+    $this->assertEquals(
+        $course,
+        json_decode($response->getContent(), true)['courses'][0]
+    );
+}
+```
+
+???
+- Happy Path tests are pretty straight forward
+
+---
+# Test some kinds of failure
+
+```php
+public function testPostBadCourse()
+{
+    $invalidCourse = $this->container
+        ->get('dataloader.course')
+        ->createInvalid()
+    ;
+    $this->createJsonRequest(
+        'POST',
+        $this->getUrl('post_courses'),
+        json_encode(['course' => $invalidCourse]),
+        $this->getAuthenticatedUserToken()
+    );
+    $response = $this->client->getResponse();
+    $this->assertEquals(Codes::HTTP_BAD_REQUEST, $response->getStatusCode());
+}
+```
+---
+
+# Test Different options
+
+```php
+public function testFilterByLevel()
+{
+    $courses = $this->container->get('dataloader.course')->getAll();
+    $this->createJsonRequest(
+        'GET',
+        $this->getUrl('cget_courses', ['filters[level]' => 3]),
+        null,
+        $this->getAuthenticatedUserToken()
+    );
+    $response = $this->client->getResponse();
+    $this->assertJsonResponse($response, Codes::HTTP_OK);
+    $data = json_decode($response->getContent(), true)['courses'];
+    $this->assertEquals(1, count($data), var_export($data, true));
+    $this->assertEquals(
+        $this->mockSerialize(
+            $courses[3]
+        ),
+        $data[0]
+    );
+}
+
+```
+---
+
+# Is Everything the Same?
+.center[![puppies all the same](media/puppies.gif)]
+
+--
+### Why not generate it?
+
+???
+- If you're still not sure what your perfect world will look like, thats ok
+- Generate more code than you need and then remove stuff
+
+---
+# Help With Generating
+
+### https://github.com/voryx/restgeneratorbundle
+
+### https://github.com/jrjohnson/TdnPilotBundle
+
+### https://github.com/vpassapera/TdnForgeBundle
+
+???
+- You will probably end up writing custom twig templates
+- Generate your tests too!
+
+---
+class: center, middle
+# Or Maybe Inject it?
+
+???
+- We started out generating everything so we could fiddle with it
+- In the end our controllers (aside from the names of things) are identical
+- We are starting the process of using a controller service
+
+---
+
+class: center
+# We have an API now what?
+
+![finding nemo now what](media/now-what.gif)
+
+???
+
+- API is tested, stable and workign really well
+---
+
+class: center
+# Microapps! That's What!
+
+![emeril saying bam](media/bam.gif)
+
+???
+- Probably you will build a Large application first - but then - MicroAPPS!
+- Other half of this talk
+- This is really about Single Page javascript apps, but being a PHP meetup I'm
+going to try and confine myself to what the backend needs to know about.
+---
+
+class: center
+# Developer Life Cycle
+.center[![developer life cycle](media/devlife1.png)]
+
+---
+class: center
+# Developer Life Cycle
+.center[![developer life cycle](media/devlife2.png)]
+
+---
+class: center
+# Developer Life Cycle
+.center[![developer life cycle](media/devlife3.png)]
+
+---
+class: center
+# Developer Life Cycle
+.center[![developer life cycle](media/devlife4.png)]
+
+---
+class: center
+# Developer Life Cycle
+.center[![developer life cycle](media/devlife5.png)]
+
+---
+class: center
+# Developer Life Cycle
+.center[![developer life cycle](media/devlife6.png)]
+
+---
+
+class: center
+# Developer Life Cycle
+.center[![technical debt circle](media/debt-circle.png)]
+
+---
+
+class: center
+# Developer Life Cycle
+.center[![build circle](media/build-circle.png)]
+
+---
+class: center
+# Developer Life Cycle
+.center[![developer life cycle](media/devlife6.png)]
+
+---
+
+class: center
+# Profound and Unstoppable Power of Yes
+
+.center[![UCSF profound and unstoppable power of yes](media/power-of-yes.jpg)]
+
+???
+- As developers we want to say yes
+- As people we want to help other people
+- The developer life cycle has taught us to be cautious.
+---
+
+# Microservices
+
+- Design software applications as suites of independently deployable services
+- Decentralized control of languages and data
+- Expose a consistent versioned API
+
+---
+.strike[
+  # Microservices
+]
+# Microapps
+
+- Take advantage of existing data through APIs
+- Single Responsibility Principle
+- Throw away things that don't work
+- Low cost of enhancement
+- Freedom to choose different technologies
+
+???
+- We're building using EmberJS
+- We LOVE EmberJS
+- That is just about all I'm going to say about EmberJS
+
+---
+
+.left-column[
+  ## Infrastructure code
+]
+.right-column[
+- Build Pipeline
+- Request Handling
+- Testing
+- Configuration
+- Internationalization
+- Continuous Integration
+]
+
+???
+- Taking us on a little detour to talk about Infrastructure Code
+- Can't understand microapps without it.
+---
+
+.left-column[
+  ## Infrastructure code
+  ## Build Pipeline
+]
+.right-column[
+  ![compile transpile preprocess transform bundle minifi fingerprint sourcemaps tree shaking autoreload](media/build-pipeline.png)
+]
+
+???
+- compile
+- transpile
+- preprocess
+- bundle
+- minify
+- fingerprint
+
+---
+
+.left-column[
+  ## Infrastructure code
+  ## Request Handling
+]
+.right-column[
+  ![flow chart of simple user flow request](media/simple-request-handling.png)
+]
+---
+
+.left-column[
+  ## Infrastructure code
+  ## Request Handling (for realz)
+]
+.right-column[
+  ![simple request flowchart with confusing arrows](media/request-handling.png)
+]
+
+---
+
+.left-column[
+  ## Infrastructure code
+  ## Request Handling (for realzy realz realz)
+]
+.right-column[
+  ![simple request flowchart with more confusing arrows](media/complicated-request-handling.png)
+]
+
+---
+
+.left-column[
+  ## Infrastructure code
+  ## So Much More
+]
+.right-column[
+  ![package lint build test deploy translation ci accessibility](media/other-tasks.png)
+]
+
+---
+
+class: center
+# Big Application
+
+![large application graph](media/large-app.jpg)
+
+---
+
+class: center
+# Medium Application
+
+![medium application graph](media/medium-app.jpg)
+
+---
+
+class: center
+# Small Application
+
+![small application graph](media/small-app.jpg)
+
+---
+
+class: center
+# Microapp
+
+![micro application graph](media/micro-app.jpg)
+
+---
+
+class: center
+# Microapps
+
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+.minibox[![small microapp graph](media/micro-app-mini.jpg)]
+
+---
+
+# Serving Assets
+- Javascript
+- CSS
+- Images
+- Fonts
+- Files (crossdomain.xml, robots.txt, etc...)
+
+---
+
+.left-column[
+  ## Serving Assets
+  ## CDN
+]
+
+.right-column[
+- Pros:
+  - Build and then upload
+  - Content close to the user
+  - Configuration can be done elsewhere
+- Cons:
+  - Keep around old versions in case they are used
+  - Ad and content blockers might block requests
+  - Costs $
+  - Configuration must be done elsewhere
+]
+
+---
+
+.left-column[
+  ## Serving Assets
+  ## Build Service (Netlify, Forge, AWS Lambda)
+]
+
+.right-column[
+- Pros:
+  - Build in place
+  - Host the entire application
+  - Custom domain
+  - Other services (SSL, logging)
+  - Probably connected to a CDN anyway
+- Cons:
+  - Configuration cannot be distributed
+  - Costs $$
+]
+
+---
+
+.left-column[
+  ## Serving Assets
+  ## BYOS
+]
+
+.right-column[
+- Pros:
+  - Full Control
+- Cons:
+  - Complete Responsibility
+  - Costs $$$$
+]
+
+???
+- BYOS = Bring Your Own Server/Stack
+- Lots of files to backup and version over time
+
+---
+
+# SPA root (index.html)
+- The users entrance point into the app
+- Must be configured to point to remote fingerprinted assets
+- The only thing that actually shows the user your domain
+- From here everything is javascript
+
+---
+
+.left-column[
+  ## SPA root
+  ## index.html sample
+]
+.right-column[
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ilios</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="ilios/config/environment" content="%7B%22modulePrefix%22%3A%22ilios%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22redirectAfterShibLogin%22%3Atrue%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%5B%22%27none%27%22%5D%2C%22script-src%22%3A%5B%22%27self%27%22%2C%22%27unsafe-eval%27%22%2C%22www.google-analytics.com%22%5D%2C%22font-src%22%3A%5B%22%27self%27%22%5D%2C%22connect-src%22%3A%5B%22%27self%27%22%2C%22www.google-analytics.com%22%2C%22http%3A//localhost%3A8000%22%5D%2C%22img-src%22%3A%5B%22%27self%27%22%2C%22data%3A%22%2C%22www.google-analytics.com%22%5D%2C%22style-src%22%3A%5B%22%27self%27%22%2C%22%27unsafe-inline%27%22%5D%2C%22media-src%22%3A%5B%22%27self%27%22%5D%7D%2C%22flashMessageDefaults%22%3A%7B%22timeout%22%3A2000%2C%22extendedTimeout%22%3A3000%2C%22types%22%3A%5B%22success%22%2C%22warning%22%2C%22info%22%2C%22alert%22%5D%7D%2C%22ember-simple-auth%22%3A%7B%22authorizer%22%3A%22authorizer%3Atoken%22%7D%2C%22ember-simple-auth-token%22%3A%7B%22serverTokenEndpoint%22%3A%22/auth/login%22%2C%22serverTokenRefreshEndpoint%22%3A%22/auth/token%22%2C%22tokenPropertyName%22%3A%22jwt%22%2C%22authorizationHeaderName%22%3A%22X-JWT-Authorization%22%2C%22authorizationPrefix%22%3A%22Token%20%22%2C%22refreshLeeway%22%3A300%7D%2C%22i18n%22%3A%7B%22defaultLocale%22%3A%22en%22%7D%2C%22froalaEditorDefaults%22%3A%7B%22toolbarInline%22%3Afalse%2C%22placeholderText%22%3A%22%22%2C%22allowHTML%22%3Atrue%2C%22saveInterval%22%3Afalse%2C%22pastePlain%22%3Atrue%2C%22spellcheck%22%3Atrue%2C%22toolbarButtons%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%2C%22toolbarButtonsMD%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%2C%22toolbarButtonsSM%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%2C%22toolbarButtonsXS%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%7D%2C%22serverVariables%22%3A%7B%22tagPrefix%22%3A%22iliosconfig%22%2C%22vars%22%3A%5B%22api-host%22%2C%22api-name-space%22%5D%2C%22defaults%22%3A%7B%22api-name-space%22%3A%22api/v1%22%2C%22api-host%22%3A%22http%3A//localhost%3A8000%22%7D%7D%2C%22ember-metrics%22%3A%7B%22includeAdapters%22%3A%5B%22google-analytics%22%5D%7D%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22String%22%3Atrue%2C%22Array%22%3Atrue%2C%22Function%22%3Afalse%2C%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22apiVersion%22%3A%22v1.12%22%2C%22name%22%3A%22ilios%22%2C%22version%22%3A%221.30.2+c4cf1099%22%7D%2C%22IliosFeatures%22%3A%7B%22allowAddNewUser%22%3Atrue%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22something%22%3A%22test%22%2C%22ember-cli-mirage%22%3A%7B%22usingProxy%22%3Afalse%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-load%22%3A%7B%22loadingIndicatorClass%22%3A%22ember-load-indicator%22%7D%2C%22noScript%22%3A%7B%22tag%22%3A%22noscript%22%2C%22content%22%3A%22%3Cp%3EFor%20full%20functionality%20of%20this%20site%20it%20is%20necessary%20to%20enable%20JavaScript.Here%20are%20the%20%3Ca%20href%3D%27http%3A//www.enable-javascript.com/%27%20target%3D%27_blank%27%3Einstructions%20how%20to%20enable%20JavaScript%20in%20your%20web%20browser%3C/a%3E.%3C/p%3E%22%7D%7D" />
+
+    <link rel="stylesheet" href="https://d26vzvixg52o0d.cloudfront.net/assets/vendor-f5d338174298b781680826893d072095.css">
+    <link rel="stylesheet" href="https://d26vzvixg52o0d.cloudfront.net/assets/ilios-555dc260d918b4f9b035ec1db2c35944.css">
+
+    <!-- Ilios variables set  by the web server -->
+
+<meta name='iliosconfig-api-name-space'content='api/v1'>
+<meta name='iliosconfig-api-host'content='http://localhost:8000'>
+
+
+  </head>
+  <body>
+    <noscript><p>For full functionality of this site it is necessary to enable JavaScript.Here are the <a href='http://www.enable-javascript.com/' target='_blank'>instructions how to enable JavaScript in your web browser</a>.</p></noscript>
+<div id='initialpageloader' class='ember-load-indicator'><header class='main'><div class='logo'><span class='image'></span></div></header><div id='site-container'><h1><i class='fa fa-spinner fa-pulse fa-3x'></i></h1><p id='browsererrormessage' class='hidden'>It is possible that your browser is not supported by Ilios.  Please refresh this page or try a different browser.</p></div></div></div>
+
+    <script src="https://d26vzvixg52o0d.cloudfront.net/assets/vendor-176c84d4f1739a5cbd0342f2dae4984e.js"></script>
+    <script src="https://d26vzvixg52o0d.cloudfront.net/assets/ilios-008c1daa7f9adbaf79122bce1c44a4b2.js"></script>
+
+    <script src="https://d26vzvixg52o0d.cloudfront.net/ilios-prerender/scripts-0184e9b3a1818f3c046d9d735319dd44.js"></script>
+  </body>
+</html>
+```
+]
+
+---
+
+.left-column[
+  ## SPA root
+  ## index.html config
+]
+.right-column[
+```html
+
+<meta
+  name="ilios/config/environment"
+  content="%7B%22modulePrefix%22%3A%22ilios%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22redirectAfterShibLogin%22%3Atrue%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%5B%22%27none%27%22%5D%2C%22script-src%22%3A%5B%22%27self%27%22%2C%22%27unsafe-eval%27%22%2C%22www.google-analytics.com%22%5D%2C%22font-src%22%3A%5B%22%27self%27%22%5D%2C%22connect-src%22%3A%5B%22%27self%27%22%2C%22" />
+```
+
+```javascript
+  modulePrefix: 'ilios',
+  environment: environment,
+  rootURL: '/',
+  locationType: 'auto',
+  redirectAfterShibLogin: true,
+  contentSecurityPolicy: {
+    'default-src': ["'none'"],
+    'script-src':  ["'self'", "'unsafe-eval'", 'www.google-analytics.com'],
+    'font-src':    ["'self'"],
+    'connect-src': ["'self'", 'www.google-analytics.com'],
+    'img-src':     ["'self'", 'data:', 'www.google-analytics.com'],
+    'style-src':   ["'self'", "'unsafe-inline'"],
+    'media-src':   ["'self'"]
+  },
+  ...
+```
+]
+---
+
+.left-column[
+  ## SPA root
+  ## index.html config
+]
+.right-column[
+```html
+
+<meta
+  name='iliosconfig-api-name-space'
+  content='api/v1'>
+<meta
+  name='iliosconfig-api-host'
+  content='http://localhost:8000'>
+```
+]
+---
+
+.left-column[
+  ## SPA root
+  ## index.html styles
+]
+.right-column[
+```html
+    <link
+    rel="stylesheet"
+    href="https://d26vzvixg52o0d.cloudfront.net/assets/vendor-f5d338174298b781680826893d072095.css">
+
+    <link
+    rel="stylesheet"
+    href="https://d26vzvixg52o0d.cloudfront.net/assets/ilios-555dc260d918b4f9b035ec1db2c35944.css">
+```
+]
+---
+
+.left-column[
+  ## SPA root
+  ## javascript
+]
+.right-column[
+```html
+<script
+ src="https://d26vzvixg52o0d.cloudfront.net/assets/vendor-176c84d4f1739a5cbd0342f2dae4984e.js">
+</script>
+<script
+ src="https://d26vzvixg52o0d.cloudfront.net/assets/ilios-008c1daa7f9adbaf79122bce1c44a4b2.js">
+</script>
+```
+]
+---
+
+.left-column[
+  ## SPA root
+  ## noscript
+]
+.right-column[
+```html
+    <noscript>
+      <p>
+        For full functionality of this site it is necessary to
+        enable JavaScript.  Here are the <a href='http://www.enable-javascript.com/' target='_blank'>instructions on
+        how to enable JavaScript in your web browser</a>.
+      </p>
+    </noscript>
+```
+]
+---
+.left-column[
+  ## SPA root
+  ## loading indicator <i class="fa fa-spinner fa-spin"></i>
+]
+.right-column[
+```html
+<div class='load-indicator'>
+  <h1><i class='fa fa-spinner fa-pulse fa-3x'></i></h1>
+  <p class='browsererrormessage hidden'>
+    It is possible that your browser is not supported by Ilios.  Please refresh this page or try a different browser.
+  </p>
+</div>
+
+<script src="https://d26vzvixg52o0d.cloudfront.net/ilios-prerender/scripts-0184e9b3a1818f3c046d9d735319dd44.js"></script>
+```
+
+- Shows a spinner while the page loads
+- JS causes the error block to be reveled after a few seconds
+]
+
+---
+
+.left-column[
+  ## Configuration through the API server
+]
+.right-column[
+- Ilios is distributed and run by schools
+- The have to be able to configure lots of things on their own
+- We distribute our SPA root as a JSON file and then turn it back into HTML on the API server
+]
+---
+
+.left-column[
+  ## Configuration through the API server
+  ## index.json
+]
+.right-column[
+```javacript
+"meta": [
+  {
+  "name": "ilios/config/environment",
+  "content": "%7B%22modulePrefix%22%3A%22ilios%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22redirectAfterShibLogin%22%3Atrue%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%5B%22%27none%27%22%5D%2C%22script-src%22%3A%5B%22%27self%27%22%2C%22%27unsafe-eval%27%22%2C%22www.google-analytics.com%22%5D%2C%22font-src%22%3A%5B%22%27self%27%22%5D%2C%22connect-src%22%3A%5B%22%27self%27%22%2C%22www.google-analytics.com%22%2Cnull%5D%2C%22img-src%22%3A%5B%22%27self%27%22%2C%22data%3A%22%2C%22www.google-analytics.com%22%5D%2C%22style-src%22%3A%5B%22%27self%27%22%2C%22%27unsafe-inline%27%22%5D%2C%22media-src%22%3A%5B%22%27self%27%22%5D%7D%2C%22flashMessageDefaults%22%3A%7B%22timeout%22%3A2000%2C%22extendedTimeout%22%3A3000%2C%22types%22%3A%5B%22success%22%2C%22warning%22%2C%22info%22%2C%22alert%22%5D%7D%2C%22ember-simple-auth%22%3A%7B%22authorizer%22%3A%22authorizer%3Atoken%22%7D%2C%22ember-simple-auth-token%22%3A%7B%22serverTokenEndpoint%22%3A%22/auth/login%22%2C%22serverTokenRefreshEndpoint%22%3A%22/auth/token%22%2C%22tokenPropertyName%22%3A%22jwt%22%2C%22authorizationHeaderName%22%3A%22X-JWT-Authorization%22%2C%22authorizationPrefix%22%3A%22Token%20%22%2C%22timeFactor%22%3A1000%7D%2C%22i18n%22%3A%7B%22defaultLocale%22%3A%22en%22%7D%2C%22froalaEditorDefaults%22%3A%7B%22toolbarInline%22%3Afalse%2C%22placeholderText%22%3A%22%22%2C%22allowHTML%22%3Atrue%2C%22saveInterval%22%3Afalse%2C%22pastePlain%22%3Atrue%2C%22spellcheck%22%3Atrue%2C%22toolbarButtons%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%2C%22toolbarButtonsMD%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%2C%22toolbarButtonsSM%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%2C%22toolbarButtonsXS%22%3A%5B%22bold%22%2C%22italic%22%2C%22subscript%22%2C%22superscript%22%2C%22formatOL%22%2C%22formatUL%22%2C%22insertLink%22%2C%22html%22%5D%7D%2C%22serverVariables%22%3A%7B%22tagPrefix%22%3A%22iliosconfig%22%2C%22vars%22%3A%5B%22api-host%22%2C%22api-name-space%22%5D%2C%22defaults%22%3A%7B%22api-name-space%22%3A%22api/v1%22%2C%22api-host%22%3Anull%7D%7D%2C%22ember-metrics%22%3A%7B%22includeAdapters%22%3A%5B%22google-analytics%22%5D%7D%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22String%22%3Atrue%2C%22Array%22%3Atrue%2C%22Function%22%3Afalse%2C%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22apiVersion%22%3A%22v1.12%22%2C%22name%22%3A%22ilios%22%2C%22version%22%3A%221.30.2+cc2625f3%22%7D%2C%22IliosFeatures%22%3A%7B%22allowAddNewUser%22%3Atrue%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22something%22%3A%22test%22%2C%22ember-cli-mirage%22%3A%7B%22usingProxy%22%3Afalse%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-load%22%3A%7B%22loadingIndicatorClass%22%3A%22ember-load-indicator%22%7D%2C%22noScript%22%3A%7B%22tag%22%3A%22noscript%22%2C%22content%22%3A%22%3Cp%3EFor%20full%20functionality%20of%20this%20site%20it%20is%20necessary%20to%20enable%20JavaScript.Here%20are%20the%20%3Ca%20href%3D%27http%3A//www.enable-javascript.com/%27%20target%3D%27_blank%27%3Einstructions%20how%20to%20enable%20JavaScript%20in%20your%20web%20browser%3C/a%3E.%3C/p%3E%22%7D%7D"
+  }
+],
+"link": [
+  {
+  "rel": "stylesheet",
+  "href": "https://d26vzvixg52o0d.cloudfront.net/assets/vendor-f5d338174298b781680826893d072095.css"
+  },
+  {
+  "rel": "stylesheet",
+  "href": "https://d26vzvixg52o0d.cloudfront.net/assets/ilios-555dc260d918b4f9b035ec1db2c35944.css"
+  }
+],
+"script": [
+  {
+  "src": "https://d26vzvixg52o0d.cloudfront.net/assets/vendor-b2e879b4494e5f1bb5108d090e9a684b.js"
+  },
+  {
+  "src": "https://d26vzvixg52o0d.cloudfront.net/assets/ilios-8ff96141a6193e852624d3b5ee4114d1.js"
+  },
+  {
+  "src": "https://d26vzvixg52o0d.cloudfront.net/ilios-prerender/scripts-0184e9b3a1818f3c046d9d735319dd44.js"
+  }
+]
+```
+]
+
+???
+- Push this file to the CDN as well
+- Grab it from the API server and use templating to make it back into html
+- Can inject and modify configuration as needed
+
+---
+
+.left-column[
+  ## Keeping the user up to date
+  ## With API Changes
+]
+
+.right-column[
+- Must account for changes in the API version of the server and prevent the user from writing bad data
+- Want to notify the user when they should refresh to see new features
+]
+
+
+???
+
+- API Version:
+  - In an ideal world server would be able to handle several simultaneous API versions
+  - We haven't figured out how to do that yet
+  - We have elected to use minor version number to represent additions and major numbers for removals
+  - Launched a v1.0 and after a year we are at v1.12
+  - That's a version number every other release so keeping track of this matters.
+- App Updates
+  - SPA's can be very long lived without refreshing
+  - Polite reminder to refresh is really the only way to keep apps up to date.
+
+---
+
+.left-column[
+  ## Keeping the user up to date
+  ## With the latest features
+]
+
+.right-column[
+- Every 5 minutes ask the server what API version they are running
+- Require the user to refresh their browser if there is a mismatch
+]
+
+???
+- Easy to implement
+- The higher the traffic the worse this solution is
+- Doing this on a fixed interval is a bad solution for mobile devices
+  instead it has to be tied to another network operation
+
+---
+class:center
+# So...
+![butts on a power wire - bottom line](media/bottomline.jpg)
+
+???
+- You can build an API in place and if you're migrating to PHP 7 anyway...
+- Frameworks are our friends, they are how we raise the shoulders of giants so we can all stand on them
+- The less code you are responsible for the more problems you can solve
+---
+
+class: center, middle
+
+## Discussion
+![Jon's avatar](http://0.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c)
+
+Slides at: https://jrjohnson.github.io/talks/2017-01-apifirst-microapps.html
+
+<i class="fa fa-github"></i>jrjohnson <br />
+<i class="fa fa-twitter"></i>iam_jrjohnson <br />
+<i class="fa fa-slack"></i>jrjohnson https://symfony-devs.slack.com/ <br />
+
+???
+
+# Thanks
+- to the Babycenter and the SF PHP group for the oportunity to speak
+- to the UCSF library for giving me the time to do this and other open source work
+- and the Ilios team who picked up a lot of slack this week as I started to panic about getting this talk finished.
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: false
+      },
+      countIncrementalSlides: false,
+    });
+    </script>
+  </body>
+</html>
