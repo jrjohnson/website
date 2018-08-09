@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>From Stuck to Soaring</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      .remark-slide-content {
+        color: #333;
+      }
+      .remark-slide {
+        border: 20px solid #506380;
+        box-sizing: border-box;
+      }
+      a, a:hover, a:visited {
+        color: grey;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      h1 {
+        color: #F26D04;
+      }
+      h2, h3, h4, h5 {
+        color: #0071AD;
+      }
+      h1, h2, h3, h4, h5 {
+        margin: .5rem;
+      }
+      img {
+        max-width: 700px;
+        max-height: 600px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .footnote {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        font-style: italic;
+        font-size: .8em;
+      }
+      .boxes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+      .boxes .icons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: right;
+      }
+      .boxes .avatar {
+        margin-left: 1rem;
+        text-align: left;
+      }
+      .multi-column ul {
+        columns: 2;
+      }
+      .twitter-tweet {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+      class: center, middle, title-slide
+      # From Stuck to Soaring
+      ## Taking Aim at Continuous Delivery
+     
+      ### Jon Johnson
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i>jrjohnson <br />
+        <i class="fab fa-slack"></i>jrjohnson-ucsf <br />
+        <i class="fab fa-twitter"></i>iam_jrjohnson <br />
+        ]
+        
+        .avatar[
+        ![Jon's avatar](media/avatar.jpg)
+        ]
+      ]
+
+      Slides at: https://jrjohnson.github.io/talks/2018-08-stuck-to-soaring-uccsc.html
+
+      
+      ???
+      # Who am I?
+      - Web developer [@ucsf_library](https://twitter.com/ucsf_library) (PHP, Javascript)
+      - Technical lead for the [Ilios Project](http://iliosproject.org) open source curriculum management system
+      for health science education.
+      - Proud owner of around the world and back again UCCSC badge!
+
+      ---
+      class: center, middle
+      # Back Story
+      --
+
+      ## Way Back in 2014
+      --
+
+      ![photo of YIU2 books](media/yui2-books.jpg)
+
+      ???
+      - Ilios was built on code igniter and YUI 2
+      - While code igniter seemed to be dying (surprise, it didn't!) YUI2 was the biggest risk
+      because even YUI3 was at end of life, 2 was LONG dead.
+      - Simple Bugs were taking a long time to fix and supporting new browsers required a lot of testing
+      - A few months into my tenure I was talking about an issue that only popped up in IE11 
+        and Sascha asked me to start thinking about replacing the UI entirely to get our from under the weight 
+        of YUI.
+      
+      ---
+      class: center, middle
+      # Fast Forward to 2018!
+
+      --
+      ![ilios's monthly status report with green boxes for budget, community, development, and outreach](media/in-the-green.png)
+      ![ilios's latest release named after a cheese](media/frontend-release.png)
+
+      ???
+      - 37 releases in the first 30 weeks of 2018
+      - Commit to production in 15 minutes
+      - @zorgbort release the frontend (chatbot)
+      - In use at dozens of health science universities on five continents
+      - Paid hosting for Stanford Medicine
+      - Added LTI Dashboard tool
+      - Integration with e*value
+      - We didn't start with *this*. It took a lot of time and iteration to get here and we're still working on it.
+      - Confidence to release on Friday Night
+      - Plan to add a new LTI tool in the next few months
+      - Replaced our entire permissions system in place and ahead of schedule (so far with only two bugs)
+      - Ready to jump on AWS fargate container to automate deployments
+      - Got rid of group tool and integrated it in
+
+      ---
+      class: center, middle
+      # Who?
+
+
+      ???
+      - 3 developers, 1 support. .5 project manager
+      - Send people to Sascha's talk It's the People People at 8:30am tomorrow
+
+      ---
+      class: center, middle
+      # How?
+      
+      ---
+      class: center, middle
+      # Seriously a rewrite?
+
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I feel that too often we use &quot;legacy codebase&quot; to mean &quot;bad&quot;. When the reality is that &quot;legacy&quot; usually means &quot;currently working without any real issues, but not optimally&quot;.<br><br>When viewed that way, it&#39;s much easier to support incremental improvements instead of complete rewrites.</p>&mdash; Trent Willis (@trentmwillis) <a href="https://twitter.com/trentmwillis/status/1020067593049083904?ref_src=twsrc%5Etfw">July 19, 2018</a></blockquote>
+
+      ---
+      class: center, middle
+      # Declaring Technical Bankruptcy
+
+      ![Smashed Piggy Bank](media/piggy-bank.jpg)
+
+
+      .footnote[
+      http://taxrebate.org.uk/
+      ]
+
+      ???
+      - At some point paying down debt no longer makes sense
+      - But it only makes sense to declare bankruptcy if you can build it again without 
+      incurring the exact same debt again.
+
+      ---
+      class: center, middle
+      # Confidence 
+
+      ???
+      - Owners should be confident in each release
+      - Developers should be confident in each change
+      - Users should be confident that bugs are important and will get fixed
+      - We're building Ilios to last
+
+      ---
+      class: center, middle
+      # Tests Bring Confidence
+
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you&#39;re scared to deploy on Fridays, you should be scared to deploy ever. <br><br>Don&#39;t you have tests? Backups? Roll back? Come on.</p>&mdash; Jessica Mauerhan (@JessicaMauerhan) <a href="https://twitter.com/JessicaMauerhan/status/1022901553479512064?ref_src=twsrc%5Etfw">July 27, 2018</a></blockquote>
+      
+      ---
+      class: center, middle
+      # Speed Brings Confidence
+
+      --
+
+      >A thing is needed... a thing is done.
+      
+      --Sascha Cohen
+
+      ???
+      - Slightly oxymoronic? Going too fast is scary, Being in complete control of speed takes Confidence
+      - Shipping fast makes things better. No need to prioritize over a long period. Don't commit to anything just deliver it. On vacation? Less work gets done. Stop arguing over labels, just build what is needed.
+      - Speed is contagious the faster you are the less time you waste on administrative race conditions
+
+      ---
+      class: center, middle
+      # Specifics
+
+      ???
+      - I knew we could do do software as infrastructure because of Eric Bolen's talk at UCCSC
+      - I knew we didn't need to take it too seriously to do agile well because Judy Dobry's UCCSC talk. 
+      - I knew we didn't need to be all in one place to do development well because Seth Roby's talk
+      - I knew we needed to take accessibility seriously because of Lucy Greko's talk.
+      - I knew we could sell hosting to other schools because of Tom Andrioloa's talk.
+      - I heard about Lambda from (well from AWS's Conference Actually), but I heard about that at UCCSC!
+      - I knew we could because of UCCSC.
+
+      --
+      ### You can do this stuff!
+      ???
+      - If you take nothing else home form this talk remember this:
+      If there is one lesson I learn over and over again from this conference it is that it's possible to do so  much with so little. 
+      We, as a group, build incredible things all the time.
+
+
+      ---
+      class: center, middle
+      # Let's Talk about tests
+
+      ???
+      - I've never met anyone who didn't want to ship well tested quality software. So why don't we all? It's a lot of work. Start small. Make writing tests easy. Spend a lot if time on your test harness. You're the user. Focus on your experience. 
+      - Always be merging - feature flags to keep functions private.
+      - I'm incredibly lazy and super forgetful so I need the computer to handle checks.
+      - I'm sloppy and I can't spell
+      - Tests also include code style rules
+      - You can do Test Driven Development or Test Reminder Development or Write Tests When Done Development, just write the tests
+      
+      ---
+      class: center, middle
+      # Tests are a Speed Multiplier
+
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I know it seems counterintuitive but just hear me out: It gets faster to do things correctly if you keep doing them correctly. It might be slow at first if you’ve just been chucking things in the bin- change can be hard but don’t give up!! You deserve good code too.</p>&mdash; Melanie Sumner 💥 🐹 (@melaniersumner) <a href="https://twitter.com/melaniersumner/status/1026934392160104454?ref_src=twsrc%5Etfw">August 7, 2018</a></blockquote>
+
+      ???
+      - Writing tests can be painful
+      - Writing tests can be slow
+      - Running tests takes time
+      - Still worth it
+      - 2275 Merged PRs on Frontend in 3 years (something like 14 changes / week)
+      - Test unlock staying up to date
+
+      ---
+      class: center, middle
+      # Open Source Model
+
+      ???
+      - Ilios was already Open
+      - Having access to the source gives our partners confidence
+      - Working in the open ensures our work is visible
+      - Makes a lot of stuff free (thank you sponsors)
+        - GitHub
+        - Travis CI
+        - Sauce Labs
+        - Heroku
+        - Netlify
+        - BrowserStack
+
+      ---
+      class: center, middle
+      # Github
+
+      ![screen capture of status checks](media/status-checks.png)
+      ???
+      - Fork an pull
+      - PRs
+      - Code Review
+      - Greenkeeper
+      - Code Climate
+      - Waffle IO
+      - Comfortable standard process for new contributors
+
+      ---
+      class: center, middle
+      # Code Review 
+
+      ![code review where a change is requested](media/change-requested.png)
+
+      ???
+      - Fix spelling!
+      - Find bugs early
+      - Catch weird assumptions
+      - Learn from each other
+      - Build community
+      - Review some things together as a group
+
+      ---
+      class: center, middle
+      # Code Review 
+      ![review that just says something nice](media/say-something-nice.png)
+
+      ???
+      - Say something nice!
+
+      ---
+      class: center, middle
+      # Code Review 
+      ![lackadaisical code review with a comment that tests will be sufficient](media/lackadaisical-review.png)
+
+      ???
+      - Require a review, but dont' require a good one
+      
+      ---
+      class: center, middle
+      # Functional Review
+      
+      ![functional review comment says click tests look fine](media/functional-review.png)
+
+      ???
+      - Every change needs a testable build 
+      - We automate this with Netlify
+    
+      ---
+      class: center, middle
+      # Continuous Integration / Delivery
+      --
+
+      .boxes[
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hey, everyone working on <a href="https://twitter.com/nodejs?ref_src=twsrc%5Etfw">@nodejs</a> core tests and continuous integration! Congratulations on a full week of node-daily-master jobs! It&#39;s been a while since we had a string of green like that. <a href="https://t.co/wCxpRKynuu">https://t.co/wCxpRKynuu</a></p>&mdash; Rich Trott (@trott) <a href="https://twitter.com/trott/status/1022892277885165568?ref_src=twsrc%5Etfw">July 27, 2018</a></blockquote>
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Continuous Integration <a href="https://t.co/OuFnPERgKU">https://t.co/OuFnPERgKU</a></p>&mdash; Ire Aderinokun (@ireaderinokun) <a href="https://twitter.com/ireaderinokun/status/727100957654405120?ref_src=twsrc%5Etfw">May 2, 2016</a></blockquote>
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Dropping columns in a rails migration is such a big foot gun. If you follow all the guides and stack overflow answers, you will break your production application during deploys.</p>&mdash; Robin Ward (@eviltrout) <a href="https://twitter.com/eviltrout/status/975838465823780865?ref_src=twsrc%5Etfw">March 19, 2018</a></blockquote>
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">continuous delivery is never having to say you&#39;re sorry</p>&mdash; just the saddest server (@sadserver) <a href="https://twitter.com/sadserver/status/831662255594889216?ref_src=twsrc%5Etfw">February 15, 2017</a></blockquote>
+      ]
+
+      ???
+      - CI / CD have buzzword aspirations for sure 
+      - Loosely Integration is the process of constantly testing changes
+      - We combine with with the idea that we should always keep our `master` branch deployable; that means 
+      at any given moment we're sure we can ship master to production. 
+      - continuous delivery generally means that every change is immediately sent to production
+      - We don't do continuous delivery at all. What we do instead is ensure that we *could* deliver 
+      at any time very rapidly. We're all setup for automated delivery, but we hold off on shipping releases 
+      until we accumulate enough meaningful changes. Usually this happens at the end of the week, but it could 
+      happen any time. 
+
+      ---
+
+      class: center, middle
+      # TravisCI
+      --
+
+      ![screenshot of Travis Build Stages with Tests and Deployment](media/travis.png)
+
+      ???
+      - For us Travis is the cornerstone of our pipeline.
+      - We run all of our tests here.
+      - It ensures that every change is tested before it is merged by integrating with Github
+      - Travis is context sensitive so it knows to test a change, deploy some changes to staging, and deploy tags to production.
+
+      ---
+      class: center, middle
+      # TravisCI
+
+      ![screenshot of Travis Build Split Into Chunks](media/travis-api.png)
+
+      ???
+      - Our build can be split into chunks to run faster
+
+      ---
+      class: center, middle
+      # Automation Brings Speed
+
+      --
+      ## and sometimes money!
+
+      ---
+      class: center, middle
+      # The Move to Docker
+
+      ???
+      - Dev machines are the same
+      - Small bit of code creates the entire infrastructure
+      - Repeatable Deployments
+      - App versions equal docker versions so the app code can control it's own dependencies
+
+      ---
+      class: center, middle
+      # Separate Release Cycles
+      ???
+      - Frontend can be released *way* more often at no institutional cost
+
+
+      ---
+      class: center, middle
+      # What code not to Write
+
+      ![graph of medium app with most of the code for infrastructure](media/medium-app.jpg)
+
+      ???
+
+      - Frontend has 40K lines of code in the app and ~5M in dependencies
+      - API has 30K lines of code in the app and ~800K in dependencies
+      - Commit to making upstream fixes
+      - commit to the community for support
+      
+      ---
+      class: center, middle
+      # Building on a solid foundation brings confidence
+
+      ![ember testing docs screenshot](media/ember-testing.png)
+      ![symfony testing docs screenshot](media/symfony-testing.png)
+
+      ???
+      - We built on top of Ember.js and Symfony
+      - Prominent testing documentation
+      - Up to date and community maintained documentation
+      - We knew we wouldn't have to document our tools
+      - The more integrated the framework the easier it is to hire productive people 
+      - STAY UP TO DATE (semver, release plans, BC promises)
+
+      ---
+      class: center, middle
+      # Let's Talk About Agile
+      
+      ???
+      - No one thinks they're doing agile exactly right. You are!
+
+      ---
+      class: center, middle
+      # The Agile Manifesto
+
+      ## We are uncovering better ways of developing software by doing it and helping others do it.
+
+      ## Through this work we have come to value:
+
+      ***Individuals and interactions*** over processes and tools
+
+      ***Working software*** over comprehensive documentation
+
+      ***Customer collaboration*** over contract negotiation
+
+      ***Responding to change*** over following a plan
+
+      ???
+      - There is *nothing* in here about sprint planning, celebrations, kanban boards, or scrum masters; while 
+      these things *can* and *do* have a place in many organizations they aren't required and might not 
+      even be right for you. 
+
+      ---
+      class: center, middle, title-slide
+      
+      ## Discussion / Questions?
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i>jrjohnson <br />
+        <i class="fab fa-slack"></i>jrjohnson-ucsf <br />
+        <i class="fab fa-twitter"></i>iam_jrjohnson <br />
+        ]
+        
+        .avatar[
+        ![Jon's avatar](media/avatar.jpg)
+        ]
+      ]
+
+      Slides at: https://jrjohnson.github.io/talks/2018-08-stuck-to-soaring-uccsc.html
+
+      
+      ???
+      
+      # Thanks
+      - UCCSC
+      - Library
+      - Ilios Team
+        
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: true
+      },
+      slideNumberFormat: '',
+      countIncrementalSlides: false,
+      ratio: '16:9',
+    });
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
