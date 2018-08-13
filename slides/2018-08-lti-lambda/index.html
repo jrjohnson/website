@@ -14,6 +14,7 @@
         font-family: 'Droid Serif';
       }
       .remark-slide-content {
+        background-color: #fffcf3;
         color: #333;
       }
       .remark-slide {
@@ -53,6 +54,14 @@
       .boxes .avatar {
         margin-left: 1rem;
         text-align: left;
+      }
+      .avatar img {
+        border-radius: 50%;
+      }
+      .boxes h3 {
+        background-color: white;
+        border: 4px solid #0071AD;
+        padding: 2rem;
       }
       .footnote {
         position: absolute;
@@ -130,6 +139,7 @@
       ### Why was this worth doing?
       
       ???
+      - Lots of requests from students and faculty to have access to more Ilios data
       - Display schedule and learning material data to students in the CLE 
       - Replace an existing calendar implementation
       - Re-use as much code as possible
@@ -206,10 +216,12 @@
       
       # Our Solution
       
-      - Leverage the LTI standard to authenticate sessions
-      - Response to LTI requests with Node.js in AWS Lambda
-      - Redirect user with a token to an AWS hosted ember application
-      - Extract the Ilios Dashboard and share it for both Ilios and LTI applications
+      .boxes[
+        ###Leverage the LTI standard to authenticate sessions
+        ###Response to LTI requests with Node.js in AWS Lambda
+        ###Redirect user with a token to an AWS hosted ember application
+        ###Extract the Ilios Dashboard and share it for both Ilios and LTI applications
+      ]
       
       ---
       class: center
@@ -425,12 +437,12 @@
       ---
       
       class: center, middle
-      # What data do **you** have that students want?
+      # The Power of Standard and Open APIs
       
       ---
       
       class: center, middle
-      # The Power of Standard and Open APIs
+      # What data do **you** have that students want?
       
       ---
       class: center, middle

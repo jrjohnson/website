@@ -13,6 +13,7 @@
         font-family: 'Droid Serif';
       }
       .remark-slide-content {
+        background-color: #fffcf3;
         color: #333;
       }
       .remark-slide {
@@ -39,6 +40,9 @@
         max-width: 700px;
         max-height: 600px;
       }
+      .photo img {
+        border-radius: 30%;
+      }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .footnote {
         position: absolute;
@@ -62,6 +66,9 @@
       .boxes .avatar {
         margin-left: 1rem;
         text-align: left;
+      }
+      .avatar img {
+        border-radius: 50%;
       }
       .multi-column ul {
         columns: 2;
@@ -108,13 +115,12 @@
 
       ## Way Back in 2014
       --
+      class: photo
 
       ![photo of YIU2 books](media/yui2-books.jpg)
 
       ???
       - Ilios was built on code igniter and YUI 2
-      - While code igniter seemed to be dying (surprise, it didn't!) YUI2 was the biggest risk
-      because even YUI3 was at end of life, 2 was LONG dead.
       - Simple Bugs were taking a long time to fix and supporting new browsers required a lot of testing
       - A few months into my tenure I was talking about an issue that only popped up in IE11 
         and Sascha asked me to start thinking about replacing the UI entirely to get our from under the weight 
@@ -130,6 +136,7 @@
       ![ilios's 100th API release](media/100th-release.png)
 
       ???
+       ## Today all of that has changed
       - 37 releases in the first 30 weeks of 2018
       - Commit to production in 15 minutes
       - @zorgbort release the frontend (chatbot)
@@ -146,16 +153,27 @@
 
       ---
       class: center, middle
+      # How?
+      --
+      
+      .boxes[
+        ## Test all the things!
+        ## Automate all the things!
+        ## Agile all the things!
+        ## Steal all the things!
+      ]
+
+      ???
+      - We're getting so many things for free!
+
+      ---
+      class: center, middle
       # Who?
 
 
       ???
       - 3 developers, 1 support. .5 project manager
       - Send people to Sascha's talk It's the People People at 8:30am tomorrow
-
-      ---
-      class: center, middle
-      # How?
       
       ---
       class: center, middle
@@ -164,7 +182,7 @@
       <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I feel that too often we use &quot;legacy codebase&quot; to mean &quot;bad&quot;. When the reality is that &quot;legacy&quot; usually means &quot;currently working without any real issues, but not optimally&quot;.<br><br>When viewed that way, it&#39;s much easier to support incremental improvements instead of complete rewrites.</p>&mdash; Trent Willis (@trentmwillis) <a href="https://twitter.com/trentmwillis/status/1020067593049083904?ref_src=twsrc%5Etfw">July 19, 2018</a></blockquote>
 
       ---
-      class: center, middle
+      class: center, middle, photo
       # Declaring Technical Bankruptcy
 
       ![Smashed Piggy Bank](media/piggy-bank.jpg)
@@ -237,7 +255,6 @@
 
       ???
       - I've never met anyone who didn't want to ship well tested quality software. So why don't we all? It's a lot of work. Start small. Make writing tests easy. Spend a lot if time on your test harness. You're the user. Focus on your experience. 
-      - Always be merging - feature flags to keep functions private.
       - I'm incredibly lazy and super forgetful so I need the computer to handle checks.
       - I'm sloppy and I can't spell
       - Tests also include code style rules
@@ -342,7 +359,7 @@
       ???
       - CI / CD have buzzword aspirations for sure 
       - Loosely Integration is the process of constantly testing changes
-      - We combine with with the idea that we should always keep our `master` branch deployable; that means 
+      - Always be merging - we should always keep our `master` branch deployable; that means 
       at any given moment we're sure we can ship master to production. 
       - continuous delivery generally means that every change is immediately sent to production
       - We don't do continuous delivery at all. What we do instead is ensure that we *could* deliver 
@@ -384,36 +401,12 @@
 
       --
       ## and sometimes money!
-
-      ---
-      class: center, middle
-      # The Move to Docker
-
-      ???
-      - Dev machines are the same
-      - Small bit of code creates the entire infrastructure
-      - Repeatable Deployments
-      - App versions equal docker versions so the app code can control it's own dependencies
-
+      
       ---
       class: center, middle
       # Separate Release Cycles
       ???
       - Frontend can be released *way* more often at no institutional cost
-
-
-      ---
-      class: center, middle
-      # What code not to Write
-
-      ![graph of medium app with most of the code for infrastructure](media/medium-app.jpg)
-
-      ???
-
-      - Frontend has 40K lines of code in the app and ~5M in dependencies
-      - API has 30K lines of code in the app and ~800K in dependencies
-      - Commit to making upstream fixes
-      - commit to the community for support
       
       ---
       class: center, middle
