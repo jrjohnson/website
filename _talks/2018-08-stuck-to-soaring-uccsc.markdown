@@ -1,7 +1,7 @@
 ---
 layout: talk
 title:  "From Stuck to Soaring: Taking Aim at Continuous Delivery"
-date:   2018-08-13
+date:   2018-08-14
 eventURI: https://uccsc.ucdavis.edu/sessions/stuck-soaring-taking-aim-continuous-delivery
 videoURI:
 slidesURI: /slides/2018-08-stuck-to-soaring
