@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ready Set Go</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body {
+        font-family: 'Droid Serif';
+      }
+      .remark-slide-content {
+        background-color: #fffcf3;
+        color: #333;
+      }
+      .remark-slide {
+        border: 20px solid #506380;
+        box-sizing: border-box;
+      }
+      a, a:hover, a:visited {
+        color: grey;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      h1 {
+        color: #F26D04;
+      }
+      h2, h3, h4, h5 {
+        color: #0071AD;
+      }
+      h1, h2, h3, h4, h5 {
+        margin: .5rem;
+      }
+      .photo-slide img {
+        max-height: 75%;
+        max-width: 75%;
+        border-radius: 3%;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-slide-content:before {
+          content: ' ';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          opacity: 0.7;
+          background-image: url(media/sflive_logo.png);
+          background-repeat: no-repeat;
+          background-position: 98% 3%;
+          background-size: 143px 50px;
+      }
+      .footnote {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        font-style: italic;
+        font-size: .8em;
+      }
+      .boxes {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        height: 50vh;
+        text-align: center;
+      }
+      .boxes .icons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: right;
+      }
+      .boxes .avatar {
+        margin-left: 1rem;
+        text-align: left;
+      }
+      .title-slide .boxes {
+        height: 100%;
+      }
+      .avatar img {
+        border-radius: 50%;
+      }
+      .multi-column ul {
+        columns: 2;
+      }
+      .twitter-tweet {
+        margin: auto;
+      }
+      .loading svg {
+        fill: #c60;
+        height: 50vh;
+        stroke: #c60;
+        width: 50vw;
+      }
+      .loading text {
+        font-size: 3rem;
+        fill: #fff;
+        stroke: #fff;
+        font-variant: small-caps;
+      }
+      .logos p {
+        display: flex;
+        margin-top: 2rem;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .logos img {
+        width: 250px;
+      }
+      .impact-boxes .boxes {
+        margin-top: 8rem;
+      }
+      .left-column {
+        width: 45%;
+        float: left;
+        padding-top: 1em;
+      }
+      .right-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+      }
+      i.huge {
+        font-size: 10rem;
+      }
+      .high-contrast {
+        color: lightgrey;
+      }
+      .high-contrast strong {
+        color: #0071AD;
+        font-size: 1.5rem;
+      }
+      .grey {
+          color: lightgrey;
+      }
+      @keyframes pulse-bad {
+        0% {
+          stroke-dashoffset: 691;
+        }
+
+        80% {
+          stroke-dashoffset: 40;
+        }
+
+        90% {
+          stroke-dashoffset: 40;
+        }
+
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          stroke-dashoffset: 691;
+        }
+
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      .pulse-loader .path {
+        animation: pulse 2.2s infinite ease-in-out;
+      }
+      .heart-attack .path {
+        animation: pulse-bad 2.2s infinite ease-in-out;
+      }
+      .title-slide:before {
+          content: ' ';
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          opacity: 1;
+          background-image: url(media/sflive_logo.png);
+          background-repeat: no-repeat;
+          background-position: 99% 2%;
+          background-size: 287px 100px;
+      }
+      .title-slide:after {
+          content: ' ';
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          opacity: 1;
+          background-image: url(media/library-logo.png);
+          background-repeat: no-repeat;
+          background-position: 3% 4%;
+          background-size: 200px 46px;
+      }
+      .whitespace {
+        display: block;
+        height: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+      class: center, middle, title-slide
+      # Ready Set Go
+      ## Loading Singe Page Apps Fast
+     
+      ### Jon Johnson
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i>jrjohnson <br />
+        <i class="fab fa-twitter"></i>iam_jrjohnson <br />
+        ]
+        
+        .avatar[
+        ![Jon's avatar](media/avatar.jpg)
+        ]
+      ]
+
+      Slides at: https://jrjohnson.github.io/talks/2018-10-ready-set-go.html
+
+      ---
+      class: center,middle,loading
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true">
+        <title>Ilios Logo</title>
+        <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+      </svg>
+
+      ???
+      #Our Story
+        - Ilios is a 20 year old project which started as an MS Access Database
+        - Built by UCSF, but available for free (and supported)
+        - Installed at medical, dental, pharmacy, nursing, and even veterinary schools around the world
+        - Been through several revisions since then, but in 2014 we decided to rewrite it
+      
+      ---
+      class: center,middle
+      #Our Problem
+      ![ilios map](media/ilios-map.png)
+  
+      ???
+      - Ilios is an on premiss hosted solution
+      - Most of our partners are non-technical staff
+      - When supported by campus IT organizations updates are infrequent
+      - We want to be able to ship UI updates very frequently so we separate the code base 
+      - Some of this is familiar territory, some of it won't be but I hope you can see where our answers will fit with your questions
+      
+      ---
+      class: center,logos
+      #Our Solution
+
+      ![symfony logo](media/symfony-logo.png)
+      ![emberjs logo](media/ember-logo.png)
+
+      ???
+      - You're at at Symfony conference so I'm guessing you know why symfony is great (and if you don't you soon will)
+      - If you stop me later I'll be happy to sing Embers praises for you as well
+      - The real key here for us though is ...
+
+      ---
+      class: center,impact-boxes
+      #Our Solution
+
+      .left-column[
+      ## <i class="huge fas fa-database"></i>
+      ## REST API 
+      ]
+      .right-column[
+      ## <i class="huge fas fa-desktop"></i>
+      ## Single Page Application
+      ]
+
+      ???
+      - Ship a PHP application that can be updated infrequently
+      - The PHP app is responsible for loading the SPA but it's easy to update
+      - Build and test both systems independently
+      ---
+      
+      # What is a single page app?
+
+      > A single-page application (SPA) is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In a SPA, either all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load,[1] or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
+
+      .left[https://en.wikipedia.org/wiki/Single-page_application]
+
+      ---
+      class: middle,center
+      <i class="huge fas fa-frown-open"></i>
+      
+      ---
+      class: high-contrast
+      # No.  Seriously.
+
+      A single-page application (SPA) is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In a SPA, either **all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load**, or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. **The page does not reload at any point** in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often **involves dynamic communication with the web server behind the scenes**.
+
+      ---
+      .grey[
+      # No.  Seriously.
+      A single-page application (SPA) is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In a SPA, either **all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load**, or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. **The page does not reload at any point** in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often **involves dynamic communication with the web server behind the scenes**.
+      ]
+      .center[
+      ## does not reload at any point <i class="huge fas fa-exclamation"></i>
+      ]
+
+
+
+      ???
+      - This isn't to say that you have to write your app in javascript
+      - We work in a templating language called handlebars, SCSS style sheets, and modern JS interactions
+
+      ---
+      class: center, middle
+
+      # Structure of a Single Page App
+
+      ---
+      # Ember.js (using ember-cli)
+
+      ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <title>EmberDemo</title>
+          <meta name="description" content="">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="ember-demo/config/environment" content="%7B%22modulePrefix%22%3A%22ember-demo%22%2C%22environment%22%3A%22development%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22ember-demo%22%2C%22version%22%3A%220.0.0+8c9fd3a5%22%7D%2C%22exportApplicationGlobal%22%3Atrue%7D" />
+          <link integrity="" rel="stylesheet" href="/assets/vendor.css">
+          <link integrity="" rel="stylesheet" href="/assets/ember-demo.css">
+        </head>
+        <body>
+          <script src="/assets/vendor.js"></script>
+          <script src="/assets/ember-demo.js"></script>
+        </body>
+      </html>
+      ```
+
+      ---
+      # React (using create-react-app)
+
+      ```html
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="theme-color" content="#000000">
+            <link rel="manifest" href="/manifest.json">
+            <link rel="shortcut icon" href="/favicon.ico">
+            <title>React App</title>
+          </head>
+          <body>
+            <noscript>
+              You need to enable JavaScript to run this app.
+            </noscript>
+            <div id="root"></div>
+          <script type="text/javascript" src="/static/js/bundle.js"></script></body>
+        </html>
+      ```
+
+      ---
+      # Vue.js (with @vue/cli)
+
+      ```html
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width,initial-scale=1.0">
+          <link rel="icon" href="/favicon.ico">
+          <title>Vue Demo</title>
+        <link href="/app.js" rel="preload" as="script"></head>
+        <body>
+          <noscript>
+            <strong>We're sorry but Vue Demo doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+          </noscript>
+          <div id="app"></div>
+        <script type="text/javascript" src="/app.js"></script></body>
+      </html>
+      ```
+
+      ---
+      # Angular (with @angular/cli)
+
+      ```html
+        <!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>AngularDemo</title>
+          <base href="/">
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="icon" type="image/x-icon" href="favicon.ico">
+        </head>
+        <body>
+          <app-root></app-root>
+        <script type="text/javascript" src="runtime.js"></script>
+        <script type="text/javascript" src="polyfills.js"></script>
+        <script type="text/javascript" src="styles.js"></script>
+        <script type="text/javascript" src="vendor.js"></script>
+        <script type="text/javascript" src="main.js"></script></body>
+        </html>
+      ```
+
+      ---
+      # Webpack Encore 
+      ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+            <link rel="stylesheet" href="/build/app.css">
+        </head>
+        <body>
+          <script src="/build/app.js"></script>
+        </body>
+      </html>
+      ```
+      ---
+      class: center,middle
+      # Default User Experience
+
+      ### There is a load cost for single page apps and  you pay it upfront. 
+      
+      ---
+      class: center, middle
+      ![default single page app is a blank screen](media/default-spa.png)
+
+      ---
+      class: center, middle
+      # Loading time stinks
+
+      <i class="huge fas fa-plane"></i>
+      <i class="huge fas fa-globe-africa"></i>
+      <i class="huge fas fa-sad-tear"></i>
+
+      ???
+        - For our faculty who work around the world we have to worry about:
+        - airplane wifi latency and the round trip latency from working 20 hops away in China or Africa. 
+        - Even the speed of light can seem slow when it has to travel most of the way around the globe. 
+      
+      ---
+      class: center,middle
+      # No one should feel like they're wasting their time
+
+      ---
+      class: center,middle,photo-slide
+      ![students getting their white coats](media/white-coats.jpg)
+
+      ???
+      # At the end of the day we have to keep our users in mind
+
+      ---
+      class: center, middle
+      # What can we do about it?
+
+      ---
+      .center[
+        # Consider loading in two parts
+      ]
+      
+      .left-column[
+        ## First Time Visitor
+        ### Empty Cache
+        ### First Impression
+        ### Really Paying Attention
+        ### Has No Understanding of Your Value
+        <i class="huge fas fa-flushed"></i>
+        ]
+
+      --
+
+      .right-column[
+        ## The Second Visit (and beyond)
+        ### Populated Cache
+        ### Your Biggest Fans
+        ### Pays the Cost Every Visit
+        ### Willing to Wait (but shouldn't have to)
+        <i class="huge fas fa-grin-hearts"></i>
+      ]
+      
+      ---
+      class: center, middle
+      # The Second Visit
+      ## Entirely from Cache
+
+      ???
+      The second visit is the most fun, we get to play so many fun tricks on the seconds visit. Cached content, service workers, some real magix to speed up the trip,
+      But the first visit is where the Money is. When a dean is evaluating out product they might only spend 15 minutes clicking around. They're not coming back tomorrow. The first visit has to be smooth.
+
+      ---
+      class: center
+      # The First Visit
+      
+      .boxes[
+        ## <i class='fas fa-less-than'></i> Send Less
+        ## <i class='fas fa-shipping-fast'></i> Send Fast
+        ## <i class='fas fa-spinner'></i> Distract Users
+        ## <i class='fas fa-gas-pump'></i> Fill That Cache
+      ]
+
+      ---
+      # <i class='fas fa-less-than'></i> Send Less
+      ## Count those bytes
+
+      --
+      ## What can be loaded later?
+
+      --
+      ## Take advantage of code splitting
+      
+      --
+      ## Compression matters
+
+      --
+      .whitespace[]
+      .whitespace[]
+      .whitespace[]
+      
+      .center[
+        ### <i class='fas fa-file-medical-alt'></i> In trying to save milliseconds. Kilobytes matter.
+      ]
+
+      ???
+      - I started building websites in 1995 1hen 10K used to be our limit. 
+      For index.html it's worth targeting that again.
+      - Many things are not needed on page load. We use an excellent library Papa Parse for processing CSV uploaded,
+      but it's only needed in a few places. Instead of sending it right away we wait until it's needed and load it then.
+      - Code splitting is a technique in many frameworks to statically analyze your code and only send what is needed
+      to render the first page. This can drastically reduce the JS needed on first page load, but it must be tested 
+      thoroughly to ensure it doesn't leave users with a broken page when the follow a link deep into your app.
+      - For sure make sure your assets are being sent gzipped, but if you're only supporting modern browsers 
+      consider a switch to *brotli* for even better compression and performance.
+
+
+      ---
+      class: center,middle
+      # <i class='fas fa-shipping-fast'></i> Send Fast
+      ## HTTP/2 PUSH
+
+      #### Change
+      ```
+      <link href="app.css">
+      ```
+      #### To
+      ```
+      <link href="{{ preload(asset('app.css'), { as: 'style' }) }}">
+      ```
+      ### Thanks WebLink!
+
+      ???
+      Also worth considering a CDN for some assets if your users are not necessarily located near the server.
+
+      ---
+      class: center,middle
+      # <i class='fas fa-spinner'></i> Distract Users
+
+      ???
+      - Loading Animation
+      - Beware pithy sayings
+      - Remember that lots of stuff will lock up the browser
+      - Animations should be simple and look good when frozen
+
+      ---
+      class: center,middle,pulse-loader
+      ## Watch Out for Metaphors
+      <svg xmlns="http://www.w3.org/2000/svg" width="168" height="106" viewBox="0 0 168 106">
+        <path class="path" stroke="#ca6728" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="391 300" stroke-dashoffset="0" fill="none" d="M0,80.9h20.6c0.5,0,1.4-0.2,1.8-0.5L38,70.1
+        c0.5-0.3,1.2-0.3,1.6,0l12.7,9.4c0.4,0.3,1.3,0.6,1.8,0.6l13.3,0c0.6,0,1.2,0.4,1.5,0.9l6.2,11.3c0.3,0.5,0.5,0.4,0.5-0.1l4.4-90.8
+        c0-0.5,0.1-0.5,0.1,0l6.9,102.1c0,0.5,0.2,0.6,0.4,0l7-22.4c0.2-0.5,0.7-1,1.3-1l16.1,0c0.5,0,1.3-0.3,1.8-0.7L129,66.4
+        c0.4-0.4,1.1-0.3,1.5,0l13.3,13.1c0.4,0.4,1.2,0.7,1.7,0.7l20.1,0,"/>
+      </svg>
+
+      ---
+      class: center,middle,heart-attack
+      <svg xmlns="http://www.w3.org/2000/svg" width="168" height="106" viewBox="0 0 168 106">
+        <path class="path" stroke="#ca6728" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="391 300" stroke-dashoffset="0" fill="none" d="M0,80.9h20.6c0.5,0,1.4-0.2,1.8-0.5L38,70.1
+        c0.5-0.3,1.2-0.3,1.6,0l12.7,9.4c0.4,0.3,1.3,0.6,1.8,0.6l13.3,0c0.6,0,1.2,0.4,1.5,0.9l6.2,11.3c0.3,0.5,0.5,0.4,0.5-0.1l4.4-90.8
+        c0-0.5,0.1-0.5,0.1,0l6.9,102.1c0,0.5,0.2,0.6,0.4,0l7-22.4c0.2-0.5,0.7-1,1.3-1l16.1,0c0.5,0,1.3-0.3,1.8-0.7L129,66.4
+        c0.4-0.4,1.1-0.3,1.5,0l13.3,13.1c0.4,0.4,1.2,0.7,1.7,0.7l20.1,0,"/>
+      </svg>
+      ## <i class='fas fa-quote-left'></i> Why is Ilios having a heart attack? <i class='fas fa-quote-left'></i>
+
+      ---
+      class: center,middle
+      # Order Matters
+      ## or... #&$%! why do I still see a white screen??
+      ### <i class='huge fas fa-angry'></i>
+
+      ---
+      # A nice starting place
+      ```html
+      <html>
+        <head>
+          <link rel="stylesheet" href="/assets/app.css">
+        </head>
+        <body>
+          <script src="/assets/framework.js"></script>
+          <script src="/assets/app.js"></script>
+        </body>
+      </html>
+      ```
+      ---
+      # Add A Distraction
+      ```html
+      <html>
+        <head>
+          <link rel="stylesheet" href="/assets/app.css">
+        </head>
+        <body>
+          <!-- LOADING INDICATOR-->
+            <h1>We'll be right with you... Promise!</h1>
+          <!-- /LOADING INDICATOR-->
+          <script src="/assets/framework.js"></script>
+          <script src="/assets/app.js"></script>
+        </body>
+      </html>
+      ```
+      ---
+      class: center,middle
+      # Browser Rendering Flow
+      ![main flow diagram](media/main-flow.png)
+
+      .footnote[
+        https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_main_flow
+      ]
+
+      ---
+      # What this means for us
+      ```html
+      <html>
+        <head>
+          <!-- WAIT --><link rel="stylesheet" href="/assets/app.css">
+        </head>
+        <body>
+          <!-- WAIT --><h1>We'll be right with you... Promise!</h1>
+          <!-- WAIT --><script src="/assets/framework.js"></script>
+          <!-- WAIT --><script src="/assets/app.js"></script>
+        </body>
+      </html>
+      ```
+
+      ---
+      # Don't wait to style the loader
+      ```html
+      <html>
+        <head>
+        </head>
+        <body>
+          <style>
+            h1 {
+              color: orange;
+              font-size: 3rem;
+            }
+          </style><!-- WAIT -->
+          <!-- WAIT --><h1>We'll be right with you... Promise!</h1>
+          <!-- WAIT --><link rel="stylesheet" href="/assets/app.css">
+          <!-- WAIT --><script src="/assets/framework.js"></script>
+          <!-- WAIT --><script src="/assets/app.js"></script>
+        </body>
+      </html>
+      ```
+
+      ### CSS Needs to block the app, but nothing else
+
+      ???
+      - Link with `rel="stylesheet"` can be in the body https://html.spec.whatwg.org/multipage/links.html#body-ok
+      
+      ---
+      # Javascript should load, not wait
+      ```html
+        <body>
+          <style>
+            h1 {
+              color: orange;
+              font-size: 3rem;
+            }
+          </style>
+          <h1>We'll be right with you... Promise!</h1>
+          <!-- wait --><link rel="stylesheet" href="/assets/app.css">
+          <script defer src="/assets/framework.js"></script>
+          <script defer src="/assets/app.js"></script>
+        </body>
+      ```
+
+      ### <i class='fas fa-quote-left'></i>defer is set to indicate to a browser that the script is meant to be executed after the document has been parsed<i class='fas fa-quote-right'></i>
+
+      #### https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+
+      ???
+      ## Our final structure sends the least possible amount of HTML and doesn't block the browser from rendering the loader at all.
+
+      ---
+      # Don't forget the noscript
+      ```html 
+      <link rel="stylesheet" href="/assets/app.css">
+      <noscript>This Site Requires Javascript!</noscript>
+      ```
+
+      ???
+      - Noscript tag can be styled
+      - Make sure it sits on top of your loader or it may never be visible
+      
+      ---
+      # Handle Parse Errors
+      ```html
+      <h1 id='loading-indicator'>and we're spinning...</h1>
+      <h1 class='hidden' id='loading-error'>Whoops!</h1>
+      ```
+
+      ```javascript
+      window.addEventListener('error', function () {
+        var loadingIndicator = document.getElementById('loading-indicator');
+        if (loadingIndicator) {
+          loadingIndicator.parentNode.removeChild(loadingIndicator);
+        }
+        var errorContainer = document.getElementById('loading-error');
+        if (errorContainer) {
+          errorContainer.classList.remove('hidden');
+        }
+      });
+      ```
+
+      ---
+      # <i class='fas fa-gas-pump'></i> Fill That Cache
+
+      ## Forever!
+      ```php
+      $response = new Response();
+      $response->setMaxAge(60 * 60 * 24 * 365);
+
+      // Cache-Control: max-age=31536000, public
+      ```
+      --
+
+      ## or require validation every time
+      ```php
+      $response = new Response();
+      $response->setEtag(sha1($content));
+      $response->headers->addCacheControlDirective('no-cache');
+      $response->isNotModified($request);
+      // Cache-Control: no-cache, public
+      // ETag: "2bff8fd31f3a1f11275cd2cff55a0491e2e62da4"
+      ```
+      
+      ???
+      - With single page apps we get to play in the extremes
+      - Assets that are fingerprinted can be cached forever. The fingerprint is the cache buster since 
+      it is based on the contents of the file.
+      - no-cache doesn't mean don't cache. It means the client has to ask if their cached copy is OK.
+      - Symfony can take the request, compare it to the response and send back an empty 304 if 
+      no changes have been made
+      - I like to use symfony to serve my assets, if I was better at apache configuration maybe
+      I would feel differently, but in an app we distribute and others configure I like building the
+      best optimizations into the code itself.
+      
+      ---
+      class: center,middle
+      # <i class='fas fa-gas-pump'></i> Fill that cache (index.html edition)
+
+      --
+      ## <i class='fas fa-paper-plane'></i> Service Workers <i class='fas fa-paper-plane'></i>
+
+      ???
+      - Using a service worker to cache index.html
+      - Show example of a simple worker that caches index.html
+
+      ---
+      # <i class='fas fa-paper-plane'></i> Service Workers <i class='fas fa-paper-plane'></i>
+      ## The Good Parts
+      ### Using a worker to cache index.html
+
+      ```javascript
+      self.addEventListener('fetch', event => {
+        event.respondWith(caches.match('/index.html').then(response => {
+          if (response) {
+            return response;
+          }
+        }));
+      });
+      ```
+      ### Bonus: This works offline!
+
+      ---
+      # <i class='fas fa-paper-plane'></i> Service Workers <i class='fas fa-paper-plane'></i> 
+      ## The Bad Parts
+
+      --
+      ### Can be accidentally cached for 24hrs
+
+      ???
+      ## Foot gun protection: spec forces browsers to load it again every day just in case you mess it up
+
+      --
+      ### Even after you replace a worker it will still respond to the very next request
+      
+      --
+      ### Syntax is.... um... <i class='fas fa-meh'></i>
+
+      ---
+      # The "kill switch" Service Worker
+
+      ```javascript
+      self.addEventListener('install', () => {
+        // Activate this worker right now, removing other workers
+        self.skipWaiting();
+      });
+      ```
+
+      ## This won't help you if you set bad cache headers when you send your service worker.
+
+      ### In that case users have to wait 24hrs or else shift-refresh
+
+      ---
+      class: center,middle
+      # Are Service Workers Worth the Work?
+      ## YES!
+
+      ???
+      - Even on a fast network the initial latency of creating the connection can be noticeable
+      - Plus they are the first step into the exciting world of making your app work offline
+      
+      ---
+      class: center,middle
+      # Bonus content
+      ## PWA
+      <i class='fas fa-quote-left'></i>
+      Progressive Web Apps are installable and live on the user's home screen, without the need for an app store. They offer an immersive full screen experience with help from a web app manifest file and can even re-engage users with web push notifications. 
+      <i class='fas fa-quote-right'></i>
+
+      .footnote[https://developers.google.com/web/progressive-web-apps/]
+
+      ---
+      class: center,middle,photo-slide
+      ![prompt to install ilios as a pwa](media/faculty-pwa-prompt.png)
+
+      ---
+      class: center,middle,photo-slide
+      ![pwa on Android home screen](media/home-screen.png)
+
+      ---
+      # @todo PWA
+      ## <i class='fas fa-check-square'></i> Service Worker
+      ## <i class='fas fa-check-square'></i> HTTPS
+      ## <i class='fas fa-minus-square'></i> Web App Manifest
+      ## <i class='fas fa-minus-square'></i> Deep Links
+
+      ???
+      - Hopefully you're already on HTTPS, if not check it out. It's SECURE!
+      - Deep links are when every site in your app has a unique URL. Any modern framework will take care of this with a router.
+
+      ---
+      class: center,middle
+      # The end of Native Apps?
+
+      ---
+      class: center, middle, title-slide
+      
+      ## Discussion / Questions?
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i>jrjohnson <br />
+        <i class="fab fa-twitter"></i>iam_jrjohnson <br />
+        ]
+        
+        .avatar[
+        ![Jon's avatar](media/avatar.jpg)
+        ]
+      ]
+
+      Slides at: https://jrjohnson.github.io/talks/2018-10-ready-set-go.html
+
+      
+      ???
+      
+      # Thanks
+      - Symfony for loving PHP and our sponsors!
+      - UCSF Library
+      - Ilios Team
+      # Ask me three questions and then we can go to lunch! (from https://twitter.com/MrsSasser/status/1034118861354950656?s=19)
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: true
+      },
+      slideNumberFormat: '',
+      countIncrementalSlides: false,
+      ratio: '16:9',
+    });
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
