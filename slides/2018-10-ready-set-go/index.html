@@ -518,16 +518,42 @@
 
       ---
       # <i class='fas fa-less-than'></i> Send Less
+      
+      ## Server Side Rendered
+
+      ???
+      - Javascript is rendered on the server and only html is sent to the client. 
+      - Interaction follows a few (or many) seconds behind
+
+      --
       ## Count those bytes
+
+      ???
+      - I started building websites in 1995 1hen 10K used to be our limit. 
+      For index.html it's worth targeting that again.
 
       --
       ## What can be loaded later?
 
-      --
-      ## Take advantage of code splitting
+      ???
+      - Many things are not needed on page load. We use an excellent library Papa Parse for processing CSV uploaded,
+      but it's only needed in a few places. Instead of sending it right away we wait until it's needed and load it then.
+      - Dropbox password strength zxcvbn 420kb compressed and minified
       
       --
+      ## Take advantage of code splitting
+
+      ???
+      - Code splitting is a technique in many frameworks to statically analyze your code and only send what is needed
+      to render the first page. This can drastically reduce the JS needed on first page load, but it must be tested 
+      thoroughly to ensure it doesn't leave users with a broken page when the follow a link deep into your app.
+
+      --
       ## Compression matters
+
+      ???
+      - For sure make sure your assets are being sent gzipped, but if you're only supporting modern browsers 
+      consider a switch to *brotli* for even better compression and performance.
 
       --
       .whitespace[]
@@ -537,18 +563,6 @@
       .center[
         ### <i class='fas fa-file-medical-alt'></i> In trying to save milliseconds. Kilobytes matter.
       ]
-
-      ???
-      - I started building websites in 1995 1hen 10K used to be our limit. 
-      For index.html it's worth targeting that again.
-      - Many things are not needed on page load. We use an excellent library Papa Parse for processing CSV uploaded,
-      but it's only needed in a few places. Instead of sending it right away we wait until it's needed and load it then.
-      - Code splitting is a technique in many frameworks to statically analyze your code and only send what is needed
-      to render the first page. This can drastically reduce the JS needed on first page load, but it must be tested 
-      thoroughly to ensure it doesn't leave users with a broken page when the follow a link deep into your app.
-      - For sure make sure your assets are being sent gzipped, but if you're only supporting modern browsers 
-      consider a switch to *brotli* for even better compression and performance.
-
 
       ---
       class: center,middle
