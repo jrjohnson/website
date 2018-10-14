@@ -23,4 +23,5 @@ bundle exec jekyll serve
 2. modify media paths to be local (remove /media/)
 3. Remove PDF link
 4. Remove frontmatter
-4. Run generator `md2resume pdf --template modern resume.md media/`
+5. Add White space with \`(space)\`(space)(space)(space)(space)
+6. Run generator `docker run -v ${PWD}:/resume there4/markdown-resume md2resume pdf --template modern resume.md media/`
