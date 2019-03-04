@@ -20,7 +20,9 @@
   "devDependencies": {
     "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
+    "autoprefixer": "^9.4.9",
     "broccoli-asset-rev": "^2.7.0",
+    "cssstats": "^3.2.0",
     "ember-ajax": "^4.0.1",
     "ember-cli": "~3.8.1",
     "ember-cli-app-version": "^3.2.0",
@@ -30,6 +32,7 @@
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
     "ember-cli-inject-live-reload": "^1.8.2",
+    "ember-cli-postcss": "^4.2.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.1",
     "ember-cli-uglify": "^2.1.0",
@@ -42,6 +45,9 @@
     "ember-source": "~3.8.0",
     "eslint-plugin-ember": "^5.2.0",
     "loader.js": "^4.7.0",
+    "postcss-nesting": "^7.0.0",
+    "postcss-reporter": "^6.0.1",
+    "postcss-stats-reporter": "^0.4.1",
     "qunit-dom": "^0.8.0"
   },
   "engines": {
