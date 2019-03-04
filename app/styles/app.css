@@ -10,13 +10,24 @@ html {
 }
 
 body {
-  background-color: #ccc;
-  color: #000;
+  background-color: rgb(59, 58, 80);
+  display: grid;
   font-family: Yantramanav, sans-serif;
+  grid-template-columns: 100vw;
+  grid-template-rows: 100vh;
+  place-items: center;
   margin: 0;
   padding: 0;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: Crimson+Text, serif;
+}
+
+main {
+  border-radius: .5rem;
+  color: rgb(59, 58, 80);
+  background-color: rgb(242, 237, 215);
+  height: calc(100% - 1rem);
+  width: calc(100% - 1rem);
 }
