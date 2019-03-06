@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: Crimson+Text, serif;
 }
 
-main {
+.site-wrapper {
   border-radius: .5rem;
   color: rgb(59, 58, 80);
   background-color: rgb(242, 237, 215);
