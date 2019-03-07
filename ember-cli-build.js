@@ -8,6 +8,7 @@ module.exports = function(defaults) {
       compile: {
         enabled: true,
         plugins: [
+          { module: require('postcss-import') },
           { module: require('cssstats') },
           { module: require('postcss-stats-reporter') },
           { module: require('postcss-reporter') },
