@@ -1,5 +1,6 @@
 body {
   background-color: rgb(59, 58, 80);
+  color: var(--text-grey);
   display: grid;
   font-family: Yantramanav, sans-serif;
   grid-template-columns: 100vw;
@@ -11,12 +12,78 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
   font-family: Crimson+Text, serif;
+  margin: 0;
+  padding: 0;
 }
 
-.site-wrapper {
+a,
+a:active,
+a:visited {
+  color: var(--link-blue);
+  text-decoration: none;
+}
+
+.application-wrapper {
   border-radius: .5rem;
   color: rgb(59, 58, 80);
   background-color: rgb(242, 237, 215);
   height: calc(100% - 1rem);
   width: calc(100% - 1rem);
+
+  display: grid;
+  grid-template-areas:
+  'header navigation'
+  'main main'
+  'footer footer';
+  grid-template-rows: auto 1fr 3rem;
+
+  & > header {
+    grid-area: header;
+    & a {
+      vertical-align: middle;
+    }
+
+    & img {
+      border-radius: 50%;
+      padding: 5px;
+      vertical-align: middle;
+    }
+  }
+
+  & > nav {
+    grid-area: navigation;
+    display: flex;
+    justify-content: flex-end;
+
+    & ul {
+      display: flex;
+      flex-direction: horizontal;
+      list-style-type: none;
+    }
+
+    & li {
+      padding-right: 1rem;
+    }
+  }
+
+  & > main {
+    grid-area: main;
+    margin: 5px;
+  }
+
+  & > footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: flex-end;
+    & ul {
+      display: flex;
+      flex-direction: horizontal;
+      list-style-type: none;
+    }
+
+    & li {
+      padding-right: 1rem;
+    }
+
+  }
 }
