@@ -1,1 +1,5 @@
-{{markdown-to-html model}}
+<h2>{{model.attributes.title}}</h2>
+<p>{{model.attributes.date}}</p>
+
+<h3>Abstract:</h3>
+{{markdown-to-html model.content}}

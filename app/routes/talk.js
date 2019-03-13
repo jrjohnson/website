@@ -5,8 +5,6 @@ export default Route.extend({
   markdownResolver: inject(),
 
   async model({ talk_id }) {
-    const talk = await this.markdownResolver.file('talks', talk_id);
-
-    return talk.content;
+    return this.markdownResolver.file('talks', talk_id);
   }
 });

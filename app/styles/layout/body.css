@@ -3,7 +3,7 @@ html {
   color: var(--text-purple);
   font-family: Yantramanav, sans-serif;
   height: 100%;
-  padding: .5rem;
+  padding: 15px;
 }
 
 body {
