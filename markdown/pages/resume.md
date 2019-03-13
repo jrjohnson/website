@@ -2,19 +2,19 @@
 
 > [PDF Resume](/media/resume.pdf)   
 > [jon.johnson@ucsf.edu](jon.johnson@ucsf.edu)   
-> [https://jrjohnson.github.io](https://jrjohnson.github.io)   
+> [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
 > ![Github](/media/github_mark.svg)[jrjohnson](https://github.com/jrjohnson) | ![twitter](/media/twitter_mark.svg)[iam_jrjohnson](https://twitter.com/iam_jrjohnson)   
 > (650) 516-7401   
 
 ------
 
-## Profile {#profile}
+## Profile
 
 Experience in enterprise web application development using PHP, Javascript, JSON, SQL and XML; modern web standards; server administration; accessible web design; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
 
 ------
 
-## Technical Expertise {#technical}
+## Technical Expertise
 
 * EmberJs
 * Symfony
@@ -37,7 +37,7 @@ Experience in enterprise web application development using PHP, Javascript, JSON
 
 ------
 
-## Sample Code {#oswork}
+## Sample Code
 
 * PHP
 	: [Ilios Symfony Backend API Server](https://github.com/ilios/ilios)
@@ -56,24 +56,24 @@ Experience in enterprise web application development using PHP, Javascript, JSON
 
 -------
 
-## Talks {#talks}
+## Talks
 
-[Ready Set Go: Loading Single Page Apps Fast](https://jrjohnson.github.io/talks/2018-10-ready-set-go-sflive.html)   
-[From Stuck to Soaring: Taking Aim at Continuous Delivery](https://jrjohnson.github.io/talks/2018-08-stuck-to-soaring-uccsc.html)   
-[Deliver Content to Students in Moodle, Canvas, and Sakai using AWS Lambda and LTI](https://jrjohnson.github.io/talks/2018-08-lti-lambda-uccsc.html)   
-[Web Development with the Microapplication Pattern](https://jrjohnson.github.io/talks/2017-08-microapps-uccsc.html)   
+[Ready Set Go: Loading Single Page Apps Fast](https://www.jrjohnson.dev/talks/2018-10-ready-set-go-sflive.html)   
+[From Stuck to Soaring: Taking Aim at Continuous Delivery](https://www.jrjohnson.dev/talks/2018-08-stuck-to-soaring-uccsc.html)   
+[Deliver Content to Students in Moodle, Canvas, and Sakai using AWS Lambda and LTI](https://www.jrjohnson.dev/talks/2018-08-lti-lambda-uccsc.html)   
+[Web Development with the Microapplication Pattern](https://www.jrjohnson.dev/talks/2017-08-microapps-uccsc.html)   
 [Testing in EmberJS (EmberSF Meetup)](http://www.meetup.com/Ember-SF/events/221266972/)
 
 ------
 
-## Posts {#posts}
+## Posts
 
-[Deploying with Ember.js: a story](https://jrjohnson.github.io/emberjs/deploy/2017/09/06/deploy-story.html/)   
+[Deploying with Ember.js: a story](https://www.jrjohnson.dev/emberjs/deploy/2017/09/06/deploy-story.html/)   
 [Testing in Ember.js (3 parts)](https://blogs.library.ucsf.edu/ckm/2015/04/24/testing-in-ember-js-part-1/)   
 
 ------
 
-## Recent Experience {#experience}
+## Recent Experience
 
 Ilios Curriculum Management Platform
 : *Technical Lead, Architect*
