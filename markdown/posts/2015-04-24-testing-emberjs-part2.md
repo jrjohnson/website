@@ -139,6 +139,6 @@ after_script:
  - if [ "$START_SAUCE_CONNECT" = true ]; then ember stop-sauce-connect; fi
 ```
 
-That's it for Part Two! Tune in next week for a look at writing acceptance tests to take advantage of this setup. If you have questions or see a mistake, tweet [@iam_jrjohnson](https://twitter.com/iam_jrjohnson).
+That's it for Part Two! Tune in next week for a look at writing acceptance tests to take advantage of this setup. If you have questions or see a mistake, tweet [@jrjohnson_](https://twitter.com/jrjohnson_).
 
 Updated: 5/6/15 - Changed the ember-try config to use a blank set of dependancies. Thanks [@katiegengler](https://twitter.com/katiegengler) for the suggestion.

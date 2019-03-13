@@ -225,4 +225,4 @@ ecosystem gives me the building blocks I can use to assemble our pipeline in wha
 ideas and strategies fast and with very little friction.
 
 I hope this was a useful overview of one deployment journey. Want to share your own? Tell me about a mistake I made or
-shower me with praise? Leave a comment here or find me at [@iam_jrjohnson](https://twitter.com/iam_jrjohnson).
+shower me with praise? Leave a comment here or find me at [@jrjohnson_](https://twitter.com/jrjohnson_).

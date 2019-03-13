@@ -3,7 +3,7 @@
 > [PDF Resume](/media/resume.pdf)   
 > [jon.johnson@ucsf.edu](jon.johnson@ucsf.edu)   
 > [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
-> ![Github](/media/github_mark.svg)[jrjohnson](https://github.com/jrjohnson) | ![twitter](/media/twitter_mark.svg)[iam_jrjohnson](https://twitter.com/iam_jrjohnson)   
+> ![Github](/media/github_mark.svg)[jrjohnson](https://github.com/jrjohnson) | ![twitter](/media/twitter_mark.svg)[jrjohnson_](https://twitter.com/jrjohnson_)   
 > (650) 516-7401   
 
 ------

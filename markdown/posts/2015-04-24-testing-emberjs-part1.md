@@ -178,4 +178,4 @@ after_script:
   - ember stop-sauce-connect
 ```
 
-You are well on your way to being a cross-browser testing hero! In my next post I will take you through using the ember-try addon to test your code against upcoming Ember.js versions. If you have questions or see a mistake tweet [@iam_jrjohnson](https://twitter.com/iam_jrjohnson).
+You are well on your way to being a cross-browser testing hero! In my next post I will take you through using the ember-try addon to test your code against upcoming Ember.js versions. If you have questions or see a mistake tweet [@jrjohnson_](https://twitter.com/jrjohnson_).

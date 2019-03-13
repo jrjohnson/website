@@ -161,4 +161,4 @@ Yup, I wrote that test for you. This isn't a lesson on Test Driven Development. 
 
 ## Final Thoughts
 
-We're just about out of time and we covered a lot. You still have some test writing to do and I wish there was an addon to do that for you. Until then you can take solace in the knowledge that your testing infrastructure is a foundation you can build your reputation on. Until next time, Internet friends: If you liked it or hated it let me know [@iam_jrjohnson](https://twitter.com/iam_jrjohnson).
+We're just about out of time and we covered a lot. You still have some test writing to do and I wish there was an addon to do that for you. Until then you can take solace in the knowledge that your testing infrastructure is a foundation you can build your reputation on. Until next time, Internet friends: If you liked it or hated it let me know [@jrjohnson_](https://twitter.com/jrjohnson_).
