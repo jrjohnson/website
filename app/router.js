@@ -7,12 +7,16 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('posts');
-  this.route('talks');
+  this.route('posts', function () {
+    this.route('post', { path: '/:post_id' });
+    this.route('index', { path: '/' });
+  });
+  this.route('talks', function () {
+    this.route('talk', { path: '/:talk_id' });
+    this.route('index', { path: '/' });
+  });
   this.route('resume');
   this.route('projects');
-  this.route('post', { path: 'posts/:post_id'});
-  this.route('talk', { path: 'talks/:talk_id'});
 });
 
 export default Router;
