@@ -2,6 +2,7 @@
   <ul>
     {{#each @posts as |post|}}
       <li>
+        [{{date-format post.attributes.date}}]
         {{#link-to "post" post.path}}
           {{post.attributes.title}}
         {{/link-to}}
