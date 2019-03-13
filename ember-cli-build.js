@@ -21,8 +21,10 @@ module.exports = function(defaults) {
           { module: require('autoprefixer') },
         ]
       }
-    }
-});
+    },
+  });
+
+  app.import('node_modules/highlight.js/styles/a11y-dark.css');
 
   return app.toTree();
 };

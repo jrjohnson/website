@@ -1,5 +1,6 @@
 :root {
   --background-color: #506380;
-  --link-blue: #0000FF;
+  --body-background-color: #fffcf3;
+  --link-blue: rgb(11, 11, 192);
   --text-purple: rgb(59, 58, 80);
 }
