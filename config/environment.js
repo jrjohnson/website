@@ -16,6 +16,16 @@ module.exports = function(environment) {
         'talks': 'talks',
       }
     },
+    fontawesome: {
+      icons: {
+        'free-brands-svg-icons': [
+          'github',
+          'linkedin',
+          'twitter',
+        ],
+        // 'free-solid-svg-icons': [],
+      }
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

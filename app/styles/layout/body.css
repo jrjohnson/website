@@ -64,7 +64,14 @@ body {
     & ul {
       display: flex;
       flex-direction: horizontal;
+      font-size: 1.5rem;
       list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      & svg {
+        margin-left: 1rem;
+      }
     }
 
     & li {
