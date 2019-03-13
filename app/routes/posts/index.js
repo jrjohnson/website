@@ -7,7 +7,7 @@ export default Route.extend({
   async model() {
     const tree = await this.markdownResolver.tree('posts');
     const improvedPaths = tree.files.map(({ path, attributes, content }) => {
-      const cleanPath = path.replace('posts/', '');
+      const cleanPath = path.replace('markdown/posts/', '');
       return { path: cleanPath, attributes, content };
     });
 

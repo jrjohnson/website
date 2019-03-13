@@ -1,9 +1,3 @@
----
-layout: page
-title: Resume
-permalink: /resume/
----
-
 ## Senior Web Platform Developer
 
 > [PDF Resume](/media/resume.pdf)   

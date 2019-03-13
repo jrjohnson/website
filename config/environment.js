@@ -12,8 +12,9 @@ module.exports = function(environment) {
     ],
     'ember-cli-markdown-resolver': {
       folders: {
-        'posts': 'posts',
-        'talks': 'talks',
+        'posts': 'markdown/posts',
+        'talks': 'markdown/talks',
+        'pages': 'markdown/pages',
       }
     },
     fontawesome: {
