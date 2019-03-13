@@ -24,7 +24,12 @@ module.exports = function(environment) {
           'linkedin',
           'twitter',
         ],
-        // 'free-solid-svg-icons': [],
+        'pro-solid-svg-icons': [
+          'blog',
+          'keynote',
+          'project-diagram',
+          'scroll',
+        ],
       }
     },
     EmberENV: {

@@ -1,29 +1,33 @@
 {{head-layout}}
 {{title "Jon's Personal Site"}}
-<header>
-  <h1>
-    {{#link-to "index"}}
-      <img src="https://secure.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c?s=60" alt="jon's avatar">
-      Jonathan Johnson
-    {{/link-to}}
-  </h1>
-</header>
-<nav>
-  <ul>
-    <li>{{#link-to "posts"}}Posts{{/link-to}}</li>
-    <li>{{#link-to "talks"}}Talks{{/link-to}}</li>
-    <li>{{#link-to "projects"}}Projects{{/link-to}}</li>
-    <li>{{#link-to "resume"}}Resume{{/link-to}}</li>
-
-  </ul>
-</nav>
-<main>{{outlet}}</main>
-<footer>
-  <nav>
+{{#if isSplashPage}}
+  {{splash-screen}}
+{{else}}
+  <header>
+    <h1>
+      {{#link-to "index"}}
+        <img src="https://secure.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c?s=60" alt="jon's avatar">
+        Jonathan Johnson
+      {{/link-to}}
+    </h1>
+  </header>
+  <nav class="primary-navigation">
     <ul>
-      <li><a href="https://github.com/jrjohnson"><FaIcon @icon="github" @prefix="fab" aria-hidden="false" @title="Github Profile" /></a></li>
-      <li><a href="https://twitter.com/jrjohnson_"><FaIcon @icon="twitter" @prefix="fab" aria-hidden="false" @title="Twitter Profile" /></a></li>
-      <li><a href="https://www.linkedin.com/in/jonjohnson/"><FaIcon @icon="linkedin" @prefix="fab" aria-hidden="false" @title="LinkedIn Profile" /></a></li>
+      <li>{{#link-to "posts"}}Posts{{/link-to}}</li>
+      <li>{{#link-to "talks"}}Talks{{/link-to}}</li>
+      <li>{{#link-to "projects"}}Projects{{/link-to}}</li>
+      <li>{{#link-to "resume"}}Resume{{/link-to}}</li>
+
     </ul>
   </nav>
-</footer>
+  <main>{{outlet}}</main>
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="https://github.com/jrjohnson"><FaIcon @icon="github" @prefix="fab" aria-hidden="false" @title="Github Profile" /></a></li>
+        <li><a href="https://twitter.com/jrjohnson_"><FaIcon @icon="twitter" @prefix="fab" aria-hidden="false" @title="Twitter Profile" /></a></li>
+        <li><a href="https://www.linkedin.com/in/jonjohnson/"><FaIcon @icon="linkedin" @prefix="fab" aria-hidden="false" @title="LinkedIn Profile" /></a></li>
+      </ul>
+    </nav>
+  </footer>
+{{/if}}

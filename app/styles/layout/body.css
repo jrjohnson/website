@@ -19,7 +19,7 @@ body {
   'header navigation'
   'main main'
   'footer footer';
-  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-rows: auto 1fr auto;
 
   & > header {
     border-bottom: 1px solid var(--text-grey);
@@ -54,7 +54,7 @@ body {
 
   & > main {
     grid-area: main;
-    margin: 2em;
+    padding: 2em;
   }
 
   & > footer {
