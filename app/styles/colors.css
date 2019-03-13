@@ -1,4 +1,5 @@
 :root {
-  --text-grey: #CCCCCC;
+  --background-purple: rgb(59, 58, 80);
   --link-blue: #0000FF;
+  --text-purple: rgb(59, 58, 80);
 }

@@ -10,6 +10,11 @@ module.exports = function(environment) {
       'Crimson+Text:400,700',
       'Yantramanav:400,700'
     ],
+    'ember-cli-markdown-resolver': {
+      folders: {
+        'posts': '_posts'
+      }
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

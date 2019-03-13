@@ -15,27 +15,27 @@ Requirements for this guide are [Ember.js](http://emberjs.com/) > 1.10 and [Embe
 
 If you've never used Ember CLI before, you should follow [their instructions to install all dependencies](http://www.ember-cli.com/#getting-started). Now let's create a new sandbox to play in: 
 
-{% highlight bash %}
+```bash
 $ ember new testing-sandbox
 $ cd testing-sandbox $ ember test --server 
-{% endhighlight %} 
+``` 
 
 Congrats! You now have a brand new Ember.js app and running tests in both PhantomJS and Chrome. Go ahead and leave that console window open and create a new one. Tests will keep running in the original window and track all the changes we make. 
 
-{% highlight bash %}
+```bash
 $ cd testing-sandbox
 $ ember g acceptance-test welcome-page
-{% endhighlight %}
+```
 
 Your test console should now record a failure indicating: 
 
-{% highlight bash %}
+```bash
 ✘ UnrecognizedURLError: /welcome-page
-{% endhighlight %}
+```
 
 Open `testing-sandbox/tests/acceptance/welcome-page-test.js` in your favorite editor and make it look like this:
 
-{% highlight javascript %}
+```javascript
 import Ember from 'ember';
 import {
   module,
@@ -64,7 +64,7 @@ test('we should be welcoming', function(assert) {
     assert.equal(title.text(), 'Welcome to Ember.js');
   });
 });
-{% endhighlight %}
+```
 
 Save that and all of your tests should pass. We are ready to get started with multi-browser testing.
 
@@ -72,38 +72,38 @@ Save that and all of your tests should pass. We are ready to get started with mu
 
 [Sauce Labs](https://saucelabs.com) is a service for running your tests against a huge variety of browsers. We're going to abstract a lot of the complexity of using Sauce Labs by taking advantage of the excellent [ember-cli-sauce](https://github.com/johanneswuerbach/ember-cli-sauce) addon. First, you will need Sauce Labs credentials. You can [start a free trial](https://saucelabs.com/signup/trial) or, if your project is open source, you can sign up for [Open Sauce](https://saucelabs.com/opensauce/). When you are done, take note of your user name and access key. You will need them later. Let's install the addon: 
 
-{% highlight bash %}
+```bash
 $ember install ember-cli-sauce
-{% endhighlight %}
+```
 
 Now we can add additional browsers to our `testem.json` file. Testem calls these _launchers_: 
 
-{% highlight bash %}
+```bash
 $ ember sauce --browser='firefox' --platform='Windows 7'
 $ ember sauce --browser='internet explorer' --version=11 --platform='Windows 8.1'
-{% endhighlight %}
+```
 
  Lets run some tests! First we have to export our sauce credentials as environment variables.
 
-{% highlight bash %}
+```bash
 $export SAUCE_USERNAME="YOUR_USERNAME"
 $export SAUCE_ACCESS_KEY="YOUR_ACCESS_KEY"
-{% endhighlight %}
+```
 
  Then we fire up a proxy tunnel so Sauce Labs browsers can get to our local Ember.js server.
- {% highlight bash %}
+ ```bash
  $ember start-sauce-connect
- {% endhighlight %}
+ ```
  
  Then we launch the actual tests. 
  
- {% highlight bash %}
+ ```bash
 $ember test --launch='SL_firefox_Windows_7,SL_internet_explorer_11_Windows_8_1'
-{% endhighlight %}
+```
 
  You should see something like: 
  
-{% highlight bash %}
+```bash
 ok 1 Firefox 37.0 - Acceptance: WelcomePage: we should be welcoming
 ok 2 Firefox 37.0 - JSHint - acceptance: acceptance/welcome-page-test.js should pass jshint
 ok 3 Firefox 37.0 - JSHint - .: app.js should pass jshint
@@ -125,21 +125,21 @@ ok 14 IE 11.0 - JSHint - .: test-helper.js should pass jshint
 # fail  0
 
 # ok
-{% endhighlight %}
+```
 
  
 Wasn't that awesome? You just tested your code in two browsers. You can add anything you want to testem.json. Go nuts! When you are done testing remember to kill the tunnel we opened. 
  
-{% highlight bash %}
+```bash
 $ember stop-sauce-connect
-{% endhighlight %}
+```
 
 ## Making It Automatic with Travis CI
 
 The last piece of this puzzle is to use Travis CI to run these tests for you every time you commit code. Update your .travis.yml file to run Sauce Labs tests. You will need to tell Travis CI what your Sauce Labs credentials are in the `env` section: 
 
 
-{% highlight yaml %}
+```yaml
 ---
 language: node_js
 node_js:
@@ -176,6 +176,6 @@ script:
 after_script:
   # Destroy the sauce tunnel
   - ember stop-sauce-connect
-{% endhighlight %}
+```
 
 You are well on your way to being a cross-browser testing hero! In my next post I will take you through using the ember-try addon to test your code against upcoming Ember.js versions. If you have questions or see a mistake tweet [@iam_jrjohnson](https://twitter.com/iam_jrjohnson).

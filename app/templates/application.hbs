@@ -1,29 +1,27 @@
-<div class="application-wrapper">
-  <header>
-    <h1>
-      {{#link-to "index"}}
-        <img src="https://secure.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c?s=60" alt="jon's avatar">
-        Jonathan Johnson
-      {{/link-to}}
-    </h1>
-  </header>
+<header>
+  <h1>
+    {{#link-to "index"}}
+      <img src="https://secure.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c?s=60" alt="jon's avatar">
+      Jonathan Johnson
+    {{/link-to}}
+  </h1>
+</header>
+<nav>
+  <ul>
+    <li>{{#link-to "posts"}}Posts{{/link-to}}</li>
+    <li>{{#link-to "talks"}}Talks{{/link-to}}</li>
+    <li>{{#link-to "projects"}}Projects{{/link-to}}</li>
+    <li>{{#link-to "resume"}}Resume{{/link-to}}</li>
+
+  </ul>
+</nav>
+<main>{{outlet}}</main>
+<footer>
   <nav>
     <ul>
-      <li>{{#link-to "posts"}}Posts{{/link-to}}</li>
-      <li>{{#link-to "talks"}}Talks{{/link-to}}</li>
-      <li>{{#link-to "projects"}}Projects{{/link-to}}</li>
-      <li>{{#link-to "resume"}}Resume{{/link-to}}</li>
-
+      <li><a href="https://github.com/jrjohnson">Github</a></li>
+      <li><a href="https://twitter.com/jrjohnson_">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jonjohnson/">LinkedIn</a></li>
     </ul>
   </nav>
-  <main>{{outlet}}</main>
-  <footer>
-    <nav>
-      <ul>
-        <li><a href="https://github.com/jrjohnson">Github</a></li>
-        <li><a href="https://twitter.com/jrjohnson_">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/in/jonjohnson/">LinkedIn</a></li>
-      </ul>
-    </nav>
-  </footer>
-</div>
+</footer>

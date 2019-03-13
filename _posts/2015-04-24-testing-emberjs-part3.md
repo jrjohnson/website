@@ -13,7 +13,7 @@ The goal of automated testing is to find problems before your users do. Good tes
 
 Part Three picks up [right where we left off](https://blogs.library.ucsf.edu/ckm/2015/04/30/testing-in-ember-js-part-2-ember-try-and-the-travis-ci-build-matrix/) with a working ember-cli project and build configuration. This is _not_ a tutorial on [Test Driven Development](http://en.wikipedia.org/wiki/Test-driven_development) so we're going to start out with a working example and then test it. First setup our ember-data models: 
 
-{% highlight bash %}
+```bash
 $ cd testing-sandbox
 $ ember g model fruit title:string color:belongsTo
 $ cat app/models/fruit.js
@@ -31,17 +31,17 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   fruits: DS.hasMany('fruit', {async: true})
 });
-{% endhighlight %}
+```
 
 Then a simple route: 
 
-{% highlight bash %}
+```bash
  $ ember g route colors --path='/colors' 
-{% endhighlight %}
+```
 
 Modify `app/routes/colors.js` to get all the colors:
 
-{% highlight javascript %}
+```javascript
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -49,12 +49,12 @@ export default Ember.Route.extend({
       return this.store.find('color');
     }
 }); 
-{% endhighlight %}
+```
  
 
 Setup a template to list the colors and their fruits `app/templates/colors.hbs` 
 
-{% highlight handlebars %}
+```handlebars
 <ul>
   {{#each model as |color|}}
     <li>{{color.title}}
@@ -66,66 +66,66 @@ Setup a template to list the colors and their fruits `app/templates/colors.hbs`
     </li>
   {{/each}}
 </ul>
-{% endhighlight %}
+```
 
 
 ## Setup ember-cli-mirage
 
 Let's install the [ember-cli-mirage](http://www.ember-cli-mirage.com/) addon.
-{% highlight bash %}
+```bash
  $ ember install ember-cli-mirage 
-{% endhighlight %}
+```
 
 Now we need to configure our basic API routes. Mirage creates a basic configuration file for you at `app/mirage/config.js`. We just need to add a few lines for our new models: 
 
-{% highlight javascript %}
+```javascript
 export default function() {
   this.get('/colors');
   this.get('/colors/:id');
   this.get('/fruits');
   this.get('/fruits/:id');
 };
-{% endhighlight %}
+```
  
 
 For each of our models we need a factory so our tests can create new data. As ember-cli-mirage matures, generators for your factories will be added. For now, you have to make them on your own. We need one for `fruit` and one for `color`.
 
 Create the file `app/mirage/factories/fruit.js`: 
 
-{% highlight javascript %}
+```javascript
 import Mirage from 'ember-cli-mirage';
 
 export default Mirage.Factory.extend({
   title: (i) => `fruit ${i}`,
   color: null
 });
-{% endhighlight %}
+```
  
 
 …and the file `app/mirage/factories/color.js`: 
 
-{% highlight javascript %}
+```javascript
 import Mirage from 'ember-cli-mirage';
 
 export default Mirage.Factory.extend({
   title: (i) => `color ${i}`,
   fruits: []
 }); 
-{% endhighlight %}
+```
  
 
 Wow. Thats was some serious setup; take heart that we're done now and we can finally write a test.
 
 ## Finally a test!
 
-{% highlight bash %}
+```bash
   $ember g acceptance-test colors
-{% endhighlight %}
+```
  
 
 Add some fixture data and a test to your new file at `tests/acceptance/colors-test.js`: 
 
-{% highlight javascript %}
+```javascript
 test('visiting /colors', function(assert) {
   //turn on logging so we can see what mirage is doing
   server.logging = true;
@@ -154,7 +154,7 @@ test('visiting /colors', function(assert) {
     assert.equal(find('li').length, 9);
   });
 });
-{% endhighlight %}
+```
  
 
 Yup, I wrote that test for you. This isn't a lesson on Test Driven Development. If you want that [watch "Test Driven Development By Example"](https://www.youtube.com/watch?v=2b1vcg_XSR8). The important part here is that we create fresh testing data with every test using `server` from ember-cli-mirage. You can be in complete control of what is passed to your application so you can check for any condition.

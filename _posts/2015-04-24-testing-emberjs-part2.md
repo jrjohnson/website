@@ -13,14 +13,14 @@ In Part Two, we will start testing our application against multiple versions of 
 ## Getting Set Up
 
 Part Two picks up [right where we left off](/testing/emberjs/javascript/heroku/2015/04/24/testing-emberjs-part1.html) with a working ember-cli project and build configuration. Let's install the ember-try addon. 
-{% highlight bash %}
+```bash
 $ cd testing-sandbox
 $ ember install ember-try
-{% endhighlight %}
+```
 
 [ember-try](https://www.npmjs.com/package/ember-try) is a completely configurable way to test your code against upcoming versions of Ember. You may want to customize this later, but for now let's add a file to `testing-sandbox/config/ember-try.js` with these contents: 
 
-{% highlight javascript %}
+```javascript
 // jshint node: true
 module.exports = {
   scenarios: [
@@ -57,19 +57,19 @@ module.exports = {
     }
   ]
 };
-{% endhighlight %}
+```
 
 That creates a few different build targets. The first one, `our-current`, is whatever version of Ember your app currently depends on, by leaving the dependencies blank it will use your current setup. The others are dynamically linked to the Ember release process for latest release, beta, and canary. We can now run all of our tests against the beta version of Ember.js with a single command. 
 
-{% highlight bash %}
+```bash
  $ember try ember-beta test 
-{% endhighlight %}
+```
 
  Go ahead, give that a spin, it's pretty great right? You can also test everything in your config file with the command:
  
-{% highlight bash %}
+```bash
  $ember try:testall 
-{% endhighlight %}
+```
 
 
 ## Automating with Travis CI
@@ -83,7 +83,7 @@ In Part One, we learned how to test against any browser and now we know how to t
 5.  Allow some of these test combinations to fail
 
 The new `.travis.yml` file looks like this: 
-{% highlight yaml %}
+```yaml
 ---
 language: node_js
 node_js:
@@ -137,7 +137,7 @@ script:
 after_script:
  # Destroy the sauce tunnel if we needed it
  - if [ "$START_SAUCE_CONNECT" = true ]; then ember stop-sauce-connect; fi
-{% endhighlight %}
+```
 
 That's it for Part Two! Tune in next week for a look at writing acceptance tests to take advantage of this setup. If you have questions or see a mistake, tweet [@iam_jrjohnson](https://twitter.com/iam_jrjohnson).
 

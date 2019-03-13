@@ -1,0 +1,11 @@
+<section class="post-list">
+  <ul>
+    {{#each @posts as |post|}}
+      <li>
+        {{#link-to "post" post.path}}
+          {{post.attributes.title}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+</section>

@@ -35,7 +35,7 @@ None of this would have been possible without:
 	<li><a href="http://welcometothebundle.com/symfony2-rest-api-the-best-2013-way/">http://welcometothebundle.com/symfony2-rest-api-the-best-2013-way/</a></li>
 </ul>
 
-{% highlight javascript %}
+```javascript
 "boot_command": [
   "",
   "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
@@ -46,4 +46,4 @@ None of this would have been possible without:
   "passwd/root-password=\"{{user `root_password`}}\" passwd/root-password-again=\"{{user `root_password`}}\" ",
   "initrd=/install/initrd.gz -- "
 ]
-{% endhighlight %}
+```
