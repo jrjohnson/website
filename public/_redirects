@@ -1,2 +1,2 @@
-# Redirect default Netlify subdomain to primary domain
 https://jrjohnson.netlify.com/* https://www.jrjohnson.dev/:splat 301!
+/*    /index.html   200
