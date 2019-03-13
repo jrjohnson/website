@@ -1,0 +1,95 @@
+html {
+  background-color: var(--background-color);
+  color: var(--text-purple);
+  font-family: Yantramanav, sans-serif;
+  height: 100%;
+  padding: 15px;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: .5rem;
+
+  border-radius: .5rem;
+  background-color: var(--body-background-color);
+
+  display: grid;
+  grid-template-areas:
+  'header navigation'
+  'main main'
+  'footer footer';
+  grid-template-rows: auto 1fr auto;
+
+  & > header {
+    border-bottom: 1px solid var(--text-grey);
+    grid-area: header;
+    & a {
+      vertical-align: middle;
+    }
+
+    & img {
+      border-radius: 50%;
+      padding: 5px;
+      vertical-align: middle;
+    }
+  }
+
+  & > nav {
+    border-bottom: 1px solid var(--text-grey);
+    grid-area: navigation;
+    display: flex;
+    justify-content: flex-end;
+
+    & ul {
+      display: flex;
+      flex-direction: horizontal;
+      list-style-type: none;
+    }
+
+    & li {
+      padding-right: 1rem;
+    }
+  }
+
+  & > main {
+    grid-area: main;
+    padding: 2em;
+  }
+
+  & > footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: flex-end;
+    & ul {
+      display: flex;
+      flex-direction: horizontal;
+      font-size: 1.5rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      & svg {
+        margin-left: 1rem;
+      }
+    }
+
+    & li {
+      padding-right: 1rem;
+    }
+
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Crimson+Text", serif;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:active,
+a:visited {
+  color: var(--link-blue);
+  text-decoration: none;
+}

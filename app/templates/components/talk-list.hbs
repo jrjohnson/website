@@ -1,0 +1,12 @@
+<section class="talk-list">
+  <ul>
+    {{#each @talks as |talk|}}
+      <li>
+        [{{date-format talk.attributes.date}}]
+        {{#link-to "talks.talk" talk.path}}
+          {{talk.attributes.title}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+</section>

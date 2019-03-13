@@ -1,22 +1,8 @@
-## About
+# Code for https://www.jrjohnson.dev
 
-This is the code-base for my personal website
+### Deploying
 
-## Development
-
-`ruby`, `gem` and `bundler` are assumed to be installed.
-
-### Installation
-
-```bash
-bundle install
-```
-
-### Running the site locally
-
-```
-bundle exec jekyll serve
-```
+Commits to `master` are auto deployed by Netlify.
 
 ### Building a PDF Resume
 1. Add Name to the top

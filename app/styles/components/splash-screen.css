@@ -1,0 +1,77 @@
+.splash-screen {
+  place-self: center;
+  width: 80%;
+  & nav ul {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+      'one two three'
+      'four five six'
+      'seven eight nine';
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 31%);
+    list-style-type: none;
+    padding: 0;
+
+    & .avatar {
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    & li {
+      font-size: 5rem;
+    }
+
+    & li:nth-of-type(1) {
+      grid-area: five;
+      place-self: center;
+      text-align: center;
+    }
+
+    & li:nth-of-type(2) {
+      grid-area: four;
+      justify-self: end;
+      align-self: center;
+    }
+
+    & li:nth-of-type(3) {
+      grid-area: one;
+      justify-self: end;
+      align-self: end;
+    }
+
+    & li:nth-of-type(4) {
+      grid-area: two;
+      justify-self: center;
+      align-self: end;
+    }
+
+    & li:nth-of-type(5) {
+      grid-area: three;
+      justify-self: start;
+      align-self: end;
+    }
+
+    & li:nth-of-type(6) {
+      grid-area: six;
+      justify-self: start;
+      align-self: center;
+    }
+
+    & li:nth-of-type(7) {
+      grid-area: seven;
+      justify-self: end;
+      align-self: start;
+    }
+    & li:nth-of-type(8) {
+      grid-area: eight;
+      justify-self: center;
+      align-self: start;
+    }
+    & li:nth-of-type(9) {
+      grid-area: nine;
+      justify-self: start;
+      align-self: start;
+    }
+  }
+}

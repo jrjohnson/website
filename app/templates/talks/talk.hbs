@@ -1,0 +1,7 @@
+<h2>{{model.attributes.title}}</h2>
+<p>{{date-format model.attributes.date}}</p>
+
+<h3>Abstract:</h3>
+{{markdown-to-html model.content}}
+
+Slides: <a href="{{model.attributes.slidesURI}}/index.html">{{model.attributes.slidesURI}}</a>
