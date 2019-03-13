@@ -12,7 +12,8 @@ module.exports = function(environment) {
     ],
     'ember-cli-markdown-resolver': {
       folders: {
-        'posts': '_posts'
+        'posts': '_posts',
+        'talks': '_talks',
       }
     },
     EmberENV: {

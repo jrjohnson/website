@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('resume');
   this.route('projects');
   this.route('post', { path: 'posts/:post_id'});
+  this.route('talk', { path: 'talks/:talk_id'});
 });
 
 export default Router;
