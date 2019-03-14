@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ready Set Go</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../shared/style.css">
+    <style>
+      .avatars img {
+        border-radius: 25%;
+        height: 135px;
+        width: 135px;
+      }
+      .screenshots img {
+        border-radius: 10%;
+        height: 250px;
+        width: 250px;
+      }
+      .brands {
+        font-size: 1.75rem;
+      }
+      svg.big {
+        font-size: 8rem;
+      }
+      .loading svg {
+        fill: #c60;
+        height: 50vh;
+        stroke: #c60;
+        width: 50vw;
+      }
+      .loading text {
+        font-size: 3rem;
+        font-family: "Helvetica Neue";
+        fill: #fff;
+        stroke: #fff;
+      }
+    </style>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/solid.js" integrity="sha384-6FXzJ8R8IC4v/SKPI8oOcRrUkJU8uvFK6YJ4eDY11bJQz4lRw5/wGthflEOX8hjL" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/brands.js" integrity="sha384-zJ8/qgGmKwL+kr/xmGA6s1oXK63ah5/1rHuILmZ44sO2Bbq1V3p3eRTkuGcivyhD" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/fontawesome.js" integrity="sha384-xl26xwG2NVtJDw2/96Lmg09++ZjrXPc89j0j7JHjLOdSwHDHPHiucUjfllW0Ywrq" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+      class: center, middle, title-slide
+      # Web Developer
+      ## Aragon High School Career Day 2019
+
+      ### Jon Johnson
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i>jrjohnson <br />
+        <i class="fab fa-twitter"></i>jrjohnson_ <br />
+        ]
+
+        .avatar[
+        ![Jon's avatar](../shared/avatar.jpg)
+        ]
+      ]
+
+      ---
+      class: middle
+      .center[
+        #What is a Web Developer?
+      ]
+      > A web developer is a programmer who specializes in, or is specifically engaged in, the development of World Wide Web applications, or applications that are run over HTTP : CSS OR HTML from a web server to a web browser.
+
+      .right[Wikipedia]
+
+      ---
+      class: middle,center
+      <i class="huge fas fa-frown-open"></i>
+
+      ---
+      class: middle,high-contrast
+      # No.  Seriously.
+
+      > A web developer is a programmer who specializes in, or is specifically engaged in, the development of World Wide Web applications, or applications that are run over HTTP : CSS OR HTML from a web server to a web browser.
+
+      .right[Wikipedia]
+
+      ---
+      class: middle
+      .grey[
+      # No.  Seriously.
+      A web developer is a programmer who specializes in, or is specifically engaged in, the development of World Wide Web applications, or applications that are run over HTTP : CSS OR HTML from a web server to a web browser.
+      ]
+
+      .center[
+      ## A Web Developer is someone who builds websites <i class="huge fas fa-exclamation"></i>
+      ]
+
+      ---
+      class:center,middle
+      #Websites Like
+      .screenshots[
+        ![amazon screenshot](media/screenshots/amazon.png)
+        ![google screenshot](media/screenshots/google.png)
+        ![netflix screenshot](media/screenshots/netflix.png)
+        ![wikipedia screenshot](media/screenshots/wikipedia.png)
+        ![youtube screenshot](media/screenshots/youtube.png)
+      ]
+
+      ---
+      class:center,middle
+      #For Brands Like
+      .brands[
+        <i class="fab fa-github-square"></i>
+        <i class="fab fa-cc-diners-club"></i>
+        <i class="fab fa-stack-exchange"></i>
+        <i class="fab fa-bitbucket"></i>
+        <i class="fab fa-aws"></i>
+        <i class="fab fa-wpexplorer"></i>
+        <i class="fab fa-odnoklassniki"></i>
+        <i class="fab fa-cloudsmith"></i>
+        <i class="fab fa-pushed"></i>
+        <i class="fab fa-snapchat-ghost"></i>
+        <i class="fab fa-sistrix"></i>
+        <i class="fab fa-wordpress"></i>
+        <i class="fab fa-google-play"></i>
+        <i class="fab fa-napster"></i>
+        <i class="fab fa-adobe"></i>
+        <i class="fab fa-vimeo"></i>
+        <i class="fab fa-gripfire"></i>
+        <i class="fab fa-renren"></i>
+        <i class="fab fa-rev"></i>
+        <i class="fab fa-simplybuilt"></i>
+        <i class="fab fa-yandex-international"></i>
+        <i class="fab fa-medrt"></i>
+        <i class="fab fa-cc-amex"></i>
+        <i class="fab fa-figma"></i>
+        <i class="fab fa-untappd"></i>
+        <i class="fab fa-ns8"></i>
+        <i class="fab fa-codepen"></i>
+        <i class="fab fa-searchengin"></i>
+        <i class="fab fa-rockrms"></i>
+        <i class="fab fa-dribbble"></i>
+        <i class="fab fa-openid"></i>
+        <i class="fab fa-wizards-of-the-coast"></i>
+        <i class="fab fa-ioxhost"></i>
+        <i class="fab fa-reddit-alien"></i>
+        <i class="fab fa-buysellads"></i>
+        <i class="fab fa-php"></i>
+        <i class="fab fa-palfed"></i>
+        <i class="fab fa-uniregistry"></i>
+        <i class="fab fa-google-plus"></i>
+        <i class="fab fa-creative-commons-nc-jp"></i>
+        <i class="fab fa-accusoft"></i>
+        <i class="fab fa-keybase"></i>
+        <i class="fab fa-soundcloud"></i>
+        <i class="fab fa-apper"></i>
+        <i class="fab fa-cloudversify"></i>
+        <i class="fab fa-app-store-ios"></i>
+        <i class="fab fa-ubuntu"></i>
+        <i class="fab fa-centos"></i>
+        <i class="fab fa-erlang"></i>
+        <i class="fab fa-trello"></i>
+        <i class="fab fa-cpanel"></i>
+        <i class="fab fa-jsfiddle"></i>
+        <i class="fab fa-autoprefixer"></i>
+        <i class="fab fa-gg-circle"></i>
+        <i class="fab fa-js"></i>
+        <i class="fab fa-rebel"></i>
+        <i class="fab fa-js-square"></i>
+        <i class="fab fa-snapchat"></i>
+        <i class="fab fa-xing"></i>
+        <i class="fab fa-playstation"></i>
+        <i class="fab fa-houzz"></i>
+        <i class="fab fa-d-and-d"></i>
+        <i class="fab fa-raspberry-pi"></i>
+        <i class="fab fa-git-square"></i>
+        <i class="fab fa-rocketchat"></i>
+        <i class="fab fa-itunes"></i>
+        <i class="fab fa-laravel"></i>
+        <i class="fab fa-jenkins"></i>
+        <i class="fab fa-stumbleupon-circle"></i>
+        <i class="fab fa-zhihu"></i>
+        <i class="fab fa-drupal"></i>
+        <i class="fab fa-buromobelexperte"></i>
+        <i class="fab fa-wpforms"></i>
+        <i class="fab fa-fort-awesome"></i>
+        <i class="fab fa-audible"></i>
+        <i class="fab fa-affiliatetheme"></i>
+        <i class="fab fa-xing-square"></i>
+        <i class="fab fa-galactic-senate"></i>
+        <i class="fab fa-joomla"></i>
+        <i class="fab fa-quinscape"></i>
+        <i class="fab fa-weixin"></i>
+        <i class="fab fa-magento"></i>
+        <i class="fab fa-canadian-maple-leaf"></i>
+        <i class="fab fa-mandalorian"></i>
+        <i class="fab fa-python"></i>
+        <i class="fab fa-facebook-messenger"></i>
+        <i class="fab fa-sourcetree"></i>
+        <i class="fab fa-gg"></i>
+        <i class="fab fa-less"></i>
+        <i class="fab fa-fulcrum"></i>
+        <i class="fab fa-xbox"></i>
+        <i class="fab fa-sass"></i>
+        <i class="fab fa-youtube-square"></i>
+        <i class="fab fa-pinterest-square"></i>
+        <i class="fab fa-envira"></i>
+        <i class="fab fa-wpbeginner"></i>
+        <i class="fab fa-pinterest-p"></i>
+        <i class="fab fa-java"></i>
+        <i class="fab fa-vimeo-v"></i>
+        <i class="fab fa-spotify"></i>
+        <i class="fab fa-cc-apple-pay"></i>
+        <i class="fab fa-dyalog"></i>
+        <i class="fab fa-avianex"></i>
+        <i class="fab fa-viber"></i>
+        <i class="fab fa-sith"></i>
+        <i class="fab fa-first-order-alt"></i>
+        <i class="fab fa-google-plus-g"></i>
+        <i class="fab fa-medapps"></i>
+        <i class="fab fa-mastodon"></i>
+        <i class="fab fa-usps"></i>
+        <i class="fab fa-studiovinari"></i>
+        <i class="fab fa-mailchimp"></i>
+        <i class="fab fa-whatsapp-square"></i>
+        <i class="fab fa-lyft"></i>
+        <i class="fab fa-fly"></i>
+        <i class="fab fa-digg"></i>
+        <i class="fab fa-css3"></i>
+        <i class="fab fa-amilia"></i>
+        <i class="fab fa-lastfm"></i>
+        <i class="fab fa-adn"></i>
+        <i class="fab fa-linode"></i>
+        <i class="fab fa-get-pocket"></i>
+        <i class="fab fa-confluence"></i>
+        <i class="fab fa-angrycreative"></i>
+        <i class="fab fa-red-river"></i>
+        <i class="fab fa-react"></i>
+        <i class="fab fa-safari"></i>
+        <i class="fab fa-creative-commons-nd"></i>
+        <i class="fab fa-whmcs"></i>
+        <i class="fab fa-bluetooth"></i>
+        <i class="fab fa-optin-monster"></i>
+        <i class="fab fa-deskpro"></i>
+        <i class="fab fa-hornbill"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-hackerrank"></i>
+        <i class="fab fa-creative-commons-sampling"></i>
+        <i class="fab fa-creative-commons-nc"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-servicestack"></i>
+        <i class="fab fa-dochub"></i>
+        <i class="fab fa-ello"></i>
+        <i class="fab fa-npm"></i>
+        <i class="fab fa-stripe-s"></i>
+        <i class="fab fa-node-js"></i>
+        <i class="fab fa-dhl"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-resolving"></i>
+        <i class="fab fa-docker"></i>
+        <i class="fab fa-aviato"></i>
+        <i class="fab fa-algolia"></i>
+        <i class="fab fa-creative-commons-pd"></i>
+        <i class="fab fa-mendeley"></i>
+        <i class="fab fa-adversal"></i>
+        <i class="fab fa-pied-piper"></i>
+        <i class="fab fa-apple"></i>
+        <i class="fab fa-hips"></i>
+        <i class="fab fa-shopware"></i>
+        <i class="fab fa-dropbox"></i>
+        <i class="fab fa-discord"></i>
+        <i class="fab fa-shirtsinbulk"></i>
+        <i class="fab fa-ethereum"></i>
+        <i class="fab fa-vine"></i>
+        <i class="fab fa-contao"></i>
+        <i class="fab fa-google"></i>
+        <i class="fab fa-strava"></i>
+        <i class="fab fa-phabricator"></i>
+        <i class="fab fa-mixcloud"></i>
+        <i class="fab fa-flickr"></i>
+        <i class="fab fa-the-red-yeti"></i>
+        <i class="fab fa-nimblr"></i>
+        <i class="fab fa-fonticons-fi"></i>
+        <i class="fab fa-centercode"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-monero"></i>
+        <i class="fab fa-product-hunt"></i>
+        <i class="fab fa-telegram-plane"></i>
+        <i class="fab fa-creative-commons-by"></i>
+        <i class="fab fa-sticker-mule"></i>
+        <i class="fab fa-bimobject"></i>
+        <i class="fab fa-wix"></i>
+        <i class="fab fa-accessible-icon"></i>
+        <i class="fab fa-creative-commons-remix"></i>
+        <i class="fab fa-uber"></i>
+        <i class="fab fa-github"></i>
+        <i class="fab fa-draft2digital"></i>
+        <i class="fab fa-cuttlefish"></i>
+        <i class="fab fa-tumblr"></i>
+        <i class="fab fa-line"></i>
+        <i class="fab fa-mizuni"></i>
+        <i class="fab fa-angellist"></i>
+        <i class="fab fa-gitlab"></i>
+        <i class="fab fa-mix"></i>
+        <i class="fab fa-keycdn"></i>
+        <i class="fab fa-meetup"></i>
+        <i class="fab fa-microsoft"></i>
+        <i class="fab fa-angular"></i>
+        <i class="fab fa-connectdevelop"></i>
+        <i class="fab fa-jedi-order"></i>
+        <i class="fab fa-viacoin"></i>
+        <i class="fab fa-cc-amazon-pay"></i>
+        <i class="fab fa-d-and-d-beyond"></i>
+        <i class="fab fa-dev"></i>
+        <i class="fab fa-google-drive"></i>
+        <i class="fab fa-creative-commons-sa"></i>
+        <i class="fab fa-itunes-note"></i>
+        <i class="fab fa-firefox"></i>
+        <i class="fab fa-weibo"></i>
+        <i class="fab fa-opencart"></i>
+        <i class="fab fa-leanpub"></i>
+        <i class="fab fa-gofore"></i>
+        <i class="fab fa-gitter"></i>
+        <i class="fab fa-blackberry"></i>
+        <i class="fab fa-think-peaks"></i>
+        <i class="fab fa-blogger-b"></i>
+        <i class="fab fa-maxcdn"></i>
+        <i class="fab fa-cloudscale"></i>
+        <i class="fab fa-ember"></i>
+        <i class="fab fa-vimeo-square"></i>
+        <i class="fab fa-discourse"></i>
+        <i class="fab fa-btc"></i>
+        <i class="fab fa-delicious"></i>
+        <i class="fab fa-stripe"></i>
+        <i class="fab fa-phoenix-framework"></i>
+        <i class="fab fa-reddit-square"></i>
+        <i class="fab fa-black-tie"></i>
+        <i class="fab fa-slideshare"></i>
+        <i class="fab fa-apple-pay"></i>
+        <i class="fab fa-slack-hash"></i>
+        <i class="fab fa-fantasy-flight-games"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-digital-ocean"></i>
+        <i class="fab fa-android"></i>
+        <i class="fab fa-slack"></i>
+        <i class="fab fa-bluetooth-b"></i>
+        <i class="fab fa-foursquare"></i>
+        <i class="fab fa-markdown"></i>
+        <i class="fab fa-page4"></i>
+        <i class="fab fa-paypal"></i>
+        <i class="fab fa-chrome"></i>
+        <i class="fab fa-schlix"></i>
+        <i class="fab fa-skyatlas"></i>
+        <i class="fab fa-flipboard"></i>
+        <i class="fab fa-medium-m"></i>
+        <i class="fab fa-stumbleupon"></i>
+        <i class="fab fa-goodreads-g"></i>
+        <i class="fab fa-hooli"></i>
+        <i class="fab fa-kaggle"></i>
+        <i class="fab fa-creative-commons-zero"></i>
+        <i class="fab fa-atlassian"></i>
+        <i class="fab fa-bitcoin"></i>
+        <i class="fab fa-gratipay"></i>
+        <i class="fab fa-pied-piper-pp"></i>
+        <i class="fab fa-squarespace"></i>
+        <i class="fab fa-creative-commons-nc-eu"></i>
+        <i class="fab fa-usb"></i>
+        <i class="fab fa-app-store"></i>
+        <i class="fab fa-hacker-news-square"></i>
+        <i class="fab fa-galactic-republic"></i>
+        <i class="fab fa-gulp"></i>
+        <i class="fab fa-fedex"></i>
+        <i class="fab fa-acquisitions-incorporated"></i>
+        <i class="fab fa-wolf-pack-battalion"></i>
+        <i class="fab fa-yelp"></i>
+        <i class="fab fa-wpressr"></i>
+        <i class="fab fa-researchgate"></i>
+        <i class="fab fa-gitkraken"></i>
+        <i class="fab fa-imdb"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-behance"></i>
+        <i class="fab fa-viadeo-square"></i>
+        <i class="fab fa-kickstarter-k"></i>
+        <i class="fab fa-css3-alt"></i>
+        <i class="fab fa-node"></i>
+        <i class="fab fa-cc-stripe"></i>
+        <i class="fab fa-sellsy"></i>
+        <i class="fab fa-vuejs"></i>
+        <i class="fab fa-hacker-news"></i>
+        <i class="fab fa-internet-explorer"></i>
+        <i class="fab fa-typo3"></i>
+        <i class="fab fa-creative-commons-pd-alt"></i>
+        <i class="fab fa-quora"></i>
+        <i class="fab fa-ebay"></i>
+        <i class="fab fa-deviantart"></i>
+        <i class="fab fa-artstation"></i>
+        <i class="fab fa-grav"></i>
+        <i class="fab fa-phoenix-squadron"></i>
+        <i class="fab fa-elementor"></i>
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-glide"></i>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-telegram"></i>
+        <i class="fab fa-speakap"></i>
+        <i class="fab fa-staylinked"></i>
+        <i class="fab fa-osi"></i>
+        <i class="fab fa-pagelines"></i>
+        <i class="fab fa-empire"></i>
+        <i class="fab fa-fort-awesome-alt"></i>
+        <i class="fab fa-themeisle"></i>
+        <i class="fab fa-tencent-weibo"></i>
+        <i class="fab fa-twitch"></i>
+        <i class="fab fa-nintendo-switch"></i>
+        <i class="fab fa-scribd"></i>
+        <i class="fab fa-google-plus-square"></i>
+        <i class="fab fa-ups"></i>
+        <i class="fab fa-grunt"></i>
+        <i class="fab fa-asymmetrik"></i>
+        <i class="fab fa-korvue"></i>
+        <i class="fab fa-edge"></i>
+        <i class="fab fa-lastfm-square"></i>
+        <i class="fab fa-steam-symbol"></i>
+        <i class="fab fa-redhat"></i>
+        <i class="fab fa-readme"></i>
+        <i class="fab fa-nutritionix"></i>
+        <i class="fab fa-skype"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-fedora"></i>
+        <i class="fab fa-expeditedssl"></i>
+        <i class="fab fa-yandex"></i>
+        <i class="fab fa-snapchat-square"></i>
+        <i class="fab fa-viadeo"></i>
+        <i class="fab fa-joget"></i>
+        <i class="fab fa-cc-jcb"></i>
+        <i class="fab fa-hubspot"></i>
+        <i class="fab fa-fonticons"></i>
+        <i class="fab fa-first-order"></i>
+        <i class="fab fa-ravelry"></i>
+        <i class="fab fa-bity"></i>
+        <i class="fab fa-linux"></i>
+        <i class="fab fa-codiepie"></i>
+        <i class="fab fa-modx"></i>
+        <i class="fab fa-steam-square"></i>
+        <i class="fab fa-creative-commons-share"></i>
+        <i class="fab fa-steam"></i>
+        <i class="fab fa-glide-g"></i>
+        <i class="fab fa-replyd"></i>
+        <i class="fab fa-trade-federation"></i>
+        <i class="fab fa-teamspeak"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-free-code-camp"></i>
+        <i class="fab fa-windows"></i>
+        <i class="fab fa-goodreads"></i>
+        <i class="fab fa-hotjar"></i>
+        <i class="fab fa-creative-commons-sampling-plus"></i>
+        <i class="fab fa-uikit"></i>
+        <i class="fab fa-y-combinator"></i>
+        <i class="fab fa-old-republic"></i>
+        <i class="fab fa-critical-role"></i>
+        <i class="fab fa-yoast"></i>
+        <i class="fab fa-etsy"></i>
+        <i class="fab fa-500px"></i>
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-creative-commons"></i>
+        <i class="fab fa-pied-piper-alt"></i>
+        <i class="fab fa-odnoklassniki-square"></i>
+        <i class="fab fa-earlybirds"></i>
+        <i class="fab fa-penny-arcade"></i>
+        <i class="fab fa-neos"></i>
+        <i class="fab fa-forumbee"></i>
+        <i class="fab fa-git"></i>
+        <i class="fab fa-supple"></i>
+        <i class="fab fa-periscope"></i>
+        <i class="fab fa-qq"></i>
+        <i class="fab fa-firstdraft"></i>
+        <i class="fab fa-vk"></i>
+        <i class="fab fa-bandcamp"></i>
+        <i class="fab fa-google-wallet"></i>
+        <i class="fab fa-reddit"></i>
+        <i class="fab fa-megaport"></i>
+        <i class="fab fa-themeco"></i>
+        <i class="fab fa-stack-overflow"></i>
+        <i class="fab fa-jira"></i>
+        <i class="fab fa-behance-square"></i>
+        <i class="fab fa-intercom"></i>
+        <i class="fab fa-invision"></i>
+        <i class="fab fa-yahoo"></i>
+        <i class="fab fa-wikipedia-w"></i>
+        <i class="fab fa-freebsd"></i>
+        <i class="fab fa-dashcube"></i>
+        <i class="fab fa-reacteurope"></i>
+        <i class="fab fa-cc-paypal"></i>
+        <i class="fab fa-deploydog"></i>
+        <i class="fab fa-sketch"></i>
+        <i class="fab fa-superpowers"></i>
+        <i class="fab fa-amazon"></i>
+        <i class="fab fa-amazon-pay"></i>
+        <i class="fab fa-tripadvisor"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-r-project"></i>
+        <i class="fab fa-patreon"></i>
+        <i class="fab fa-opera"></i>
+        <i class="fab fa-medium"></i>
+        <i class="fab fa-vaadin"></i>
+        <i class="fab fa-pied-piper-hat"></i>
+        <i class="fab fa-tumblr-square"></i>
+        <i class="fab fa-wordpress-simple"></i>
+        <i class="fab fa-hire-a-helper"></i>
+        <i class="fab fa-kickstarter"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-blogger"></i>
+        <i class="fab fa-suse"></i>
+        <i class="fab fa-github-alt"></i>
+        <i class="fab fa-alipay"></i>
+        <i class="fab fa-vnv"></i>
+        <i class="fab fa-sellcast"></i>
+        <i class="fab fa-cc-discover"></i>
+        <i class="fab fa-ussunnah"></i>
+        <i class="fab fa-yarn"></i>
+        <i class="fab fa-diaspora"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-weebly"></i>
+        <i class="fab fa-dribbble-square"></i>
+      ]
+
+      ---
+      class: center
+      #And Things Like
+
+      .screenshots[
+        ![aeries screenshot](media/screenshots/aeries.png)
+        ![alerts screenshot](media/screenshots/alerts.png)
+        ![canvas screenshot](media/screenshots/canvas.png)
+        ![flex screenshot](media/screenshots/flex.png)
+        ![naviance screenshot](media/screenshots/naviance.png)
+      ]
+
+      ---
+      class: photo-slide
+      #What do I do?
+      - Work at UCSF
+      - On a team other developers, designers, support people
+      - Working to make the world a better place together
+
+      .center[
+      ![photo of our team](media/team.jpg)
+      ]
+
+      ---
+      class: center,photo-slide
+      #Ilios
+      ![map of ilios schools](../shared/ilios-map.png)
+
+      ???
+      - Ilios helps teach doctors, pharmacists, nurses, dentists, physical therapists, and veterinarians
+      - It's used by a few dozen schools around the world
+      - It's my small contribution to making the world a better place instead of working at a big company driven by proffit
+
+      ---
+
+      class: center, middle
+      # Open Source Software
+      <i class="big fas fa-globe"></i>
+
+      ???
+      - Open source is about writing things that anyone can use for free
+      - Aside from Ilios I contribute to tools that make the web faster
+
+      ---
+      class: middle,center
+      #Interested Yet?
+
+      ---
+      class: middle,center
+      <i class="big fas fa-dollar-sign"></i>
+      <i class="big fas fa-dollar-sign"></i>
+      <i class="big fas fa-dollar-sign"></i>
+      #Starting Salary
+      ##~$100,000
+      <i class="big fas fa-dollar-sign"></i>
+      <i class="big fas fa-dollar-sign"></i>
+      <i class="big fas fa-dollar-sign"></i>
+
+      ---
+      class: middle,center,photo-slide
+      ![Hired Salary Report](media/hired-salaries.png)
+      .footnote[hired.com State of Software Engineers]
+
+      ---
+      class: middle,center
+      #Still need to be convinced?
+
+      ---
+      class: middle,center
+      # Work from Anywhere in the World
+
+      ---
+      class: middle,center
+      # Never Set an Alarm
+
+      ---
+      class: center
+      #Collaborate with Awesome People
+
+      .avatars[
+        ![twitter profile pic of a web developer I know](media/avatars/avatar01.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar02.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar03.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar04.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar05.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar06.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar07.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar08.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar09.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar10.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar11.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar12.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar13.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar14.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar15.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar16.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar17.png)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar18.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar19.jpg)
+        ![twitter profile pic of a web developer I know](media/avatars/avatar20.jpg)
+      ]
+
+      ---
+      class: center, middle
+      <blockquote class="twitter-tweet" data-width="550" data-lang="en"><p lang="en" dir="ltr">Twitter isn’t all bad afterall 😊💜 And the Web community is so full of good people it fills my heart with joy. I’ve always felt blessed to be doing what I do and to be a part of this community. 💕</p>&mdash; Sara Soueidan (@SaraSoueidan) <a href="https://twitter.com/SaraSoueidan/status/1102288361639813120?ref_src=twsrc%5Etfw">March 3, 2019</a></blockquote>
+
+
+      ---
+      class: center,middle,loading
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true">
+        <title>Ilios Logo</title>
+        <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+      </svg>
+
+      ---
+      class: photo-slide, center, middle
+      ![ilios loading in a phone](media/ilios-phone.png)
+
+      ---
+      class: center, middle, photo-slide
+      ![typical whiteboard](media/whiteboard.jpg)
+
+      ---
+      class: photo-slide, center, middle
+      ![screenshot of code](media/code-sample.png)
+
+      ---
+      class: photo-slide
+      # <i class="big fas fa-home"></i> A Day in the Life (Working Remote)
+      - 930am Wake up, check email, checkin with team online
+      - 10am Build something, fix someting, write some code
+      - 2pm Take pupps to the park, grab something to eat, checkin with team online
+      - 8pm - 10pm learn something new, finish up code, plan for tomorrow
+
+      .center[
+        ![my dog jasper](media/home-jasper.jpg)
+      ]
+
+      ---
+      # <i class="big fas fa-building"></i> A Day in the Life (In the office)
+      - 9:30am Get in, Say hello to foks, and grab some coffee with my team, standup meeting
+      - 10am Meet with users, planning on the whiteboard, organizing
+      - 12pm Lunch with team
+      - 1pm Build something, fix someting, write some code
+      - 4pm Go Home, Relax
+      - 10pm - midnight build something
+
+      ---
+      class: center, middle
+      # Special Events
+      <i class="big fas fa-bowling-ball"></i>
+      <i class="big fas fa-bullseye"></i>
+      <i class="big fas fa-gamepad"></i>
+
+      ---
+      class: center, middle
+      # Tools of our Team
+      <i class="big fab fa-slack"></i>
+      <i class="big fab fa-github"></i>
+      <i class="big fab fa-twitter"></i>
+
+      ---
+      #Typical Entry Level Responsibilities
+      - Learn the tools of your team
+      - Plan and execute basic features, bug fixes
+      - Ask Questions. Ask Questions. Seriously Ask Questions
+
+      ???
+      - This is a young field with an apprenticeship style education, take advantage of your team and ask them everything
+
+      ---
+      class: center,middle
+      #What makes a good developer
+
+      ???
+      - Confidence to put your work out into the world
+      - Working with others
+      - Desire to solve problems and figure stuff out
+
+      ---
+      class: center,middle
+
+      <blockquote class="twitter-tweet" data-width="550" data-lang="en"><p lang="en" dir="ltr">The most important skill to have as a programmer is the ability to teach yourself new things effectively and efficiently.<br><br>You&#39;re going to be constantly growing and picking up new technologies. The ability to do that is more important than any individual tool or technology.</p>&mdash; Ali Spittel 💁 (@ASpittel) <a href="https://twitter.com/ASpittel/status/1101165138361479169?ref_src=twsrc%5Etfw">February 28, 2019</a></blockquote>
+
+      ---
+      class: center,middle
+
+      <blockquote class="twitter-tweet" data-width="550" data-lang="en"><p lang="en" dir="ltr">Biggest misconception people have about programmers is that we work with 0s and 1s all day.<br><br>I&#39;m sorry, but<br>01100111 01101001 01100010 01100010 01100101 01110010 01101001 01110011 01101000 <br>is gibberish to me too...</p>&mdash; Yechiel K (@yechielk) <a href="https://twitter.com/yechielk/status/1104557520671133697?ref_src=twsrc%5Etfw">March 10, 2019</a></blockquote>
+
+      ---
+      class: center, middle
+
+      <blockquote class="twitter-tweet" data-width="550" data-lang="en"><p lang="en" dir="ltr">I went from being a competent lawyer to being an incompetent coder in a matter of weeks. After 2 years in this industry coding still isn&#39;t my strongest skill. But sucking at something taught me a lesson I will never forget: I need to overcome my own ego on an almost daily basis.</p>&mdash; Sonia Gupta (@soniagupta504) <a href="https://twitter.com/soniagupta504/status/1103473902024454145?ref_src=twsrc%5Etfw">March 7, 2019</a></blockquote>
+
+      ---
+      class: center,middle
+      #College or Not?
+
+      ---
+      class: photo-slide,center,middle
+      #Formal Education
+      ![chart showing breakdown of education](media/education.png)
+
+      .footnote[Stackoverflow 2018 Developer Survey]
+
+      ---
+      class: photo-slide,center,middle
+      #Typical Majors
+      ![majors developer have](media/majors-developers-have.png)
+
+      .footnote[Stackoverflow 2018 Developer Survey]
+
+      ???
+      - Many of the best developers I know have degrees in music, film, history, or something else
+      - But it takes a long time to learn to code, whatever your major you should be practicing every day
+
+      ---
+      class: photo-slide,center,middle
+      #How Developers Learn
+      ![how developers learn](media/how-to-learn.png)
+
+      .footnote[Stackoverflow 2018 Developer Survey]
+
+      ---
+      class: center,middle
+      #What I love about my job
+      <i class="big fas fa-grin-hearts"></i>
+      ???
+      - I get to build things
+      - I built this podium, but it's not great and it could be better
+      - With software you can change it even after you finish
+      - I get to make a difference
+
+      ---
+      class: center,middle
+      #What I hate about my job
+      <i class="big fas fa-hand-middle-finger "></i>
+
+      ???
+      - It's impossible to know even a small part of everything
+      - It's easy to feel like an imposture
+
+      ---
+      class: center,middle
+      #Who's Hiring?
+
+      ???
+      - Right now everyone
+      - Probably won't last forever
+      - But there is a lot of untapped market
+      - Probably the last job that will be replaced with robots
+      - Increasing Options for Remote will probably drive down wages
+      - Success Advice
+      - Related Fields
+      - Do it over again (I would start earlier, got stuck thinking this wasn't for me)
+
+      ---
+      class: center, middle
+      #How to get started today
+      ???
+      - Build your own website
+      - Learn all the parts
+      - Make it whatever you want it to be
+      - Build websites for anyone you can find as they challenge you to do new things try and do them
+      - Your first several tries are going to be pretty bad, keep at it
+      - Figure out what you enjoy (design, making things fit together, talking to users) there are a lot of different jobs under this umbrella
+
+      ---
+      class: center,middle
+      <blockquote class="twitter-tweet" data-width="550" data-lang="en"><p lang="en" dir="ltr">I just had a full circle moment in an Uber. I remember driving for Lyft a little over a year ago and picking up this guy at Netflix and feeling so inspired after my convo with him. My driver heard me on a call and just asked what I did at Netflix. It hit me...I’m now that guy. 🙏🏾</p>&mdash; Kevin J. Stuckey (@KevinJStuckey) <a href="https://twitter.com/KevinJStuckey/status/1103843150991220736?ref_src=twsrc%5Etfw">March 8, 2019</a></blockquote>
+
+      ---
+      class: center, middle, title-slide
+
+      ## Discussion / Questions?
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i>jrjohnson <br />
+        <i class="fab fa-twitter"></i>jrjohnson_ <br />
+        ]
+
+        .avatar[
+        ![Jon's avatar](../shared/avatar.jpg)
+        ]
+      ]
+
+
+      ???
+
+      # Thanks
+      - AHS for the invitation (Go Dons!)
+      - UCSF Library
+      - Ilios Team
+      # Ask me a question and get yourself some candy!
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: true
+      },
+      slideNumberFormat: '',
+      countIncrementalSlides: false,
+      ratio: '16:9',
+      highlightStyle: 'railscasts'
+    });
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
