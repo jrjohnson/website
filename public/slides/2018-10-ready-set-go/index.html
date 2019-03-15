@@ -222,7 +222,7 @@
       class: center, middle, title-slide
       # Ready Set Go
       ## Loading Single Page Apps Fast
-     
+
       ### Jon Johnson
 
       .boxes[
@@ -230,7 +230,7 @@
         <i class="fab fa-github"></i>jrjohnson <br />
         <i class="fab fa-twitter"></i>jrjohnson_ <br />
         ]
-        
+
         .avatar[
         ![Jon's avatar](media/avatar.jpg)
         ]
@@ -252,19 +252,19 @@
         - Built by UCSF, but available for free (and supported)
         - Installed at medical, dental, pharmacy, nursing, and even veterinary schools around the world
         - Been through several revisions since then, but in 2014 we decided to rewrite it
-      
+
       ---
       class: center,middle
       #Our Problem
       ![ilios map](media/ilios-map.png)
-  
+
       ???
       - Ilios is an on premiss hosted solution
       - Most of our partners are non-technical staff
       - When supported by campus IT organizations updates are infrequent
-      - We want to be able to ship UI updates very frequently so we separate the code base 
+      - We want to be able to ship UI updates very frequently so we separate the code base
       - Some of this is familiar territory, some of it won't be but I hope you can see where our answers will fit with your questions
-      
+
       ---
       class: center,logos
       #Our Solution
@@ -283,7 +283,7 @@
 
       .left-column[
       ## <i class="huge fas fa-database"></i>
-      ## REST API 
+      ## REST API
       ]
       .right-column[
       ## <i class="huge fas fa-desktop"></i>
@@ -295,7 +295,7 @@
       - The PHP app is responsible for loading the SPA but it's easy to update
       - Build and test both systems independently
       ---
-      
+
       # What is a single page app?
 
       > A single-page application (SPA) is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In a SPA, either all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load,[1] or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
@@ -305,7 +305,7 @@
       ---
       class: middle,center
       <i class="huge fas fa-frown-open"></i>
-      
+
       ---
       class: high-contrast
       # No.  Seriously.
@@ -425,7 +425,7 @@
       ```
 
       ---
-      # Webpack Encore 
+      # Webpack Encore
       ```html
       <!DOCTYPE html>
       <html>
@@ -441,8 +441,8 @@
       class: center,middle
       # Default User Experience
 
-      ### There is a load cost for single page apps and  you pay it upfront. 
-      
+      ### There is a load cost for single page apps and  you pay it upfront.
+
       ---
       class: center, middle
       ![default single page app is a blank screen](media/default-spa.png)
@@ -457,9 +457,9 @@
 
       ???
         - For our faculty who work around the world we have to worry about:
-        - airplane wifi latency and the round trip latency from working 20 hops away in China or Africa. 
-        - Even the speed of light can seem slow when it has to travel most of the way around the globe. 
-      
+        - airplane wifi latency and the round trip latency from working 20 hops away in China or Africa.
+        - Even the speed of light can seem slow when it has to travel most of the way around the globe.
+
       ---
       class: center,middle
       # No one should feel like they're wasting their time
@@ -479,7 +479,7 @@
       class: center, middle
       # First Fix Everything Else!
       ## <i class='fas fa-smile'></i>
-      
+
       ---
       class: blackfire-logo-list
       # @todo
@@ -502,7 +502,7 @@
       .center[
         # Consider loading in two parts
       ]
-      
+
       .left-column[
         ## First Time Visitor
         ### Empty Cache
@@ -522,7 +522,7 @@
         ### Willing to Wait (but shouldn't have to)
         <i class="huge fas fa-grin-hearts"></i>
       ]
-      
+
       ---
       class: center, middle
       # The Second Visit
@@ -535,7 +535,7 @@
       ---
       class: center
       # The First Visit
-      
+
       .boxes[
         ## <i class='fas fa-less-than'></i> Send Less
         ## <i class='fas fa-shipping-fast'></i> Send Fast
@@ -545,18 +545,18 @@
 
       ---
       # <i class='fas fa-less-than'></i> Send Less
-      
+
       ## Server Side Rendered
 
       ???
-      - Javascript is rendered on the server and only html is sent to the client. 
+      - Javascript is rendered on the server and only html is sent to the client.
       - Interaction follows a few (or many) seconds behind
 
       --
       ## Count those bytes
 
       ???
-      - I started building websites in 1995 1hen 10K used to be our limit. 
+      - I started building websites in 1995 1hen 10K used to be our limit.
       For index.html it's worth targeting that again.
 
       --
@@ -566,27 +566,27 @@
       - Many things are not needed on page load. We use an excellent library Papa Parse for processing CSV uploaded,
       but it's only needed in a few places. Instead of sending it right away we wait until it's needed and load it then.
       - Dropbox password strength zxcvbn 420kb compressed and minified
-      
+
       --
       ## Take advantage of code splitting
 
       ???
       - Code splitting is a technique in many frameworks to statically analyze your code and only send what is needed
-      to render the first page. This can drastically reduce the JS needed on first page load, but it must be tested 
+      to render the first page. This can drastically reduce the JS needed on first page load, but it must be tested
       thoroughly to ensure it doesn't leave users with a broken page when the follow a link deep into your app.
 
       --
       ## Compression matters
 
       ???
-      - For sure make sure your assets are being sent gzipped, but if you're only supporting modern browsers 
+      - For sure make sure your assets are being sent gzipped, but if you're only supporting modern browsers
       consider a switch to *brotli* for even better compression and performance.
 
       --
       .whitespace[]
       .whitespace[]
       .whitespace[]
-      
+
       .center[
         ### <i class='fas fa-file-medical-alt'></i> In trying to save milliseconds. Kilobytes matter.
       ]
@@ -723,7 +723,7 @@
 
       ???
       - Link with `rel="stylesheet"` can be in the body https://html.spec.whatwg.org/multipage/links.html#body-ok
-      
+
       ---
       # Javascript should load, not wait
       ```html
@@ -750,7 +750,7 @@
 
       ---
       # Don't forget the noscript
-      ```html 
+      ```html
       <link rel="stylesheet" href="/assets/app.css">
       <noscript>This Site Requires Javascript!</noscript>
       ```
@@ -758,7 +758,7 @@
       ???
       - Noscript tag can be styled
       - Make sure it sits on top of your loader or it may never be visible
-      
+
       ---
       # Handle Parse Errors
       ```html
@@ -800,18 +800,18 @@
       // Cache-Control: no-cache, public
       // ETag: "2bff8fd31f3a1f11275cd2cff55a0491e2e62da4"
       ```
-      
+
       ???
       - With single page apps we get to play in the extremes
-      - Assets that are fingerprinted can be cached forever. The fingerprint is the cache buster since 
+      - Assets that are fingerprinted can be cached forever. The fingerprint is the cache buster since
       it is based on the contents of the file.
       - no-cache doesn't mean don't cache. It means the client has to ask if their cached copy is OK.
-      - Symfony can take the request, compare it to the response and send back an empty 304 if 
+      - Symfony can take the request, compare it to the response and send back an empty 304 if
       no changes have been made
       - I like to use symfony to serve my assets, if I was better at apache configuration maybe
       I would feel differently, but in an app we distribute and others configure I like building the
       best optimizations into the code itself.
-      
+
       ---
       class: center,middle
       # <i class='fas fa-gas-pump'></i> Fill that cache (index.html edition)
@@ -840,7 +840,7 @@
       ### Bonus: This works offline!
 
       ---
-      # <i class='fas fa-paper-plane'></i> Service Workers <i class='fas fa-paper-plane'></i> 
+      # <i class='fas fa-paper-plane'></i> Service Workers <i class='fas fa-paper-plane'></i>
       ## The Bad Parts
 
       --
@@ -851,7 +851,7 @@
 
       --
       ### Even after you replace a worker it will still respond to the very next request
-      
+
       --
       ### Syntax is.... um... <i class='fas fa-meh'></i>
 
@@ -877,13 +877,13 @@
       ???
       - Even on a fast network the initial latency of creating the connection can be noticeable
       - Plus they are the first step into the exciting world of making your app work offline
-      
+
       ---
       class: center,middle
       # Bonus content
       ## PWA
       <i class='fas fa-quote-left'></i>
-      Progressive Web Apps are installable and live on the user's home screen, without the need for an app store. They offer an immersive full screen experience with help from a web app manifest file and can even re-engage users with web push notifications. 
+      Progressive Web Apps are installable and live on the user's home screen, without the need for an app store. They offer an immersive full screen experience with help from a web app manifest file and can even re-engage users with web push notifications.
       <i class='fas fa-quote-right'></i>
 
       .footnote[https://developers.google.com/web/progressive-web-apps/]
@@ -913,7 +913,7 @@
 
       ---
       class: center, middle, title-slide
-      
+
       ## Discussion / Questions?
 
       .boxes[
@@ -921,7 +921,7 @@
         <i class="fab fa-github"></i>jrjohnson <br />
         <i class="fab fa-twitter"></i>jrjohnson_ <br />
         ]
-        
+
         .avatar[
         ![Jon's avatar](media/avatar.jpg)
         ]
@@ -929,9 +929,9 @@
 
       Slides at: https://jrjohnson.github.io/talks/2018-10-ready-set-go-sflive.html
 
-      
+
       ???
-      
+
       # Thanks
       - Symfony for loving PHP and our sponsors!
       - UCSF Library

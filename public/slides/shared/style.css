@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+body {
+  font-family: 'Droid Serif';
+}
+.remark-slide-content {
+  background-color: #fffcf3;
+  color: #333;
+}
+.remark-slide {
+  border: 20px solid #506380;
+  box-sizing: border-box;
+}
+a, a:hover, a:visited {
+  color: grey;
+}
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+h1 {
+  color: #F26D04;
+}
+h2, h3, h4, h5 {
+  color: #0071AD;
+}
+h1, h2, h3, h4, h5 {
+  margin: .5rem;
+}
+.photo-slide img {
+  max-height: 75%;
+  max-width: 75%;
+  border-radius: 3%;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.footnote {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-style: italic;
+  font-size: .8em;
+}
+.boxes {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  height: 50vh;
+  text-align: center;
+}
+.boxes .icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: right;
+}
+.boxes .avatar {
+  margin-left: 1rem;
+  text-align: left;
+}
+.title-slide .boxes {
+  height: 30%;
+}
+.avatar img {
+  border-radius: 50%;
+}
+.multi-column ul {
+  columns: 2;
+}
+.twitter-tweet {
+  margin: auto;
+}
+.left-column {
+  width: 45%;
+  float: left;
+  padding-top: 1em;
+}
+.right-column {
+  width: 45%;
+  float: right;
+  padding-top: 1em;
+}
+i.huge, svg.huge {
+  font-size: 20rem;
+}
+.high-contrast {
+  color: rgb(155, 155, 155);
+}
+.high-contrast strong {
+  color: #0071AD;
+  font-size: 1.5rem;
+}
+.grey {
+  color: rgb(155, 155, 155);
+}
+.whitespace {
+  display: block;
+  height: 1rem;
+}
