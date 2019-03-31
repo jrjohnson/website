@@ -1,77 +1,53 @@
 .splash-screen {
   place-self: center;
   width: 80%;
-  & nav ul {
+
+  & h1 {
+    font-size: 5rem;
+    text-align: right;
+  }
+
+  & nav {
     display: grid;
     gap: 1rem;
     grid-template-areas:
-      'one two three'
-      'four five six'
-      'seven eight nine';
+      'top top top'
+      'left left right'
+      'left left right'
+      'bottom bottom bottom';
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 31%);
-    list-style-type: none;
-    padding: 0;
+    grid-template-rows: repeat(3, 31%) 25%;
 
-    & .avatar {
+    & img {
       border-radius: 50%;
+      grid-area: right;
       padding: 5px;
+      place-self: right;
     }
 
-    & li {
-      font-size: 5rem;
+    & ul {
+      list-style-type: none;
+      padding: 0;
+
+      & .avatar {
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      & li {
+        font-size: 5rem;
+      }
     }
 
-    & li:nth-of-type(1) {
-      grid-area: five;
-      place-self: center;
-      text-align: center;
+    & ul:nth-of-type(1) {
+      grid-area: left;
     }
 
-    & li:nth-of-type(2) {
-      grid-area: four;
-      justify-self: end;
-      align-self: center;
-    }
-
-    & li:nth-of-type(3) {
-      grid-area: one;
-      justify-self: end;
-      align-self: end;
-    }
-
-    & li:nth-of-type(4) {
-      grid-area: two;
-      justify-self: center;
-      align-self: end;
-    }
-
-    & li:nth-of-type(5) {
-      grid-area: three;
-      justify-self: start;
-      align-self: end;
-    }
-
-    & li:nth-of-type(6) {
-      grid-area: six;
-      justify-self: start;
-      align-self: center;
-    }
-
-    & li:nth-of-type(7) {
-      grid-area: seven;
-      justify-self: end;
-      align-self: start;
-    }
-    & li:nth-of-type(8) {
-      grid-area: eight;
-      justify-self: center;
-      align-self: start;
-    }
-    & li:nth-of-type(9) {
-      grid-area: nine;
-      justify-self: start;
-      align-self: start;
+    & ul:nth-of-type(2) {
+      display: flex;
+      flex-direction: row;
+      grid-area: bottom;
+      justify-content: space-around;
     }
   }
 }
