@@ -4,3 +4,6 @@
   --link-blue: rgb(11, 11, 192);
   --text-purple: rgb(59, 58, 80);
 }
+
+@custom-media --small-viewport (max-width: 1000px);
+

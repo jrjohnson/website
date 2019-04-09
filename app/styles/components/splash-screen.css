@@ -5,6 +5,11 @@
   & h1 {
     font-size: 5rem;
     text-align: right;
+
+    @media (--small-viewport) {
+      font-size: 3rem;
+      text-align: center;
+    }
   }
 
   & nav {
@@ -18,24 +23,30 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 31%) 25%;
 
+    @media (--small-viewport) {
+      display: flex;
+      flex-direction: column;
+    }
+
     & img {
       border-radius: 50%;
       grid-area: right;
+      height: 300px;
       padding: 5px;
       place-self: right;
+      width: 300px;
+      @media (--small-viewport) {
+        height: 200px;
+        width: 200px;
+      }
     }
 
     & ul {
       list-style-type: none;
       padding: 0;
 
-      & .avatar {
-        border-radius: 50%;
-        padding: 5px;
-      }
-
       & li {
-        font-size: 5rem;
+        font-size: 2rem;
       }
     }
 
