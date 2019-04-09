@@ -16,14 +16,11 @@ Experience in enterprise web application development using PHP, Javascript, JSON
 
 ## Technical Expertise
 
-* EmberJs
-* Symfony
 * PHP
 * Javascript ES2018
+* EmberJs
+* Symfony
 * Test Driven Development
-* Enterprise Application Development
-* Doctrine ORM
-* SQL
 * Open Source Development
 
 ------
@@ -48,11 +45,6 @@ Experience in enterprise web application development using PHP, Javascript, JSON
 	: [ember-noscript](https://github.com/jrjohnson/ember-noscript)
 
 	: [ember-fontawesome](https://github.com/FortAwesome/ember-fontawesome)
-	: [ember-cli-password-strength](https://github.com/elwayman02/ember-cli-password-strength)
-
-* Other
-	: [Jekyll Website](https://github.com/ilios/ilios.github.io)
-	: [Netlify Build Image](https://github.com/netlify/build-image/pull/165)
 
 -------
 
