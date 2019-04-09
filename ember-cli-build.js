@@ -9,10 +9,11 @@ module.exports = function(defaults) {
         enabled: true,
         plugins: [
           { module: require('postcss-import') },
+          { module: require('postcss-custom-media') },
+          { module: require('postcss-nesting') },
           { module: require('cssstats') },
           { module: require('postcss-stats-reporter') },
           { module: require('postcss-reporter') },
-          { module: require('postcss-nesting') },
         ]
       },
       filter: {

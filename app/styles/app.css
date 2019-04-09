@@ -1,4 +1,4 @@
-@import "colors.css";
+@import "variables.css";
 @import "layout/html.css";
 @import "layout/body.css";
 @import "components/post-list.css";
