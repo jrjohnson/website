@@ -1,9 +1,12 @@
 :root {
   --background-color: #506380;
+  --base-font-size: 20px;
+  @media (--small-viewport) {
+    --base-font-size: 16px;
+  }
   --body-background-color: #fffcf3;
   --link-blue: rgb(11, 11, 192);
   --text-purple: rgb(59, 58, 80);
 }
 
 @custom-media --small-viewport (max-width: 1000px);
-
