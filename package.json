@@ -21,7 +21,7 @@
     "@ember/optional-features": "^0.7.0",
     "@fortawesome/ember-fontawesome": "^0.1.13",
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/pro-solid-svg-icons": "^5.7.2",
     "autoprefixer": "^9.4.9",
     "broccoli-asset-rev": "^3.0.0",
