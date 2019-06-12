@@ -52,7 +52,7 @@
     "ember-source": "~3.10.0",
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^9.0.1",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^9.15.8",
     "loader.js": "^4.7.0",
     "luxon": "^1.16.0",
     "postcss-custom-media": "^7.0.8",
