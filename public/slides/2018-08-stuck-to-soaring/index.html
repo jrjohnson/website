@@ -83,7 +83,7 @@
       class: center, middle, title-slide
       # From Stuck to Soaring
       ## Taking Aim at Continuous Delivery
-     
+
       ### Jon Johnson
 
       .boxes[
@@ -92,15 +92,15 @@
         <i class="fab fa-slack"></i>jrjohnson-ucsf <br />
         <i class="fab fa-twitter"></i>jrjohnson_ <br />
         ]
-        
+
         .avatar[
         ![Jon's avatar](media/avatar.jpg)
         ]
       ]
 
-      Slides at: https://jrjohnson.github.io/talks/2018-08-stuck-to-soaring-uccsc.html
+      Slides at: https://jrjohnson.dev/talks/2018-08-stuck-to-soaring-uccsc.html
 
-      
+
       ???
       # Who am I?
       - Web developer [@ucsf_library](https://twitter.com/ucsf_library) (PHP, Javascript)
@@ -122,10 +122,10 @@
       ???
       - Ilios was built on code igniter and YUI 2
       - Simple Bugs were taking a long time to fix and supporting new browsers required a lot of testing
-      - A few months into my tenure I was talking about an issue that only popped up in IE11 
-        and Sascha asked me to start thinking about replacing the UI entirely to get our from under the weight 
+      - A few months into my tenure I was talking about an issue that only popped up in IE11
+        and Sascha asked me to start thinking about replacing the UI entirely to get our from under the weight
         of YUI.
-      
+
       ---
       class: center, middle
       # Fast Forward to 2018!
@@ -155,7 +155,7 @@
       class: center, middle
       # How?
       --
-      
+
       .boxes[
         ## Test all the things!
         ## Automate all the things!
@@ -174,7 +174,7 @@
       ???
       - 3 developers, 1 support. .5 project manager
       - Send people to Sascha's talk It's the People People at 8:30am tomorrow
-      
+
       ---
       class: center, middle
       # Seriously a rewrite?
@@ -194,12 +194,12 @@
 
       ???
       - At some point paying down debt no longer makes sense
-      - But it only makes sense to declare bankruptcy if you can build it again without 
+      - But it only makes sense to declare bankruptcy if you can build it again without
       incurring the exact same debt again.
 
       ---
       class: center, middle
-      # Confidence 
+      # Confidence
 
       ???
       - Owners should be confident in each release
@@ -212,7 +212,7 @@
       # Tests Bring Confidence
 
       <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you&#39;re scared to deploy on Fridays, you should be scared to deploy ever. <br><br>Don&#39;t you have tests? Backups? Roll back? Come on.</p>&mdash; Jessica Mauerhan (@JessicaMauerhan) <a href="https://twitter.com/JessicaMauerhan/status/1022901553479512064?ref_src=twsrc%5Etfw">July 27, 2018</a></blockquote>
-      
+
       ---
       class: center, middle
       # Speed Brings Confidence
@@ -220,7 +220,7 @@
       --
 
       >A thing is needed... a thing is done.
-      
+
       --Sascha Cohen
 
       ???
@@ -234,7 +234,7 @@
 
       ???
       - I knew we could do do software as infrastructure because of Eric Bolen's talk at UCCSC
-      - I knew we didn't need to take it too seriously to do agile well because Judy Dobry's UCCSC talk. 
+      - I knew we didn't need to take it too seriously to do agile well because Judy Dobry's UCCSC talk.
       - I knew we didn't need to be all in one place to do development well because Seth Roby's talk
       - I knew we needed to take accessibility seriously because of Lucy Greko's talk.
       - I knew we could sell hosting to other schools because of Tom Andrioloa's talk.
@@ -245,7 +245,7 @@
       ### You can do this stuff!
       ???
       - If you take nothing else home form this talk remember this:
-      If there is one lesson I learn over and over again from this conference it is that it's possible to do so  much with so little. 
+      If there is one lesson I learn over and over again from this conference it is that it's possible to do so  much with so little.
       We, as a group, build incredible things all the time.
 
 
@@ -254,12 +254,12 @@
       # Let's Talk about tests
 
       ???
-      - I've never met anyone who didn't want to ship well tested quality software. So why don't we all? It's a lot of work. Start small. Make writing tests easy. Spend a lot if time on your test harness. You're the user. Focus on your experience. 
+      - I've never met anyone who didn't want to ship well tested quality software. So why don't we all? It's a lot of work. Start small. Make writing tests easy. Spend a lot if time on your test harness. You're the user. Focus on your experience.
       - I'm incredibly lazy and super forgetful so I need the computer to handle checks.
       - I'm sloppy and I can't spell
       - Tests also include code style rules
       - You can do Test Driven Development or Test Reminder Development or Write Tests When Done Development, just write the tests
-      
+
       ---
       class: center, middle
       # Tests are a Speed Multiplier
@@ -306,7 +306,7 @@
 
       ---
       class: center, middle
-      # Code Review 
+      # Code Review
 
       ![code review where a change is requested](media/change-requested.png)
 
@@ -320,7 +320,7 @@
 
       ---
       class: center, middle
-      # Code Review 
+      # Code Review
       ![review that just says something nice](media/say-something-nice.png)
 
       ???
@@ -328,22 +328,22 @@
 
       ---
       class: center, middle
-      # Code Review 
+      # Code Review
       ![lackadaisical code review with a comment that tests will be sufficient](media/lackadaisical-review.png)
 
       ???
       - Require a review, but dont' require a good one
-      
+
       ---
       class: center, middle
       # Functional Review
-      
+
       ![functional review comment says click tests look fine](media/functional-review.png)
 
       ???
-      - Every change needs a testable build 
+      - Every change needs a testable build
       - We automate this with Netlify
-    
+
       ---
       class: center, middle
       # Continuous Integration / Delivery
@@ -357,15 +357,15 @@
       ]
 
       ???
-      - CI / CD have buzzword aspirations for sure 
+      - CI / CD have buzzword aspirations for sure
       - Loosely Integration is the process of constantly testing changes
-      - Always be merging - we should always keep our `master` branch deployable; that means 
-      at any given moment we're sure we can ship master to production. 
+      - Always be merging - we should always keep our `master` branch deployable; that means
+      at any given moment we're sure we can ship master to production.
       - continuous delivery generally means that every change is immediately sent to production
-      - We don't do continuous delivery at all. What we do instead is ensure that we *could* deliver 
-      at any time very rapidly. We're all setup for automated delivery, but we hold off on shipping releases 
-      until we accumulate enough meaningful changes. Usually this happens at the end of the week, but it could 
-      happen any time. 
+      - We don't do continuous delivery at all. What we do instead is ensure that we *could* deliver
+      at any time very rapidly. We're all setup for automated delivery, but we hold off on shipping releases
+      until we accumulate enough meaningful changes. Usually this happens at the end of the week, but it could
+      happen any time.
 
       ---
 
@@ -401,13 +401,13 @@
 
       --
       ## and sometimes money!
-      
+
       ---
       class: center, middle
       # Separate Release Cycles
       ???
       - Frontend can be released *way* more often at no institutional cost
-      
+
       ---
       class: center, middle
       # Building on a solid foundation brings confidence
@@ -420,13 +420,13 @@
       - Prominent testing documentation
       - Up to date and community maintained documentation
       - We knew we wouldn't have to document our tools
-      - The more integrated the framework the easier it is to hire productive people 
+      - The more integrated the framework the easier it is to hire productive people
       - STAY UP TO DATE (semver, release plans, BC promises)
 
       ---
       class: center, middle
       # Let's Talk About Agile
-      
+
       ???
       - No one thinks they're doing agile exactly right. You are!
 
@@ -447,13 +447,13 @@
       ***Responding to change*** over following a plan
 
       ???
-      - There is *nothing* in here about sprint planning, celebrations, kanban boards, or scrum masters; while 
-      these things *can* and *do* have a place in many organizations they aren't required and might not 
-      even be right for you. 
+      - There is *nothing* in here about sprint planning, celebrations, kanban boards, or scrum masters; while
+      these things *can* and *do* have a place in many organizations they aren't required and might not
+      even be right for you.
 
       ---
       class: center, middle, title-slide
-      
+
       ## Discussion / Questions?
 
       .boxes[
@@ -462,22 +462,22 @@
         <i class="fab fa-slack"></i>jrjohnson-ucsf <br />
         <i class="fab fa-twitter"></i>jrjohnson_ <br />
         ]
-        
+
         .avatar[
         ![Jon's avatar](media/avatar.jpg)
         ]
       ]
 
-      Slides at: https://jrjohnson.github.io/talks/2018-08-stuck-to-soaring-uccsc.html
+      Slides at: https://jrjohnson.dev/talks/2018-08-stuck-to-soaring-uccsc.html
 
-      
+
       ???
-      
+
       # Thanks
       - UCCSC
       - Library
       - Ilios Team
-        
+
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>

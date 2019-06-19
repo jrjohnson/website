@@ -75,9 +75,9 @@
   <body>
     <textarea id="source" style="display: none;">
       class: center, middle
-      # Deliver Content to Students in Moodle, Canvas, and Sakai 
+      # Deliver Content to Students in Moodle, Canvas, and Sakai
       ## Using AWS Lambda and LTI
-      
+
       ### Jon Johnson
       .boxes[
         .icons[
@@ -85,62 +85,62 @@
         <i class="fab fa-slack"></i>jrjohnson-ucsf <br />
         <i class="fab fa-twitter"></i>jrjohnson_ <br />
         ]
-        
+
         .avatar[
         ![Jon's avatar](media/avatar.jpg)
         ]
       ]
 
-      Slides at: https://jrjohnson.github.io/talks/2018-08-lti-lambda-uccsc.html
-      
+      Slides at: https://jrjohnson.dev/talks/2018-08-lti-lambda-uccsc.html
+
       ---
       class: center, middle
-      
+
       # Who are you?
-      
+
       ### Last summer a brand new Learning Tools Interoperability (LTI) application was rolled out at UCSF to connect students using our learning management system (Moodle) to their class schedules. Leveraging the LTI standard, Amazon’s Lambda serverless architecture, and the Ilios REST API this integration was built and rolled out in just few weeks with mission critical reliability and scalability. Come and see how we brought together these services to address a long standing student issue and learn how you can duplicate this effort on campuses running Canvas, Moodle or any other LMS that supports the LTI standard.
-      
+
       ---
       class: center, middle
       # Who am I?
-      
+
       ???
       - Web developer in the CKM (UCSF Library) (PHP, Javascript)
       - Technical lead for the Ilios Project open source curriculum management system
       for health science education. (http://iliosproject.org)
-      
+
       ---
-      
+
       # What is Ilios
-      
+
       - Curriculum management system for health science education. (http://iliosproject.org)
       - Deployed at dozens of medical schools on 5 continents
       - Built with partners from Medicine, Library, Pharmacy, Dentistry, Global Health, UC Irvine.
       - Supporting community partners in Nursing, Medbiquitous, Stanford, Vanderbilt
-      
+
       .center[![map of international Ilios schools](media/ilios-map.png)]
-      
+
       ---
-      
+
       # What is the Collaborative Learning Environment (CLE)
-      
+
       - Open source Moodle learning platform
       - UCSF's Learning Management System for Students
       - Accessed Daily by Students for Course Information and Activities
-      
+
       .center[![cle homepage](media/cle.png)]
-      
+
       ---
       class: center, middle
       # What were we trying to do?
-      
+
       ## What is the point of this talk?
-      
+
       ### Why was this worth doing?
-      
+
       ???
       - Lots of requests from students and faculty to have access to more Ilios data
-      - Display schedule and learning material data to students in the CLE 
+      - Display schedule and learning material data to students in the CLE
       - Replace an existing calendar implementation
       - Re-use as much code as possible
       - Better Authentication Flow
@@ -148,23 +148,23 @@
       - Shareable Implementation
       - Less Developer Effort to maintain
       - Logout of Moodle leads to Logout of Ilios
-      
+
       ---
-      
+
       # The **original** embedded calendar
-      
+
       .center[![events loading](media/loadingevents.png)]
-      
+
       ---
-      
+
       # The **original** embedded calendar
-      
+
       .center[![calendar loading](media/loadingcalendar.png)]
-      
+
       ---
-      
+
       # Loading Ilios Calendar... <i class='fa fa-spinner fa-spin'></i>
-      
+
       ```javascript
       attemptIliosAuthentication(loginUrl, shibbolethLoginUrl){
         let iframe = jQuery('<iframe>', {
@@ -187,61 +187,61 @@
         }, 1000);
       ```
       ???
-      Little secret: in my experience no good code is ever found inside a 
+      Little secret: in my experience no good code is ever found inside a
       javascript interval.
-      
+
       And anytime you see the word *Semaphore* just walk away.
-      
+
       ---
-      
+
       # Loading Ilios Calendar... <i class='fa fa-spinner fa-spin'></i>
-      
+
       .center[![events loading](media/embeddedflow.png)]
-      
+
       ???
       - iFrame is created and bounced back and forth for login
       - Once a Session Cookie exists in the browser the main thread will find it
       - When a user logs out of Moodle but does not close their browser the cookie stays
-      
+
       ---
       # The **original** embedded calendar
-      
+
       .center[![loaded calendar with circle around text](media/loadedcalendar.png)]
-      
+
       ???
       - We want to provide features here not have students click around
-      
-      
+
+
       ---
-      
+
       # Our Solution
-      
+
       .boxes[
         ###Leverage the LTI standard to authenticate sessions
         ###Response to LTI requests with Node.js in AWS Lambda
         ###Redirect user with a token to an AWS hosted ember application
         ###Extract the Ilios Dashboard and share it for both Ilios and LTI applications
       ]
-      
+
       ---
       class: center
       # What is an LTI
-      
+
       --
       ## Standard set of specifications for allowing third party learning applications to integrate with educational platforms.
-      
+
       --
       ## Translation: LTI lets you easily integrate external tools into your learning management system (LMS)
-      
+
       ???
       - Contract for data and integrity
           - Shared Secret
           - Known Hash Algorithm
-      
+
       ---
-      
+
       # LTI Payload
-      
+
       <pre>
       oauth_version	1.0
       oauth_nonce	7c7a4c3f5f07630ea9cfa1baed295ce0
@@ -260,48 +260,48 @@
       oauth_signature_method	HMAC-SHA1
       <strong>oauth_signature	s/xgWXAcM+KsFMaVvA32A9gM1+U=</strong>
       </pre>
-      
+
       ---
-      
+
       # All we have to do is
-      
+
         - Use that payload to lookup the user
         - Generate a token for that user
         - Redirect them to our application
-      
+
       oh and....
-      
+
       --
-      
+
       # Scale to thousands of simultaneous users
-      
+
       ???
       - Few hundred from each Ilios school
       - Control costs and (if necessary) charge schools
-      
+
       ---
       class: center
       # What is AWS Lambda
-      
+
       ## <i class='fa fa-quote-left'></i>Serverless<i class='fa fa-quote-right'></i>
-      
+
       --
-      
+
       ### AWS Lambda is a compute service that lets you run code without provisioning or managing servers. AWS Lambda executes your code only when needed and scales automatically, from a few requests per day to thousands per second. You pay only for the compute time you consume - there is no charge when your code is not running.
-      
+
       ---
       class: center, middle
       # Serverless Framework
-      
+
       ## https://serverless.com/
-      
+
       ???
       - Declarative configuration that can be deployed over and over again
       - Easy to setup production / staging instances
-      
+
       ---
       # Our Configuration
-      
+
       ```yaml
       service: ilios-lti-launch
       provider:
@@ -318,12 +318,12 @@
                 method: post
                 integration: lambda-proxy
       ```
-      
+
       .footnote[https://github.com/ilios/lti-server]
       ---
-      
+
       # Node.js on AWS Lambda
-      
+
       ```javascript
       const lti = require('ims-lti');
       const aws = require('aws-sdk');
@@ -333,7 +333,7 @@
       const launchResponse = require('./lib/launchResponse');
       const findIliosUser = require('./lib/findIliosUser');
       const createJWT = require('./lib/createJWT');
-      
+
       module.exports.dashboard = (event, context, callback) => {
         console.log('Starting generation of dashboard redirect response');
         launchResponse({event, lti, aws, eventToRequest, readSchoolConfig, fetch, createJWT, findIliosUser}).then(response => {
@@ -351,135 +351,135 @@
         });
       };
       ```
-      
+
       .footnote[https://github.com/ilios/lti-server]
       ---
-      
+
       class: center, middle
       # Once you have authenticated the user you can present whatever data you want to them
-      
+
       --
       ## We Chose to Redirect to a single page Ember.js app
-      
+
       --
       # You don't *need* to do anything like this, you can return pure HTML from the LTI Itself. We only chose a redirect because we had an existing application to use.
-      
+
       ???
       # Why Ember.js?
       - addons make it simple to share
       - ember deploy
-      
+
       ---
       class: center, middle
       # The Big Reveal
-      
+
       --
-      
+
       ## The Final Product
-      
+
       ---
-      
+
       # What does this looks like for course creators?
       ## Click Add Activity
-      
+
       .center[![screenshot of add activity](media/addlti-step1.png)]
-      
+
       ---
-      
+
       # What does this looks like for course creators?
       ## Choose Ilios Dashboard
-      
+
       .center[![screenshot of external tools choose with arrow for ilios dashboard](media/addlti-step2.png)]
-      
+
       ---
-      
+
       # What does this looks like for course creators?
       ## Save
-      
+
       .center[![screenshot to name and click save](media/addlti-step3.png)]
-      
+
       ---
-      
+
       # What does this look like to students?
-      
+
       .center[![lti dashboard week at a glance](media/lti-dashboard-week.png)]
-      
+
       ---
-      
+
       # What does this look like to students?
-      
+
       .center[![lti dashboard all materials](media/lti-dashboard-materials.png)]
-      
+
       ---
       class: center, middle
       # Did we accomplish our goals?
-      
+
       --
-      
+
       ## How does login work?
       --
-      
+
       ## How does logout work?
       --
-      
+
       ## How much code did we reuse?
       --
-      
+
       # Are we giving students the info they want?
-      
+
       ---
-      
+
       # Next steps?
         - Allow course creators to refine the data they display
         - Respond to student feedback to add new features
         - Repeat this pattern for other tools
-      
+
       ---
-      
+
       class: center, middle
       # The Power of Standard and Open APIs
-      
+
       ---
-      
+
       class: center, middle
       # What data do **you** have that students want?
-      
+
       ---
       class: center, middle
       # What else can LTI do for you?
-      
+
       ---
       class: center, middle
       # What else can you do with LTI?
-      
+
       ---
-      
+
       class: center, middle
-      
+
       ## Discussion / Questions?
-      
+
       .boxes[
         .icons[
         <i class="fab fa-github"></i>jrjohnson <br />
         <i class="fab fa-slack"></i>jrjohnson-ucsf <br />
         <i class="fab fa-twitter"></i>jrjohnson_ <br />
         ]
-        
+
         .avatar[
         ![Jon's avatar](media/avatar.jpg)
         ]
       ]
-      
-      Slides at: https://jrjohnson.github.io/talks/2018-08-lti-lambda-uccsc.html
-      
+
+      Slides at: https://jrjohnson.dev/talks/2018-08-lti-lambda-uccsc.html
+
       ???
-      
+
       # Thanks
       - CLE Team (particularly Brian and Carson) for putting up with a thousand questions
       - UCCSC
       - Library
       - Ilios Team
-        
+
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
