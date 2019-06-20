@@ -21,6 +21,15 @@ body {
   'footer footer';
   grid-template-rows: auto 1fr auto;
 
+  @media (--small-viewport) {
+    grid-template-areas:
+    'header'
+    'navigation'
+    'main'
+    'footer';
+    grid-template-columns: 1fr;
+  }
+
   & > header {
     border-bottom: 1px solid var(--text-grey);
     grid-area: header;
@@ -54,6 +63,7 @@ body {
 
   & > main {
     grid-area: main;
+    min-width: 0;
     padding: 2em;
   }
 
@@ -116,4 +126,8 @@ a:active,
 a:visited {
   color: var(--link-blue);
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
 }
