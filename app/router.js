@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('talks', function () {
     this.route('talk', { path: '/:talk_id' });
     this.route('index', { path: '/' });
+    this.route('slide-text', { path: '/slide-text/:talk_id' });
   });
   this.route('resume');
   this.route('projects');

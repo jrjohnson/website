@@ -1,9 +1,10 @@
 ---
 layout: talk
-title:  "Always Be Updating "
+title:  "Always Be Updating"
 date:   2019-06-18
 videoURI:
 slidesURI: /slides/2019-06-always-be-updating
+slideContentURI: ./slide-text/2019-06-always-be-updating
 ---
 
 Abstract for [2019 Information Security Symposium](https://infosecsymposium.ucdavis.edu/event-information/)

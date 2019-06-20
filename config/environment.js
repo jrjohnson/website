@@ -14,6 +14,7 @@ module.exports = function(environment) {
       folders: {
         'posts': 'markdown/posts',
         'talks': 'markdown/talks',
+        'slide-text': 'markdown/slide-text',
         'pages': 'markdown/pages',
       }
     },
