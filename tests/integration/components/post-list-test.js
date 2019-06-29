@@ -7,20 +7,13 @@ module('Integration | Component | post-list', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.set('posts', [
+      { path: 'test', attributes: { date: '2019-03-01', title: 'test-post' } }
+    ]);
+    await render(hbs`<PostList @posts={{posts}} />`);
 
-    await render(hbs`{{post-list}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#post-list}}
-        template block text
-      {{/post-list}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('.post-list').exists();
+    assert.dom('.post-list').containsText('[Friday, March 1, 2019]');
+    assert.dom('.post-list').containsText('test-post');
   });
 });

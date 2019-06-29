@@ -1,12 +1,14 @@
-<h2>{{model.attributes.title}}</h2>
-<p>{{date-format model.attributes.date}}</p>
+<section>
+  <h2>{{model.attributes.title}}</h2>
+  <p>{{date-format model.attributes.date}}</p>
 
-<h3>Abstract:</h3>
-{{markdown-to-html model.content}}
+  <h3>Abstract:</h3>
+  {{markdown-to-html model.content}}
 
-From here you can access the
-<a href="{{model.attributes.slidesURI}}/index.html">Slides</a>
+  From here you can access the
+  <a href="{{model.attributes.slidesURI}}/index.html">Slides</a>
 
-{{#if model.attributes.slideContentURI}}
-  or an <a href={{model.attributes.slideContentURI}}>all text summary</a> or those slides
-{{/if}}
+  {{#if model.attributes.slideContentURI}}
+    or an <a href={{model.attributes.slideContentURI}}>all text summary</a> or those slides
+  {{/if}}
+</section>
