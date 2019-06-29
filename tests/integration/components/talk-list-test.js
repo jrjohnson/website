@@ -7,20 +7,13 @@ module('Integration | Component | talk-list', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.set('talks', [
+      { path: 'test', attributes: { date: '2019-03-01', title: 'test-talk' } }
+    ]);
+    await render(hbs`<TalkList @talks={{talks}} />`);
 
-    await render(hbs`{{talk-list}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#talk-list}}
-        template block text
-      {{/talk-list}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('.talk-list').exists();
+    assert.dom('.talk-list').containsText('[Friday, March 1, 2019]');
+    assert.dom('.talk-list').containsText('test-talk');
   });
 });

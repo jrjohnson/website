@@ -26,13 +26,13 @@
     "autoprefixer": "^9.6.0",
     "broccoli-asset-rev": "^3.0.0",
     "cssstats": "^3.2.0",
+    "ember-a11y-testing": "^1.0.0",
     "ember-ajax": "^5.0.0",
     "ember-auto-import": "^1.4.1",
     "ember-cli": "~3.10.1",
     "ember-cli-app-version": "^3.2.0",
     "ember-cli-babel": "^7.7.3",
     "ember-cli-dependency-checker": "^3.1.0",
-    "ember-cli-eslint": "^5.1.0",
     "ember-cli-google-fonts": "^2.16.2",
     "ember-cli-htmlbars": "^3.0.1",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
@@ -41,7 +41,7 @@
     "ember-cli-postcss": "^4.2.1",
     "ember-cli-showdown": "^4.4.4",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-template-lint": "^1.0.0-beta.1",
+    "ember-template-lint": "^1.0.0",
     "ember-cli-uglify": "^2.1.0",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^2.0.0",
@@ -50,6 +50,7 @@
     "ember-qunit": "^4.4.1",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.10.0",
+    "ember-test-selectors": "^2.1.0",
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^9.0.1",
     "highlight.js": "^9.15.8",
@@ -64,5 +65,8 @@
   },
   "engines": {
     "node": ">= 10.*"
+  },
+  "dependencies": {
+    "eslint": "^6.0.1"
   }
 }

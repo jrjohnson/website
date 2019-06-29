@@ -8,10 +8,10 @@ module('Integration | Helper | date-format', function(hooks) {
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+    this.set('inputValue', '2005-06-24');
 
     await render(hbs`{{date-format inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), 'Friday, June 24, 2005');
   });
 });
