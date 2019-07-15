@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Handling Complicated Tasks with a Chatbot</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../shared/style.css">
+    <style>
+      .remark-slide-content {
+        font-size: 24px;
+      }
+      .loading svg {
+        fill: #c60;
+        height: 50vh;
+        stroke: #c60;
+        width: 50vw;
+      }
+      .loading text {
+        font-size: 3rem;
+        font-family: "Helvetica Neue";
+        fill: #fff;
+        stroke: #fff;
+      }
+      .row p {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      .containers .row p {
+        align-items: center;
+        justify-content: center;
+      }
+      i.medium, svg.medium {
+        font-size: 3rem;
+      }
+      .huge {
+        font-size: 6rem;
+      }
+    </style>
+    <script defer src="../shared/fontawesome.js"></script>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+      class: center, middle, title-slide
+      # Handling Complicated Tasks with a Chatbot
+
+      ## Jon Johnson
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i> jrjohnson <br />
+        <i class="fab fa-twitter"></i> jrjohnson_ <br />
+        <i class="fab fa-slack"></i> jrjohnson-ucsf <br />
+        ]
+
+        .avatar[
+        ![Jon's avatar](../shared/avatar.jpg)
+        ]
+      ]
+
+      ## UCTech Slack: https://uctech.slack.com <br><br>
+
+      ### Plain Text and Slides At:
+      #### https://www.jrjohnson.dev/talks/2019-07-chatbots.html
+
+      ???
+      # Who am I?
+      - Web Platform Engineer and Manager [@ucsf_library](https://twitter.com/ucsf_library) (PHP, Javascript)
+      - Technical lead for the [Ilios Project](http://iliosproject.org) open source curriculum management system
+      for health science education.
+      - UCTech Slack Ambassador
+
+      ---
+      class: center,middle,loading
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true">
+        <title>Ilios Logo</title>
+        <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+      </svg>
+
+      ???
+      #Our Story
+        - Ilios is a 20 year old project which started as an MS Access Database
+        - Built by UCSF, but available for free (and supported)
+        - Installed at medical, dental, pharmacy, nursing, around the world including UCI and maybe soon UCSD
+        - Been through several revisions since then, but in 2014 we decided to rewrite it
+
+      ---
+      class: center,middle
+      # @greeterbot <i class="fas fa-robot"></i>
+      ## Your First UCTech Friend
+
+      .footnote[https://github.com/stopfstedt/uctech-greeter]
+
+      ???
+      - If you want to get your feet wet with bots we could always use help with greeterbot
+      - If you don't remember what it does just say `greet me` to that app in Slack
+
+      ---
+      class: center,middle
+      # @Zorgbort <i class="fas fa-robot"></i>
+      --
+
+      ## Or whatever stupid name you want to give your bot <i class="fas fa-smile"></i>
+
+      .footnote[https://github.com/ucsf-ckm/zorgbort]
+
+      ???
+      - The Ilios project bot
+      - Mainly what I'll be talking about today
+
+      ---
+      class: center,middle
+      # Automate Everything
+
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you&#39;re scared to deploy on Fridays, you should be scared to deploy ever. <br><br>Don&#39;t you have tests? Backups? Roll back? Come on.</p>&mdash; Jessica Mauerhan (@JessicaMauerhan) <a href="https://twitter.com/JessicaMauerhan/status/1022901553479512064?ref_src=twsrc%5Etfw">July 27, 2018</a></blockquote>
+
+      ---
+      class: center, middle
+      # Automation Brings Speed
+
+      ???
+      - Jason is always 'Dialing it in'
+      - This is a task which may never be completely done, but like CI setup it's always worth getting right
+      - Good, reliable, automation truly pays off over the long term
+
+      --
+      ## and sometimes money!
+
+      ???
+      - UCSF was able to offer paid hosting support to Stanford (and soon OHSU and USF)
+      - We were able to do this because we made the administrative costs very low for each instance
+
+      ---
+
+      class: center,middle,containers
+      # Our Automation Goal
+      --
+
+      ## Human
+      .row[
+      <i class="fab medium fa-slack"></i>
+      <i class="fal fa-arrow-from-left"></i>
+      <i class="fal medium fa-coffee"></i>
+      <i class="fal fa-arrow-from-left"></i>
+      <i class="fal medium fa-island-tropical"></i>
+      <i class="fal fa-arrow-from-left"></i>
+      <i class="fal medium fa-smile"></i>
+      ]
+
+      --
+
+      ## Robots
+      .row[
+      <i class="fab medium fa-slack"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fal medium fa-robot"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fal medium fa-code-branch"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fab medium fa-github"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fal medium fa-clipboard-check"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fal medium fa-conveyor-belt"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fab medium fa-docker"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fab medium fa-aws"></i>
+      <i class="fal fa-arrow-right"></i>
+      <i class="fal medium fa-users"></i>
+      ]
+
+      ???
+      Tag Code
+      1. Tag Code as v65.4.3
+      2. Go To Lunch
+      3. v65.4.3 is now in *Production*
+      4. Repeat
+
+      ---
+      class: center,middle
+      # Where we are now
+
+      ---
+      class: center,middle
+      ![zorgbort screenshot](media/zorgbort1.png)
+
+      ---
+      class: center,middle
+      ![zorgbort screenshot](media/zorgbort2.png)
+
+      ---
+      class: center,middle
+      ![zorgbort screenshot](media/zorgbort3.png)
+
+      ---
+      class: center,middle
+      ![zorgbort screenshot](media/zorgbort4.png)
+
+      ---
+      class: center,middle
+      ![zorgbort screenshot](media/zorgbort5.png)
+
+      ---
+      class: center,middle
+      ![zorgbort screenshot](media/zorgbort6.png)
+
+      ---
+      class: center,middle
+      ![zorgbort screenshot](media/zorgbort7.png)
+
+      ---
+      class: center,middle
+
+      # Zorgbort is just the fancy UI
+      --
+
+      ## The hard part is building automated processes
+      --
+
+      ### But knowing a UI can be built can make the automation process simpler
+
+      ???
+      - Our first iteration was entirely conversational
+      - You would say `release the frontend` and Zorg would answer back with questions
+      - It wasn't as pretty, but it mostly got the job done.
+      ---
+      class: center,middle
+      # <i class='fas fa-code-branch huge'></i>
+
+      ???
+      - We use git tags to drive our process
+      - Once something is tagged in github it kicks off automation
+      - Tagging things is easy
+      - Discovering tags is easy
+
+      ---
+      class: center,middle
+      # <i class="fal fa-smile-wink"></i> No one cares about your problems Jon <i class="fal fa-smile-wink"></i>
+      ## <i class="fal fa-grin"></i> Show us how to build bots! <i class="fal fa-grin"></i>
+
+      ---
+      class: center,middle
+      # <i class="fab fa-slack huge"></i>
+
+      ???
+      - I'm going to be focusing on Slackbots
+      - There are all kinds of other chatbot options
+      - Whatever your team is most familiar with should work
+      - The bot is just a UI on top of a process
+      - We're using the slack conversation API, there is a newer Blocks API that you should check out.
+
+      ---
+      class: center,middle
+      <i class="fab fa-node huge"></i>
+
+      ???
+      ## Easy to deploy lots of places
+      ## Botkit (and many other) frameworks
+      ## Cuz javascript is the BEST!
+
+      ---
+      class: center,middle
+      <i class="fas fa-home huge"></i>
+      # Home is where the bot lives
+
+      ???
+      - Your bot will probably be portable so you can go with whatever makes you happy
+      - Lots of options for free bot hosts, or at the very least super cheap
+
+      ---
+      class: center,middle
+
+      .row[
+        <i class="fab fa-google big"></i>
+        <i class="fab fa-microsoft big"></i>
+        <i class="fab fa-aws big"></i>
+      ]
+
+      --
+
+      .row[
+        <i class="fab fa-bitbucket medium"></i>
+        <i class="fab fa-github medium"></i>
+        <i class="fab fa-canadian-maple-leaf medium"></i>
+        <i class="fab fa-centercode medium"></i>
+        <i class="fab fa-cloudscale medium"></i>
+        <i class="fab fa-cloudsmith medium"></i>
+        <i class="fab fa-cloudversify medium"></i>
+        <i class="fab fa-cuttlefish medium"></i>
+        <i class="fab fa-digital-ocean medium"></i>
+        <i class="fab fa-docker medium"></i>
+        <i class="fab fa-gitlab medium"></i>
+        <i class="fab fa-hubspot medium"></i>
+        <i class="fab fa-linode medium"></i>
+        <i class="fab fa-salesforce medium"></i>
+        <i class="fab fa-sourcetree medium"></i>
+        <i class="fab fa-usps medium"></i>
+      ]
+
+      ???
+      - Some of the biggest names in hosting will host your app
+      - But probably anything you trust will do
+      - So what are the minimum requirements
+
+      ---
+      .center[
+      # Slackbot anatomy
+      ]
+      --
+
+      .center[
+      ## ... first of all they're called apps now
+      ]
+
+      --
+      <br />
+      > ### <i class="fas fa-phone"></i> Don't call us, we'll call you
+      > ### <i class="fas fa-paper-plane"></i> Subscribe to the event types you need
+      > ### <i class="fas fa-lock"></i> Governed by OAuth permission scopes
+      > ### <i class="fas fa-robot"></i> Bot users served here
+      > ### <i class="fas fa-magic"></i> Everything is eventual
+
+      .footnote[https://api.slack.com/]
+      ---
+      # <i class="fas fa-phone"></i> Don't call us, we'll call you
+      ## POST
+      ```json
+      {
+        "token": "XXYYZZ",
+        "team_id": "TXXXXXXXX",
+        "api_app_id": "AXXXXXXXXX",
+        "event": {
+                "type": "name_of_event",
+                "event_ts": "1234567890.123456",
+                "user": "UXXXXXXX1",
+                ...
+        },
+        "type": "event_callback",
+        "authed_users": [
+                "UXXXXXXX1",
+                "UXXXXXXX2"
+        ],
+        "event_id": "Ev08MFMKH6",
+        "event_time": 1234567890
+      }
+      ```
+      ---
+      # <i class="fas fa-magic"></i> Everything is eventual
+      ## POST /api/chat.postMessage
+
+      ```json
+      {
+        "channel":"C061EG9SL",
+        "text":"I hope the tour went well, Mr. Wonka.",
+        "attachments":[
+           {
+              "text":"Who wins the lifetime supply of chocolate?",
+              "fallback":"You could be telling the computer exactly what it can do with a lifetime supply of chocolate.",
+              "color":"#3AA3E3",
+              "attachment_type":"default",
+              "callback_id":"select_simple_1234",
+              "actions":[
+                 {
+                    "name":"winners_list",
+                    "text":"Who should win?",
+                    "type":"select",
+                    "data_source":"users"
+                 }
+              ]
+           }
+        ]
+      }
+      ```
+      ---
+      .center[
+      # <i class="fas fa-glasses"></i> Botkit <i class="fas fa-mask"></i>
+      ## Our Hero
+      ]
+
+      ```javascript
+      const Botkit = require('botkit');
+
+      const hal = new Botkit();
+      hal.hears('Open the pod bay doors', async (bot, message) => {
+        await bot.reply(message, "I'm Sorry Dave, I'm afraid I can't do that.");
+      });
+
+      ```
+      ---
+      .center[
+      # Intelligent Conversation
+      ]
+
+      ```javascript
+      const Botkit = require('botkit');
+      const Skynet = require('skynet');
+
+      const controller = new Botkit();
+      controller.hears(async (bot, message) => {
+        const reply = Skynet.process(message.text);
+        await bot.reply(message, reply);
+      });
+
+      ```
+      ???
+      - Services like AWS Lex can be used to make your bot easier to talk to
+      - If the bot is just a UI you could attach other UIs to the same structure
+
+      ---
+      class: center,middle
+      # Don't trust the **#&$%!s** at SlackHQ
+
+      ---
+      class: center,middle
+      # Don't trust the Developers at SlackHQ
+
+      --
+      ## Slack should be a thin layer on top of functionality
+
+      --
+      ### Because the slack API will change
+
+      --
+      #### Not without warning
+
+      ???
+      - They're paid to invent new things
+      - they do this a lot
+      - so your bot will probably be old fast, that's ok.
+
+      ---
+      # @Zorgbort
+
+      ```javascript
+      module.exports = bot => {
+        bot.hears(['start release', 'release'], ['direct_message', 'direct_mention', 'mention'], startRelease);
+        bot.on('interactive_message_callback', chooseReleaseType);
+        bot.on('interactive_message_callback', confirmRelease);
+        bot.on('interactive_message_callback', doRelease);
+      };
+      ```
+      .footnote[https://github.com/ucsf-ckm/zorgbort]
+
+      ???
+      - Bot listens for different types of events or keywords and then passes execution
+        off to another function.
+
+      ---
+      # @Zorgbort
+      ## chooseReleaseType
+
+      ```javascript
+      const startRelease = async (bot, message) => {
+        bot.reply(message, createActionReply(':cool: I just need to know:', releaseProject, [
+          {
+            name: 'project',
+            text: 'Which Project?',
+            type: 'select',
+            options: [
+              {
+                text: 'Ilios Frontend',
+                value: 'frontend',
+              },
+              {
+                text: 'Ember Simple Charts',
+                value: 'simple-charts',
+              },
+            ]
+          },
+        ]));
+      };
+      ```
+      .footnote[https://github.com/ucsf-ckm/zorgbort]
+
+      ???
+      - Some of those functions send messages back for clarification / authentication
+      ---
+      # @Zorgbort
+      ## releaseAndTag
+
+      ```javascript
+      const releaseAndTag = async (owner, repo, releaseType, namer) => {
+        const { nextVersion, currentVersion } = await incrementPackageVersion(dir, releaseType);
+        await commitAndTag(dir, version, releaseName);
+        const release = await Github.repos.createRelease({
+          owner,
+          repo,
+          tag_name: version,
+          name: releaseName,
+          body: releaseNotes,
+          draft: false,
+          prerelease: false,
+        });
+
+        return {
+          version,
+          releaseName,
+          releaseUrl: release.data.html_url
+        };
+      };
+      ```
+      .footnote[https://github.com/ucsf-ckm/zorgbort]
+
+      ???
+      - But the real meat is done without the bot at all, this makes it easier to switch
+        out the conversational parts and to test the non-bot stuff.
+
+      ---
+      class: center,middle
+      # Security
+      .huge[🙈]
+
+      ???
+      ## Depends on the specific threat
+      ## Slack requires token auth and SSL
+      ## You may need to validate users yourself
+
+      ---
+      class: middle
+      # Authorize Users
+
+      ```javascript
+      if (validUsers.includes(user)) {
+        try {
+          return await releaseAndTag(owner, repo, releaseType, namer);
+        } catch (e) {
+          bot.reply(message, `Error: ${e.message} (stack trace in logs)`);
+          console.error(e);
+      }
+      ```
+      ???
+      - Slack UserIds are persistent
+      - Only as good as slack's account security
+      ---
+      # Testing locally
+
+      ```bash
+      $ npm start
+      > zorgbort@1.0.0 start
+      > node zorgbort.js
+
+      Initializing Botkit v0.7.4
+      info: ** Using simple storage. Saving data to .data/db/
+      info: ** Starting webserver on port 3000
+      info: ** Serving webhook endpoints for Slash commands and outgoing webhooks at: http://0.0.0.0:3000/slack/receive
+      info: ** Serving login URL: http://0.0.0.0:8899/login
+      info: ** Serving oauth return endpoint: http://0.0.0.0:3000/oauth
+      ```
+      --
+      ## So how to we hookup slack to port 3000?
+      ---
+      ```bash
+      $ npm install -g localtunnel
+      ```
+
+      ```bash
+      $ lt --port 3000 -s zorgbort-stage
+      your url is: https://zorgbort-stage.localtunnel.me
+      ```
+
+      ![Screenshot of Slack's Interactive setup process](media/slack-interactive.png)
+
+      ???
+      - The localtunnel NPM module is mad sweet
+      - Slack let's you pick any URL to send things to, create a test-bot app and a real one.
+
+      ---
+      class: center,middle
+      # Let's Review
+      --
+
+      ## Bots Are Cool
+      --
+
+      ### But They're Really Just Window Dressing
+      ---
+      class: center, middle, title-slide
+
+      # Discussion / Questions?
+
+
+      .boxes[
+        .icons[
+        <i class="fab fa-github"></i> jrjohnson <br />
+        <i class="fab fa-twitter"></i> jrjohnson_ <br />
+        <i class="fab fa-slack"></i> jrjohnson-ucsf <br />
+        ]
+
+        .avatar[
+        ![Jon's avatar](../shared/avatar.jpg)
+        ]
+      ]
+      ## UCTech Slack: https://uctech.slack.com <br><br>
+
+      ### Slides at:
+      #### https://jrjohnson.dev/talks/2019-06-always-be-updating.html
+
+
+      ???
+
+      # Thanks
+      - UCTech for the invitation
+      - UCSF Library
+      - My Team
+      # This is the first time I've given this talk so please ask me
+      #  at least three questions so I know what needs improvement!
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: true
+      },
+      slideNumberFormat: '',
+      countIncrementalSlides: false,
+      ratio: '16:9',
+      highlightStyle: 'railscasts'
+    });
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
