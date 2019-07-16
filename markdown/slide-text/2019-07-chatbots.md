@@ -307,6 +307,19 @@ https://github.com/ucsf-ckm/zorgbort
 
 ---
 
+# Start the Conversation
+## Send Alerts
+## Start a Virtual Standup
+### Remind Yourself to Drink More Water
+
+```javascript
+await bot.startConversationInChannel(SLACK_CHANNEL_ID);
+await bot.say('The Server is On Fire!!! :fire:');
+await bot.say('Everybody Blame Jon');
+await bot.say("PS: don't tell Jon!");
+```
+---
+
 ## Security
 ### Depends on the specific threat
 ### Slack requires token auth and SSL
@@ -345,7 +358,7 @@ info: ** Serving oauth return endpoint: http://0.0.0.0:3000/oauth
 ```
 
 ### So how to we hookup slack to port 3000?
----
+
 ```bash
 $ npm install -g localtunnel
 ```
