@@ -25,7 +25,7 @@
     "@fortawesome/pro-solid-svg-icons": "^5.9.0",
     "autoprefixer": "^9.6.1",
     "broccoli-asset-rev": "^3.0.0",
-    "cssstats": "^3.2.0",
+    "cssstats": "^3.3.1",
     "ember-a11y-testing": "^1.0.0",
     "ember-ajax": "^5.0.0",
     "ember-auto-import": "^1.5.2",
