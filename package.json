@@ -53,7 +53,7 @@
     "ember-test-selectors": "^3.0.0",
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^9.0.1",
-    "highlight.js": "^9.16.2",
+    "highlight.js": "^9.17.0",
     "loader.js": "^4.7.0",
     "luxon": "^1.21.3",
     "postcss-custom-media": "^7.0.8",
