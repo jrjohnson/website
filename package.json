@@ -22,7 +22,7 @@
     "@fortawesome/ember-fontawesome": "^0.2.1",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
-    "@fortawesome/pro-solid-svg-icons": "^5.12.0",
+    "@fortawesome/pro-solid-svg-icons": "^5.12.1",
     "autoprefixer": "^9.7.4",
     "broccoli-asset-rev": "^3.0.0",
     "cssstats": "^3.4.0",
