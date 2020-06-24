@@ -23,7 +23,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/pro-solid-svg-icons": "^5.13.1",
-    "autoprefixer": "^9.8.2",
+    "autoprefixer": "^9.8.3",
     "broccoli-asset-rev": "^3.0.0",
     "cssstats": "^3.4.1",
     "ember-a11y-testing": "^3.0.1",
