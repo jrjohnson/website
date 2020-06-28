@@ -2,10 +2,10 @@
   <h1>Jonathan Johnson</h1>
   <nav>
     <ul>
-      <li>{{#link-to "posts"}}<FaIcon @icon="blog" @prefix="fas" aria-hidden="false" @title="Blog Posts" /> Posts{{/link-to}}</li>
-      <li>{{#link-to "talks"}}<FaIcon @icon="keynote" @prefix="fas" aria-hidden="false" @title="Talks" /> Talks{{/link-to}}</li>
-      <li>{{#link-to "projects"}}<FaIcon @icon="project-diagram" @prefix="fas" aria-hidden="false" @title="Projects" /> Projects{{/link-to}}</li>
-      <li>{{#link-to "resume"}}<FaIcon @icon="scroll" @prefix="fas" aria-hidden="false" @title="Resume" /> Resume{{/link-to}}</li>
+      <li><LinkTo @route="posts"><FaIcon @icon="blog" @prefix="fas" aria-hidden="false" @title="Blog Posts" /> Posts</LinkTo></li>
+      <li><LinkTo @route="talks"><FaIcon @icon="keynote" @prefix="fas" aria-hidden="false" @title="Talks" /> Talks</LinkTo></li>
+      <li><LinkTo @route="projects"><FaIcon @icon="project-diagram" @prefix="fas" aria-hidden="false" @title="Projects" /> Projects</LinkTo></li>
+      <li><LinkTo @route="resume"><FaIcon @icon="scroll" @prefix="fas" aria-hidden="false" @title="Resume" /> Resume</LinkTo></li>
     </ul>
     <ul>
       <li><a href="https://github.com/jrjohnson"><FaIcon @icon="github" @prefix="fab" aria-hidden="false" @title="Github Profile" /></a></li>

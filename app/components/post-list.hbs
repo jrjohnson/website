@@ -3,9 +3,9 @@
     {{#each @posts as |post|}}
       <li>
         [{{date-format post.attributes.date}}]
-        {{#link-to "posts.post" post.path}}
+        <LinkTo @route="posts.post" @model={{post.path}}>
           {{post.attributes.title}}
-        {{/link-to}}
+        </LinkTo>
       </li>
     {{/each}}
   </ul>

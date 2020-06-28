@@ -1,10 +1,10 @@
-import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
+import Controller from '@ember/controller';
 
-export default Controller.extend({
-  router: service(),
-  isSplashPage: computed('router.currentURL', function () {
+export default class ApplicationController extends Controller {
+  @service router;
+
+  get isSplashPage() {
     return this.router.currentURL == '/';
-  }),
-});
+  }
+}

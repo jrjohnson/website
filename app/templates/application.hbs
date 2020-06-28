@@ -1,28 +1,28 @@
-{{head-layout}}
-{{title "Jon's Personal Site"}}
-{{#if isSplashPage}}
-  {{splash-screen}}
+<HeadLayout />
+{{page-title "Jon's Personal Site"}}
+{{#if this.isSplashPage}}
+  <SplashScreen />
 {{else}}
   <header>
     <h1>
-      {{#link-to "index"}}
+      <LinkTo @route="index">
         <img src="https://secure.gravatar.com/avatar/081b2280f004322ad0e2e17062557f7c?s=60" alt="jon's avatar">
         Jonathan Johnson
-      {{/link-to}}
+      </LinkTo>
     </h1>
   </header>
-  <nav class="primary-navigation">
+  <nav aria-label="Primary" class="primary-navigation">
     <ul>
-      <li>{{#link-to "posts"}}Posts{{/link-to}}</li>
-      <li>{{#link-to "talks"}}Talks{{/link-to}}</li>
-      <li>{{#link-to "projects"}}Projects{{/link-to}}</li>
-      <li>{{#link-to "resume"}}Resume{{/link-to}}</li>
+      <li><LinkTo @route="posts">Posts</LinkTo></li>
+      <li><LinkTo @route="talks">Talks</LinkTo></li>
+      <li><LinkTo @route="projects">Projects</LinkTo></li>
+      <li><LinkTo @route="resume">Resume</LinkTo></li>
 
     </ul>
   </nav>
   <main>{{outlet}}</main>
   <footer>
-    <nav>
+    <nav aria-label="Footer">
       <ul>
         <li><a href="https://github.com/jrjohnson"><FaIcon @icon="github" @prefix="fab" aria-hidden="false" @title="Github Profile" /></a></li>
         <li><a href="https://twitter.com/jrjohnson_"><FaIcon @icon="twitter" @prefix="fab" aria-hidden="false" @title="Twitter Profile" /></a></li>
