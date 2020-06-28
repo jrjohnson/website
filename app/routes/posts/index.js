@@ -1,8 +1,8 @@
+import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
-import { inject } from '@ember/service';
 
-export default Route.extend({
-  markdownResolver: inject(),
+export default class IndexRoute extends Route {
+  @service markdownResolver;
 
   async model() {
     const tree = await this.markdownResolver.tree('posts');
@@ -13,4 +13,4 @@ export default Route.extend({
 
     return improvedPaths.sortBy('attributes.date').reverse();
   }
-});
+}
