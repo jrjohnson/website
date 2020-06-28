@@ -3,9 +3,9 @@
     {{#each @talks as |talk|}}
       <li>
         [{{date-format talk.attributes.date}}]
-        {{#link-to "talks.talk" talk.path}}
+        <LinkTo @route="talks.talk" @model={{talk.path}}>
           {{talk.attributes.title}}
-        {{/link-to}}
+        </LinkTo>
       </li>
     {{/each}}
   </ul>
