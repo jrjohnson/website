@@ -24,7 +24,7 @@
     "@fortawesome/ember-fontawesome": "^0.2.1",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
-    "@fortawesome/pro-solid-svg-icons": "^5.13.1",
+    "@fortawesome/pro-solid-svg-icons": "^5.14.0",
     "@glimmer/component": "^1.0.0",
     "@glimmer/tracking": "^1.0.0",
     "autoprefixer": "^9.8.5",
