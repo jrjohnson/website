@@ -27,7 +27,7 @@
     "@fortawesome/pro-solid-svg-icons": "^5.14.0",
     "@glimmer/component": "^1.0.1",
     "@glimmer/tracking": "^1.0.1",
-    "autoprefixer": "^9.8.5",
+    "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "cssstats": "^3.4.1",
