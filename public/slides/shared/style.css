@@ -68,6 +68,9 @@ h1, h2, h3, h4, h5 {
 .title-slide .boxes {
   height: 30%;
 }
+.title-slide .pronouns {
+  color: #333;
+}
 .avatar img {
   border-radius: 50%;
 }
