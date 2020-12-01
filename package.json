@@ -65,7 +65,7 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-import": "^13.0.0",
     "postcss-nesting": "^7.0.1",
-    "postcss-reporter": "^7.0.1",
+    "postcss-reporter": "^7.0.2",
     "postcss-stats-reporter": "^0.4.1",
     "qunit-dom": "^1.2.0"
   },
