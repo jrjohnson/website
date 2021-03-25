@@ -32,7 +32,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "cssstats": "^4.0.2",
     "ember-a11y-testing": "^3.0.2",
-    "ember-auto-import": "^1.11.0",
+    "ember-auto-import": "^1.11.2",
     "ember-cli": "~3.19.0",
     "ember-cli-app-version": "^3.2.0",
     "ember-cli-babel": "^7.20.5",
