@@ -1,11 +1,11 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'jrjohnson',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
     googleFonts: [
       'Crimson+Text:400,700',
       'Yantramanav:400,700'
@@ -38,16 +38,12 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
-      EXTEND_PROTOTYPES: {
-        // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
   };
 
   if (environment === 'development') {
