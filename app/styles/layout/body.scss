@@ -21,7 +21,7 @@ body {
   'footer footer';
   grid-template-rows: auto 1fr auto;
 
-  @media (--small-viewport) {
+  @media (max-width: 1000px) {
     grid-template-areas:
     'header'
     'navigation'
