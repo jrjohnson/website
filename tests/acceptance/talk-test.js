@@ -8,7 +8,7 @@ module('Acceptance | single talk', function (hooks) {
 
   test('single talk renders and is accessible', async function (assert) {
     await visit('/talks/2019-06-always-be-updating');
-    assert.equal(currentURL(), '/talks/2019-06-always-be-updating');
+    assert.strictEqual(currentURL(), '/talks/2019-06-always-be-updating');
     assert.dom('section h2').containsText('Always Be Updating');
 
     await a11yAudit();

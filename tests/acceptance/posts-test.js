@@ -8,7 +8,7 @@ module('Acceptance | posts', function (hooks) {
 
   test('posts is accessible', async function (assert) {
     await visit('/posts');
-    assert.equal(currentURL(), '/posts');
+    assert.strictEqual(currentURL(), '/posts');
 
     await a11yAudit();
     assert.ok(true, 'no a11y errors found!');

@@ -12,6 +12,9 @@ module('Integration | Helper | date-format', function (hooks) {
 
     await render(hbs`{{date-format inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), 'Friday, June 24, 2005');
+    assert.strictEqual(
+      this.element.textContent.trim(),
+      'Friday, June 24, 2005'
+    );
   });
 });

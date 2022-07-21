@@ -8,7 +8,7 @@ module('Acceptance | home', function (hooks) {
 
   test('home is accessible', async function (assert) {
     await visit('/');
-    assert.equal(currentURL(), '/');
+    assert.strictEqual(currentURL(), '/');
 
     await a11yAudit();
     assert.ok(true, 'no a11y errors found!');

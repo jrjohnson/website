@@ -8,7 +8,7 @@ module('Acceptance | single post', function (hooks) {
 
   test('single renders and is accessible', async function (assert) {
     await visit('/posts/2019-05-26-ember-2019');
-    assert.equal(currentURL(), '/posts/2019-05-26-ember-2019');
+    assert.strictEqual(currentURL(), '/posts/2019-05-26-ember-2019');
     assert
       .dom('section h1')
       .containsText('From two directions: 2019 Ember.js Roadmap');
