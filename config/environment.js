@@ -6,32 +6,20 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     locationType: 'history',
-    googleFonts: [
-      'Crimson+Text:400,700',
-      'Yantramanav:400,700'
-    ],
+    googleFonts: ['Crimson+Text:400,700', 'Yantramanav:400,700'],
     'ember-cli-markdown-resolver': {
       folders: {
-        'posts': 'markdown/posts',
-        'talks': 'markdown/talks',
+        posts: 'markdown/posts',
+        talks: 'markdown/talks',
         'slide-text': 'markdown/slide-text',
-        'pages': 'markdown/pages',
-      }
+        pages: 'markdown/pages',
+      },
     },
     fontawesome: {
       icons: {
-        'free-brands-svg-icons': [
-          'github',
-          'linkedin',
-          'twitter',
-        ],
-        'pro-solid-svg-icons': [
-          'blog',
-          'keynote',
-          'project-diagram',
-          'scroll',
-        ],
-      }
+        'free-brands-svg-icons': ['github', 'linkedin', 'twitter'],
+        'pro-solid-svg-icons': ['blog', 'keynote', 'project-diagram', 'scroll'],
+      },
     },
     EmberENV: {
       FEATURES: {

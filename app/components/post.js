@@ -14,8 +14,8 @@ hljs.registerLanguage('dockerfile', dockerfile);
 export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
-    this.element.querySelectorAll('pre code').forEach(el => {
+    this.element.querySelectorAll('pre code').forEach((el) => {
       hljs.highlightBlock(el);
     });
-  }
+  },
 });

@@ -14,14 +14,12 @@ module.exports = function (defaults) {
           { module: require('cssstats') },
           { module: require('postcss-stats-reporter') },
           { module: require('postcss-reporter') },
-        ]
+        ],
       },
       filter: {
         enabled: true,
-        plugins: [
-          { module: require('autoprefixer') },
-        ]
-      }
+        plugins: [{ module: require('autoprefixer') }],
+      },
     },
   });
 
