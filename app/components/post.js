@@ -1,4 +1,6 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+
 import hljs from 'highlight.js/lib/core';
 import bash from 'highlight.js/lib/languages/bash';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -11,11 +13,11 @@ hljs.registerLanguage('php', php);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('dockerfile', dockerfile);
 
-export default Component.extend({
-  didInsertElement() {
-    this._super(...arguments);
-    this.element.querySelectorAll('pre code').forEach((el) => {
+export default class PostComponent extends Component {
+  @action
+  highlight(el) {
+    el.querySelectorAll('pre code').forEach((el) => {
       hljs.highlightBlock(el);
     });
-  },
-});
+  }
+}

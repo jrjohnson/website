@@ -3,10 +3,8 @@ import Route from '@ember/routing/route';
 
 export default class ResumeRoute extends Route {
   @service markdownResolver;
-
-  async model() {
-    const page = await this.markdownResolver.file('pages', 'resume');
-
+  model() {
+    const page = this.markdownResolver.getFile('pages', 'resume');
     return page.content;
   }
 }
