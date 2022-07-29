@@ -7,12 +7,6 @@ module.exports = function (environment) {
     rootURL: '/',
     locationType: 'history',
     googleFonts: ['Crimson+Text:400,700', 'Yantramanav:400,700'],
-    fontawesome: {
-      icons: {
-        'free-brands-svg-icons': ['github', 'linkedin', 'twitter'],
-        'pro-solid-svg-icons': ['blog', 'keynote', 'project-diagram', 'scroll'],
-      },
-    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
