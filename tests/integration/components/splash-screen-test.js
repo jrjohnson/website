@@ -8,7 +8,7 @@ module('Integration | Component | splash-screen', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    await render(hbs`{{splash-screen}}`);
+    await render(hbs`<SplashScreen />`);
 
     await a11yAudit(this.element);
     assert.ok(true, 'no a11y errors found!');

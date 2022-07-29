@@ -10,7 +10,7 @@ module('Integration | Helper | date-format', function (hooks) {
   test('it renders', async function (assert) {
     this.set('inputValue', '2005-06-24');
 
-    await render(hbs`{{date-format inputValue}}`);
+    await render(hbs`{{date-format this.inputValue}}`);
 
     assert.strictEqual(
       this.element.textContent.trim(),

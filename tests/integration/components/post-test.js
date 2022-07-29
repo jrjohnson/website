@@ -8,7 +8,7 @@ module('Integration | Component | post', function (hooks) {
 
   test('it renders', async function (assert) {
     this.set('markdown', '# Post \n - list 1\n - list 2');
-    await render(hbs`<Post @post={{markdown}} />`);
+    await render(hbs`<Post @post={{this.markdown}} />`);
 
     assert.dom('section').exists();
     assert.dom('section h1').containsText('Post');
