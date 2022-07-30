@@ -3,14 +3,14 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | talk-list', function(hooks) {
+module('Integration | Component | talk-list', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     this.set('talks', [
-      { path: 'test', attributes: { date: '2019-03-01', title: 'test-talk' } }
+      { path: 'test', attributes: { date: '2019-03-01', title: 'test-talk' } },
     ]);
-    await render(hbs`<TalkList @talks={{talks}} />`);
+    await render(hbs`<TalkList @talks={{this.talks}} />`);
 
     assert.dom('.talk-list').exists();
     assert.dom('.talk-list').containsText('[Friday, March 1, 2019]');
