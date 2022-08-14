@@ -39,6 +39,9 @@ h1, h2, h3, h4, h5 {
   border-radius: 3%;
 }
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.remark-code {
+  border-radius: 15px;
+}
 .footnote {
   position: absolute;
   bottom: 40px;
@@ -68,8 +71,11 @@ h1, h2, h3, h4, h5 {
 .title-slide .boxes {
   height: 30%;
 }
-.title-slide .pronouns {
+.pronouns {
   color: #333;
+}
+.qr-title-slide img {
+  height: 200px;
 }
 .avatar img {
   border-radius: 50%;
@@ -90,6 +96,11 @@ h1, h2, h3, h4, h5 {
   float: right;
   padding-top: 1em;
 }
+.full-width-column {
+  display: block;
+  clear: both;
+  width: 100%;
+}
 i.huge, svg.huge {
   font-size: 20rem;
 }
@@ -98,6 +109,13 @@ i.big, svg.big {
 }
 .high-contrast {
   color: rgb(155, 155, 155);
+}
+.highlight h1 strong,
+.highlight h2 strong,
+.highlight h3 strong,
+.highlight h4 strong,
+.highlight h5 strong {
+  color: #F26D04;
 }
 .high-contrast strong {
   color: #0071AD;
