@@ -129,6 +129,14 @@ a:visited {
   text-decoration: none;
 }
 
+.long-form {
+  a,
+  a:active,
+  a:visited {
+    text-decoration: underline;
+  }
+}
+
 img {
   max-width: 100%;
 }
