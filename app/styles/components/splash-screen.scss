@@ -3,11 +3,11 @@
   width: 80%;
 
   & h1 {
-    font-size: 5rem;
+    @include font-size('xxxl');
     text-align: right;
 
     @media (max-width: 1000px) {
-      font-size: 3rem;
+      @include font-size('xxl');
       text-align: center;
     }
   }
@@ -46,7 +46,7 @@
       padding: 0;
 
       & li {
-        font-size: 2rem;
+        @include font-size('xl');
       }
     }
 
