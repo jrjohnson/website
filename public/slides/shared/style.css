@@ -77,6 +77,13 @@ h1, h2, h3, h4, h5 {
 .qr-title-slide img {
   height: 200px;
 }
+.qr-title-slide .right-column {
+  display: flex;
+  flex-direction: column;
+}
+.qr-title-slide .right-column p {
+  margin: 0;
+}
 .avatar img {
   border-radius: 50%;
 }
