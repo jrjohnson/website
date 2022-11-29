@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jumping into Deep Work</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../shared/style.css">
+    <style>
+      .remark-slide-content {
+        font-size: 24px;
+      }
+      .remark-slide-scaler {
+        background-color: #fffcf3;
+      }
+      .logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .logos svg, .logos p {
+        width: 45%;
+      }
+      .icon-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 5rem;
+      }
+      .icon-row p {
+        margin: 0;
+      }
+      .ilios-logo {
+        fill: #c60;
+        height: 50vh;
+        stroke: #c60;
+        width: 50vw;
+      }
+      .orange {
+        color: #c60;
+      }
+      .fa-stack-1x {
+        margin: 0 auto;
+      }
+
+      .ilios-logo text {
+        font-size: 3rem;
+        font-family: "Helvetica Neue";
+        fill: #fff;
+        stroke: #fff;
+      }
+      .focus-h1 h1 {
+        color: rgb(155, 155, 155);
+        display: inline;
+      }
+      .focus-h1 h1:last-of-type {
+        color: #0071AD;
+      }
+      .set-photos .photos p {
+        display: grid;
+        height: 45vh;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: .25rem;
+      }
+      .set-photos img {
+        max-height: 95%;
+        max-width: 95%;
+        border-radius: 3%;
+        overflow: hidden;
+      }
+      .left-column, .right-column {
+        text-align: left;
+      }
+    </style>
+    <script defer src="../shared/fontawesome6.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+class: center, middle, title-slide, qr-title-slide
+# Jumping into Deep Work
+
+## Jon Johnson <span class="pronouns">(he/him)</span>
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson <br />
+  <i class="fa-brands fa-twitter"></i> jrjohnson_ <br />
+  ]
+
+  .avatar[
+  ![Jon's avatar](../shared/avatar.jpg)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2022-11-deep-work](media/talk-qr.svg)
+  `https://www.jrjohnson.dev`
+]
+
+---
+class: logos
+![UCSF Logo](media/ucsf-logo.jpg)
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true" class="ilios-logo">
+  <title>Ilios Logo</title>
+  <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+  <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+</svg>
+
+???
+# UCSF Educational Technology
+  - Team Hosts, and Develops, supports, and configures Moodle, Kaltura, Ilios, TurnItIn, PollEverywhere, and other edtech tools
+  - We're hiring!
+
+---
+class: center,middle,highlight
+# Deep Work
+## <i class="fa-duotone fa-quote-left"></i> Deep work is the ability to focus without distraction on a cognitively demanding task. **It’s a skill that** allows you to quickly master complicated information and produce better results in less time. Deep work **will make you better at what you do** and provide the sense of true fulfillment that comes from craftsmanship. In short, deep work is **like a super power** in our increasingly competitive twenty-first century economy. And yet, most people have lost the ability to go deep—spending their days instead in a frantic blur of e-mail and social media, not even realizing there’s a better way.<i class="fa-duotone fa-quote-right"></i>
+.footnote[-Cal Newport https://www.calnewport.com/books/deep-work/]
+
+???
+- I named this talk after this book
+- It gave me the vocabulary to talk about something I'd been messing with for years
+- I remember it being a good book, and I'm not going to summarize it here, other than this quote you probably shouldn't think of anything I'm saying as being from this book
+
+---
+class:center,middle
+# The Problem
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Urgency culture has us believe it&#39;s &quot;selfless&quot; to be on call, always available 24/7. It&#39;s actually a form of self neglect. time away is needed. Boundaries are needed. so many of us are exhausted, burnt out, or in chronic pain because our bodies...👇</p>&mdash; Dr. Nicole LePera (@Theholisticpsyc) <a href="https://twitter.com/Theholisticpsyc/status/1589042366975205378?ref_src=twsrc%5Etfw">November 5, 2022</a></blockquote>
+
+???
+The problem is us. We all want to be seen as busy, as important, as helping. There's nothing
+wrong with wanting to feel appreciated, but when you say yes to everything, when you fail to
+take care of yourself, when you don't take time to focus, it is impossible to be truly effective
+at the really impactful interesting work we all want to do.
+
+---
+class: center,photo-slide
+# The Problem
+![Calendar with meetings all over and overlapping, no focused time anywhere](./media/calendar-full.png)
+
+---
+class: center,middle
+# Taking Control of My Calendar
+## and by extension my focus
+### and discovering deep work
+
+???
+I've approached this in phases, today I'm talking about mostly where I am now, but that's
+not the whole story. I've experimented with a *lot* of ways to be productive developing
+software, managing a team, and supporting education.
+
+---
+class: center,middle,photo-slide
+# <i class="fa-duotone fa-trophy-star"></i> Deep Work Achievement Unlocked<i class="fa-duotone fa-trophy-star"></i>
+![Calendar with Mornings and all day Wednesday and Friday blocked off, recurring meetings pushed together into blocks](media/calendar.png)
+
+???
+By blocking off huge chunks of my calendar (All day Wednesday and Friday) I was able to guarantee time to focus.
+
+---
+class: center,middle
+# Better Meetings<i class="fa-duotone fa-ear-listen"></i>
+
+???
+Not only did focus time become more productive, but squashing all my meetings into specific slots
+made it easier to focus on those meetings. I didn't need to be halfway present, I could be all-in because I knew
+I'd have time to finish my work.
+
+---
+class: center,middle
+# <i class="fa-duotone fa-inbox"></i>Inbox Zero
+
+???
+Inbox zero was possible for the first time (like dishes I didn't need to worry about the next email coming in, I'd get to it)
+
+---
+class: center,middle
+# <i class="fa-duotone fa-cubes-stacked"></i>Planning Stacked Work
+
+???
+Stacking work like this allowed by time to plan what work I would stack. Instead of reacting to the idea de jour I was able to
+work on what was most important and know I could finish really big projects.
+
+---
+class: center,middle
+# All In
+## <i class="fa-duotone fa-people-group"></i>bringing in the team<i class="fa-duotone fa-people-group"></i>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Whatever the opposite of “hardcore” 10x rock star dev is, that’s what I want.<br><br>cosycore, moving slowly, making things right, petting the dog, naps, staring out of the window pondering problems and drinking tea.</p>&mdash; Cassie Evans (@cassiecodes) <a href="https://twitter.com/cassiecodes/status/1592974814352146432?ref_src=twsrc%5Etfw">November 16, 2022</a></blockquote>
+
+???
+### My privilege allowed me to experiment
+- as leaders we need to give explicit permission for our teams to do this
+- those with less privilege may be seen as lazy, unengaged, or fraudulent
+- Evaluate our teams (and ourselves) on criteria other than attendance
+
+---
+class: center,middle
+# <i class="fa-duotone fa-people-group"></i>Making Deep Work Our Policy
+
+.boxes[
+  ##<i class="fa-duotone big fa-calendar-heart"></i>
+  ##<i class="fa-duotone big fa-face-shush"></i>
+]
+
+???
+Block off at least 2 days a week for deep work
+Establish, and socialize, a communication policy
+
+---
+class: center,highlight
+# Communication
+.whitespace[]
+
+## To **foster deep work** and allow the most flexibility in scheduling meaningful work, the following guidelines apply to any communication within our group and as much as possible should be the **default for all internal and external communication**.
+
+---
+class: center,highlight
+# Asynchronous Decision Making
+.whitespace[]
+
+## Give meaningful discussions a meaningful amount of time to develop and unfold. Allowing time for everyone to take part in any decision allows time for new ideas as well as **reducing the stress from missing out** if you're not plugged into chat at the exact time decisions are unfolding.
+
+---
+class: center,highlight
+# Response Times
+.whitespace[]
+
+## Messages should be answered **within two working days** if a response is required. It's OK to not respond to every message. It is also OK for your first response to be "I need to think about the implications further". When you need more time to respond, let everyone know. We're a **very small team** and everyone having time to fully digest and consider information is critical for avoiding many types of issues. When you are engaged in meaningful deep work, you should **ignore all communication channels and focus** on your work knowing you will have time to read and respond later.
+
+---
+class: center,highlight
+# Checking in to say hi
+.whitespace[]
+
+## It can get very lonely working in isolation. These requirements are not meant to cover casual conversation. Reach out, be around, say hi, **we're a team** only as long as we all take part in a community.
+
+---
+class: center,highlight
+# Emergencies
+.whitespace[]
+
+## Critical response is rarely needed, but you should leave team members a way to **break into your work for emergencies** only. If this communication channel is used more than once a year, then we should re-tool our process to have **fewer emergencies**. Phone, text, or Slack (breaking Do-Not-Disturb mode) are fine. Use whatever you need, but make everyone aware of how to reach you in crisis.
+
+???
+- May 2021 was the last time we had an emergency of this type and needed to break in, text worked fine
+
+---
+class: center,highlight
+# External Communication Requirements
+.whitespace[]
+
+## You should check external communication channels (email) **once per day** to be responsive to external emergencies and information requests from important campus partners. Even for critical requests from important constituents, an 8-hour delay in responding is acceptable. **We have very few true emergencies**, but waste a significant amount of our potential when monitoring email is a top priority. I would much rather us **do very good work every day** and occasionally have a delay in responding than to waste time every day on the off chance there is an emergency.
+
+---
+class: center
+# Along Came Covid
+## Untethered From Time
+
+<br><br><br>
+.icon-row[
+## <i class="fa-duotone fa-disease big" title="Disease"></i>
+## <i class="fa-duotone fa-toilet-paper big" title="Toilet Paper"></i>
+## <i class="fa-duotone fa-hand-holding-medical big" title="Hand Holding a Medical Symbol"></i>
+]
+
+???
+## First time working fully remote for many
+- Freedom to merge personal and work schedules and optimize both
+## Work When you're ready to work
+- I used to get so stressed on Sunday, felt like I couldn't relax. Now I work on Sunday afternoon and take Wednesday morning off
+- I used to come in really early to get focus time in, but I was regularly told the leaving early didn't seem fair to the team
+- Perceptions mater a lot, COVID has made this much easier to play around with
+
+---
+class: center,middle
+# How's it Going?
+
+.left-column[
+  ## Ilios
+  - ### 48 releases in 2021
+  - ### Since January 2022 62% Faster and 75% less memory
+  - ### First to Meet AAMC Curriculum Inventory Standards
+  - ### Fully Deployed in Containers
+  - ### Perfect <i class="fa-duotone fa-hundred-points" title="100"></i> Siteimprove Accessibility Rating
+]
+
+.right-column[
+  ## Moodle
+  - ### Up To Date on v3.11.11
+  - ### Significant Deployment Automation
+  - ### Removed 80K Unneeded User Accounts
+  - ### Shorter Maintenance Windows
+  - ### Zero Unplanned Downtime in more than a Year
+]
+
+???
+47 Ilios releases (so far) in 2022
+Progress on Upstream work for Embroider, unlocking significant improvements for users on low cost devices
+
+---
+class:center,middle
+# Organizational Limits
+## such a thing as too productive
+
+???
+- It's a weird thing to say, but you can be too productive.
+- An organization can only absorb so much change.
+- Because we've maximized our time it has allowed us to focus on other UCSF mission areas to advance health worldwide
+including:
+  - building small tools for data extraction and pandemic communication,
+  - contributing to open source maintenance of Moodle, it's plugins, and many other libraries we depend on.
+
+---
+class:center,middle,set-photos
+# What Will You Do With More Time?
+
+.photos[
+![library staff watching an eclipse](media/watching-eclipse.jpg)
+![view up into the canopy of redwoods](media/redwoods.jpg)
+![sitting cross legged at the end of yoga class with my dog Jackson](media/yoga-with-jackson.jpg)
+![laying down in the grass enjoying the day](media/laying-down.jpg)
+![two dogs sitting looking up and waiting to see what is happening](media/jayden-jackson-waiting.jpg)
+![with Jen, my wife, on a boat on the water](media/with-jen.jpg)
+]
+
+???
+# Hard To Prioritize Yourself When Our Mission is So Critical
+## If you have as much trouble as I do throwing off your capitalist conditioning
+Remember:
+- You're an incredibly expensive and difficult to replace asset and it's your job to take care of you
+- Keep track of your hours and accomplishments. You'll find work is getting its fair share.
+- I solved a long standing performance issue while walking my dogs on the beach, taking care of yourself takes care of your job
+
+---
+class: center,middle,highlight
+## <i class="fa-duotone fa-quote-left"></i>Do something. **If it works, do more of it**. If it doesn't, do something else.<i class="fa-duotone fa-quote-right"></i>
+.footnote[– FDR]
+
+???
+## Get Started Today
+- It's a perfect time to schedule some deep work time for 2023
+
+---
+class:center,middle,photo-slide
+
+![Jayden, a super cute chihuahua waiting for you to do something](./media/jayden-waiting.jpeg)
+
+---
+class: center, middle, title-slide, qr-title-slide
+# Thanks!
+
+## Jon Johnson
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson <br />
+  <i class="fa-brands fa-twitter"></i> jrjohnson_ <br />
+  ]
+
+  .avatar[
+  ![Jon's avatar](../shared/avatar.jpg)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2022-11-deep-work](media/talk-qr.svg)
+  `https://www.jrjohnson.dev`
+]
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+      const slideshow = remark.create({
+        navigation: {
+          scroll: false,
+          touch: true,
+          click: true
+        },
+        slideNumberFormat: '',
+        countIncrementalSlides: false,
+        ratio: '16:9',
+        highlightStyle: 'railscasts'
+      });
+    </script>
+  </body>
+</html>
