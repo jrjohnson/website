@@ -15,6 +15,6 @@ We've been prioritizing deep work on our team for the last few years and have fo
 
 Outcomes:
 
-1) Inspiration to give deep work a try
-2) Specific steps to start taking control of your calendar and attention
-3) A working example communication policy which fosters deep work
+1. Inspiration to give deep work a try
+2. Specific steps to start taking control of your calendar and attention
+3. A working example communication policy which fosters deep work
