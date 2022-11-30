@@ -142,6 +142,9 @@ There are a lot of things you have to get right to make that work and a lot of i
 ## Organizational Limits
 ### such a thing as too productive
 
+"Just because you can doesn't mean you should!"
+- Kelly (this morning)
+
 - It's a weird thing to say, but you can be too productive.
 - An organization, and it's users, can only absorb so much change.
 
