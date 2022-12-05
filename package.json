@@ -38,7 +38,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "broccoli-markdown-resolver": "^0.0.1",
     "cssstats": "^4.0.2",
-    "ember-a11y-testing": "^5.0.0",
+    "ember-a11y-testing": "^5.1.0",
     "ember-auto-import": "^2.4.3",
     "ember-cli": "~4.8.0",
     "ember-cli-app-version": "^5.0.0",
