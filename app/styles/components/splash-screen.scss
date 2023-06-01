@@ -3,11 +3,11 @@
   width: 80%;
 
   & h1 {
-    @include font-size('xxxl');
+    @include font-size("xxxl");
     text-align: right;
 
     @media (max-width: 1000px) {
-      @include font-size('xxl');
+      @include font-size("xxl");
       text-align: center;
     }
   }
@@ -16,10 +16,10 @@
     display: grid;
     gap: 1rem;
     grid-template-areas:
-      'top top top'
-      'left left right'
-      'left left right'
-      'bottom bottom bottom';
+      "top top top"
+      "left left right"
+      "left left right"
+      "bottom bottom bottom";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 31%) 25%;
 
@@ -46,7 +46,7 @@
       padding: 0;
 
       & li {
-        @include font-size('xl');
+        @include font-size("xl");
       }
     }
 
