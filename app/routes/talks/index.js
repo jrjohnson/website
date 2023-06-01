@@ -9,6 +9,8 @@ export default class IndexRoute extends Route {
       const cleanPath = path.replace('markdown/talks/', '');
       return { path: cleanPath, attributes, content };
     });
-    return improvedPaths.sortBy('attributes.date').reverse();
+    return improvedPaths
+      .sort((a, b) => new Date(a.attributes.date) - new Date(b.attributes.date))
+      .reverse();
   }
 }
