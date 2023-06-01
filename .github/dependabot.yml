@@ -7,11 +7,13 @@ updates:
   open-pull-requests-limit: 10
   ignore:
   - dependency-name: "@ember/optional-features"
+  - dependency-name: "@ember/string"
   - dependency-name: "@ember/test-helpers"
   - dependency-name: "@glimmer/component"
   - dependency-name: "@glimmer/tracking"
   - dependency-name: babel-eslint
   - dependency-name: broccoli-asset-rev
+  - dependency-name: concurrently
   - dependency-name: ember-auto-import
   - dependency-name: ember-cli
   - dependency-name: ember-cli-app-version
@@ -36,10 +38,12 @@ updates:
   - dependency-name: eslint-plugin-prettier
   - dependency-name: eslint-plugin-qunit
   - dependency-name: loader.js
-  - dependency-name: npm-run-all
   - dependency-name: prettier
   - dependency-name: qunit
   - dependency-name: qunit-dom
+  - dependency-name: stylelint
+  - dependency-name: stylelint-prettier
+  - dependency-name: tracked-built-ins
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
