@@ -1,0 +1,77 @@
+.resume {
+  h1 {
+    display: none;
+  }
+
+  h3 {
+    @include font-size("large");
+    color: var(--header-purple);
+  }
+
+  h2 + h3 {
+    margin-top: .5rem;
+  }
+
+  p {
+    margin-top: .25rem;
+  }
+
+  h2 + p, h3 + p, p + p {
+    margin: 0 0 0 .75rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-top: 0;
+  }
+
+  ul li {
+    display: flex;
+  }
+
+  ul li img {
+    margin-right: .1rem;
+  }
+
+  #education + ul li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #talks + ul {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 5rem;
+    justify-content: flex-start;
+    align-content: space-around;
+    column-gap: .5rem;
+  }
+
+  #skills + ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+
+    li {
+      @include font-size("large");
+      font-family: "Crimson+Text", serif;
+      color: var(--header-purple);
+      list-style-type: none;
+      display: block;
+
+      ul {
+        display: block;
+        padding-left: 0;
+      }
+
+      li {
+        @include font-size("base");
+        color: var(--text-purple);
+        list-style-type: disc;
+      }
+    }
+  }
+
+}

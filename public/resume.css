@@ -1,0 +1,122 @@
+html {
+  font-family: Yantramanav, sans-serif;
+  font-size: 14px;
+}
+
+body {
+  color: #0D0628;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #E8871E;
+  font-family: "Crimson+Text", serif;
+  margin: 0 0 .25rem 0;
+  padding: 0;
+  line-height: calc(4px + 2ex);
+}
+
+h1 {
+  color: #0D0628;
+  font-size: 2.074rem;
+  text-align: center;
+}
+
+h2#applicationdevelopmentandoperationsmanager {
+  color: #6E507C;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.728rem;
+}
+
+h3 {
+  color: #6E507C;
+  font-size: 1.44rem;
+  margin-top: 1rem;
+}
+
+a, a:visited {
+  color: #2589bd;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+  line-height: calc(1px + 3ex);
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+ul li {
+  display: flex;
+}
+
+ul li img {
+  margin-right: .1rem;
+}
+
+hr {
+  margin-top: 1rem;
+}
+
+h2 + p, h3 + p, p + p, h2 + ul {
+  margin: 0 0 0 .75rem;
+}
+
+#education + ul li {
+  flex-direction: column;
+  text-align: center;
+}
+
+#talks + ul {
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 5rem;
+  justify-content: flex-start;
+  align-content: space-between;
+  padding: 0;
+}
+
+#talks + ul li {
+  width: 49%;
+}
+
+#skills + ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+#skills + ul ul {
+  display: block;
+  margin: 0;
+  padding-left: 0;
+}
+
+#skills + ul li {
+  display: block;
+  color: #6E507C;
+  font-size: 1.44rem;
+  list-style-type: none;
+  font-family: "Crimson+Text", serif;
+  width: 49%;
+}
+
+#skills + ul li li {
+  font-size: 1rem;
+  list-style-type: disc;
+  color: #0D0628;
+  width: 100%;
+}
