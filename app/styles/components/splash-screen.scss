@@ -31,13 +31,11 @@
     & img {
       border-radius: 50%;
       grid-area: right;
-      height: 300px;
       padding: 5px;
       place-self: right;
       width: 300px;
       @media (max-width: 1000px) {
-        height: 200px;
-        width: 200px;
+        width: 150px;
       }
     }
 
@@ -59,6 +57,10 @@
       flex-direction: row;
       grid-area: bottom;
       justify-content: space-around;
+
+      @media (max-width: 1000px) {
+        width: 80%;
+      }
     }
   }
 }
