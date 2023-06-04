@@ -92,7 +92,8 @@
   },
   "ember-addon": {
     "paths": [
-      "lib/markdown"
+      "lib/markdown",
+      "lib/splash"
     ]
   }
 }
