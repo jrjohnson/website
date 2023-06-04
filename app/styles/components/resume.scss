@@ -16,7 +16,7 @@
     margin-top: .25rem;
   }
 
-  h2 + p, h3 + p, p + p {
+  h2 + p, h3 + p, p + p, h2 + ul {
     margin: 0 0 0 .75rem;
   }
 
@@ -45,13 +45,17 @@
     flex-wrap: wrap;
     height: 5rem;
     justify-content: flex-start;
-    align-content: space-around;
-    column-gap: .5rem;
+    align-content: space-between;
+    padding: 0;
+  }
+
+  #talks + ul li {
+    width: 50%;
   }
 
   #skills + ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0;
 
     li {
@@ -60,6 +64,8 @@
       color: var(--header-purple);
       list-style-type: none;
       display: block;
+      font-weight: 700;
+      width: 50%;
 
       ul {
         display: block;
@@ -68,8 +74,12 @@
 
       li {
         @include font-size("base");
+        @include paragraph-line-height;
+        font-family: Yantramanav, sans-serif;
+        font-weight: 400;
         color: var(--text-purple);
         list-style-type: disc;
+        width: 100%;
       }
     }
   }

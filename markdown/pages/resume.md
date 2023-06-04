@@ -70,14 +70,14 @@ Expert in team leadership, development, and psychological safety; enterprise web
 ## Recent Experience
 
 ### Teaching and Learning Applications
-*Manager* __2019-present__
+__Manager *2019-present*__
   While still maintaining a focus on technical leadership for the Ilios platform assumed responsibility for the Collaborative Learning Environment and the developers and support staff for CLE systems. Led the campus wide A3 effort to transform the organization and funding model for education at UCSF on behalf of the Committee for Educational Technology; maintained uptime, stability, and security through multiple system upgrades; seamlessly transitioned to fully remote work; strengthened partnerships with LTG and school technologists during the transition to pandemic remote teaching; proactively advocated for moving our team to the new Educational IT organization and managed the uncertainty and chaos of that transitional while maintaining a rigorous Ilios release schedule and on schedule upgrade of Moodle; served on the Medibiquitous Technical Advisory Group as an API and medical education standards expert.
 
 
 ### Ilios Curriculum Management Platform
-*Technical Lead, Architect* __2014-2019__
+__Technical Lead, Architect *2014-2019*__
   Managed the transition from a code igniter and YUI driven application to a modern Hexagonal Symfony API with an EmberJS frontend for a user-friendly, flexible, and robust web application to collect, manage, analyze and deliver curricular information in Medical Education.
 
 ### Jazzee Graduate Admissions
-*Architect, Developer, Evangilist* __2009-2014__
+__Architect, Developer, Evangilist *2009-2014*__
   Designed and built the Jazzee admissions system to collect and manage graduate applications and payments. Built on an XML API and a revolutionary user customizable form builder with a focus on accessibility, usability, and security. Deployed for admissions at three University of California graduate schools for admissions.

@@ -1,6 +1,6 @@
 html {
   font-family: Yantramanav, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 body {
@@ -90,7 +90,7 @@ h2 + p, h3 + p, p + p, h2 + ul {
 }
 
 #talks + ul li {
-  width: 49%;
+  width: 50%;
 }
 
 #skills + ul {
@@ -111,12 +111,16 @@ h2 + p, h3 + p, p + p, h2 + ul {
   font-size: 1.44rem;
   list-style-type: none;
   font-family: "Crimson+Text", serif;
-  width: 49%;
+  font-weight: 700;
+  width: 50%;
 }
 
 #skills + ul li li {
   font-size: 1rem;
   list-style-type: disc;
   color: #0D0628;
+  font-family: Yantramanav, sans-serif;
+  font-weight: 400;
+  line-height: calc(1px + 3ex);
   width: 100%;
 }
