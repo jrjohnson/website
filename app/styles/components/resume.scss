@@ -6,15 +6,11 @@
   h3 {
     @include font-size("large");
     color: var(--header-purple);
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 
   p {
-    margin-top: .25rem;
-  }
-
-  h2 + p, h3 + p, p + p, h2 + ul {
-    margin: 0 0 0 .75rem;
+    margin-top: 0.25rem;
   }
 
   ul {
@@ -29,7 +25,14 @@
   }
 
   ul li img {
-    margin-right: .1rem;
+    margin-right: 0.1rem;
+  }
+
+  h2 + p,
+  h3 + p,
+  p + p,
+  h2 + ul {
+    margin: 0 0 0 0.75rem;
   }
 
   #education + ul li {
@@ -80,5 +83,4 @@
       }
     }
   }
-
 }
