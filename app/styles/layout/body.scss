@@ -97,6 +97,10 @@ body {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
+
+      @media (min-width: 500px) {
+        justify-content: flex-start;
+      }
     }
 
     & img {
@@ -126,7 +130,7 @@ body {
   & > main {
     grid-area: main;
     min-width: 0;
-    padding: 2em;
+    padding: 0.5em 2em;
   }
 
   & > footer {
