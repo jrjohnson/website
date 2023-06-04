@@ -1,0 +1,142 @@
+:root {
+  --background-color: #506380;
+  --body-background-color: #F8F6F2;
+  --link-blue: #006DAA;
+  --text-purple: #171019;
+  --header-orange: #BF6900;
+  --header-purple: #5B3F64;
+  --body-font: Yantramanav, sans-serif;
+  --header-font: "Crimson+Text", serif;
+  --fs-base: 1rem;
+  --fs-large: 1.44rem;
+  --fs-xl: 1.728rem;
+  --fs-xxl: 2.074rem;
+}
+
+html {
+  font-family: var(--body-font);
+  font-size: 13px;
+}
+
+body {
+  color: var(--text-purple);
+  font-size: var(--fs-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--header-orange);
+  font-family: var(--header-font);
+  margin: 0 0 .25rem 0;
+  padding: 0;
+  line-height: calc(4px + 2ex);
+}
+
+h1 {
+  color: var(--text-purple);
+  font-size: var(--fs-xxl);
+  text-align: center;
+}
+
+h2#applicationdevelopmentandoperationsmanager {
+  color: var(--header-purple);
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  color: var(--header-purple);
+  font-size: var(--fs-large);
+  margin-top: 1rem;
+}
+
+a, a:visited {
+  color: var(--link-blue);
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+  line-height: calc(1px + 3ex);
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+ul li {
+  display: flex;
+}
+
+ul li img {
+  margin-right: .1rem;
+}
+
+hr {
+  margin-top: 1rem;
+}
+
+h2 + p, h3 + p, p + p, h2 + ul {
+  margin: 0 0 0 .75rem;
+}
+
+#education + ul li {
+  flex-direction: column;
+  text-align: center;
+}
+
+#talks + ul {
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 5rem;
+  justify-content: flex-start;
+  align-content: space-between;
+  padding: 0;
+}
+
+#talks + ul li {
+  width: 50%;
+}
+
+#skills + ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+#skills + ul ul {
+  display: block;
+  margin: 0;
+  padding-left: 0;
+}
+
+#skills + ul li {
+  display: block;
+  color: var(--header-purple);
+  font-size: var(--fs-large);
+  list-style-type: none;
+  font-family: var(--header-font);
+  font-weight: 700;
+  width: 50%;
+}
+
+#skills + ul li li {
+  font-size: var(--fs-base);
+  list-style-type: disc;
+  color: var(--text-purple);
+  font-family: var(--body-font);
+  font-weight: 400;
+  line-height: calc(1px + 3ex);
+  width: 100%;
+}

@@ -1,73 +1,83 @@
-## Senior Web Platform Developer
+---
+css: resume.css
+---
 
-> [PDF Resume](/media/resume.pdf)   
-> [jon.johnson@ucsf.edu](jon.johnson@ucsf.edu)   
-> [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
-> ![Github](/media/github_mark.svg)[jrjohnson](https://github.com/jrjohnson) | ![twitter](/media/twitter_mark.svg)[jrjohnson_](https://twitter.com/jrjohnson_)   
-> (650) 516-7401   
+# Jonathan Ryan Johnson
+
+## Application Development and Operations Manager
+
+* [PDF Resume](/media/resume.pdf)
+* jon.johnson@ucsf.edu
+* (650) 516-7401
+* [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
+* ![Github](/media/github_mark.svg)[jrjohnson](https://github.com/jrjohnson)
+* ![twitter](/media/twitter_mark.svg)[jrjohnson_](https://twitter.com/jrjohnson_)   
 
 ------
 
 ## Profile
 
-Experience in enterprise web application development using PHP, Javascript, JSON, SQL and XML; modern web standards; server administration; accessible web design; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
+Expert in team leadership, development, and psychological safety; enterprise web application development using PHP, Javascript, JSON, SQL and XML; open source contributions and community; modern web standards; cloud systems; accessible web design; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
 
 ------
 
-## Technical Expertise
+## Skills
 
-* PHP
-* Javascript ES2018
-* EmberJs
-* Symfony
-* Test Driven Development
-* Open Source Development
-
-------
-
-## Domain and Soft Skills
-
-* Educational Administration and Curriculum Development
-* Working with and Building Diverse Teams
-* Open Source Community Maintenance and Communication
-* Organization Architecture and Development
-
-------
-
-## Sample Code
-
-* PHP
-	: [Ilios Symfony Backend API Server](https://github.com/ilios/ilios)
-
-* Javascript
-	: [Ilios EmberJS Web App](https://github.com/ilios/frontend)
-	: [ember-cli-image-transformer](https://github.com/jrjohnson/ember-cli-image-transformer)
-	: [ember-noscript](https://github.com/jrjohnson/ember-noscript)
-
-	: [ember-fontawesome](https://github.com/FortAwesome/ember-fontawesome)
+* Domain
+    * Working with and Building Diverse Teams
+    * Psychological Safety and People Management
+    * Educational Administration and Curriculum Development
+    * Open Source Community Maintenance and Communication
+    * Organization Architecture and Development
+    * Community Building
+* Technical
+    * API Design and Development
+    * Web Application Development
+    * Accessibility
+    * Secure Application Development and Operations
+    * Test Driven Development
+    * Open Source Development
+    * Continuous Integration and Deployment
+    * AWS and Cloud First Architecture
 
 -------
 
 ## Talks
 
-[Ready Set Go: Loading Single Page Apps Fast](https://www.jrjohnson.dev/talks/2018-10-ready-set-go-sflive.html)   
-[From Stuck to Soaring: Taking Aim at Continuous Delivery](https://www.jrjohnson.dev/talks/2018-08-stuck-to-soaring-uccsc.html)   
-[Deliver Content to Students in Moodle, Canvas, and Sakai using AWS Lambda and LTI](https://www.jrjohnson.dev/talks/2018-08-lti-lambda-uccsc.html)   
-[Web Development with the Microapplication Pattern](https://www.jrjohnson.dev/talks/2017-08-microapps-uccsc.html)   
-[Testing in EmberJS (EmberSF Meetup)](http://www.meetup.com/Ember-SF/events/221266972/)
+* [Jumping into Deep Work](https://www.jrjohnson.dev/talks/2022-11-deep-work)   
+* [Automagic Deployment with Github Actions](https://www.jrjohnson.dev/talks/2022-08-github-actions)   
+* [Microapps: A Covid-19 Case Study](https://www.jrjohnson.dev/talks/2020-08-covid-microapps)
+* [Cut Your Team Some Slack](https://www.jrjohnson.dev/talks/2019-10-slack-in-brief)
+* [Handling Complicated Tasks with a Chatbot](https://www.jrjohnson.dev/talks/2019-07-chatbots)
+* [Always Be Updating](https://www.jrjohnson.dev/talks/2019-06-always-be-updating)
+* [Career Day at Aragon High School](https://www.jrjohnson.dev/talks/2019-03-ahs-career-day)
+
+------                                                    
+                                                          
+## Education                                              
+* BA History (Pre-Law) *University of the Pacific* __2003__    
+* MA Educational Administration *University of the Pacific* __2005__
 
 ------
 
-## Posts
+## Sample Code
 
-[Deploying with Ember.js: a story](https://www.jrjohnson.dev/emberjs/deploy/2017/09/06/deploy-story.html/)   
-[Testing in Ember.js (3 parts)](https://blogs.library.ucsf.edu/ckm/2015/04/24/testing-in-ember-js-part-1/)   
+*PHP*: [Ilios Symfony Backend API Server](https://github.com/ilios/ilios)
+
+*Javascript*: [Ilios EmberJS Web App](https://github.com/ilios/frontend)  | [ember-cli-image-transformer](https://github.com/jrjohnson/ember-cli-image-transformer)  | [ember-noscript](https://github.com/jrjohnson/ember-noscript)  | [ember-fontawesome](https://github.com/FortAwesome/ember-fontawesome)
 
 ------
 
 ## Recent Experience
 
-Ilios Curriculum Management Platform
-: *Technical Lead, Architect*
-  __2014-present__
-  Managed the transition from a code igniter and YUI driven application to a modern Hexagonal Symfony API with an EmberJS frontend for a user-friendly, flexible, and robust web application to collect, manage, analyze and deliver curricular information in Medical Education.
+### Teaching and Learning Applications
+__Manager *2019-present*__
+  While still maintaining a focus on technical leadership for the Ilios platform assumed responsibility for the Collaborative Learning Environment and the developers and support staff for CLE systems. Led the campus wide A3 effort to transform the organization and funding model for education at UCSF on behalf of the Committee for Educational Technology; facilitated internship with JCC and served as a mentor for diverse career switchers exploring technology; served as UCTech ambassador with a focus on creating an inclusive conference and recruiting first-time speakers; maintained uptime, stability, and security through multiple system upgrades; seamlessly transitioned to fully remote work; strengthened partnerships with LTG and school technologists during the transition to pandemic remote teaching; proactively advocated for moving our team to the new Educational IT organization and managed the uncertainty and chaos of that transitional while maintaining a rigorous Ilios release schedule and on schedule upgrade of Moodle; served on the Medibiquitous Technical Advisory Group as an API and medical education standards expert.
+
+### Ilios Curriculum Management Platform
+__Technical Lead, Architect *2014-2019*__
+  Managed the transition from a code igniter and YUI driven application to a modern Hexagonal Symfony API with an EmberJS frontend for a user-friendly, flexible, and robust web application to collect, manage, analyze and deliver curricular information in Medical Education. Recruited for, administered, and created a code of conduct for the UCTech slack a hugely successful diverse, cross campus collaborative community for technical staff across the University of California.
+
+### Jazzee Graduate Admissions
+__Architect, Developer, Evangilist *2009-2014*__
+  Designed and built the Jazzee admissions system to collect and manage graduate applications and payments. Built on an XML API and a revolutionary user customizable form builder with a focus on accessibility, usability, and security. Deployed for admissions at three University of California graduate schools for admissions.

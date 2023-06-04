@@ -1,0 +1,86 @@
+.resume {
+  h1 {
+    display: none;
+  }
+
+  h3 {
+    @include font-size("large");
+    color: var(--header-purple);
+    margin-top: 0.5rem;
+  }
+
+  p {
+    margin-top: 0.25rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-top: 0;
+  }
+
+  ul li {
+    display: flex;
+  }
+
+  ul li img {
+    margin-right: 0.1rem;
+  }
+
+  h2 + p,
+  h3 + p,
+  p + p,
+  h2 + ul {
+    margin: 0 0 0 0.75rem;
+  }
+
+  #education + ul li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #talks + ul {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 5rem;
+    justify-content: flex-start;
+    align-content: space-between;
+    padding: 0;
+  }
+
+  #talks + ul li {
+    width: 50%;
+  }
+
+  #skills + ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+
+    li {
+      @include font-size("large");
+      font-family: "Crimson+Text", serif;
+      color: var(--header-purple);
+      list-style-type: none;
+      display: block;
+      font-weight: 700;
+      width: 50%;
+
+      ul {
+        display: block;
+        padding-left: 0;
+      }
+
+      li {
+        @include font-size("base");
+        @include paragraph-line-height;
+        font-family: Yantramanav, sans-serif;
+        font-weight: 400;
+        color: var(--text-purple);
+        list-style-type: disc;
+        width: 100%;
+      }
+    }
+  }
+}

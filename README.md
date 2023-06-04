@@ -51,9 +51,9 @@ Commits to `master` are auto deployed by Netlify.
 1. Add Name to the top
 2. modify media paths to be local (remove /media/)
 3. Remove PDF link
-4. Remove frontmatter
-5. Add White space with \`(space)\`(space)(space)(space)(space)
-6. Run generator `docker run -v ${PWD}:/resume there4/markdown-resume md2resume pdf --template modern resume.md media/`
+4. Convert to HTML `multimarkdown markdown/pages/resume.md -o public/resume-output.html`
+5. Generate PDF from HTML `npx electron-pdf http://localhost:4200/resume-output.html public/media/resume.pdf -p=Letter -m=0`
+6. Remove HTML `rm public/resume-output.html`
 
 * [ember.js](https://emberjs.com/)
 * [ember-cli](https://cli.emberjs.com/release/)
