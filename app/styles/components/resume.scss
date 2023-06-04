@@ -6,9 +6,6 @@
   h3 {
     @include font-size("large");
     color: var(--header-purple);
-  }
-
-  h2 + h3 {
     margin-top: .5rem;
   }
 
