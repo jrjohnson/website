@@ -6,6 +6,7 @@ css: resume.css
 
 ## Application Development and Operations Manager
 
+* [PDF Resume](/media/resume.pdf)
 * jon.johnson@ucsf.edu
 * (650) 516-7401
 * [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
