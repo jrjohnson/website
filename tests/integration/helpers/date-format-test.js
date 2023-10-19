@@ -14,7 +14,7 @@ module('Integration | Helper | date-format', function (hooks) {
 
     assert.strictEqual(
       this.element.textContent.trim(),
-      'Friday, June 24, 2005'
+      'Friday, June 24, 2005',
     );
   });
 });
