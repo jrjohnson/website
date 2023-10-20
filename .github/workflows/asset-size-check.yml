@@ -13,3 +13,5 @@ jobs:
     - uses: mainmatter/ember-asset-size-action@v3
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+      env:
+        FONTAWESOME_NPM_AUTH_TOKEN: "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
