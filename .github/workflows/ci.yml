@@ -18,16 +18,15 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: npm
-      - name: Install Dependencies
-        run: npm ci
+          cache: pnpm
+      - run: pnpm install
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
 
   test:
     name: "Test"
@@ -35,13 +34,27 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: npm
-      - name: Install Dependencies
-        run: npm ci
+          cache: pnpm
+      - run: pnpm install
       - name: Run Tests
-        run: npm test
+        run: pnpm run test:ember
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - name: test build
+        run: pnpm run build
