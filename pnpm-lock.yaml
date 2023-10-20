@@ -26,6 +26,9 @@ devDependencies:
   '@ember/test-helpers':
     specifier: ^3.2.0
     version: 3.2.0(ember-source@5.3.0)(webpack@5.89.0)
+  '@fastify/pre-commit':
+    specifier: ^2.0.2
+    version: 2.0.2
   '@fortawesome/ember-fontawesome':
     specifier: ^1.0.3
     version: 1.0.3(webpack@5.89.0)
@@ -1719,6 +1722,14 @@ packages:
   /@eslint/js@8.51.0:
     resolution: {integrity: sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@fastify/pre-commit@2.0.2:
+    resolution: {integrity: sha512-NCruP+jjsaj+kwDKAS1zQc2XVCVcBPnH2q4cYbgzoUqvblmXE/SD0MaVgZ4o9MUMnCG+z1YLBGJb1eXNi0SEUw==}
+    requiresBuild: true
+    dependencies:
+      cross-spawn: 7.0.3
+      which: 2.0.2
     dev: true
 
   /@fortawesome/ember-fontawesome@1.0.3(webpack@5.89.0):
