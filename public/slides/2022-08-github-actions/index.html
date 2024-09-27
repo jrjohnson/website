@@ -3,7 +3,7 @@
   <head>
     <title>Automagic Deployment with Github Actions</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="/slides/shared/style.css">
     <style>
       .remark-slide-content {
         font-size: 24px;
@@ -91,7 +91,7 @@
       }
     </style>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script defer src="../shared/fontawesome6.js"></script>
+    <script defer src="/slides/shared/fontawesome6.js"></script>
   </head>
   <body>
     <textarea id="source" style="display: none;">
@@ -166,7 +166,7 @@
       # The Problem
       ## Building Something People Enjoy Using is Stressful
       <i class="fa-duotone huge fa-face-anxious-sweat"></i>
-      
+
       ???
       ## They want them to work
       ## and be fast
@@ -177,17 +177,17 @@
       class: middle,center
 
       <blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s Friday the 13th in 2020, I double dog dare you to deploy to production!</p>&mdash; Molly Struve 🦄 (@molly_struve) <a href="https://twitter.com/molly_struve/status/1327243228626755584?ref_src=twsrc%5Etfw">November 13, 2020</a></blockquote>
-      
+
       ---
       class: center,magic-quadrant
       # Some Things That Can Help
 
       --
       ## Agile Process <br><i class="fa-duotone fa-arrows-split-up-and-left"></i>
-      
+
       --
       ## Tests <br><i class="fa-duotone fa-vial-circle-check"></i>
-      
+
       --
       ## Continuous Integration <br><i class="fa-duotone fa-industry-windows"></i>
 
@@ -232,7 +232,7 @@
       - One of the only ways to do it wrong is to get too caught up in trying to do it by someones else's definition
       - I lead two "agile" teams with 80% of the same people and they run totally different processes
         - Both of them can get code into production in under an hour
-      
+
       ---
       class: center, middle
       # Let's Talk About Tests
@@ -243,7 +243,7 @@
       - I'm sloppy and I can't spell
       - Tests also include code style rules
       - You can do Test Driven Development or Test Reminder Development or Write Tests When Done Development, just write the tests
-      
+
       ---
       # Let's Talk About Tests
 
@@ -251,7 +251,7 @@
 
       --
       ## It will take another two weeks to get it running automatically
-      
+
 
       --
       class:short-photo,photo-slide
@@ -278,8 +278,8 @@
       ### Ilios Had Bad Tests
 
       .left-column[
-      - Getting them to run was a perfect first day. 
-      - Getting them to fail was a great second day. 
+      - Getting them to run was a perfect first day.
+      - Getting them to fail was a great second day.
       - In my second week the "terrible" tests saved me from a horrible mistake
       ]
       .right-column[
@@ -287,7 +287,7 @@
       ]
       --
       .full-width-column[## Write bad tests!!!]
-      
+
       ---
       class: center, middle
       # Easier to Test with a Solid Foundation
@@ -400,7 +400,7 @@
       ```
 
       .footnote[https://github.com/ilios/ilios/blob/master/.github/workflows/ci.yml]
-      
+
       ???
       ## It's a confusing time in PHP land
       - Lots of ways to analyze your code
@@ -416,7 +416,7 @@
         strategy:
           matrix:
             php-version: [8.1,8.2]
-    
+
         steps:
         ...
         - name: Use PHP ${{ matrix.php-version }}
@@ -430,7 +430,7 @@
       ```
 
       .footnote[https://github.com/ilios/ilios/blob/master/.github/workflows/ci.yml]
-      
+
       ???
       ## Matrix of Versions
       - Our official policy is to support the most recently released version of PHP
@@ -565,7 +565,7 @@
       ???
       ## WTF Is Zorgbort
       - It's our robot name, we use it for our chatbot and for resource accounts
-      
+
       ---
       class:photo-slide,center,middle
       # <i class="fa-duotone fa-tags"></i> Tag Version
@@ -575,7 +575,7 @@
       class:center,middle
       # <i class="fa-duotone fa-robot"></i> Improving the Tagging Experience with a Chatbot
       ![Slack conversation with a chatbot starting the deploy](./media/zorgbort-deploy.png)
-      
+
       ???
       ## Zorgbort Details
       - Talked about it at UCTech a few years ago (slides on my site)
@@ -590,11 +590,11 @@
 
       ```yaml
 
-      on: 
+      on:
         push:
           tags:
           - '*'
-          
+
       jobs:
         notes:
           steps:
@@ -624,14 +624,14 @@
 
       ---
       # <i class="fa-brands fa-npm"></i> Publish Package
-      
+
       ```yaml
       name: Publish NPM Package
 
       on:
       release:
         types: [published]
-        
+
       jobs:
         publish-npm:
           needs: build
@@ -650,7 +650,7 @@
       class:center,middle
 
       # <i class="fa-brands fa-npm"></i> Publish Package
-      
+
       ![List of 8 Ilios common NPM releases in the past 3 months](./media/common-releases.png)
 
       ---
@@ -675,7 +675,7 @@
 
       --
       ## Compile Styles<br><i class="fa-brands fa-sass"></i>
-     
+
       --
       ## Transpile Javascript<br><i class="fa-brands fa-js"></i>
 
@@ -710,7 +710,7 @@
       ```
 
       .footnote[https://github.com/ilios/frontend/blob/master/.github/workflows/deploy-production.yml]
-      
+
       ???
       ## Framework FTW!
       - Zero Config or Convention over Configuration Frameworks can often do really nice builds
@@ -738,7 +738,7 @@
       ```
 
       .footnote[https://github.com/ilios/frontend/blob/master/.github/workflows/deploy-production.yml]
-      
+
       ---
       class: center,middle
       # Let's talk about containers!
@@ -835,7 +835,7 @@
 
       --
       ## Push To Docker Hub<br><i class="fa-brands fa-docker"></i>
-      
+
       ---
       # <i class="fa-duotone fa-microchip"></i> Build Multi Platform Containers
 
@@ -856,7 +856,7 @@
       ???
       - Using emulation we can build for different architectures
         - Which turns out to be really important when your team starts getting apple silicon
-      
+
       ---
       # <i class="fa-brands fa-docker"></i> Push To Docker Hub
 
@@ -911,7 +911,7 @@
       ```
 
       .footnote[https://github.com/ilios/ilios/blob/master/.github/workflows/deploy-nightly.yml]
-      
+
       ---
       class:center,middle,photo-slide
 
@@ -933,7 +933,7 @@
       2. Go To Lunch
       3. v65.4.3 is now in *Production*
       4. Repeat
-      
+
       ---
       class: magic-quadrant
       # <i class="fa-duotone fa-brain-circuit"></i> Explore The Limits
@@ -949,7 +949,7 @@
 
       --
       ## Run Cron Jobs <br><i class="fa-duotone fa-screwdriver-wrench"></i>
-      
+
       ---
       class: center, middle, title-slide, qr-title-slide
       # Thanks!

@@ -3,10 +3,12 @@
   <p>{{date-format @model.attributes.date}}</p>
 
   <h3>Abstract:</h3>
-  {{markdown-to-html @model.content}}
+  <MarkdownToHtml @markdown={{@model.content}} />
 
-  From here you can access the
-  <a href="{{@model.attributes.slidesURI}}/index.html">Slides</a>
+  {{#if @model.attributes.slidesURI}}
+    From here you can access the
+    <a href="{{@model.attributes.slidesURI}}/index.html">Slides</a>
+  {{/if}}
 
   {{#if @model.attributes.slideContentURI}}
     or an <a href={{@model.attributes.slideContentURI}}>all text summary</a> or those slides
