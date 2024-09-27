@@ -3,7 +3,7 @@
   <p>{{date-format @model.attributes.date}}</p>
 
   <h3>Abstract:</h3>
-  {{markdown-to-html @model.content}}
+  <MarkdownToHtml @markdown={{@model.content}} />
 
   {{#if @model.attributes.slidesURI}}
     From here you can access the
