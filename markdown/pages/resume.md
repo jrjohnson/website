@@ -11,7 +11,6 @@ css: resume.css
 * (650) 516-7401
 * [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
 * ![Github](/media/github_mark.svg)[jrjohnson](https://github.com/jrjohnson)
-* ![twitter](/media/twitter_mark.svg)[jrjohnson_](https://twitter.com/jrjohnson_)   
 
 ------
 
