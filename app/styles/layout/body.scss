@@ -101,12 +101,15 @@ body {
       @media (min-width: 500px) {
         justify-content: flex-start;
       }
-    }
 
-    & img {
-      border-radius: 50%;
-      padding: 5px;
-      width: 50px;
+      & img {
+        border-radius: 50%;
+        padding: 0 5px;
+        width: var(--fs-xxl);
+        @media (max-width: 400px) {
+          width: var(--fs-xl);
+        }
+      }
     }
   }
 
@@ -137,22 +140,6 @@ body {
     grid-area: footer;
     display: flex;
     justify-content: flex-end;
-    & ul {
-      display: flex;
-      flex-direction: row;
-      @include font-size("large");
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-
-      & svg {
-        margin-left: 1rem;
-      }
-    }
-
-    & li {
-      padding-right: 1rem;
-    }
   }
 }
 
