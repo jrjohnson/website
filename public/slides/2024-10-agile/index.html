@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flow, Flex, and Ship: The Daily Practice of Agile Engineering</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/slides/shared/style.css">
+    <style>
+      .remark-slide-content {
+        font-size: 24px;
+      }
+      .remark-slide-scaler {
+        background-color: #fffcf3;
+      }
+      .logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .logos svg, .logos p {
+        width: 45%;
+      }
+      .icon-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 5rem;
+      }
+      .icon-row p {
+        margin: 0;
+      }
+      .ilios-logo {
+        fill: #c60;
+        height: 50vh;
+        stroke: #c60;
+        width: 50vw;
+      }
+      .orange {
+        color: #c60;
+      }
+      .fa-stack-1x {
+        margin: 0 auto;
+      }
+
+      .ilios-logo text {
+        font-size: 3rem;
+        font-family: "Helvetica Neue";
+        fill: #fff;
+        stroke: #fff;
+      }
+      .focus-h1 h1 {
+        color: rgb(155, 155, 155);
+        display: inline;
+      }
+      .focus-h1 h1:last-of-type {
+        color: #0071AD;
+      }
+      .set-photos .photos p {
+        display: grid;
+        height: 45vh;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: .25rem;
+      }
+      .set-photos img {
+        max-height: 95%;
+        max-width: 95%;
+        border-radius: 3%;
+        overflow: hidden;
+      }
+      .left-column, .right-column {
+        text-align: left;
+      }
+      .center-column-text .left-column, .center-column-text .right-column {
+        text-align: center;
+      }
+      .boxes.break h2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+    <script defer src="/slides/shared/fontawesome6.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+class: center, middle, title-slide, qr-title-slide
+# Flow, Flex, and Ship: The Daily Practice of Agile Engineering
+
+## Jon Johnson <span class="pronouns">(he/him)</span>
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson <br />
+  <i class="fa-brands fa-slack"></i> jrjohnson-ucsf <br />
+  ]
+
+  .avatar[
+  ![Jon's avatar](../shared/avatar.png)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2024-10-agile](media/talk-qr.svg)
+
+  `https://www.jrjohnson.dev`
+]
+
+---
+class:center,middle,photo-slide
+
+![Jayden, a super cute chihuahua waiting for you to do something](./media/jayden-waiting.jpeg)
+
+???
+# Action Items:
+
+---
+class: center, middle, title-slide, qr-title-slide
+# Thanks!
+
+## Jon Johnson
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson <br />
+  <i class="fa-brands fa-slack"></i> jrjohnson-ucsf <br />
+  ]
+
+  .avatar[
+  ![Jon's avatar](../shared/avatar.png)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2024-10-agile](media/talk-qr.svg)
+
+  `https://www.jrjohnson.dev`
+]
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+      const slideshow = remark.create({
+        navigation: {
+          scroll: false,
+          touch: true,
+          click: true
+        },
+        slideNumberFormat: '',
+        countIncrementalSlides: false,
+        ratio: '16:9',
+        highlightStyle: 'railscasts'
+      });
+    </script>
+  </body>
+</html>
