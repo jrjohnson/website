@@ -114,6 +114,9 @@ i.huge, svg.huge {
 i.big, svg.big {
   font-size: 14rem;
 }
+i.large, svg.large {
+  font-size: 6rem;
+}
 .high-contrast {
   color: rgb(155, 155, 155);
 }
