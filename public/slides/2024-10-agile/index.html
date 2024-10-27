@@ -19,15 +19,6 @@
       .logos svg, .logos p {
         width: 45%;
       }
-      .icon-row {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 5rem;
-      }
-      .icon-row p {
-        margin: 0;
-      }
       .ilios-logo {
         fill: #c60;
         height: 50vh;
@@ -40,45 +31,30 @@
       .fa-stack-1x {
         margin: 0 auto;
       }
-
       .ilios-logo text {
         font-size: 3rem;
         font-family: "Helvetica Neue";
         fill: #fff;
         stroke: #fff;
       }
-      .focus-h1 h1 {
-        color: rgb(155, 155, 155);
-        display: inline;
-      }
-      .focus-h1 h1:last-of-type {
-        color: #0071AD;
-      }
-      .set-photos .photos p {
-        display: grid;
-        height: 45vh;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        justify-items: center;
-        gap: .25rem;
-      }
-      .set-photos img {
-        max-height: 95%;
-        max-width: 95%;
-        border-radius: 3%;
-        overflow: hidden;
-      }
-      .left-column, .right-column {
-        text-align: left;
-      }
-      .center-column-text .left-column, .center-column-text .right-column {
-        text-align: center;
-      }
       .boxes.break h2 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+      }
+      .icon-boxes {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        height: 50vh;
+        text-align: center;
+      }
+      .icon-boxes > * {
+        display: flex;
+        flex-direction: column;
       }
     </style>
     <script defer src="/slides/shared/fontawesome6.js"></script>
@@ -87,9 +63,10 @@
   <body>
     <textarea id="source" style="display: none;">
 class: center, middle, title-slide, qr-title-slide
-# Flow, Flex, and Ship: The Daily Practice of Agile Engineering
+# Flow, Flex, and Ship:
+## The Daily Practice of Agile Engineering
 
-## Jon Johnson <span class="pronouns">(he/him)</span>
+### Jon Johnson <span class="pronouns">(he/him)</span>
 
 .left-column[
 .boxes[
@@ -111,12 +88,759 @@ class: center, middle, title-slide, qr-title-slide
 ]
 
 ---
-class:center,middle,photo-slide
+class: logos
+![UCSF Logo](media/ucsf-logo.jpg)
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true" class="ilios-logo">
+  <title>Ilios Logo</title>
+  <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+  <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+</svg>
 
+???
+# Ilios
+- 40+ releases in 2024 so far
+- Extensive test coverage
+- Releases are automated with a chatbot
+- 100% remote team
+- Up to date on the latest versions of PHP, Symfony, Ember, and a huge number of dependencies
+- Sauter Gold Award Winner!
+# UCSF Education IT
+  - Team Hosts, and Develops, supports, and configures Moodle, Kaltura, Ilios, TurnItIn, PollEverywhere, and other edtech tools
+
+---
+# .center[Today's Agenda]
+## <i class="fa-duotone fa-chalkboard-user"></i> Agile
+## <i class="fa-duotone fa-brain-circuit"></i> Flow
+## <i class="fa-duotone fa-child-reaching"></i> Flex
+## <i class="fa-duotone fa-squirrel"></i> Ship
+
+---
+class: center,middle
+# <i class="fa-duotone fa-chalkboard-user"></i> Manifesto for Agile Software Development
+
+We are uncovering better ways of developing
+software by doing it and helping others do it.
+Through this work we have come to value:
+
+**Individuals and interactions** *over* processes and tools
+
+**Working software** *over* comprehensive documentation
+
+**Customer collaboration** *over* contract negotiation
+
+**Responding to change** *over* following a plan
+
+That is, while there is value in the items on
+the right, we value the items on the left more.
+
+.footnote[-Agile Manifesto https://agilemanifesto.org/]
+
+???
+- Pretty Simple Stuff
+- Notices a lot of stuff is missing (Kanban, scrum, lean, celebration, retrospective, sprint)
+- It's a set of values and principles, not a methodology
+
+---
+class: center,middle
+# <i class="fa-duotone fa-chalkboard-user"></i> Building Agility vs Being Agile
+<i class="fa-duotone fa-face-grin-beam-sweat big"></i> <i class="fa-solid fa-not-equal big"></i> <i class="fa-duotone fa-solid fa-ballot-check big"></i>
+
+???
+- Good news is you can call yourself agile whenever you want
+- Bad news is you'll never be done building agility
+
+---
+class: center,middle
+# Let's Build Some Agility Together
+
+## Flow, Flex, Ship
+
+???
+- A few years ago I wrecked my back picking up an 7lb chihuahua
+- Started doing yoga, and it was hard
+- Kept doing yoga, and it is still hard
+- Earlier this year I stepped in a hole carying a 40lb bag of golf clubs, fell mostly on my face, rolled down a hill, and walked away with a nothing but a smile
+- This talk is about building agility for our projects, teams, and ourselves in the same way
+- It's hard, but it's worth it!
+- Because eventually everyone steps in a hole
+
+---
+class: center,middle,highlight
+# <i class="fa-duotone fa-brain-circuit"></i> Flow
+--
+
+## <i class="fa-duotone fa-quote-left"></i> Flow is the melting together of action and consciousness; the state of **finding a balance between a skill and how challenging that task is**. It requires a high level of concentration.<i class="fa-duotone fa-quote-right"></i>
+.footnote[-Mirvis, Philip H. (July 1991) doi:10.5465/amr.1991.4279513]
+
+---
+class: center,middle
+# <i class="fa-duotone fa-brain-circuit"></i> Flow isn't only about focus <i class="fa-duotone fa-brain-circuit"></i>
+
+---
+class: center,middle,photo-slide
+# <i class="fa-duotone fa-brain-circuit"></i> Maslow's hierarchy of needs
+
+![Pyramid of needs: Psychological, Safety, Belonging and Love, Esteem, Cognitive, Asthetic, Self-Actualization, Transcendence ](media/maslow-hierarchy.png)
+
+.footnote[By EucalyptusTreeHugger - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=122601755]
+
+---
+class: center,middle,photo-slide
+# <i class="fa-duotone fa-brain-circuit"></i> Gallup Engagment Pyramid
+
+![Gallup Q12 survey questions as a pyriamid with Q11 and Q12 at the top ](media/engagement-pyramid.png)
+
+.footnote[https://www.gallup.com/q12/]
+
+
+---
+class: highlight
+# <i class="fa-duotone fa-brain-circuit"></i> nine dimensions of flow
+
+##### A challenge–skills balance to **feel engaged but not overwhelmed**
+##### Clear objectives allowing one to concentrate on the current task and knowing what is coming next, while **reducing distractions and stress**
+##### An action-awareness merging, meaning the person is **completely absorbed by the situation**
+##### Clear and unambiguous feedback
+##### A high, task-related, concentration that **absorbs the person in the activity** without being distracted by unrelated things
+##### An **absolute** sense of **control**
+##### A loss of self-consciousness, leading to the person being so immersed in the activity that there is a **lack of ego**-oriented protection
+##### The transformation of time, meaning that the time either slows down or flies by when experiencing flow
+##### An autotelic experience, as **the activity becomes an end** in itself.
+
+.footnote[-Csikszentmihalyi M. (1990). Flow: The Psychology of Optimal Experience]
+
+---
+class: center,middle
+# Don't Worry, Flow is Easier to Find that to Describe
+
+---
+class: center,middle
+# <i class="fa-duotone fa-brain-circuit"></i> The Bigest Enemies of Flow
+
+.icon-boxes[
+  ###<i class="fa-duotone fa-siren-on large"></i>Distraction
+  ###<i class="fa-duotone fa-face-hand-yawn large"></i>Ego Depletion
+  ###<i class="fa-duotone fa-ear-muffs large"></i>Lack of Feedback
+  ###<i class="fa-duotone fa-person-circle-question large"></i>Poorly Defined Objectives
+]
+
+---
+class: center,middle
+# <i class="fa-duotone fa-brain-circuit"></i> The Bigest Enemies of Flow
+## Let's Get Rid of Them!
+
+---
+class: center,middle,highlight
+# <i class="fa-duotone fa-brain-circuit"></i> Deep Work Removes Distractions
+## <i class="fa-duotone fa-quote-left"></i> Deep work is the ability to focus without distraction on a cognitively demanding task. **It’s a skill that** allows you to quickly master complicated information and produce better results in less time. Deep work **will make you better at what you do** and provide the sense of true fulfillment that comes from craftsmanship. In short, deep work is **like a super power** in our increasingly competitive twenty-first century economy. And yet, most people have lost the ability to go deep—spending their days instead in a frantic blur of e-mail and social media, not even realizing there’s a better way.<i class="fa-duotone fa-quote-right"></i>
+.footnote[-Cal Newport https://www.calnewport.com/books/deep-work/]
+
+---
+class: center,middle
+# <i class="fa-duotone fa-brain-circuit"></i> Ego depletion Must be Managed <i class="fa-duotone fa-brain-circuit"></i>
+
+--
+### Your ability to make good decisions is finite
+
+--
+### Every choice you make depletes your ability to make good decisions
+
+--
+### Every discussion, every email, every slack message, every notification draws from this same pool of decision making ability
+
+--
+## Focus on the decisions that matter!
+
+.footnote[-Yehuda Katz https://www.rubyvideo.dev/talks/keynote-10-years]
+
+---
+class: center,middle
+# <i class="fa-duotone fa-brain-circuit"></i> Open the Feedback Loop <i class="fa-duotone fa-brain-circuit"></i>
+
+## <i class="fa-duotone fa-gift large"></i> Feedback is a gift <i class="fa-duotone fa-gift large"></i>
+### It should be easy to give even if it is hard to receive.
+
+???
+- Feedback is critical to flow
+- The mechanism for getting feedback should be well defined and easy to use
+- Automate this
+  - Netlify
+  - Sentry
+  - Tugboat
+- We'll talk about releasea in a moment, they're a great source of feedback
+
+---
+# <i class="fa-duotone fa-brain-circuit"></i> Automated Testing FTW! <i class="fa-duotone fa-gift"></i>
+
+--
+## Tests provide immdiate feedback
+
+--
+## Tests are a gift to your future self
+
+--
+## Tests provde a universal place to store your knowledge
+
+--
+## Tests are not just a way to prevent bugs, they are a way to prevent ego depletion
+
+---
+class: center,middle
+# <i class="fa-duotone fa-brain-circuit"></i> Communication is Critical to Flow <i class="fa-duotone fa-comments"></i>
+
+## <i class="fa-duotone fa-quote-left"></i> Communication overhead increases as the number of people increases. Due to combinatorial explosion, the number of different communication channels increases rapidly with the number of people. Everyone working on the same task needs to keep in sync, so as more people are added they spend more time trying to find out what everyone else is doing. <i class="fa-duotone fa-quote-right"></i>
+
+### is this Brooks quote valid (got it from wikipedia)
+
+.footnote[-Fred Brooks, The Mythical Man Month]
+
+???
+- Meetings socialize expectations and ensure everyone is working on something important.
+- We use meetings to find the boundaries for experimentation.
+- How far can we dig this hole before we need to build a different shovel.
+
+---
+class: center,middle
+# <i class="fa-duotone fa-brain-circuit"></i> Finding Flow, One Small Step
+## Find a day in December to block off 4 hours in your calendar for deep work
+
+???
+- This doesn't have to be a permanant thing, just a one time thing to see how it feels
+- If you like it, try it again in January
+- If you don't like it, try it again in January
+
+---
+class: center,middle,highlight
+# <i class="fa-duotone fa-child-reaching"></i> Flex
+
+--
+## <i class="fa-duotone fa-quote-left"></i> You get really good at the things you do **everyday**, and not so good at the things you don't. <i class="fa-duotone fa-quote-right"></i>
+<i class="huge fa-duotone fa-face-persevering"></i>
+<i class="huge fa-duotone fa-repeat"></i>
+<i class="huge fa-duotone fa-face-smile-relaxed"></i>
+.footnote[-Maya Magennis]
+
+---
+class: center,middle
+# <i class="fa-duotone fa-child-reaching"></i> Flex
+
+## Agile is a Verb, Not a Noun
+
+--
+#### You have to practice it everyday
+
+???
+- Flexibility requires practice, it requires understanding your limits and your teams limits
+- Flexilibity isn't disorganization
+- Chaos is inevitable, but that doesn't make organization impossible
+
+---
+class: full-page-boxes
+# <i class="fa-duotone fa-child-reaching"></i> Flexability Requires Process <i class="fa-duotone fa-child-reaching"></i>
+
+--
+<i class="fa-duotone fa-chart-kanban big"></i>
+
+--
+<i class="fa-duotone fa-person-running-fast big"></i>
+
+--
+<i class="fa-duotone fa-comments big"></i>
+
+--
+<i class="fa-duotone fa-sunglasses big"></i>
+
+???
+- This is where things like kanban, sprints, standups, and retrospectives come from
+- But the goal can't be the process, the goal has to be agility
+
+---
+class: center,middle
+# <i class="fa-duotone fa-child-reaching"></i>  Building Flexibility, One Small Step
+## Spend 5 minutes as soon as you get back to work thinking about one thing you learned this week that you want to try.
+
+???
+- Doesn't have to be something you learned from me!
+
+---
+class: center,middle,highlight
+# <i class="fa-duotone fa-squirrel"></i> Ship <i class="fa-duotone fa-squirrel"></i>
+
+--
+## <i class="fa-duotone fa-quote-left"></i> Release early. **Release often.** And listen to your customers <i class="fa-duotone fa-quote-right"></i>
+
+.footnote[-Eric S. Raymond, The Cathedral and the Bazaar]
+
+???
+- Releasing is a superpower
+- The shorter the time is between releases the more stable each release will be
+- The more often you release the more you can learn from your customers
+- The more you learn from your customers the better your product will be
+
+---
+class: center,middle
+# <i class="fa-duotone fa-squirrel"></i> Ship <i class="fa-duotone fa-squirrel"></i>
+
+<i class="big fa-duotone fa-lightbulb"></i>
+--
+<i class="big fa-duotone fa-users"></i>
+--
+<i class="big fa-duotone fa-repeat"></i>
+
+---
+class: center,middle
+# <i class="fa-duotone fa-squirrel"></i> Ship <i class="fa-duotone fa-squirrel"></i>
+
+<i class="big fa-solid fa-lightbulb"></i>
+<i class="big fa-solid fa-users"></i>
+<i class="big fa-solid fa-repeat"></i>
+---
+class: center,middle
+# <i class="fa-duotone fa-squirrel"></i> Ship <i class="fa-duotone fa-squirrel"></i>
+
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+<i class="fa-light fa-lightbulb"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-repeat"></i>
+
+---
+class: full-page-boxes
+# <i class="fa-duotone fa-squirrel"></i> Shipping Styles, Seen in the Wild <i class="fa-duotone fa-squirrel"></i>
+
+--
+<span><i class="fa-duotone fa-skull-crossbones large"></i>Shturmovshchina</span>
+
+--
+<span><i class="fa-duotone fa-chart-waterfall large"></i>Waterfall</span>
+
+--
+<span><i class="fa-duotone fa-person-walking-dashed-line-arrow-right large"></i>Sprint Waterfall</span>
+
+--
+<span><i class="fa-duotone fa-train large"></i>Release Train</span>
+
+???
+- Brook's Law: Adding people to a late project makes it later
+- Waterfall frontloads feedback at the design stage, and makes it very difficult to adjust
+- Sprint Waterfall is a way to make Waterfall more agile, but it's still Waterfall
+- Release Train - pick a date and release everything that's ready.
+- Continuous Deployment - release everything that's ready as soon as it's ready
+  - This puts process too much at the center for me
+  - I don't like continuous change, I think it can be exausting for users
+  - but it's a valid way to ship
+
+---
+# <i class="fa-duotone fa-squirrel"></i> Ship
+
+## Use releases to define your process
+### (sprints, communication, feedback, retrospectives)
+
+--
+## Automated testing makes releases easier
+
+--
+## You should start releasing now, even if you don't have tests
+
+--
+# Seriously, like, now! What are you waiting for?
+
+???
+Developers will make mistakes
+You can choose to blame someone else (users, QA, designers, code reviewers, project managers, product owners) or you can accept that correcting your mistakes should be as fast as possible.
+
+---
+class: center, middle, highlight
+
+## The experience you have in building things is critical to your ability to serve users. Do you feel trepedation in making small changes? Anxiety with every release? Do you feel joy at solving new problems?
+
+##You **deserve to love your job**, make changes to improve your experience and **bring that joy to your users**.
+
+---
+class:center,middle,photo-slide
 ![Jayden, a super cute chihuahua waiting for you to do something](./media/jayden-waiting.jpeg)
 
 ???
-# Action Items:
+# Questions?
 
 ---
 class: center, middle, title-slide, qr-title-slide
