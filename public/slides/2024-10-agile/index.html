@@ -13,66 +13,28 @@
       }
       .logos {
         display: flex;
-        align-items: center;
-        justify-content: space-around;
-      }
-      .logos svg, .logos p {
-        width: 45%;
-      }
-      .icon-row {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 5rem;
-      }
-      .icon-row p {
-        margin: 0;
       }
       .ilios-logo {
         fill: #c60;
-        height: 50vh;
         stroke: #c60;
-        width: 50vw;
       }
       .orange {
         color: #c60;
       }
+      .blue {
+        color: #0071AD;
+      }
+      .red {
+        color: tomato;
+      }
       .fa-stack-1x {
         margin: 0 auto;
       }
-
       .ilios-logo text {
         font-size: 3rem;
         font-family: "Helvetica Neue";
         fill: #fff;
         stroke: #fff;
-      }
-      .focus-h1 h1 {
-        color: rgb(155, 155, 155);
-        display: inline;
-      }
-      .focus-h1 h1:last-of-type {
-        color: #0071AD;
-      }
-      .set-photos .photos p {
-        display: grid;
-        height: 45vh;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        justify-items: center;
-        gap: .25rem;
-      }
-      .set-photos img {
-        max-height: 95%;
-        max-width: 95%;
-        border-radius: 3%;
-        overflow: hidden;
-      }
-      .left-column, .right-column {
-        text-align: left;
-      }
-      .center-column-text .left-column, .center-column-text .right-column {
-        text-align: center;
       }
       .boxes.break h2 {
         display: flex;
@@ -80,16 +42,106 @@
         justify-content: space-between;
         align-items: center;
       }
+      .icon-boxes ul {
+        align-items: center;
+        justify-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        height: 50vh;
+      }
+      .icon-boxes ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .silhouette-slide:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background-repeat: no-repeat;
+        background-position: 95% 0;
+      }
+      .silhouette-slide.tree:before {
+        background-image: url(media/yoga-tree.svg);
+      }
+      .silhouette-slide.wariorr1:before {
+        background-image: url(media/yoga-warrior1.svg);
+      }
+      .silhouette-slide.shoulder-stand:before {
+        background-image: url(media/yoga-shoulder-stand.svg);
+      }
+      .silhouette-slide.crow:before {
+        background-image: url(media/yoga-crow.svg);
+      }
+      .silhouette-slide.lotus:before {
+        background-image: url(media/yoga-lotus.svg);
+      }
+      .silhouette-slide.triangle:before {
+        background-image: url(media/yoga-triangle.svg);
+      }
+      .silhouette-slide.dancer:before {
+        background-image: url(media/yoga-dancer.svg);
+      }
+      .silhouette-slide.up-dog:before {
+        background-image: url(media/up-dog.svg);
+      }
+      .silhouette-slide.head-stand:before {
+        background-image: url(media/yoga-head-stand.svg);
+      }
+      .silhouette-slide.standing:before {
+        background-image: url(media/yoga-standing.svg);
+      }
+      .silhouette-slide.king-pigeon:before {
+        background-image: url(media/yoga-king-pigeon.svg);
+      }
+      .silhouette-slide.running:before {
+        background-image: url(media/running.svg);
+      }
+      .silhouette-slide.ostrich-running:before {
+        background-image: url(media/ostrich-running.svg);
+      }
+      .silhouette-slide.ballerina:before {
+        background-image: url(media/ballerina.svg);
+      }
+      .silhouette-slide.jumping:before {
+        background-image: url(media/jumping.svg);
+      }
+      .silhouette-slide.struggle:before {
+        background-image: url(media/struggle.svg);
+      }
+      .silhouette-slide.love:before {
+        background-image: url(media/love.svg);
+      }
+      .silhouette-slide.hammock:before {
+        background-image: url(media/hammock.svg);
+      }
+      .silhouette-slide.hill:before {
+        background-image: url(media/hill.svg);
+      }
+
+      #slide-repeat .fa-repeat {
+        margin-right: 0.4em;
+      }
+      #slide-repeat .fa-repeat:nth-of-type(3n) {
+        margin-right: 0.2em;
+      }
     </style>
     <script defer src="/slides/shared/fontawesome6.js"></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </head>
   <body>
     <textarea id="source" style="display: none;">
 class: center, middle, title-slide, qr-title-slide
-# Flow, Flex, and Ship: The Daily Practice of Agile Engineering
+# Flow, Flex, and Ship:
+## The Daily Practice of Agile Engineering
 
-## Jon Johnson <span class="pronouns">(he/him)</span>
+### Jon Johnson <span class="pronouns">(he/him)</span>
 
 .left-column[
 .boxes[
@@ -111,12 +163,660 @@ class: center, middle, title-slide, qr-title-slide
 ]
 
 ---
-class:center,middle,photo-slide
-
-![Jayden, a super cute chihuahua waiting for you to do something](./media/jayden-waiting.jpeg)
+class: logos
+![UCSF Education IT Logo](media/ed-it-logo.png)
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true" class="ilios-logo">
+  <title>Ilios Logo</title>
+  <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+  <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+</svg>
 
 ???
-# Action Items:
+# UCSF Education IT
+  - Team Hosts, and Develops, supports, and configures Moodle, Kaltura, Ilios, TurnItIn, PollEverywhere, and other edtech tools
+
+# Ilios
+- Open Source Curriculum Management System
+- 100% remote team
+- Up to date on the latest versions of PHP, Symfony, Ember, and a huge number of dependencies
+- In use at health science schools around the world
+- ## Highlights of the work that won us a Sautter Gold Award:
+  - Rave Reviews from Students
+  - ### Focus on accessibility
+    - Nearly perfect siteimprove accessibility score
+    - Manual a11y tester called the webapp the best of its kind that they had ever tested
+    - Code splitting, lazy loading, and data optimization to ensure support on very low powered devices
+  - JSON Web Token (JWT) app-specific B2B authentication token system
+  - GraphQL API (in addition to our existing JSON:API implementation)
+  - Container Based Cloud Native AWS Fargate Deployment (which is an awesome service, I highly recommend it)
+
+---
+class: center, middle, blue
+<i class="fa-duotone fa-lightbulb-exclamation-on huge"></i>
+
+???
+# Story Time
+
+---
+class: center, middle, blue
+<i class="fa-duotone fa-person-falling big"></i>
+???
+- A few years ago I stepped in a very small hole and wrecked my back
+- It wasn't a long way down, but the change was dramatic enough that I seized up completely
+
+--
+
+<i class="fa-duotone fa-face-head-bandage big"></i>
+???
+- I was in a lot of pain
+--
+
+<i class="fa-duotone fa-crutch big"></i>
+???
+- and needed help to walk for a couple of weeks
+---
+class: center, middle, blue
+<i class="fa-duotone fa-child-reaching big"></i>
+???
+- On the advice of like 50 different people I took up yoga to help with my back
+--
+<i class="fa-duotone fa-face-downcast-sweat big"></i>
+???
+- It was Hard
+
+--
+<i class="fa-duotone fa-face-tongue-sweat big"></i>
+???
+- Kept doing it, and it's still hard
+
+---
+class: center, middle, blue
+<i class="fa-duotone fa-octagon big red"></i>
+???
+- I probably would have quit, but my wife bullied me into showing up most days
+
+--
+<i class="fa-duotone fa-person-falling big"></i>
+???
+- And then I had a bit of a revelation when I tripped again, but this time I didn't hurt myself
+
+--
+<i class="fa-duotone fa-face-awesome big"></i>
+???
+- I finally internalized what I'd been hearing for a long time.
+- Practicing this difficult, painful thing was making me better at it
+
+---
+class: center, middle, blue
+<i class="fa-duotone fa-cloud-question huge"></i>
+???
+- What does this have to do with agile engineering?
+
+---
+class: center, middle, blue
+<i class="fa-duotone fa-book-sparkles big"></i>
+???
+- Last year my entire team moved from the UCSF Library to IT
+
+--
+<i class="fa-duotone fa-person-falling big"></i>
+???
+- It was a huge change
+- Different from falling in a hole, but all change is traumatic
+
+--
+<i class="fa-duotone fa-face-persevering big"></i>
+???
+- The years we'd spent building agility in our team paid off in a huge way
+  - We were able to adapt to the new environment
+  - We were able to keep shipping
+  - Our work pace slowed down a lot, but we kept moving forward
+
+---
+class: center, middle, blue
+<i class="fa-duotone fa-draw-circle huge"></i>
+
+???
+- This talk is about building agility for our projects, teams, and ourselves in the same way
+- It's hard, but it's worth it!
+- Because the only constant is change
+
+---
+class: center, middle
+# You Are Here <i class="fa-solid fa-location-dot blue"></i>
+
+???
+## Let's set the stage
+---
+
+class: center, middle, highlight
+# Programming is Hard!
+--
+
+## <i class="fa-duotone fa-quote-left"></i> The computer resembles the magic of legend... if one of the incantation is not strictly in proper form, the magic doesn't work. **Human beings are not accustomed to being perfect**, and few areas of human activity demand it. Adjusting to the requirement for perfection is, I think, the most difficult part of learning to program <i class="fa-duotone fa-quote-right"></i>
+
+.footnote[-Fred Brooks, Mythical Man Month, 1975]
+
+???
+- In 1975 Fred Brooks wrote the Mythical Man Month
+- It's an attempt to understand why so many projects failed to deliver anywhere close to on time or on budget
+- This talk, like this book, is going to be a lot about software development because that is my point of view
+  - But I think the principles are going to apply to any kind of project or team
+  - ### Building anything worth building is hard!
+
+---
+class: center,middle, orange
+<i class="fa-duotone fa-starship-freighter huge"></i>
+
+???
+- Fast forward 25 years
+- A new millennium had dawned
+- (For licensing reasons, this icon is not the **Millennium Falcon**, it is a generic starship freighter 😆)
+- Software development was still hard
+- a group of 17 heavy hitters in software development process got together in Utah to talk about how to make it easier
+- The result is what we know today as the Agile Manifesto
+
+---
+class: center,middle
+# Manifesto for Agile Software Development
+
+We are uncovering better ways of developing
+software by doing it and helping others do it.
+Through this work we have come to value:
+
+**Individuals and interactions** *over* processes and tools
+
+**Working software** *over* comprehensive documentation
+
+**Customer collaboration** *over* contract negotiation
+
+**Responding to change** *over* following a plan
+
+That is, while there is value in the items on
+the right, we value the items on the left more.
+
+.footnote[-Agile Manifesto https://agilemanifesto.org/ 2001]
+
+???
+- It's a set of values and principles, not a methodology
+- Missing are a lot of things most people think of as "Agile"
+  - Standups
+  - Scrum
+  - Kanban
+  - Sprints
+  - Retrospectives
+  - User Stories
+- Almost 25 years later, agile is still the best way I've found to build anything
+
+---
+class: center,middle,photo-slide
+# UCCSC 2009, UC Davis
+## My Agile Journey Started Right Here at Davis
+### at this conference (then called UCCSC)
+![Very permanent sign for some "Temporary Classrooms"](media/temporary-classroom.png)
+
+???
+- UCB Won a Sautter Award that year for GLOW "Grad Link on the Web"
+- I went to hear how they had done it
+- Instead of talking about the tech or the systems, **They talked about Agile**
+- I didn't know it was possible to build things that way at UC
+- I was hooked
+- While I was wandering around thinking about agility I found this very permanent sign for some "temporary classrooms"
+  - I think this is a perfect metaphor for the way most teams think about "Agile"
+  - You put up a very permanent sign for something that is supposed to be temporary
+
+---
+class: center,middle
+# Today's Big Takeaway
+## Building Agility vs Being Agile
+<i class="fa-duotone fa-face-grin-beam-sweat big"></i> <i class="fa-solid fa-not-equal big"></i> <i class="fa-duotone fa-ballot-check big"></i>
+
+???
+- Good news is you can call yourself agile whenever you want
+- Bad news is you'll never be done building agility
+- Even better news, you can start today even if it's just you on a team of one building something amazing
+
+---
+class: center,middle
+# So...
+![Taylor Swift Saying "Are you ready for it?"](media/ready-for-it.webp)
+
+---
+class: center,middle,silhouette-slide,wariorr1
+# Let's Build Some Agility Together
+
+## Flow, Flex, Ship
+
+???
+All of these great silhouette images are from https://openclipart.org and are licensed under the Creative Commons Zero license
+
+---
+class: center,middle,highlight,silhouette-slide,shoulder-stand
+# Flow
+
+## <i class="fa-duotone fa-quote-left"></i> Flow is the melting together of action and consciousness; the state of **finding a balance between a skill and how challenging that task is**. It requires a high level of concentration.<i class="fa-duotone fa-quote-right"></i>
+.footnote[-Mirvis, Philip H. (July 1991) doi:10.5465/amr.1991.4279513]
+
+???
+- It might seem like a weird place to start, but I think flow is the most important part of agility
+- It's the thing that makes everything else possible
+- Optimizing your team, process, and tools for flow is the most important thing you can do
+- ### It's the 10x multiplier that let's us build the best tool for curriculum management in the world
+
+---
+class: center,middle,highlight
+
+## <i class="fa-quote-left"></i>Time really does seem to behave differently around the act of making software. **When things go well, you can lose track of passing hours in the state psychologists call "flow."** When things go badly, you get stuck, frozen between dimensions, unable to move of see a way forward.<i class="fa-quote-right"></i>
+
+.footnote[-Scott Rosenberg, Dreaming in Code]
+
+???
+- Flow is individual, different people find flow in different ways
+- I like a absolute silence, surrounded by dogs, feet up, and a full water bottle
+- Some people like music, some people like to be in a crowd
+## Make room in your process for people to find their flow
+
+---
+class: center,middle, silhouette-slide,crow
+# Flow is More than a Metaphor
+## We Can Pursue Flow
+### and we can get better at finding flow with practice
+
+---
+class: center,middle,blue
+# The Biggest Enemies of Flow
+
+.icon-boxes[
+- <i class="fa-duotone fa-siren-on fa-4x"></i>Distraction
+- <i class="fa-duotone fa-face-hand-yawn fa-4x"></i>Ego Depletion
+- <i class="fa-duotone fa-ear-muffs fa-4x"></i>Lack of Feedback
+- <i class="fa-duotone fa-person-circle-question fa-4x"></i>Poorly Defined Objectives
+]
+
+???
+- While finding flow is individual, there are some things that are universally bad for flow
+
+---
+class: center,middle,blue
+# The Biggest Enemies of Flow
+
+.icon-boxes[
+- <span class="fa-layers fa-fw fa-4x">
+  <i class="fa-duotone  fa-siren-on" data-fa-transform="shrink-6"></i>
+  <i class="fa-regular fa-ban red"></i>
+</span>Distraction
+- <span class="fa-layers fa-fw fa-4x">
+  <i class="fa-duotone  fa-face-hand-yawn" data-fa-transform="shrink-6"></i>
+  <i class="fa-regular fa-ban red"></i>
+</span>Ego Depletion
+- <span class="fa-layers fa-fw fa-4x">
+  <i class="fa-duotone  fa-ear-muffs" data-fa-transform="shrink-6"></i>
+  <i class="fa-regular fa-ban red"></i>
+</span>Lack of Feedback
+- <span class="fa-layers fa-fw fa-4x">
+  <i class="fa-duotone  fa-person-circle-question" data-fa-transform="shrink-6"></i>
+  <i class="fa-regular fa-ban red"></i>
+</span>Poorly Defined Objectives
+]
+
+???
+## Let's Get Rid of Them!
+
+---
+class: center,middle,highlight,silhouette-slide,lotus
+# Deep Work Removes Distractions
+## <i class="fa-duotone fa-quote-left"></i> Deep work is the ability to focus without distraction on a cognitively demanding task. **It’s a skill that** allows you to quickly master complicated information and produce better results in less time. Deep work **will make you better at what you do** and provide the sense of true fulfillment that comes from craftsmanship. In short, deep work is **like a super power** in our increasingly competitive twenty-first century economy. And yet, most people have lost the ability to go deep—spending their days instead in a frantic blur of e-mail and social media, not even realizing there’s a better way.<i class="fa-duotone fa-quote-right"></i>
+.footnote[-Cal Newport https://www.calnewport.com/books/deep-work/]
+
+???
+
+- Deep work is a big topic, I talked about it at UCTech in San Diego a few years ago and it's worth an entire talk
+- The highlight is:
+  - You have to make time in your day for serious concentration, not 15 minutes between meetings, but hours at a time
+- Those that practice Deep Work
+  - Who Schedule time in their day for focus and concentration
+  - Are finding that they can do so much more and better work
+  - ## AND find much more balance and joy away from work
+
+---
+class: center,middle,silhouette-slide,triangle
+# Ego Depletion
+## Your ability to make good decisions is finite
+
+.footnote[-Yehuda Katz https://www.rubyvideo.dev/talks/keynote-10-years]
+
+???
+- Seemingly Trivial Choices add up and take away from your ability to make good decisions
+- This is why grocery stores put the candy at the checkout
+- By the time you get to the checkout you've made so many decisions you're more likely to give up and pickup a shiny orange reeses peanut butter cup
+- The tools we use, the processes we have, the meetings we attend, the emails we send, the code we write, all of these things deplete our ability to make good decisions
+
+--
+
+# Make Time For Every Decision!
+
+???
+## When your process encourages rapid decision making, you are going to hit this issue over and over again
+- It's impossible to know if you're even making a good choice on how critical an issue is
+- You have to make time for every decision
+
+---
+class: center,middle,silhouette-slide,dancer
+# Open the Feedback Loop
+
+## <i class="fa-duotone fa-gift large"></i> Feedback is a gift <i class="fa-duotone fa-gift large"></i>
+### It should be easy to give even if it is hard to receive.
+
+???
+- Feedback is critical to flow
+- The mechanism for getting feedback should be well defined and easy to use
+- Automate this:
+  - Netlify
+  - Sentry
+  - Tugboat
+- When you can't get feedback right away, you may need to move on to something else
+  - You're process should make room for Flexibility in choosing tasks
+  - I like to have big stuff I'm working on and a variety of little things too
+- We'll talk about releases in a moment, they're a great source of feedback
+
+---
+class:center,middle,photo-slide
+
+![Old shady tree at UC Irvine where I sat stunned after learning about CI](media/irvine-tree.jpg)
+
+???
+# Speaking of Feedback...
+## Let's Talk about Automated Tests!!
+- In 2013 I learned about CI at Irvine. Afterwards I was so blown away I had to take a walk and ended up sitting under a tree thinking about how amazing it would be to test every change.
+- How freeing that would be (I was pretty bogged down in an endless cycle of fixing bugs and causing other bugs)
+
+---
+class: silhouette-slide,up-dog
+# Automated Testing FTW!
+
+--
+## Tests provide immediate feedback, and keep you in the flow
+
+--
+## Tests are a gift to your future self
+
+--
+## Tests provide a universal place to store your knowledge
+
+--
+## Tests are not just a way to prevent bugs, they are a way to prevent ego depletion
+
+---
+class: center,middle,silhouette-slide,hill
+# That's a Lot of Work!
+## Start by Taking One Small Step
+
+???
+- One of the most important things in Yoga is just showing up on your mat
+- It's the same with building agility
+- Take one small step
+---
+class: center,middle,silhouette-slide,standing
+# Finding Flow, One Small Step
+## Find a day in December to block off 4 hours in your calendar for deep work
+
+???
+- This doesn't have to be a permanent thing, just a one time thing to see how it feels
+- If you like it, try it again in January
+- If you don't like it, try it again in January
+
+---
+class: center,middle,highlight,silhouette-slide,king-pigeon
+# Flex
+
+--
+## <i class="fa-duotone fa-quote-left"></i> You get really good at the things you do **everyday**, and not so good at the things you don't. <i class="fa-duotone fa-quote-right"></i>
+
+.footnote[-Maya Magennis]
+
+---
+class: center,middle,silhouette-slide,king-pigeon
+# Flex
+
+## Agile is a Verb, Not a Noun
+
+--
+#### You have to practice it everyday
+
+???
+- Flexibility requires practice, it requires understanding your limits and your teams limits
+- Flexibility isn't disorganization
+- Chaos is inevitable, but that doesn't make organization impossible
+
+---
+class: full-page-boxes
+# Flexibility Requires Process
+
+--
+<i class="fa-duotone fa-chart-kanban big"></i>
+???
+- Kanban
+--
+<i class="fa-duotone fa-person-running-fast big"></i>
+???
+- sprints
+
+--
+<i class="fa-duotone fa-comments big"></i>
+???
+- standups
+
+--
+<i class="fa-duotone fa-sunglasses big"></i>
+???
+- retrospectives
+##But the goal can't be the process, the goal has to be agility
+
+---
+class: center,middle,silhouette-slide,head-stand
+# Communication is How We Define Objectives
+## Which is Absolutely Critical for Flow
+
+???
+- Meetings, project management tools, email, slack, zoom are, for most people, the antithesis of flow and deep work
+  - It's why they can feel so frustrating
+  - You're trying to find flow and you're being pulled in a million different directions
+  - ## Without clear objectives, you can't find flow
+    - And these are the best tools we have for defining objectives and communicating them
+    - ### Create your process with deep work in mind, make sure you're making time for flow
+
+---
+class:center,middle,photo-slide
+![Illustration of how lines of communication multiple exponentially with the number of people](media/lines-of-communication-stackoverflow.png)
+
+.footnote[https://getlighthouse.com/blog/developing-leaders-team-grows-big/]
+
+???
+# Lines of Communication
+## This is, more than anything else, the hole we fell into when moving to EdIT
+- 3 people, 3 lines
+- 4 people, 6 lines
+- 5 people, 10 lines
+- 6 people, 15 lines
+- 7 people, 21 lines
+- 8 people, 28 lines
+- 9 people, 36 lines
+- 10 people, 45 lines
+- 11 people, 55 lines
+- 12 people, 66 lines
+- 13 people, 78 lines
+- 14 people, 91 lines
+
+## Spend time optimizing your communication
+## When you add someone to your team, do it all again
+## It's hard to see just how much adding a single person to a team can slow everyone down
+## Be willing to change and change again
+
+---
+class: center,middle,silhouette-slide,king-pigeon
+#  Building Flexibility, One Small Step
+## Spend 5 minutes as soon as you get back to work thinking about one thing you learned this week that you want to try.
+
+???
+- Doesn't have to be something you learned from me!
+
+---
+class: center,middle,highlight,silhouette-slide,running
+# Ship
+
+--
+## <i class="fa-duotone fa-quote-left"></i> Release early. **Release often.** And listen to your customers <i class="fa-duotone fa-quote-right"></i>
+
+.footnote[-Eric S. Raymond, The Cathedral and the Bazaar]
+
+???
+- Releasing is a superpower
+- The more often you release the better you'll be at it
+- The shorter the time is between releases the more stable each release will be
+- The more often you release the more you can learn from your customers
+- The more you learn from your customers the better your product will be
+
+---
+class: silhouette-slide,running
+# Ship
+
+## Use releases to define your process
+### (sprints, communication, feedback, retrospectives)
+
+--
+## Automated testing makes releases easier
+
+--
+## You should start releasing now, even if you don't have tests
+
+--
+# Seriously, like, now! What are you waiting for?
+
+???
+Developers will make mistakes
+You can choose to blame someone else (users, QA, designers, code reviewers, project managers, product owners) or you can accept that correcting your mistakes should be as fast as possible.
+
+---
+class: center,middle,blue
+# Ship
+
+<i class="large fa-duotone fa-lightbulb"></i>
+???
+- Take your ideas
+--
+<i class="large fa-duotone fa-users"></i>
+???
+- Get them to users
+--
+<i class="large fa-duotone fa-repeat"></i>
+???
+- Repeat!
+
+---
+
+class: center,middle
+# Ship
+
+<i class="large fa-thin fa-lightbulb"></i>
+<i class="large fa-thin fa-users"></i>
+<i class="blue large fa-duotone fa-screwdriver-wrench"></i>
+<i class="large fa-thin fa-repeat"></i>
+
+???
+- Write Tests
+
+---
+
+class: center,middle
+# Ship
+
+<i class="large fa-thin fa-lightbulb"></i>
+<i class="blue large fa-duotone fa-vials"></i>
+<i class="large fa-thin fa-users"></i>
+<i class="large fa-thin fa-screwdriver-wrench"></i>
+<i class="large fa-thin fa-repeat"></i>
+
+???
+- Make it easy to preview changes and experiment
+
+---
+class: center,middle
+name: repeat
+# Ship, Ship, Ship!
+
+<i class="orange fa-duotone fa-lightbulb"></i>
+<i class="fa-light fa-vials"></i>
+<i class="fa-light fa-users"></i>
+<i class="fa-light fa-screwdriver-wrench"></i>
+<i class="fa-light fa-repeat"></i>
+
+???
+- I hope you take more than one thing away from this talk
+- But if you only take one thing away, I hope it's that you should be shipping more often
+
+---
+class: full-page-boxes,silhouette-slide,ostrich-running
+# Shipping Styles, Seen in the Wild
+
+--
+<span><i class="fa-duotone fa-chart-waterfall large"></i>Waterfall</span>
+???
+### Waterfall
+- Break down the release into stages, each Stage depends on the one before
+- Requirements, Design, Implementation, Testing, Deployment
+- Frontloads feedback at the design stage, and makes it very difficult to adjust
+
+--
+<span><i class="fa-duotone fa-person-walking-dashed-line-arrow-right large"></i>Sprint Waterfall</span>
+???
+### Sprint Waterfall
+- Way to make Waterfall more agile by breaking releases into smaller pieces
+- But each sprint often includes the same phases: Requirements, Design, Implementation, Testing, Deployment
+- Frontloads feedback at the sprint planning stage
+- Trouble dealing with bugs because sprints tend to be feature focused
+
+--
+<span><i class="fa-duotone fa-image-polaroid large"></i>Continuous Deployment</span>
+???
+### Continuous Deployment
+- Release everything that's ready as soon as it's ready
+  - I don't like continuous change, I think it can be exhausting for users
+  - It's a great way to get feedback
+
+--
+<span><i class="fa-duotone fa-train large"></i>Release Train</span>
+???
+### Release Train
+- Pick a date and release everything that's ready.
+- Nice balance between communication and feedback cycles
+- Can be scary to get started because it requires a lot of trust
+
+---
+# Small Steps to Build Agility
+
+## 1. <i class="fa-regular blue fa-square-check"></i> Attend this talk
+## 2. <i class="fa-regular blue fa-square"></i> Find a day in December to block off 4 hours in your calendar for deep work
+## 3. <i class="fa-regular blue fa-square"></i> Spend 5 minutes as soon as you get back to work thinking about one thing you learned this week that you want to try.
+## 4. <i class="fa-regular blue fa-square"></i> If you don't have any tests, write one, even if it's just a test that the page loads
+## 5. <i class="fa-regular blue fa-square"></i> Identify the biggest single blocker preventing you from shipping tomorrow
+
+???
+## Congrats you've already completed the first step!
+- This isn't a list of things you need to do
+- It's just a list of things you can do
+
+---
+class: center, middle, silhouette-slide, love, highlight
+## <i class="fa-duotone fa-quote-left"></i>The only way to do great work is to **love what you do**.<i class="fa-duotone fa-quote-right"></i>
+
+.footnote[ -Steve Jobs]
+
+---
+class:center,middle,photo-slide
+![Jayden, a super cute chihuahua waiting for you to ask a question](./media/jayden-waiting.jpeg)
+
+???
+# Questions?
 
 ---
 class: center, middle, title-slide, qr-title-slide
@@ -157,6 +857,25 @@ class: center, middle, title-slide, qr-title-slide
         ratio: '16:9',
         highlightStyle: 'railscasts'
       });
+
+      const repeatSlide = document.getElementById('slide-repeat');
+      const p = repeatSlide.querySelector('p');
+      const icons = p.children;
+      const newP = document.createElement('p');
+      for (let i = 0; i < 148; i++) {
+        icons.forEach(icon => {
+          const newIcon = icon.cloneNode(true);
+          if (icon.classList.contains('fa-vials')) {
+            if (i % 4 === 0) {
+              newP.appendChild(newIcon);
+            }
+          } else {
+            newP.appendChild(newIcon);
+          }
+        });
+      }
+      p.replaceWith(newP);
+
     </script>
   </body>
 </html>

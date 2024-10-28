@@ -38,7 +38,10 @@ h1, h2, h3, h4, h5 {
   max-width: 75%;
   border-radius: 3%;
 }
-.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.remark-code,
+.remark-inline-code {
+  font-family: "Ubuntu Mono";
+}
 .remark-code {
   border-radius: 15px;
 }
@@ -47,7 +50,7 @@ h1, h2, h3, h4, h5 {
   bottom: 40px;
   right: 40px;
   font-style: italic;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 .boxes {
   align-items: center;
@@ -141,4 +144,34 @@ i.large, svg.large {
 img {
   max-width: 700px;
   max-height: 600px;
+}
+.full-page-boxes {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr;
+}
+
+.full-page-boxes h1 {
+  grid-row: 1;
+  text-align: center;
+}
+
+.full-page-boxes p {
+  grid-row: 2;
+  text-align: center;
+
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  height: 50vh;
+  color: #0071AD;
+  font-size: 2rem;
+}
+
+.full-page-boxes p > *{
+  display: flex;
+  flex-direction: column;
 }
