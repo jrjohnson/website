@@ -38,7 +38,7 @@
   <body>
     <textarea id="source">
         class: center, middle
-        # Building a Symfony API to support Ember.js 
+        # Building a Symfony API to support Ember.js
 
         ## (or anything else)
 
@@ -47,7 +47,7 @@
         #### Jon Johnson
         ![Jons avatar](media/jonsavatar.jpeg)
 
-        <i class="fa fa-github"></i>jrjohnson  
+        <i class="fa fa-github"></i>jrjohnson
         <i class="fa fa-twitter"></i>jrjohnson_
 
         ---
@@ -58,7 +58,7 @@
         ???
         - Working as a PHP pro for 10 years
         - Get Paid to write open source
-        - Small Team (CKM) in a huge organization UCSF 40K Jobs in SF 
+        - Small Team (CKM) in a huge organization UCSF 40K Jobs in SF
 
         ---
         # Who am I to you?
@@ -120,11 +120,11 @@
         - Run old and new at the same time if necessary
         - Great docs to point contributors to
         - Stable core and excellent bundles
-        
+
         .center[Our Complex Data]
         .center[![ilios data sample](media/ilios-noise.png)]
 
-        
+
 
         ???
 
@@ -155,14 +155,14 @@
         # All Symfony has to do is REST
 
         > REST or RESTfull APIs deliver stateless data based on URL and allow for authorized CRUD operations on that data.
-        
+
         ---
         # All Symfony has to do is REST
 
         > REST or RESTfull APIs deliver stateless data based on URL and allow for authorized CRUD operations on that data.
 
         .right[--Jon Johnson, Symfony Live SF, Just Now]
-        
+
         ---
         # All Symfony has to do is REST
 
@@ -264,11 +264,11 @@
           "user_id": 2000
         }
         ```
-    
+
         ---
 
         # All your payloads are belong to you
-        
+
         ```javascript
         {
           "iss": "ilios",
@@ -292,7 +292,7 @@
                 $jwt = $token->getCredentials();
                 $username = $this->jwtManager->getUserIdFromToken($jwt);
                 $issuedAt = $this->jwtManager->getIssuedAtFromToken($jwt);
-                
+
                 $user = $userProvider->loadUserByUsername($username);
                 $authenticatedToken = new PreAuthenticatedToken(
                     $user,
@@ -300,7 +300,7 @@
                     $providerKey
                 );
                 $authenticatedToken->setAuthenticated(true);
-                
+
                 return $authenticatedToken;
             }
         }
@@ -377,11 +377,11 @@
              }
 
         *     $answer['courses'] = [$course];
-        * 
+        *
         *     return $answer;
         }
          ```
-         
+
         ???
          - $course is a doctrine entity.  A complex data object containing data and references to other data.
          - There is no explicit transformer in the controller
@@ -617,7 +617,7 @@
         ```yaml
         ilios_web:
             environment: production
-            version: 2012de2 
+            version: 2012de2
         ```
 
         ```yaml
@@ -639,7 +639,7 @@
         }
         ```
         ---
-        # Future 
+        # Future
         - Automatically release app when tests pass
         - Redis store for index.html which maps releases against API versions
         - WebRTC indication of new app versions
@@ -662,11 +662,11 @@
         ### Questions?
         ![Jons avatar](media/jonsavatar.jpeg)
 
-        <i class="fa fa-github"></i>jrjohnson  
+        <i class="fa fa-github"></i>jrjohnson
         <i class="fa fa-twitter"></i>jrjohnson_
 
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    <script src="/slides/shared/remark-latest.min.js">
     </script>
     <script>
       var slideshow = remark.create({
