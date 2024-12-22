@@ -42,7 +42,7 @@ Expert in team leadership, development, and psychological safety; enterprise web
 -------
 
 ## Talks
-
+* [Flow, Flex, and Ship: The Daily Practice of Agile Engineering](https://www.jrjohnson.dev/talks/2024-10-agile)
 * [Jumping into Deep Work](https://www.jrjohnson.dev/talks/2022-11-deep-work)   
 * [Automagic Deployment with Github Actions](https://www.jrjohnson.dev/talks/2022-08-github-actions)   
 * [Microapps: A Covid-19 Case Study](https://www.jrjohnson.dev/talks/2020-08-covid-microapps)
