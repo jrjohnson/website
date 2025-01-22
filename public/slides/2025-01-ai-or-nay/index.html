@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI or Nay? Balancing Distraction and Utility</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/slides/shared/style.css">
+    <style>
+      .title-slide .left-column {
+        width: 50%;
+      }
+      .title-slide .right-column {
+        width: 45%;
+      }
+      .logos {
+        display: flex;
+      }
+      .ilios-logo {
+        fill: #c60;
+        stroke: #c60;
+      }
+      .ilios-logo text {
+        font-size: 3rem;
+        font-family: "Helvetica Neue";
+        fill: #fff;
+        stroke: #fff;
+      }
+      .blue {
+        color: #0071AD;
+      }
+      .red {
+        color: tomato;
+      }
+      .prompt-output h3 {
+        opacity: 0.5;
+      }
+      .prompt h3 {
+        color: #333;
+        padding: 0 3rem;
+        text-align: justify;
+      }
+      .chat h2:nth-of-type(odd){
+        color: #333;
+      }
+      del {
+        opacity: 0.5;
+        color: #333;
+      }
+      .chat-slide img {
+        max-width: 95%;
+        max-height: 90%;
+      }
+    </style>
+    <script defer src="/slides/shared/fontawesome6.js"></script>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+class: center, middle, title-slide, qr-title-slide
+# AI or Nay?
+## Balancing Distraction and Utility
+
+### Jon Johnson <span class="pronouns">(he/him)</span>
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson<br />
+  <i class="fa-brands fa-slack"></i> jrjohnson-ucsf<br />
+  <i class="fa-solid fa-paper-plane-top"></i> jon.johnson@ucsf.edu
+  ]
+  .avatar[
+  ![Jon's avatar](../shared/avatar.png)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2025-01-ai-or-nay](media/talk-qr.svg)
+
+  `https://www.jrjohnson.dev`
+]
+
+---
+class: logos
+![UCSF Education IT Logo](media/ed-it-logo.png)
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true" class="ilios-logo">
+  <title>Ilios Logo</title>
+  <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+  <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+</svg>
+
+???
+- I'm Jon Johnson, I work in Education IT at UCSF
+- Day to day I'm a developer for education tools at UCSF
+- Time is the biggest resource constraint in my work
+- I'm always looking for ways to be more efficient
+
+---
+class: center, middle blue
+<i class="fa-duotone fa-lightbulb-exclamation-on huge"></i>
+???
+- Started using GenAI about a year ago with the launch of Versa
+- I've found it extremely useful in some places
+- And miserably wasteful in others
+- I'm going to share some of the things I've learned
+- And some of the things I'm still trying to figure out
+- But mostly I want to talk about how I'm thinking about Generative AI today and the way that framework informs my usage
+
+---
+class: center, middle, blue
+# <i class="fa-duotone fa-person-sign huge"></i>
+
+???
+- Fair warning, strong personal opinions ahead!
+
+---
+class: center, middle, red
+# How Many R's in Strawberry?
+<i class="fa-duotone fa-strawberry huge"></i>
+
+???
+- Maybe you've seen this before
+- It's a fun little quirk of the way that large language models work
+- It's also a good starting point for a conversation about the utility of AI
+
+---
+class: center,middle,chat-slide
+### How many R‘s are there in the word ‘strawberry’?
+![A screen shot of a chat with versa where it is wrong about the R's in Strawberry](./media/Strawberry.png)
+
+???
+- This is a screen shot of a chat with Versa
+- This isn't a burn on Versa, it's a fundamental feature of the way that large language models work
+- You can do this with every tool and get the same result
+
+---
+class: chat
+##<i class="fa-duotone fa-microchip-ai"></i>Greetings, Jon! I'm Versa, how may I help you today?
+##<i class="fa-duotone fa-input-pipe"></i>How many R‘s are there in the word ‘strawberry’?
+##<i class="fa-duotone fa-microchip-ai"></i>There are two 'R’s in the word ‘strawberry’.
+##<i class="fa-duotone fa-input-pipe"></i>I'm pretty sure there are three
+##<i class="fa-duotone fa-microchip-ai"></i>Actually, there are two 'R’s in the word ‘strawberry’. The word is spelled as S-T-R-A-W-B-E-R-R-Y.
+##<i class="fa-duotone fa-input-pipe"></i>That's three r's!
+##<i class="fa-duotone fa-microchip-ai"></i>I apologize for any confusion. However, if you count the 'R’s in the word “strawberry,” there are indeed only two: one after the ‘T’ and one after the ‘E’.
+
+---
+class: center, middle
+<i class="fa-duotone fa-question huge"></i>
+???
+- What's going on here?
+- Why is Versa so sure there are only two R's in Strawberry?
+
+---
+class: center, middle, highlight
+# ChatGPT is Bullshit
+## <i class="fa-duotone fa-quote-left"></i>what occurs in the case of an LLM delivering false utterances is not an unusual or deviant form of the process it usually goes through (as some claim is the case in hallucinations, e.g., disjunctivists about perception). The **very same process occurs when its outputs happen to be true**.<i class="fa-duotone fa-quote-right"></i>
+
+.footnote[Hicks, M.T., Humphries, J. & Slater, J. ChatGPT is bullshit. Ethics Inf Technol 26, 38 (2024). https://doi.org/10.1007/s10676-024-09775-5]
+
+???
+- Excuse my French, the title isn't my own
+- Based on a philosophical theory of truth by Harry Frankfurt
+- The core idea is that the model doesn't care what the truth is
+- As I approach using these tools in various ways I always have this in my mind
+- The computer flat out, *does not care*
+
+---
+class: center
+# Use Cases for Generative AI
+
+---
+class: full-page-boxes
+# Use Cases for ~~Generative AI~~ Bullshit
+
+--
+<i class="fa-duotone fa-duck large"></i>
+???
+- Rubber Ducky
+
+--
+<i class="fa-duotone fa-wand-sparkles large"></i>
+???
+- Autocomplete
+
+--
+<i class="fa-duotone fa-arrows-to-eye large"></i>
+???
+- Help Reading and Understanding Output
+
+--
+<i class="fa-duotone fa-display-code large"></i>
+???
+- Help Writing Code
+
+---
+class: center, middle
+# First Use Case
+## Rubber Ducky
+<i class="fa-duotone fa-duck huge blue"></i>
+
+.footnote[https://versa.ucsf.edu/]
+???
+- Rubber Ducking is a technique a lot of programmers use
+- The idea is that you explain your problem to a rubber duck
+- The act of explaining the problem helps you understand it better
+- Demo time
+- What are six titles for a blog post about a new way of using modifiers in Ember.js? The modifiers are declared on the class where they are needed and not in a separate class. Each title should be some kind of pun or involve hamsters.
+
+---
+class: center, middle
+# Second Use Case
+## Autocomplete
+<i class="fa-duotone fa-wand-sparkles huge blue"></i>
+
+.footnote[https://github.com/features/copilot]
+
+???
+- Using CoPilot hooked up to my editor (Code)
+- This is only possible because the code I'm working with is open source
+- I know there are efforts in place to secure licensing for more highly protected data
+- I don't know where those currently stand
+- I'm an expert software developer
+- But I'm also the kind of person who likes to use cruise control in a residential neighborhood
+- How can I generate code, so I don't have to type it
+- This is a very small piece of a chart building library we have for Ilios
+- What I want to do is write tests that confirm data that I already know is correct
+- What I don't want to have to do is copy and paste a lot of stuff
+
+---
+class: center, middle
+# Third Use Case
+## Help Understanding Output
+<i class="fa-duotone fa-arrows-to-eye huge blue"></i>
+
+.footnote[https://www.warp.dev/]
+
+???
+- Warp is a command line terminal that is fast and pretty
+- It has been adding a bunch of GenAI features
+- I really like the way it always asks before sharing any data with any model
+- Again, we don't have a good data licensing agreement with them, so if you want to use something like this you have to really understand what's going on
+- Example of some errors I came across when attempting to install Stable Diffusion
+- I've simplified the context some, in a way that won't ever actually work, but it's a good demonstration
+- The model is able to read *way* faster than me and can summarize very well
+- It can also often suggest solutions
+
+---
+class: center, middle
+# Fourth Use Case
+## Help Writing Code
+<i class="fa-duotone fa-display-code huge blue"></i>
+
+.footnote[https://github.com/features/copilot]
+
+???
+- Back to Code and Copilot, this time for some more advanced work
+- This is the riskiest demo I have, it's supposed to fail, but it might work
+- Refactor to use luxon instead of moment
+---
+class: center, middle
+# <i class="fa-duotone fa-clock-rotate-left huge"></i>
+# Let's Go Back Through Each Case
+## Talk About What Went Right and What Went Wrong
+### and what we can learn from it
+
+---
+class: center, middle
+# <i class="fa-duotone fa-clock-rotate-left"></i> <i class="fa-solid fa-4"></i>
+## Help Writing Code <i class="fa-duotone fa-display-code"></i>
+
+<i class="fa-duotone fa-ban huge red"></i>
+
+???
+- Exercise extreme caution
+- Tiny errors are magnified in code
+- It takes way longer to figure out where the guess has gone wrong
+
+---
+class: center, middle
+# <i class="fa-duotone fa-clock-rotate-left"></i> <i class="fa-solid fa-3"></i>
+## Help Understanding Output <i class="fa-duotone fa-arrows-to-eye"></i>
+
+<i class="fa-duotone fa-thumbs-up huge blue"></i>
+
+???
+- Can be a big help in summarizing huge amounts of information
+- Can often be very helpful in suggesting solutions
+- The quality of those solutions isn't important to the model
+- The less you know about the environment the more likely you are to be misled
+- I missed a chance to learn something new
+
+---
+class: center, middle
+# <i class="fa-duotone fa-clock-rotate-left"></i> <i class="fa-solid fa-2"></i>
+## Autocomplete <i class="fa-duotone fa-wand-sparkles"></i>
+
+<i class="fa-duotone fa-business-time big blue"></i>
+<i class="fa-duotone fa-alarm-exclamation big red"></i>
+
+???
+- The output depends too much on the input, missing an opportunity to make it better
+- I missed a chance to learn something new
+- Just like with autocomplete in a text, it's often very wrong
+- When it's wrong it can be super distracting and interrupt flow
+
+---
+class: center, middle
+# <i class="fa-duotone fa-clock-rotate-left"></i> <i class="fa-solid fa-1"></i>
+## Rubber Ducky <i class="fa-duotone fa-duck"></i>
+
+<i class="fa-duotone fa-display-code big blue"></i>
+<i class="fa-duotone fa-people-arrows big red"></i>
+
+???
+- Works great for generating ideas
+- I've missed the chance to connect with a person
+  - A person who I could have shared the joy of success with
+- When I'm done I don't feel like I came up with something, I feel like I was given something
+
+---
+class: center, middle
+## <i class="fa-solid fa-scale-balanced huge"></i>
+
+???
+- I'm still figuring this out
+- I can tell you that I, personally, have found some utility in some usage
+- If you're building your own applications on top of AI, you need to be deeply aware of the experience you're creating for your users
+
+---
+class: middle, highlight
+
+### <i class="fa-duotone fa-quote-left"></i>
+
+##### First off, your detailed feedback has been invaluable, underscoring the importance of these features for our users. This kind of transparent communication is key to tailoring our solutions to meet your precise needs. We appreciate this style of collaborative work. **Upon reflection and analysis of our prior discussions** and the outlined technical challenges, it's become evident that we initially may not have fully grasped the extent of your requirements for absolute data protection in certain features and the depth we needed to ensure this data protection was secured. This acknowledgment has sharpened our understanding of your needs and the essential role these features play in your operations. **Rest assured**, we are fully equipped and ready to rise to this challenge.
+##### With this new clarity, our development team has already begun a detailed analysis to chart out the enhancements needed to align with your exacting standards for data protection and security. Our team is **dedicated to formulating solutions** that match with your feedback and are currently in the process of determining the scope of effort required to bring these to fruition.
+##### We are acutely aware that ongoing modifications after our initial agreement can introduce complexities, particularly in terms of budgeting and the logistical hurdles associated with procurement and invoicing. In light of this, our goal is to implement the necessary updates without incurring additional costs wherever feasible. Should there arise any need for adjustments that might lead to extra charges, we are committed to engaging in an open, transparent, and collaborative discussion with you. Our priority is to ensure that any course of action is squarely focused on delivering the best outcomes for you and your stakeholders.
+##### Regarding the configuration identifier for the plugin's documentation on our internal system, **rest assured**, this will be catalogued in the issues list as you've requested. This step is fundamental to facilitating smooth updates in the future and safeguarding the integrity of your environment.
+##### Please don't hesitate to reach out for any clarifications or additional queries in the meantime. Ensuring your satisfaction and the success of your initiatives **continues to be our utmost priority**.
+
+### <i class="fa-duotone fa-quote-right"></i>
+
+???
+- You better really not care about the audience
+- You'll be wasting their time
+- This is the most ethically dangerous use case
+- When you use GenAI to communicate with other people you're not being genuine in those interactions
+- If someone asks you for help, they want your help, not the help of the internet
+
+---
+class:center,middle,photo-slide
+![Jayden, a super cute chihuahua waiting for you to ask a question](./media/jayden-waiting.jpeg)
+
+???
+# Questions?
+
+---
+class: center, middle, title-slide, qr-title-slide
+# Thanks!
+
+## Jon Johnson
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson<br />
+  <i class="fa-brands fa-slack"></i> jrjohnson-ucsf<br />
+  <i class="fa-solid fa-paper-plane-top"></i> jon.johnson@ucsf.edu
+  ]
+
+  .avatar[
+  ![Jon's avatar](../shared/avatar.png)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2024-10-agile](media/talk-qr.svg)
+
+  `https://www.jrjohnson.dev`
+]
+
+    </textarea>
+    <script src="/slides/shared/remark-latest.min.js"></script>
+    <script>
+      const slideshow = remark.create({
+        navigation: {
+          scroll: false,
+          touch: true,
+          click: true
+        },
+        slideNumberFormat: '',
+        countIncrementalSlides: false,
+        ratio: '16:9',
+        highlightStyle: 'railscasts'
+      });
+    </script>
+  </body>
+</html>
