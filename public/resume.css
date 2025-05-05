@@ -99,7 +99,7 @@ h2 + p, h3 + p, p + p, h2 + ul {
 #talks + ul {
   flex-direction: column;
   flex-wrap: wrap;
-  height: 5rem;
+  height: 7rem;
   justify-content: flex-start;
   align-content: space-between;
   padding: 0;

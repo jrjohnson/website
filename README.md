@@ -49,9 +49,10 @@ Make use of the many generators for code, try `ember help generate` for more det
 Commits to `master` are auto deployed by Netlify.
 
 ### Building a PDF Resume
+
 1. Remove PDF link
 2. Convert to HTML `multimarkdown markdown/pages/resume.md -o public/resume-output.html`
-3. Generate PDF from HTML `pnpx electron-pdf http://localhost:4200/resume-output.html public/media/resume.pdf -p=Letter -m=0`
+3. Generate PDF from HTML `npx electron-pdf http://localhost:4200/resume-output.html public/media/resume.pdf -p=Letter -m=0` don't use pnpm for this, electron doesn't install
 4. Remove HTML `rm public/resume-output.html`
 
 - [ember.js](https://emberjs.com/)
