@@ -4,7 +4,7 @@ css: resume.css
 
 # Jonathan Ryan Johnson
 
-## Application Development and Operations Manager
+## Architect
 
 * [PDF Resume](/media/resume.pdf)
 * jon.johnson@ucsf.edu
@@ -16,7 +16,7 @@ css: resume.css
 
 ## Profile
 
-Expert in team leadership, development, and psychological safety; enterprise web application development using PHP, Javascript, JSON, SQL and XML; open source contributions and community; modern web standards; cloud systems; accessible web design; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
+Expert in team leadership, development, and psychological safety; enterprise web application development using PHP, Javascript, JSON, SQL and XML; generative AI user experience and integration; open source contributions and community; modern web standards; cloud systems; accessibility; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
 
 ------
 
@@ -42,6 +42,7 @@ Expert in team leadership, development, and psychological safety; enterprise web
 -------
 
 ## Talks
+* [AI or Nay? Balancing Distraction and Utility](https://www.jrjohnson.dev/talks/2025-01-ai-or-nay)
 * [Flow, Flex, and Ship: The Daily Practice of Agile Engineering](https://www.jrjohnson.dev/talks/2024-10-agile)
 * [Jumping into Deep Work](https://www.jrjohnson.dev/talks/2022-11-deep-work)   
 * [Automagic Deployment with Github Actions](https://www.jrjohnson.dev/talks/2022-08-github-actions)   
@@ -69,8 +70,13 @@ Expert in team leadership, development, and psychological safety; enterprise web
 
 ## Recent Experience
 
+### Education IT
+__Architect *2024-present*__
+
+Develop and implement long-term technical strategy to meet the needs of the UCSF Education community in partnership with Education IT and school leadership, ensuring the long-term viability of the technical stack and managing short-term operational requirements for all enterprise teaching and learning applications and integrations.
+
 ### Teaching and Learning Applications
-__Manager *2019-present*__
+__Manager *2019-2024*__
   While still maintaining a focus on technical leadership for the Ilios platform assumed responsibility for the Collaborative Learning Environment and the developers and support staff for CLE systems. Led the campus wide A3 effort to transform the organization and funding model for education at UCSF on behalf of the Committee for Educational Technology; facilitated internship with JCC and served as a mentor for diverse career switchers exploring technology; served as UCTech ambassador with a focus on creating an inclusive conference and recruiting first-time speakers; maintained uptime, stability, and security through multiple system upgrades; seamlessly transitioned to fully remote work; strengthened partnerships with LTG and school technologists during the transition to pandemic remote teaching; proactively advocated for moving our team to the new Educational IT organization and managed the uncertainty and chaos of that transitional while maintaining a rigorous Ilios release schedule and on schedule upgrade of Moodle; served on the Medibiquitous Technical Advisory Group as an API and medical education standards expert.
 
 ### Ilios Curriculum Management Platform
