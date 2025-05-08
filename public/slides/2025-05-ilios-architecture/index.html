@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ilios Architecture, Form Follows Function</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/slides/shared/style.css">
+    <style>
+      .title-slide .left-column {
+        width: 50%;
+      }
+      .title-slide .right-column {
+        width: 45%;
+      }
+      .logos {
+        display: flex;
+      }
+      .ilios-logo {
+        fill: #c60;
+        stroke: #c60;
+      }
+      .ilios-logo text {
+        font-size: 3rem;
+        font-family: "Helvetica Neue";
+        fill: #fff;
+        stroke: #fff;
+      }
+      .blue {
+        color: #0071AD;
+      }
+      .red {
+        color: tomato;
+      }
+      .strike {
+        text-decoration: line-through;
+      }
+    </style>
+    <script defer src="/slides/shared/fontawesome6.js"></script>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+class: center, middle, title-slide, qr-title-slide
+# Ilios Architecture
+## How Form Follows Function
+
+### Jon Johnson <span class="pronouns">(he/him)</span>
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson<br />
+  <i class="fa-brands fa-slack"></i> jrjohnson-ucsf<br />
+  <i class="fa-solid fa-paper-plane-top"></i> jon.johnson@ucsf.edu
+  ]
+  .avatar[
+  ![Jon's avatar](../shared/avatar.png)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2025-05-ilios-architecture](media/talk-qr.svg)
+
+  `https://www.jrjohnson.dev`
+]
+
+---
+class: logos
+![UCSF Education IT Logo](media/ed-it-logo.png)
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 392.11 392.11" aria-hidden="true" class="ilios-logo">
+  <title>Ilios Logo</title>
+  <path d="M371.83,461.83c-77.62-89.13-98.6-113.11-30.25-93.76-62.12-34.35-30.23-36.41,87.67-44.87-117.91-8.47-149.8-10.52-87.67-44.87-68.34,19.35-47.37-4.63,30.26-93.76-89.12,77.62-113.11,98.6-93.76,30.25-34.35,62.12-36.41,30.23-44.87-87.68-8.47,117.91-10.53,149.8-44.87,87.68,19.35,68.34-4.64,47.37-93.76-30.26,77.62,89.13,98.59,113.11,30.25,93.76,62.12,34.35,30.23,36.41-87.68,44.87,117.91,8.47,149.8,10.52,87.68,44.87,68.34-19.35,47.37,4.63-30.25,93.76,89.12-77.62,113.11-98.6,93.76-30.25,34.35-62.12,36.41-30.23,44.87,87.68,8.47-117.91,10.52-149.8,44.87-87.68C258.71,363.23,282.7,384.21,371.83,461.83Z" transform="translate(-37.14 -127.14)"/>
+  <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Ilios</text>
+</svg>
+
+---
+class: center, middle
+# <i class="fa-solid fa-flux-capacitor huge"></i>
+
+???
+- Let's go back in time
+
+---
+class: center, middle, photo-slide
+![Cover for a book on YUI 2](./media/yui2.jpg)
+
+## <i class="fa-duotone fa-quote-left"></i> Don't lose these books, you can't buy them anymore. Ok, bye!<i class="fa-duotone fa-quote-right"></i>
+.footnote[-Stefan Topfstedt, 2014]
+
+???
+- The year is 2013, and Ilios is in trouble
+- The lead dev just left for IT, and handed me a book.
+- We need to update everything right now, but we also need to add features, oh and we need it fast.
+
+---
+# deepCloneAssociativeArray
+```javascript
+/**
+ * Written because slice() is dysfunctional with associative arrays.
+ *
+ * @return a deep copy of the associative array (the returned array is its own unique
+ *                 Array instance, and the objects in the array have clone() called on them -
+ *                 so they must implement that). If originalArray is null, null is returned.
+ */
+ilios.utilities.deepCloneAssociativeArray = function (originalArray) {
+    var rhett = null;
+    if (originalArray != null) {
+        rhett = new Array();
+        for (var key in originalArray) {
+            rhett[key] = originalArray[key].clone();
+            rhett.length++;
+        }
+    }
+    return rhett;
+};
+```
+---
+class: center, middle
+# Good, Fast, Cheap
+## Pick Three
+![Poorly Drawn Lines Cartoon, mouse says you have to choose your battles, crow says I choose all of them](./media/choose.png)
+
+.footnote[https://poorlydrawnlines.com/comic/choose/]
+
+---
+class: center, middle
+# What is Ilios?
+Ilios is a curriculum management platform for the Health Professions educational community. It is a user-friendly, flexible, and robust web application. Ilios collects, manages, analyzes, and delivers curricular information.
+
+Built by and for the health professions, Ilios supports the sharing of curriculum outcomes and materials among programs, departments, schools and institutions, while maintaining the flexibility to accommodate the unique practices within our diverse health professions community.
+
+.footnote[https://www.iliosproject.org/]
+
+---
+class: center, middle, photo-slide
+# A Segment of Ilios Data
+## Session, Course, and Program Objectives Linked to Competencies
+![ilios data sample](media/ilios-noise.png)
+
+---
+# Ilios is a Data Management Productivity Application
+
+.left-column[
+## Data Access
+### Easy to read, writes, and integrate with
+### Everything should be accessible through the API
+### Without support!
+]
+.right-column[
+## Productivity
+### Feels like an application
+### Classic UX problems
+### Adding features should be easy
+### Support for all types of devices
+]
+
+--
+
+.full-width-column[
+# a single hour of downtime at the wrong time is a disaster
+]
+
+---
+class: center, middle
+# My Philosophy, Buy the Bikeshed
+## The Best Code is No Code At All
+## If You Have to Build It, Make Sure You Can Maintain It
+## If You Have to Maintain It, Make It Easy
+
+.footnote[https://blog.codinghorror.com/the-best-code-is-no-code-at-all/]
+
+
+---
+class: center, middle
+# Buy the Bikeshed
+
+---
+class: center
+# What You Think You Need
+
+![blank map of SF](media/wood-bike-shed.jpg)
+
+.footnote[.style-free-list[
+  - http://whatshed.co.uk/7-x-3-waltons-tongue-and-groove-apex-wooden-bike-shed/
+]]
+
+---
+class: center
+# What a Library Provides
+
+![Twitter SF's Bike Room](media/twitter-bike-room.jpg)
+
+.footnote[.style-free-list[
+  - http://www.sfbike.org/news/dero-bicycle-parking-solutions/
+]]
+
+---
+class: center
+# What You End up Building
+
+![Bike locked to fence with no bike parking sign](media/bike-parking-fail.jpg)
+
+.footnote[.style-free-list[
+  - https://flic.kr/p/8qqnzn
+]]
+
+---
+class: center
+# What You Actually Need
+
+![Bikes on SF Muni Bus](media/muni-bike-rack.jpg)
+
+.footnote[.style-free-list[
+  - https://www.sfmta.com/about-sfmta/blog/bigger-bike-racks-hilly-muni-routes
+]]
+
+???
+- scary place for developers have to throw out all of that really fancy
+code that is tied very closely to my identity as a human
+- this isn't a bad thing (you should love your code), just try not to get into the situation too often
+
+---
+
+class: center, middle
+# Buy the Bikeshed
+
+### Build What You Have the Expertise to Maintain
+
+--
+### Build What You Have the FTE to Fix **CONSTANTLY** .strike[Expertise to Maintain]
+
+---
+class: center, middle
+# Focus on the Solution
+
+## If the goal is to build a fast airplane why are you manufacturing bricks?
+
+---
+class: center, middle
+# The Ilios Architecture
+## Finally, he get's to the point!
+
+![XKCD, long story about fire, emphasizing getting to the point](./media/prometheus.png)
+
+.footnote[https://xkcd.com/1228/]
+
+???
+- Let's get into specifics, but keep in mind that most of these choices aren't technical, they're about the constraints and requirements for Ilios
+
+---
+class: center, middle
+# The Ilios Architecture
+
+.left-column[
+## API Server aka Backend
+### PHP
+### Symfony
+### Doctrine
+### JSON:API
+### GraphQL
+
+https://github.com/ilios/ilios
+]
+
+.right-column[
+## Single Page Application (SPA) aka Frontend
+### JavaScript
+### Ember.js
+### JSON:API
+### GraphQL
+
+https://github.com/ilios/frontend
+]
+
+???
+- PHP is where expertise was already, we considered other frameworks and languages, but ultimately didn't want to absorb the training cost.
+- A lot more time went into picking Ember.js. At the time Angular was going through a huge internal upgrade struggle, and React didn't exist.
+- Will talk a bit more about why each of these choices in a bit.
+
+---
+
+# Why the split?
+## Significantly easier to maintain, monorepos didn't really exist yet
+## Tests are easier to run (we were on Travis at the time, which was language specific)
+## Easier to deploy
+## Easier to understand
+## Tried it all together, but it was hard, and not standard.
+
+---
+class: center, middle
+# The Ilios Architecture
+## Containers
+### What runs on my machine, runs in production
+
+.footnote[https://hub.docker.com/orgs/ilios]
+
+---
+# The Ilios Architecture, Containers
+## Dockerfile
+
+```dockerfile
+FROM php:8.4-fpm AS php-base
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=src /src/app /srv/app/
+
+# configure PHP extensions required for Ilios and delete the source files after install
+RUN set -eux; \
+    mkdir -p var/cache var/log; \
+    composer install --prefer-dist --no-dev --no-progress --no-scripts --no-interaction; \
+    composer dump-autoload --classmap-authoritative --no-dev; \
+    composer symfony:dump-env prod; \
+    composer run-script --no-dev post-install-cmd; \
+    sync
+
+COPY docker/fpm/symfony.prod.ini $PHP_INI_DIR/conf.d/symfony.ini
+COPY docker/fpm/ilios.ini $PHP_INI_DIR/conf.d/ilios.ini
+
+ENTRYPOINT ["docker-entrypoint"]
+CMD ["php-fpm"]
+```
+
+.footnote[https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/Dockerfile]
+---
+# The Ilios Architecture, Containers
+## Testing and Building
+
+```yaml
+  build_containers:
+    strategy:
+      matrix:
+        arch:
+          - amd64
+          - arm64
+        image:
+          - php-apache
+          - nginx
+          - fpm
+    steps:
+    - uses: docker/setup-buildx-action@v3
+    - uses: docker/build-push-action@v6
+      with:
+        target: ${{ matrix.image }}
+        push: false
+        outputs: type=docker,dest=/tmp/${{ matrix.image }}-${{ matrix.arch }}.tar,compression=gzip
+        tags: ${{ matrix.image }}:${{ matrix.arch }}-testing
+        platforms: linux/${{ matrix.arch }}
+
+```
+.footnote[https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.github/workflows/ci.yml#L145-L340]
+
+---
+# The Ilios Architecture, Containers
+## Testing and Building
+
+```yaml
+  run_containers:
+      matrix:
+        arch:
+          - amd64
+          - arm64
+    steps:
+    - uses: actions/checkout@v4
+    - name: FPM
+      if: ${{ always() }}
+      run: |
+        docker image load --input /tmp/fpm-${{ matrix.arch }}.tar
+        docker run -d --name ilios-fpm fpm:${{ matrix.arch }}-testing
+        docker ps
+        docker ps | grep -q ilios-fpm
+        docker exec ilios-fpm php bin/console monitor:health
+        docker stop ilios-fpm
+        docker rm --volumes ilios-fpm
+        docker image rm fpm:${{ matrix.arch }}-testing
+
+```
+.footnote[https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.github/workflows/ci.yml#L145-L340]
+
+---
+# The Ilios Architecture, Containers
+## Deploying Tags
+### v3,v3.123,v3.123.0
+
+```yaml
+jobs:
+  deploy-docker-containers:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - php-apache
+          - ...
+    steps:
+    - name: ${{ matrix.image }} to Docker Registry
+      uses: docker/build-push-action@v6
+      with:
+        tags: ilios/${{ matrix.image }}:${{needs.tags.outputs.major}},ilios/${{ matrix.image }}:${{needs.tags.outputs.minor}},ilios/${{ matrix.image }}:${{needs.tags.outputs.patch}}
+        target: ${{ matrix.image }}
+        push: true
+        provenance: false #https://github.com/gabrieldemarmiesse/python-on-whales/issues/407
+        platforms: linux/amd64,linux/arm64
+```
+
+.footnote[https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.github/workflows/deploy-tag.yml]
+
+
+---
+# The Ilios Architecture, Containers
+## Nightly Rebuild
+### v3,v3.123,v3.123.0
+
+```yaml
+jobs:
+  tags:
+    steps:
+    - uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
+          token: ${{ secrets.ZORGBORT_TOKEN }}
+    - id: tag
+      run: |
+        LATEST_TAG=$(git describe --tags --abbrev=0)
+        echo ${LATEST_TAG}
+  deploy-docker-containers:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - php-apache
+          - ...
+
+```
+
+.footnote[https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.github/workflows/deploy-nightly.yml]
+
+---
+class: center, middle
+# The Ilios Architecture
+## Symfony API Server
+
+.footnote[https://github.com/ilios/ilios]
+
+???
+- Why Symfony?
+  - Awesome Documentation
+  - Great Testing Story
+  - Great Upgrade Story
+
+---
+# The Ilios Architecture, Symfony API Server
+## Testing
+### Code Style
+
+```yaml
+code_style:
+runs-on: ubuntu-latest
+steps:
+- run: composer validate --no-check-all --no-check-version --strict
+- run: vendor/bin/phpcs
+- name: lint markdown
+  uses: DavidAnson/markdownlint-cli2-action@v19
+  with:
+    globs: |
+      CHANGELOG.md
+      README.md
+      docs/*.md
+- name: lint yaml
+  run: |
+    vendor/bin/yaml-lint .github
+    vendor/bin/yaml-lint docs
+    vendor/bin/yaml-lint compose.yaml
+- name: phpstan
+  run: |
+    vendor/bin/phpstan analyse --no-progress
+```
+
+.footnote[https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.github/workflows/ci.yml#L25-L64]
+
+???
+- My thinking on code style, you can never comment on the style of the code in a PR if you don't have a linting rule preventing it
+- Style rules cause all the code in Ilios to look very similar
+- Styles tests build confidence when contributing for the first time
+
+---
+# The Ilios Architecture, Symfony API Server
+## Testing
+### Continuous Integration
+
+```yaml
+tests:
+strategy:
+  matrix:
+    php-version: [8.4, 8.3]
+steps:
+- name: Use PHP ${{ matrix.php-version }}
+  uses: shivammathur/setup-php@v2
+  with:
+    coverage: pcov
+    php-version: ${{ matrix.php-version }}
+- name: Run Tests
+  run: vendor/bin/phpunit --coverage-clover build/coverage.xml
+- name: Archive Coverage Report
+  uses: actions/upload-artifact@v4
+  with:
+    name: coverage-output
+    path: build/coverage.xml
+    overwrite: true
+    retention-days: 1
+```
+
+.footnote[https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.github/workflows/ci.yml#L65-L93]
+
+???
+- Absolutely nothing beats tests
+
+---
+class: center, middle, photo-slide
+# The Ilios Architecture
+## AWS
+
+![Diagram of Ilios AWS Architecture](./media/aws.png)
+
+.footnote[https://wiki.library.ucsf.edu/pages/viewpage.action?pageId=670867637]
+
+???
+- this isn't my bit to share, Brandon and Jason are the experts here
+- what I can say is that we rely on AWS services to run. For example RDS instead of our own DB and Fargate instead of Kubernetes
+- again, buy the Bikeshed
+
+---
+class: center, middle
+# The Ilios Architecture, The Frontend
+## Monorepo
+### https://github.com/ilios/frontend
+
+???
+- Contains multiple apps
+- The frontend that almost everyone uses as well as two LTIs
+- LTI is very cool, it puts Ilios in Moodle, will work just as well with Canvas. 5 minutes to setup.
+
+---
+class: center, middle
+# The Ilios Architecture, The Frontend
+## Ember.js SPA
+### https://demo.iliosproject.org
+
+---
+class: center, middle, photo-slide
+# The Ilios Architecture, The Frontend
+## Netlify
+
+![Netlify Pull Request Preview](./media/netlify.png)
+
+---
+class: center, middle, photo-slide
+# The Ilios Architecture, The Frontend
+## Percy
+
+![Percy Pull Request Visual Diff](./media/percy.png)
+
+---
+class: center, middle
+# The Ilios Architecture, The Frontend
+## Deploy
+
+???
+- We have to absorb some complexity in our frontend deployment because Ilios isn't run only at UCSF
+- Because other schools download and run Ilios we can't just deploy the html to a web server, which would be awesome
+- Instead we package the entire app into an archive and upload it to S3
+- Each API server then download the archive that matches their API version and can serve it
+
+---
+# The Ilios Architecture, Frontend
+## Deploy
+### Ember CLI Deploy
+
+```javascript
+const API_VERSION = require('ilios-common/config/api-version.js');
+
+module.exports = function (deployTarget) {
+  var ENV = {
+    's3-index': {
+      region: 'us-west-2',
+      filePattern(context) {
+        return context.archiveName;
+      },
+      distDir(context) {
+        return context.archivePath;
+      },
+    },
+    brotli: {
+      filePattern: '**/*.{js,css,json,ico,map,xml,txt,svg,eot,ttf,webmanifest}',
+      ignorePattern: 'index.json',
+      keep: true,
+    },
+  };
+};
+```
+
+.footnote[https://github.com/ilios/frontend/blob/2f241c90bc7a737ad01898c05c08f6190337910a/packages/frontend/config/deploy.js]
+
+
+---
+# The Ilios Architecture, Frontend
+## Deploy
+### index.json
+
+```json
+{
+  "meta": [
+    { "charset": "utf-8" },
+    { "name": "description", "content": "" },
+    { "name": "viewport", "content": "width=device-width, initial-scale=1" },
+    { "name": "theme-color", "content": "#cc6600" },
+    { "name": "apple-mobile-web-app-capable", "content": "yes" },
+    { "name": "apple-mobile-web-app-status-bar-style", "content": "black" },
+  ],
+  "script": [
+    {},
+    {
+      "src": "/ilios-loading/display-loader.d911ede498a82bcd652f366f4cd0fd8a.js"
+    },
+    {},
+    { "src": "/assets/vendor.9c86d0ff26b2efa7b46bf1fc458df517.js" },
+    { "src": "/assets/chunk.cd5e4b4b99b2dfbe70c3.js" },
+    { "src": "/assets/chunk.8cfb67599df1b87bece5.js" },
+    {}
+  ]
+}
+```
+
+
+---
+# The Ilios Architecture, Frontend
+## Deploy
+### Github Actions Deploys
+
+```yaml
+jobs:
+  deploy-frontend:
+    name: Deploy Frontend and Create Sentry Release
+    steps:
+      - name: Ember CLI Deploy
+        run: pnpm --filter frontend run deploy:production
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+```
+
+.footnote[https://github.com/ilios/frontend/blob/2f241c90bc7a737ad01898c05c08f6190337910a/.github/workflows/deploy-production.yml]
+
+---
+# The Ilios Architecture, Frontend
+## Deploy
+### Sentry
+
+```yaml
+jobs:
+  deploy-frontend:
+    name: Deploy Frontend and Create Sentry Release
+    steps:
+      - name: Create a Sentry.io release
+        run: |
+          # Create new Sentry release
+          sentry-cli releases new ${{github.ref_name}}
+          sentry-cli releases set-commits --auto ${{github.ref_name}}
+          sentry-cli releases files ${{github.ref_name}} upload-sourcemaps packages/frontend/tmp/deploy-dist/
+          sentry-cli releases finalize ${{github.ref_name}}
+```
+
+.footnote[https://github.com/ilios/frontend/blob/2f241c90bc7a737ad01898c05c08f6190337910a/.github/workflows/deploy-production.yml]
+
+???
+- Sentry is its own talk, next time!
+
+---
+class: center, middle
+# The Ilios Architecture, Frontend
+## Prettier
+### Opinionated Code Formatter
+
+.footnote[https://prettier.io]
+
+???
+- Event better than linting, prettier just formats the code for you
+
+
+---
+# The Ilios Architecture, Frontend
+## Tests as Code
+### package.json
+
+```json
+{
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "format": "pnpm run --parallel format",
+    "lint": "pnpm run --parallel \"/^lint:(hbs|js|css|format)$/\"",
+    "lint:js": "pnpm run --parallel lint:js",
+    "lint:hbs": "pnpm run --parallel lint:hbs",
+    "lint:css": "pnpm run --parallel lint:css",
+    "lint:fix": "pnpm run --parallel lint:fix",
+    "lint:deps": "pnpm run --parallel lint:deps",
+    "lint:format": "pnpm run --parallel lint:format",
+    "start": "pnpm --filter frontend exec ember serve",
+    "test:frontend": "pnpm --filter frontend exec ember exam --parallel=8 --load-balance",
+    "test:test-app": "pnpm --filter test-app exec ember exam --parallel=8 --load-balance",
+    "prepare": "husky"
+  }
+}
+```
+
+---
+# The Ilios Architecture, Frontend
+## Tests
+### Code Style
+
+```yaml
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Lint
+        run: pnpm run lint
+      - name: Test Dependency Installation
+        run: pnpm install --resolution-only --no-frozen-lockfile
+```
+
+.footnote[https://github.com/ilios/frontend/blob/2f241c90bc7a737ad01898c05c08f6190337910a/.github/workflows/ci.yml]
+
+---
+# The Ilios Architecture, Frontend
+## Tests
+### Tests
+
+```yaml
+jobs:
+  test:
+    strategy:
+      matrix:
+        node-version: [20]
+        workspace:
+          - frontend
+          - test-app
+          - lti-course-manager
+          - lti-dashboard
+    steps:
+      - name: Run Tests
+        run: pnpm --filter ${{matrix.workspace}} exec ember exam --parallel=3 --load-balance --write-execution-file
+        env:
+          COVERAGE: true
+```
+
+.footnote[https://github.com/ilios/frontend/blob/2f241c90bc7a737ad01898c05c08f6190337910a/.github/workflows/ci.yml]
+
+---
+class: center, middle, photo-slide
+
+![Poorly Drawn Lines, mouse says it's time to be productive](./media/productive.png)
+
+.footnote[https://poorlydrawnlines.com/comic/productive/]
+
+---
+class:center,middle,photo-slide
+![Jayden, a super cute chihuahua waiting for you to ask a question](./media/jayden-waiting.jpeg)
+
+???
+# Questions?
+
+---
+class: center, middle, title-slide, qr-title-slide
+# Thanks!
+
+## Jon Johnson
+
+.left-column[
+.boxes[
+  .icons[
+  <i class="fa-brands fa-github"></i> jrjohnson<br />
+  <i class="fa-brands fa-slack"></i> jrjohnson-ucsf<br />
+  <i class="fa-solid fa-paper-plane-top"></i> jon.johnson@ucsf.edu
+  ]
+
+  .avatar[
+  ![Jon's avatar](../shared/avatar.png)
+  ]
+]]
+
+.right-column[
+  ### Plain Text and Slides At:
+  ![QR code for https://www.jrjohnson.dev/talks/2024-10-agile](media/talk-qr.svg)
+
+  `https://www.jrjohnson.dev`
+]
+
+    </textarea>
+    <script src="/slides/shared/remark-latest.min.js"></script>
+    <script>
+      const slideshow = remark.create({
+        navigation: {
+          scroll: false,
+          touch: true,
+          click: true
+        },
+        slideNumberFormat: '',
+        countIncrementalSlides: false,
+        ratio: '16:9',
+        highlightStyle: 'railscasts'
+      });
+    </script>
+  </body>
+</html>
