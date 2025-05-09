@@ -42,7 +42,7 @@ h1 {
   text-align: center;
 }
 
-h2#applicationdevelopmentandoperationsmanager {
+h2:first-of-type {
   color: var(--header-purple);
   text-align: center;
 }
