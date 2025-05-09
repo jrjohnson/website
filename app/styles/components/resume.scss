@@ -3,6 +3,12 @@
     display: none;
   }
 
+  h2:first-of-type {
+    text-align: center;
+    color: var(--header-purple);
+    margin-bottom: 1rem;
+  }
+
   h3 {
     @include font-size("large");
     color: var(--header-purple);
