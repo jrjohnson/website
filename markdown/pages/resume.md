@@ -16,7 +16,7 @@ css: resume.css
 
 ## Profile
 
-Expert in team leadership, development, and psychological safety; enterprise web application development using PHP, Javascript, JSON, SQL and XML; generative AI user experience and integration; open source contributions and community; modern web standards; cloud systems; accessibility; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
+Expert in team leadership, development, and psychological safety; enterprise web application development; generative AI user experience and integration; open source contributions and community; modern web standards; cloud systems; accessibility; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
 
 ------
 
@@ -29,6 +29,7 @@ Expert in team leadership, development, and psychological safety; enterprise web
     * Open Source Community Maintenance and Communication
     * Organization Architecture and Development
     * Community Building
+    * Strategy, Budget, and Planning
 * Technical
     * API Design and Development
     * Web Application Development
@@ -36,12 +37,14 @@ Expert in team leadership, development, and psychological safety; enterprise web
     * Secure Application Development and Operations
     * Test Driven Development
     * Open Source Development
+    * Generative AI Integration UX
     * Continuous Integration and Deployment
     * AWS and Cloud First Architecture
 
 -------
 
 ## Talks
+* [Ilios Architecture, Form Follows Function](https://www.jrjohnson.dev/talks/2025-05-ilios-architecture)
 * [AI or Nay? Balancing Distraction and Utility](https://www.jrjohnson.dev/talks/2025-01-ai-or-nay)
 * [Flow, Flex, and Ship: The Daily Practice of Agile Engineering](https://www.jrjohnson.dev/talks/2024-10-agile)
 * [Jumping into Deep Work](https://www.jrjohnson.dev/talks/2022-11-deep-work)   
@@ -72,8 +75,7 @@ Expert in team leadership, development, and psychological safety; enterprise web
 
 ### Education IT
 __Architect *2024-present*__
-
-Develop and implement long-term technical strategy to meet the needs of the UCSF Education community in partnership with Education IT and school leadership, ensuring the long-term viability of the technical stack and managing short-term operational requirements for all enterprise teaching and learning applications and integrations.
+  Develop and implement long-term technical and team strategy to meet the needs of the UCSF Education community in partnership with Education IT and school leadership, ensuring the long-term viability of the technical stack and managing short-term operational requirements for all enterprise teaching and learning applications and integrations.
 
 ### Teaching and Learning Applications
 __Manager *2019-2024*__
