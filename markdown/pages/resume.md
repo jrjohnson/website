@@ -4,9 +4,9 @@ css: resume.css
 
 # Jonathan Ryan Johnson
 
+## Full Stack Enterprise Web Application Developer
 ## Architect
 
-* [PDF Resume](/media/resume.pdf)
 * jon@jrjohnson.dev
 * (650) 516-7401
 * [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
@@ -16,20 +16,14 @@ css: resume.css
 
 ## Profile
 
-Expert in team leadership, development, and psychological safety; enterprise web application development; generative AI user experience and integration; open source contributions and community; modern web standards; cloud systems; accessibility; automated deployment; continuous integration and system automation. Recognized for ability to adapt and expand with the growing needs of an organization and learn new skills as necessary.
+I build full stack web applications that people love to use because they are tested, highly scalable, secure, accessible, fast, and beautiful. The applications I create last because they are architected for maintainability and adoption, not based on the flavor-of-the-month framework or trend; instead, I adopt tools that are backed by strong open communities with long-term vision and an unwavering focus on backwards compatibility.
+
+Building for the web, and in a team setting, has required me to become an expert in open source contributions and community, modern web standards, cloud systems, accessibility, automated deployment, continuous integration and system automation, team leadership, development, psychological safety, and generative AI user experience and integration.
 
 ------
 
 ## Skills
 
-* Domain
-    * Working with and Building Diverse Teams
-    * Psychological Safety and People Management
-    * Educational Administration and Curriculum Development
-    * Open Source Community Maintenance and Communication
-    * Organization Architecture and Development
-    * Community Building
-    * Strategy, Budget, and Planning
 * Technical
     * API Design and Development
     * Web Application Development
@@ -40,6 +34,23 @@ Expert in team leadership, development, and psychological safety; enterprise web
     * Generative AI Integration UX
     * Continuous Integration and Deployment
     * AWS and Cloud First Architecture
+    * Opensearch
+* Domain
+    * Working with and Building Diverse Teams
+    * Psychological Safety and People Management
+    * Educational Administration and Curriculum Development
+    * Open Source Community Maintenance and Communication
+    * Organization Architecture and Development
+    * Community Building
+    * Strategy, Budget, and Planning
+
+------
+
+## Sample Code
+
+*PHP*: [Ilios Symfony Backend API Server](https://github.com/ilios/ilios)
+
+*Javascript*: [Ilios EmberJS Web App](https://github.com/ilios/frontend)
 
 -------
 
@@ -55,31 +66,17 @@ Expert in team leadership, development, and psychological safety; enterprise web
 * [Always Be Updating](https://www.jrjohnson.dev/talks/2019-06-always-be-updating)
 * [Career Day at Aragon High School](https://www.jrjohnson.dev/talks/2019-03-ahs-career-day)
 
-------                                                    
-                                                          
-## Education                                              
-* BA History (Pre-Law) *University of the Pacific* __2003__    
-* MA Educational Administration *University of the Pacific* __2005__
-
-------
-
-## Sample Code
-
-*PHP*: [Ilios Symfony Backend API Server](https://github.com/ilios/ilios)
-
-*Javascript*: [Ilios EmberJS Web App](https://github.com/ilios/frontend)  | [ember-cli-image-transformer](https://github.com/jrjohnson/ember-cli-image-transformer)  | [ember-noscript](https://github.com/jrjohnson/ember-noscript)  | [ember-fontawesome](https://github.com/FortAwesome/ember-fontawesome)
-
 ------
 
 ## Recent Experience
 
 ### Education IT
 __Architect *2024-present*__
-  Develop and implement long-term technical and team strategy to meet the needs of the UCSF Education community in partnership with Education IT and school leadership, ensuring the long-term viability of the technical stack and managing short-term operational requirements for all enterprise teaching and learning applications and integrations.
+  Continue to lead the development of the [Ilios platform](https://github.com/ilios) and the growing technical team, focusing on iterative improvements to the user experience for search and reporting. Develop and implement long-term technical and team strategies to meet the needs of the UCSF education community in partnership with Education IT and school leadership. Ensure the long-term viability of the technical stack while managing short-term operational requirements for all enterprise teaching and learning applications and integrations.
 
 ### Teaching and Learning Applications
 __Manager *2019-2024*__
-  While still maintaining a focus on technical leadership for the Ilios platform assumed responsibility for the Collaborative Learning Environment and the developers and support staff for CLE systems. Led the campus wide A3 effort to transform the organization and funding model for education at UCSF on behalf of the Committee for Educational Technology; facilitated internship with JCC and served as a mentor for diverse career switchers exploring technology; served as UCTech ambassador with a focus on creating an inclusive conference and recruiting first-time speakers; maintained uptime, stability, and security through multiple system upgrades; seamlessly transitioned to fully remote work; strengthened partnerships with LTG and school technologists during the transition to pandemic remote teaching; proactively advocated for moving our team to the new Educational IT organization and managed the uncertainty and chaos of that transitional while maintaining a rigorous Ilios release schedule and on schedule upgrade of Moodle; served on the Medibiquitous Technical Advisory Group as an API and medical education standards expert.
+  While still maintaining a focus on technical leadership for the [Ilios platform](https://github.com/ilios) assumed responsibility for the Collaborative Learning Environment and the developers and support staff for CLE systems. Led the campus wide A3 effort to transform the organization and funding model for education at UCSF on behalf of the Committee for Educational Technology; facilitated internship with JCC and served as a mentor for diverse career switchers exploring technology; served as UCTech ambassador with a focus on creating an inclusive conference and recruiting first-time speakers; maintained uptime, stability, and security through multiple system upgrades; seamlessly transitioned to fully remote work; strengthened partnerships with LTG and school technologists during the transition to pandemic remote teaching; proactively advocated for moving our team to the new Educational IT organization and managed the uncertainty and chaos of that transitional while maintaining a rigorous Ilios release schedule and on schedule upgrade of Moodle; served on the Medibiquitous Technical Advisory Group as an API and medical education standards expert.
 
 ### Ilios Curriculum Management Platform
 __Technical Lead, Architect *2014-2019*__
@@ -88,3 +85,9 @@ __Technical Lead, Architect *2014-2019*__
 ### Jazzee Graduate Admissions
 __Architect, Developer, Evangilist *2009-2014*__
   Designed and built the Jazzee admissions system to collect and manage graduate applications and payments. Built on an XML API and a revolutionary user customizable form builder with a focus on accessibility, usability, and security. Deployed for admissions at three University of California graduate schools for admissions.
+
+------                                                    
+                                                          
+## Education                                              
+* BA History (Pre-Law) *University of the Pacific* __2003__    
+* MA Educational Administration *University of the Pacific* __2005__
