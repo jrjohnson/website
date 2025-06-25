@@ -7,6 +7,7 @@ css: resume.css
 ## Full Stack Enterprise Web Application Developer
 ## Architect
 
+* [PDF Resume](/media/resume.pdf)
 * jon@jrjohnson.dev
 * (650) 516-7401
 * [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
