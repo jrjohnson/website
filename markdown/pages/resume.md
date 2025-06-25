@@ -7,7 +7,7 @@ css: resume.css
 ## Architect
 
 * [PDF Resume](/media/resume.pdf)
-* jon.johnson@ucsf.edu
+* jon@jrjohnson.dev
 * (650) 516-7401
 * [https://www.jrjohnson.dev](https://www.jrjohnson.dev)   
 * ![Github](/media/github_mark.svg)[jrjohnson](https://github.com/jrjohnson)
