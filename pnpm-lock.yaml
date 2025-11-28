@@ -19,7 +19,7 @@ importers:
         version: 7.28.0(@babel/core@7.28.5)
       '@ember/optional-features':
         specifier: ^2.1.0
-        version: 2.2.0
+        version: 2.3.0
       '@ember/render-modifiers':
         specifier: ^2.1.0
         version: 2.1.0(@babel/core@7.28.5)(ember-source@5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0))
@@ -85,7 +85,7 @@ importers:
         version: 7.1.3(@babel/core@7.28.5)(@ember/test-helpers@3.3.1(@babel/core@7.28.5)(ember-source@5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0))(webpack@5.103.0))(qunit@2.24.2)(webpack@5.103.0)
       ember-auto-import:
         specifier: ^2.7.4
-        version: 2.11.2(webpack@5.103.0)
+        version: 2.12.0(webpack@5.103.0)
       ember-cli:
         specifier: ~5.11.0
         version: 5.11.0(@types/node@24.10.1)(babel-core@6.26.3)(handlebars@4.7.8)(underscore@1.13.7)
@@ -163,7 +163,7 @@ importers:
         version: 16.6.2(eslint@8.57.1)
       eslint-plugin-prettier:
         specifier: ^5.2.1
-        version: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
+        version: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.7.1)
       eslint-plugin-qunit:
         specifier: ^8.1.1
         version: 8.2.5(eslint@8.57.1)
@@ -178,7 +178,7 @@ importers:
         version: 3.7.2
       prettier:
         specifier: ^3.3.3
-        version: 3.6.2
+        version: 3.7.1
       qunit:
         specifier: ^2.22.0
         version: 2.24.2
@@ -196,7 +196,7 @@ importers:
         version: 12.0.0(postcss@8.5.6)(stylelint@15.11.0)
       stylelint-prettier:
         specifier: ^4.1.0
-        version: 4.1.0(prettier@3.6.2)(stylelint@15.11.0)
+        version: 4.1.0(prettier@3.7.1)(stylelint@15.11.0)
       stylelint-scss:
         specifier: ^4.6.0
         version: 4.7.0(stylelint@15.11.0)
@@ -855,8 +855,8 @@ packages:
   '@ember/edition-utils@1.2.0':
     resolution: {integrity: sha512-VmVq/8saCaPdesQmftPqbFtxJWrzxNGSQ+e8x8LLe3Hjm36pJ04Q8LeORGZkAeOhldoUX9seLGmSaHeXkIqoog==}
 
-  '@ember/optional-features@2.2.0':
-    resolution: {integrity: sha512-a1OQ+w9vDvMXd9BNA9r779yr8MAPguGaMGbIeTMPWACeWBdD6bACBB5iKE3gNyrJAYKMq2wab6BKmRFS3Qw3hw==}
+  '@ember/optional-features@2.3.0':
+    resolution: {integrity: sha512-+M8CkPledQEaDbfIlwlq6Phgpm5jdT3a6WVDJk7b/zadw5xAJkuQKVK7DgR0SFgHGiWlyn6a8AU5p2mCA706RA==}
     engines: {node: 10.* || 12.* || >= 14}
 
   '@ember/render-modifiers@2.1.0':
@@ -923,14 +923,18 @@ packages:
       '@glint/template':
         optional: true
 
-  '@embroider/macros@1.19.4':
-    resolution: {integrity: sha512-x4wrnkE6fPN6mOyJeJv2I+lpKE2pHPq25S8bCiRJJb3H3RyiTm2LjSeB4AOVTi8YUjiWToI4PBgZOtx44hM4LA==}
+  '@embroider/macros@1.19.5':
+    resolution: {integrity: sha512-zwpe7J9jyh8YPLzblk8WR3AQf6m+Ln/8Prlz9/DEwHD1m7GjJog1TIT0Sjv8guEj/hXCGntbNOzfE2Vj1T0Uug==}
     engines: {node: 12.* || 14.* || >= 16}
     peerDependencies:
       '@glint/template': ^1.0.0
     peerDependenciesMeta:
       '@glint/template':
         optional: true
+
+  '@embroider/reverse-exports@0.2.0':
+    resolution: {integrity: sha512-WFsw8nQpHZiWGEDYpa/A79KEFfTisqteXbY+jg9eZiww1r1G+LZvsmdszDp86TkotUSCqrMbK/ewn0jR1CJmqg==}
+    engines: {node: 12.* || 14.* || >= 16}
 
   '@embroider/router@2.1.9':
     resolution: {integrity: sha512-rJPf3nIRgeZfeM4nqUE6nJypG1fGes9QMITnQzECth9lvD+MhEAUrw7SAHfXdNiIbfkDQTTSS9n3uea+yESTPQ==}
@@ -2050,8 +2054,8 @@ packages:
     resolution: {integrity: sha512-5T6P4xPgpp0YDFvSWwEZ4NoE3aM4QBQXDzmVbraCkFj8zHM+mba8SyqB5DbZWyR7mYHo6Y7BdQo3MoA4m0TeQg==}
     engines: {node: '>=0.10.0'}
 
-  baseline-browser-mapping@2.8.30:
-    resolution: {integrity: sha512-aTUKW4ptQhS64+v2d6IkPzymEzzhw+G0bA1g3uBRV3+ntkH+svttKseW5IOR4Ed6NUVKqnY7qT3dKvzQ7io4AA==}
+  baseline-browser-mapping@2.8.32:
+    resolution: {integrity: sha512-OPz5aBThlyLFgxyhdwf/s2+8ab3OvT7AdTNvKHBwpXomIYeXqpUUuT8LrdtxZSsWJ4R4CU1un4XGh5Ez3nlTpw==}
     hasBin: true
 
   basic-auth@2.0.1:
@@ -2347,8 +2351,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001756:
-    resolution: {integrity: sha512-4HnCNKbMLkLdhJz3TToeVWHSnfJvPaq6vu/eRP0Ahub/07n484XHhBF5AJoSGHdVrS8tKFauUQz8Bp9P7LVx7A==}
+  caniuse-lite@1.0.30001757:
+    resolution: {integrity: sha512-r0nnL/I28Zi/yjk1el6ilj27tKcdjLsNqAOZr0yVjWPrSQyHgKI2INaEWw21bAQSv2LXRt1XuCS/GomNpWOxsQ==}
 
   capture-exit@2.0.0:
     resolution: {integrity: sha512-PiT/hQmTonHhl/HFGN+Lx3JJUznrVYJ3+AQsnthneZbvW7x+f08Tk7yLJTLEOUvBTbduLeeBkxEaYXUOUrRq6g==}
@@ -3042,8 +3046,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.259:
-    resolution: {integrity: sha512-I+oLXgpEJzD6Cwuwt1gYjxsDmu/S/Kd41mmLA3O+/uH2pFRO/DvOjUyGozL8j3KeLV6WyZ7ssPwELMsXCcsJAQ==}
+  electron-to-chromium@1.5.262:
+    resolution: {integrity: sha512-NlAsMteRHek05jRUxUR0a5jpjYq9ykk6+kO0yRaMi5moe7u0fVIOeQ3Y30A8dIiWFBNUoQGi1ljb1i5VtS9WQQ==}
 
   ember-a11y-testing@7.1.3:
     resolution: {integrity: sha512-3d4oqSGRBqYbX6nqcruLzfQrQSoLpRd5iinITusefylk1aQd7HJdoJLkL+En8YLqTt3DsUfImnX3svT0flMhsw==}
@@ -3059,8 +3063,8 @@ packages:
     resolution: {integrity: sha512-3gBsatspW3AT2hwzD27aQbgyWA29RXeMxCnMYgFBYtmS/T1M6TxuatEgfpofKqai4OC/JijftmN4s6dydeXGzQ==}
     engines: {node: '>= 6'}
 
-  ember-auto-import@2.11.2:
-    resolution: {integrity: sha512-eR67ggmPQ6Upx6Smbur0HTRYqQshyxJMKPkWBHwWZmZ8sOA5piR0raL7ccKO0Hrn4ZEkp8ih24yAwvssb6K4NQ==}
+  ember-auto-import@2.12.0:
+    resolution: {integrity: sha512-J9wVTddnpx1ZPf6CgtMs8byp5t9ZZITUX9v+H+PgSDSgbYbDrVlKr2RGDfJLrnaTpuWwZqh1b54/9jLaERr6QA==}
     engines: {node: 12.* || 14.* || >= 16}
 
   ember-cli-app-version@6.0.1:
@@ -4875,6 +4879,10 @@ packages:
     resolution: {integrity: sha512-qvwipnozMohxLXG1pOqoLiZKNkC4r4qqRucSoDwXowsNGDSULiqFTRUF05vcZWnwJSG22qTsynQhxbaMtnX9gw==}
     engines: {node: '>=8'}
 
+  mem@8.1.1:
+    resolution: {integrity: sha512-qFCFUDs7U3b8mBDPyz5EToEKoAkgCzqquIgi9nkkR9bixxOVOre+09lbuH7+9Kn2NFpm56M3GUWVbU2hQgdACA==}
+    engines: {node: '>=10'}
+
   memory-streams@0.1.3:
     resolution: {integrity: sha512-qVQ/CjkMyMInPaaRMrwWNDvf6boRZXaT/DbQeMYcCWuXPEBf1v8qChOc9OlEVQp2uOvRXa1Qu30fLmKhY6NipA==}
 
@@ -4934,6 +4942,10 @@ packages:
   mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
+
+  mimic-fn@3.1.0:
+    resolution: {integrity: sha512-Ysbi9uYW9hFyfrThdDEQuykN4Ey6BuwPD2kpI5ES/nFTDn/98yxYNLZJcgUAKPT/mcrLLKaGzJR9YVxJrIdASQ==}
+    engines: {node: '>=8'}
 
   mini-css-extract-plugin@2.9.4:
     resolution: {integrity: sha512-ZWYT7ln73Hptxqxk2DxPU9MmapXRhxkJD6tkSR04dnQxm8BGu2hzgKLugK5yySD97u/8yy7Ma7E76k9ZdvtjkQ==}
@@ -4996,9 +5008,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  mktemp@0.4.0:
-    resolution: {integrity: sha512-IXnMcJ6ZyTuhRmJSjzvHSRhlVPiN9Jwc6e59V0bEJ0ba6OBeX2L0E+mRN1QseeOF4mM+F1Rit6Nh7o+rl2Yn/A==}
-    engines: {node: '>0.9'}
+  mktemp@2.0.2:
+    resolution: {integrity: sha512-Q9wJ/xhzeD9Wua1MwDN2v3ah3HENsUVSlzzL9Qw149cL9hHZkXtQGl3Eq36BbdLV+/qUwaP1WtJQ+H/+Oxso8g==}
+    engines: {node: 20 || 22 || 24}
 
   morgan@1.10.1:
     resolution: {integrity: sha512-223dMRJtI/l25dJKWpgij2cMtywuG/WiUKXdvwfbhGKBhy1puASqXwFzmWZ7+K73vUPoR7SS2Qz2cI/g9MKw0A==}
@@ -5458,8 +5470,8 @@ packages:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
     engines: {node: '>=4'}
 
-  postcss-selector-parser@7.1.0:
-    resolution: {integrity: sha512-8sLjZwK0R+JlxlYcTuVnyT2v+htpdrjDOKuMcOVdYjt52Lh8hWRYpxBPoKx/Zg+bcjc3wx6fmQevMmUztS/ccA==}
+  postcss-selector-parser@7.1.1:
+    resolution: {integrity: sha512-orRsuYpJVw8LdAwqqLykBj9ecS5/cRHlI5+nvTo8LcCKmzDmqVORXtOIYEEQuL9D4BxtA1lm5isAqzQZCoQ6Eg==}
     engines: {node: '>=4'}
 
   postcss-value-parser@4.2.0:
@@ -5482,8 +5494,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.7.1:
+    resolution: {integrity: sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -5549,8 +5561,8 @@ packages:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
 
-  quick-temp@0.1.8:
-    resolution: {integrity: sha512-YsmIFfD9j2zaFwJkzI6eMG7y0lQP7YeWzgtFgNl38pGWZBSXJooZbOWwkcRot7Vt0Fg9L23pX0tqWU3VvLDsiA==}
+  quick-temp@0.1.9:
+    resolution: {integrity: sha512-yI0h7tIhKVObn03kD+Ln9JFi4OljD28lfaOsTdfpTR0xzrhGOod+q66CjGafUqYX2juUfT9oHIGrTBBo22mkRA==}
 
   qunit-dom@2.0.0:
     resolution: {integrity: sha512-mElzLN99wYPOGekahqRA+mq7NcThXY9c+/tDkgJmT7W5LeZAFNyITr2rFKNnCbWLIhuLdFw88kCBMrJSfyBYpA==}
@@ -5574,6 +5586,7 @@ packages:
   raw-body@1.1.7:
     resolution: {integrity: sha512-WmJJU2e9Y6M5UzTOkHaM7xJGAPQD8PNzx3bAd2+uhZAim6wDk6dAZxPVYLF67XhbR4hmKGh33Lpmh4XWrCH5Mg==}
     engines: {node: '>= 0.8.0'}
+    deprecated: No longer maintained. Please upgrade to a stable version.
 
   raw-body@2.5.2:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
@@ -5789,6 +5802,10 @@ packages:
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     deprecated: Rimraf versions prior to v4 are no longer supported
+    hasBin: true
+
+  rimraf@5.0.10:
+    resolution: {integrity: sha512-l0OE8wL34P4nJH/H2ffoaniAokM2qSmrtXHmlpvYr5AVVX8msAyW0l8NVJFDxlSK4u3Uh/f41cQheDVdnYijwQ==}
     hasBin: true
 
   rollup-pluginutils@2.8.2:
@@ -7706,7 +7723,7 @@ snapshots:
 
   '@ember/edition-utils@1.2.0': {}
 
-  '@ember/optional-features@2.2.0':
+  '@ember/optional-features@2.3.0':
     dependencies:
       chalk: 4.1.2
       ember-cli-version-checker: 5.1.2
@@ -7719,7 +7736,7 @@ snapshots:
 
   '@ember/render-modifiers@2.1.0(@babel/core@7.28.5)(ember-source@5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0))':
     dependencies:
-      '@embroider/macros': 1.19.4
+      '@embroider/macros': 1.19.5
       ember-cli-babel: 7.26.11
       ember-modifier-manager-polyfill: 1.2.0(@babel/core@7.28.5)
       ember-source: 5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0)
@@ -7736,12 +7753,12 @@ snapshots:
   '@ember/test-helpers@3.3.1(@babel/core@7.28.5)(ember-source@5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0))(webpack@5.103.0)':
     dependencies:
       '@ember/test-waiters': 3.1.0
-      '@embroider/macros': 1.19.4
+      '@embroider/macros': 1.19.5
       '@simple-dom/interface': 1.4.0
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       dom-element-descriptors: 0.5.1
-      ember-auto-import: 2.11.2(webpack@5.103.0)
+      ember-auto-import: 2.12.0(webpack@5.103.0)
       ember-cli-babel: 8.2.0(@babel/core@7.28.5)
       ember-cli-htmlbars: 6.3.0
       ember-source: 5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0)
@@ -7763,7 +7780,7 @@ snapshots:
   '@ember/test-waiters@4.1.1':
     dependencies:
       '@embroider/addon-shim': 1.10.2
-      '@embroider/macros': 1.19.4
+      '@embroider/macros': 1.19.5
     transitivePeerDependencies:
       - '@glint/template'
       - supports-color
@@ -7891,7 +7908,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@embroider/macros@1.19.4':
+  '@embroider/macros@1.19.5':
     dependencies:
       '@embroider/shared-internals': 3.0.1
       assert-never: 1.4.0
@@ -7903,6 +7920,11 @@ snapshots:
       semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
+
+  '@embroider/reverse-exports@0.2.0':
+    dependencies:
+      mem: 8.1.1
+      resolve.exports: 2.0.3
 
   '@embroider/router@2.1.9(@embroider/core@3.5.7)':
     dependencies:
@@ -8036,7 +8058,7 @@ snapshots:
       broccoli-source: 3.0.1
       camel-case: 4.1.2
       ember-ast-helpers: 0.4.0
-      ember-auto-import: 2.11.2(webpack@5.103.0)
+      ember-auto-import: 2.12.0(webpack@5.103.0)
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 6.3.0
       ember-get-config: 2.1.1
@@ -8959,7 +8981,7 @@ snapshots:
   autoprefixer@10.4.22(postcss@8.5.6):
     dependencies:
       browserslist: 4.28.0
-      caniuse-lite: 1.0.30001756
+      caniuse-lite: 1.0.30001757
       fraction.js: 5.3.4
       normalize-range: 0.1.2
       picocolors: 1.1.1
@@ -9508,7 +9530,7 @@ snapshots:
       mixin-deep: 1.3.2
       pascalcase: 0.1.1
 
-  baseline-browser-mapping@2.8.30: {}
+  baseline-browser-mapping@2.8.32: {}
 
   basic-auth@2.0.1:
     dependencies:
@@ -9654,7 +9676,7 @@ snapshots:
       broccoli-node-info: 1.1.0
       heimdalljs: 0.2.6
       promise-map-series: 0.2.3
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       rimraf: 2.7.1
       rsvp: 3.6.2
       silent-error: 1.1.1
@@ -9890,21 +9912,21 @@ snapshots:
   broccoli-plugin@1.1.0:
     dependencies:
       promise-map-series: 0.2.3
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       rimraf: 2.7.1
       symlink-or-copy: 1.3.1
 
   broccoli-plugin@1.3.1:
     dependencies:
       promise-map-series: 0.2.3
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       rimraf: 2.7.1
       symlink-or-copy: 1.3.1
 
   broccoli-plugin@2.1.0:
     dependencies:
       promise-map-series: 0.2.3
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       rimraf: 2.7.1
       symlink-or-copy: 1.3.1
 
@@ -9914,7 +9936,7 @@ snapshots:
       broccoli-output-wrapper: 3.2.5
       fs-merger: 3.2.1
       promise-map-series: 0.3.0
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       rimraf: 3.0.2
       symlink-or-copy: 1.3.1
     transitivePeerDependencies:
@@ -10055,14 +10077,14 @@ snapshots:
 
   browserslist@3.2.8:
     dependencies:
-      caniuse-lite: 1.0.30001756
-      electron-to-chromium: 1.5.259
+      caniuse-lite: 1.0.30001757
+      electron-to-chromium: 1.5.262
 
   browserslist@4.28.0:
     dependencies:
-      baseline-browser-mapping: 2.8.30
-      caniuse-lite: 1.0.30001756
-      electron-to-chromium: 1.5.259
+      baseline-browser-mapping: 2.8.32
+      caniuse-lite: 1.0.30001757
+      electron-to-chromium: 1.5.262
       node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.28.0)
 
@@ -10143,11 +10165,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.28.0
-      caniuse-lite: 1.0.30001756
+      caniuse-lite: 1.0.30001757
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001756: {}
+  caniuse-lite@1.0.30001757: {}
 
   capture-exit@2.0.0:
     dependencies:
@@ -10672,7 +10694,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.259: {}
+  electron-to-chromium@1.5.262: {}
 
   ember-a11y-testing@7.1.3(@babel/core@7.28.5)(@ember/test-helpers@3.3.1(@babel/core@7.28.5)(ember-source@5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0))(webpack@5.103.0))(qunit@2.24.2)(webpack@5.103.0):
     dependencies:
@@ -10682,7 +10704,7 @@ snapshots:
       '@scalvert/ember-setup-middleware-reporter': 0.1.1
       axe-core: 4.11.0
       broccoli-persistent-filter: 3.1.3
-      ember-auto-import: 2.11.2(webpack@5.103.0)
+      ember-auto-import: 2.12.0(webpack@5.103.0)
       ember-cli-babel: 8.2.0(@babel/core@7.28.5)
       ember-cli-htmlbars: 6.3.0
       ember-cli-typescript: 4.2.1
@@ -10699,7 +10721,7 @@ snapshots:
 
   ember-ast-helpers@0.4.0: {}
 
-  ember-auto-import@2.11.2(webpack@5.103.0):
+  ember-auto-import@2.12.0(webpack@5.103.0):
     dependencies:
       '@babel/core': 7.28.5(supports-color@8.1.1)
       '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.28.5)
@@ -10707,7 +10729,8 @@ snapshots:
       '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.28.5)
       '@babel/plugin-transform-class-static-block': 7.28.3(@babel/core@7.28.5)(supports-color@8.1.1)
       '@babel/preset-env': 7.28.5(@babel/core@7.28.5)(supports-color@8.1.1)
-      '@embroider/macros': 1.19.4
+      '@embroider/macros': 1.19.5
+      '@embroider/reverse-exports': 0.2.0
       '@embroider/shared-internals': 2.9.1(supports-color@8.1.1)
       babel-loader: 8.4.1(@babel/core@7.28.5)(webpack@5.103.0)
       babel-plugin-ember-modules-api-polyfill: 3.5.0
@@ -10941,7 +10964,7 @@ snapshots:
   ember-cli-showdown@9.0.2(webpack@5.103.0):
     dependencies:
       '@babel/core': 7.28.5(supports-color@8.1.1)
-      ember-auto-import: 2.11.2(webpack@5.103.0)
+      ember-auto-import: 2.12.0(webpack@5.103.0)
       ember-cli-babel: 8.2.0(@babel/core@7.28.5)
       ember-cli-htmlbars: 6.3.0
       showdown: 2.1.0
@@ -11121,7 +11144,7 @@ snapshots:
       portfinder: 1.0.38
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       remove-types: 1.0.0
       resolve: 1.22.11
       resolve-package-path: 4.0.3
@@ -11230,7 +11253,7 @@ snapshots:
 
   ember-get-config@2.1.1:
     dependencies:
-      '@embroider/macros': 1.19.4
+      '@embroider/macros': 1.19.5
       ember-cli-babel: 7.26.11
     transitivePeerDependencies:
       - '@glint/template'
@@ -11275,7 +11298,7 @@ snapshots:
     dependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.28.5)(ember-source@5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0))(webpack@5.103.0)
       '@embroider/addon-shim': 1.10.2
-      '@embroider/macros': 1.19.4
+      '@embroider/macros': 1.19.5
       ember-cli-test-loader: 3.1.0
       ember-source: 5.11.1(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)(webpack@5.103.0)
       qunit: 2.24.2
@@ -11330,7 +11353,7 @@ snapshots:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 4.2.0
       chalk: 4.1.2
-      ember-auto-import: 2.11.2(webpack@5.103.0)
+      ember-auto-import: 2.12.0(webpack@5.103.0)
       ember-cli-babel: 8.2.0(@babel/core@7.28.5)
       ember-cli-get-component-path-option: 1.0.0
       ember-cli-is-package-missing: 1.0.0
@@ -11620,10 +11643,10 @@ snapshots:
       resolve: 1.22.11
       semver: 7.7.3
 
-  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2):
+  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.7.1):
     dependencies:
       eslint: 8.57.1
-      prettier: 3.6.2
+      prettier: 3.7.1
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.11
     optionalDependencies:
@@ -13318,6 +13341,11 @@ snapshots:
       mimic-fn: 2.1.0
       p-is-promise: 2.1.0
 
+  mem@8.1.1:
+    dependencies:
+      map-age-cleaner: 0.1.3
+      mimic-fn: 3.1.0
+
   memory-streams@0.1.3:
     dependencies:
       readable-stream: 1.0.34
@@ -13400,6 +13428,8 @@ snapshots:
 
   mimic-fn@2.1.0: {}
 
+  mimic-fn@3.1.0: {}
+
   mini-css-extract-plugin@2.9.4(webpack@5.103.0):
     dependencies:
       schema-utils: 4.3.3
@@ -13456,7 +13486,7 @@ snapshots:
 
   mkdirp@3.0.1: {}
 
-  mktemp@0.4.0: {}
+  mktemp@2.0.2: {}
 
   morgan@1.10.1:
     dependencies:
@@ -13848,13 +13878,13 @@ snapshots:
     dependencies:
       icss-utils: 5.1.0(postcss@8.5.6)
       postcss: 8.5.6
-      postcss-selector-parser: 7.1.0
+      postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
 
   postcss-modules-scope@3.2.1(postcss@8.5.6):
     dependencies:
       postcss: 8.5.6
-      postcss-selector-parser: 7.1.0
+      postcss-selector-parser: 7.1.1
 
   postcss-modules-values@4.0.0(postcss@8.5.6):
     dependencies:
@@ -13880,7 +13910,7 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-selector-parser@7.1.0:
+  postcss-selector-parser@7.1.1:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -13901,7 +13931,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.6.2: {}
+  prettier@3.7.1: {}
 
   pretty-ms@3.2.0:
     dependencies:
@@ -13955,10 +13985,10 @@ snapshots:
 
   quick-lru@5.1.1: {}
 
-  quick-temp@0.1.8:
+  quick-temp@0.1.9:
     dependencies:
-      mktemp: 0.4.0
-      rimraf: 2.7.1
+      mktemp: 2.0.2
+      rimraf: 5.0.10
       underscore.string: 3.3.6
 
   qunit-dom@2.0.0:
@@ -14219,6 +14249,10 @@ snapshots:
   rimraf@3.0.2:
     dependencies:
       glob: 7.2.3
+
+  rimraf@5.0.10:
+    dependencies:
+      glob: 10.5.0
 
   rollup-pluginutils@2.8.2:
     dependencies:
@@ -14779,9 +14813,9 @@ snapshots:
     dependencies:
       stylelint: 15.11.0
 
-  stylelint-prettier@4.1.0(prettier@3.6.2)(stylelint@15.11.0):
+  stylelint-prettier@4.1.0(prettier@3.7.1)(stylelint@15.11.0):
     dependencies:
-      prettier: 3.6.2
+      prettier: 3.7.1
       prettier-linter-helpers: 1.0.0
       stylelint: 15.11.0
 
@@ -15130,7 +15164,7 @@ snapshots:
       debug: 2.6.9
       fs-tree-diff: 0.5.9
       mkdirp: 0.5.6
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       walk-sync: 0.3.4
     transitivePeerDependencies:
       - supports-color
@@ -15140,7 +15174,7 @@ snapshots:
       debug: 4.4.3(supports-color@8.1.1)
       fs-tree-diff: 2.0.1
       mkdirp: 0.5.6
-      quick-temp: 0.1.8
+      quick-temp: 0.1.9
       walk-sync: 0.3.4
     transitivePeerDependencies:
       - supports-color
