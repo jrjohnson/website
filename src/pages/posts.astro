@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ContentLayout from '../layouts/ContentLayout.astro';
+import '../styles/top-list.css';
 
 const posts = (await getCollection('post')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -8,19 +9,22 @@ const posts = (await getCollection('post')).sort(
 ---
 
 <ContentLayout>
-  <h1>Posts I've written collected in one place</h1>
-  <ul>
-    {posts.map(post => (
-      <li>
-        <a href={`/posts/${post.id}`}>
-        [{post.data.date.toLocaleDateString('en-us', {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          })}] {post.data.title}
-        </a>
-      </li>
-    ))}
-  </ul>
+  <div class="top-list">
+    <h2>Posts I've written collected in one place</h2>
+    <ul>
+      {posts.map(post => (
+        <li>
+          [{post.data.date.toLocaleDateString('en-us', {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}]
+          <a href={`/posts/${post.id}`}>
+          {post.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
 </ContentLayout>
