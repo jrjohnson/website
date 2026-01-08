@@ -1,23 +1,26 @@
 ---
 import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
 
 const posts = (await getCollection('post')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<h1>Posts I've written collected in one place</h1>
-<ul>
-  {posts.map(post => (
-    <li>
-      <a href={`/posts/${post.id}`}>
-      [{post.data.date.toLocaleDateString('en-us', {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        })}] {post.data.title}
-      </a>
-    </li>
-  ))}
-</ul>
+<Layout>
+  <h1>Posts I've written collected in one place</h1>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={`/posts/${post.id}`}>
+        [{post.data.date.toLocaleDateString('en-us', {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          })}] {post.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</Layout>

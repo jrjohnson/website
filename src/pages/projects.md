@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 **Ilios Curriculum Management System**
 
 - [Javascript EmberJS Web App](https://github.com/ilios/frontend)

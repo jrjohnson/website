@@ -1,3 +1,6 @@
+---
+layout: ../layouts/Layout.astro
+---
 
 ## Handling Complicated Tasks with a Chatbot
 

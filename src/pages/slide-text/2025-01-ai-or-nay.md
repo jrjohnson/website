@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # AI or Nay?
 ## Balancing Distraction and Utility
 

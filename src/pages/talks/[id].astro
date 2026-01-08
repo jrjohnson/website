@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
 
 
 export async function getStaticPaths() {
@@ -19,17 +20,19 @@ if (!talkData) {
 const { Content, headings } = await render(talkData);
 ---
 
-<h2>{talkData.data.title}</h2>
-<p>{talkData.data.date.toLocaleDateString()}</p>
+<Layout>
+  <h2>{talkData.data.title}</h2>
+  <p>{talkData.data.date.toLocaleDateString()}</p>
 
-<h3>Abstract:</h3>
-<Content />
+  <h3>Abstract:</h3>
+  <Content />
 
-{talkData.data.slidesURI && (
-  <p>From here you can access the <a href={`${talkData.data.slidesURI}/index.html`}>Slides</a></p>
-)}
+  {talkData.data.slidesURI && (
+    <p>From here you can access the <a href={`${talkData.data.slidesURI}/index.html`}>Slides</a></p>
+  )}
 
-{talkData.data.slideContentURI && (
-  <p>From here you can access the
-  or an <a href={talkData.data.slideContentURI}>all text summary</a> of those slides</p>
-)}
+  {talkData.data.slideContentURI && (
+    <p>From here you can access the
+    or an <a href={talkData.data.slideContentURI}>all text summary</a> of those slides</p>
+  )}
+</Layout>

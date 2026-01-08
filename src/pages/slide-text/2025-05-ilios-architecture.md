@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # Ilios Architecture
 
 ## How Form Follows Function

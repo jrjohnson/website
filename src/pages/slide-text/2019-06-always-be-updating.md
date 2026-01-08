@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 ## Always Be Updating
 
 This is a text summary of [slides for a talk](/talks/2019-06-always-be-updating).

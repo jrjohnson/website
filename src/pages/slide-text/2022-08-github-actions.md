@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # Automagic Deployment with Github Actions
 ## Jon Johnson <span class="pronouns">(he/him)</span>
 UCSF Library Educational Technology

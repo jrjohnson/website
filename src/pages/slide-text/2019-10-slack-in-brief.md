@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # Cut Your Team Some Slack
 
 ---

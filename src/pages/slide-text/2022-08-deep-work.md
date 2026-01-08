@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # Jumping into Deep Work
 ## Jon Johnson <span class="pronouns">(he/him)</span>
 
