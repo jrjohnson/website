@@ -1,13 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import ContentLayout from '../layouts/ContentLayout.astro';
 
 const posts = (await getCollection('post')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<Layout>
+<ContentLayout>
   <h1>Posts I've written collected in one place</h1>
   <ul>
     {posts.map(post => (
@@ -23,4 +23,4 @@ const posts = (await getCollection('post')).sort(
       </li>
     ))}
   </ul>
-</Layout>
+</ContentLayout>

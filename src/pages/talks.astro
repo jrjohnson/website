@@ -1,13 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import ContentLayout from '../layouts/ContentLayout.astro';
 
 const talks = (await getCollection('talk')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<Layout>
+<ContentLayout>
   <h1>Talks</h1>
   <ul>
     {talks.map(post => (
@@ -23,4 +23,4 @@ const talks = (await getCollection('talk')).sort(
       </li>
     ))}
   </ul>
-</Layout>
+</ContentLayout>

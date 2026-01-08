@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import ContentLayout from '../../layouts/ContentLayout.astro';
 
 
 export async function getStaticPaths() {
@@ -20,7 +20,7 @@ if (!postData) {
 const { Content, headings } = await render(postData);
 ---
 
-<Layout>
+<ContentLayout>
   <Content />
   <p>Published on: {postData.data.date.toLocaleDateString()}</p>
-</Layout>
+</ContentLayout>

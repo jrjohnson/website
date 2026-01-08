@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Layout.astro
+layout: ../layouts/ContentLayout.astro
 ---
 
 **Ilios Curriculum Management System**
@@ -13,17 +13,16 @@ layout: ../layouts/Layout.astro
 - [PHP Doctrine Backed Application](https://github.com/Jazzee/Jazzee)
 - [PHP Framework](https://github.com/jazzee/foundation)
 
-
 **Open Source Work**
 
-*Semi Popular Personal Projects*
+_Semi Popular Personal Projects_
 
 - [No Script Ember Adddon](https://github.com/jrjohnson/ember-noscript)
 - [Ember addon to generate icons](https://github.com/jrjohnson/ember-cli-image-transformer)
 
-I've contributed documentation, code, and support to several open source projects.  Some pull requests I'm proud of:
+I've contributed documentation, code, and support to several open source projects. Some pull requests I'm proud of:
 
-*Javascript*
+_Javascript_
 
 - [ember-cli](https://github.com/ember-cli/ember-cli/pull/3703)
 - [ember-try](https://github.com/kategengler/ember-try/pull/18)
@@ -40,7 +39,7 @@ I've contributed documentation, code, and support to several open source project
 - [ember-papaparse](https://github.com/suchitadoshi1987/ember-papaparse/pull/7)
 - [ember-web-app](https://github.com/san650/ember-web-app/pull/74)
 
-*PHP*
+_PHP_
 
 - [Doctrine DBAL](https://github.com/doctrine/dbal/pull/278)
 - [TdnPilotBundle](https://github.com/TheDevNetwork/TdnPilotBundle/pull/4)
@@ -48,7 +47,7 @@ I've contributed documentation, code, and support to several open source project
 - [eluceo—iCal](https://github.com/markuspoerschke/iCal/pull/53)
 - [Doctrine Annotations](https://github.com/doctrine/annotations/pull/162)
 
-*Puppet*
+_Puppet_
 
 - [Puppet PHPMyAdmin](https://github.com/justicel/puppet-phpmyadmin/pull/24)
 - [Puppet Deploy](https://github.com/doctrine/dbal/pull/278)

@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ContentLayout.astro
 ---
 
 # Cut Your Team Some Slack

@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ContentLayout.astro
 ---
 
 # [Microapps: A Covid-19 Case Study](https://www.jrjohnson.dev/talks/2020-08-covid-microapps)

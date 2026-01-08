@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ContentLayout.astro
 ---
 
 ## Handling Complicated Tasks with a Chatbot

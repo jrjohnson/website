@@ -1,0 +1,25 @@
+---
+import Layout from "./Layout.astro";
+---
+
+<Layout>
+  <header>
+    <h1>
+      <a href="/" aria-label="Home">
+        <img src="/media/avatar.png" alt="jon's avatar">
+        Jonathan Johnson
+      </a>
+    </h1>
+  </header>
+  <nav aria-label="Primary" class="primary-navigation">
+    <ul>
+      <li><a href="/posts">Posts</a></li>
+      <li><a href="/talks">Talks</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/resume">Resume</a></li>
+    </ul>
+  </nav>
+  <main>
+    <slot />
+  </main>
+</Layout>
