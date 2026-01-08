@@ -1,54 +1,6 @@
 # Code for https://www.jrjohnson.dev
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/)
-- [pnpm](https://pnpm.io/)
-- [Ember CLI](https://cli.emberjs.com/release/)
-- [Google Chrome](https://google.com/chrome/)
-
-## Installation
-
-- `git clone <repository-url>` this repository
-- `cd jrjohnson`
-- `pnpm install`
-
-## Running / Development
-
-- `pnpm start`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
-- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-- `pnpm test`
-- `pnpm test:ember --server`
-
-### Linting
-
-- `pnpm lint`
-- `pnpm lint:fix`
-
-### Building
-
-- `pnpm ember build` (development)
-- `pnpm build` (production)
-
-### Deploying
-
-Commits to `master` are auto deployed by Netlify.
-
-### Building a PDF Resume
+## Building a PDF Resume
 
 1. Remove PDF link
 2. Convert to HTML `multimarkdown markdown/pages/resume.md -o public/resume-output.html`
@@ -60,3 +12,42 @@ Commits to `master` are auto deployed by Netlify.
 - Development Browser Extensions
   - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+## 🚀 Astro Docs
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
+
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `pnpm install`         | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

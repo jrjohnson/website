@@ -1,0 +1,21 @@
+---
+import { library, findIconDefinition, icon } from '@fortawesome/fontawesome-svg-core';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faBlog, faKeynote, faProjectDiagram, faScroll } from '@fortawesome/pro-solid-svg-icons';
+
+library.add(faGithub, faLinkedin, faBlog, faKeynote, faProjectDiagram, faScroll);
+
+export interface Props {
+  iconName: string;
+  prefix: string;
+  title: string;
+}
+
+const { iconName, prefix } = Astro.props;
+
+const def = findIconDefinition({ prefix, iconName })
+const i = icon(def)
+
+---
+
+<Fragment set:html={i.html} />

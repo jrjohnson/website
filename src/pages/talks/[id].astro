@@ -1,0 +1,35 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+
+
+export async function getStaticPaths() {
+  const talks = await getCollection('talk');
+  return talks.map((p) => {
+    return {
+      params: { id: p.id }
+    }
+  });
+}
+
+const { id } = Astro.params;
+const talkData = await getEntry('talk', id);
+if (!talkData) {
+  throw new Error(`No such talk: ${id}`);
+}
+const { Content, headings } = await render(talkData);
+---
+
+<h2>{talkData.data.title}</h2>
+<p>{talkData.data.date.toLocaleDateString()}</p>
+
+<h3>Abstract:</h3>
+<Content />
+
+{talkData.data.slidesURI && (
+  <p>From here you can access the <a href={`${talkData.data.slidesURI}/index.html`}>Slides</a></p>
+)}
+
+{talkData.data.slideContentURI && (
+  <p>From here you can access the
+  or an <a href={talkData.data.slideContentURI}>all text summary</a> of those slides</p>
+)}
