@@ -5,7 +5,6 @@
   --text-purple: #171019;
   --header-orange: #bf6900;
   --header-purple: #5b3f64;
-
   --fs-smallest: max(0.5rem, 9px);
   --fs-small: 0.833rem;
   --fs-base: 1rem;
@@ -25,21 +24,22 @@ html {
   height: 100%;
   padding: 15px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (width >= 768px) {
     --fs-huge: 25rem;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (width >= 1200px) {
     --fs-huge: 30rem;
   }
 
   line-height: calc(4px + 2ex);
   font-size: 16px;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (width >= 1200px) {
     font-size: calc(10px + 0.5vw);
   }
-  @media screen and (min-width: 1920px) {
+
+  @media screen and (width >= 1920px) {
     font-size: 20px;
   }
 }
@@ -66,7 +66,7 @@ h6 {
 h1 {
   font-size: var(--fs-xxl);
 
-  @media (max-width: 400px) {
+  @media (width <= 400px) {
     font-size: var(--fs-xl);
   }
 }
@@ -113,17 +113,15 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0.5rem;
-
   border-radius: 0.5rem;
   background-color: var(--body-background-color);
-
   display: grid;
   grid-template-areas:
     "header navigation"
     "main main";
   grid-template-rows: auto 1fr;
 
-  @media (max-width: 1000px) {
+  @media (width < 1000px) {
     grid-template-areas:
       "header"
       "navigation"
@@ -141,7 +139,7 @@ body {
       justify-content: space-evenly;
       align-items: center;
 
-      @media (min-width: 500px) {
+      @media (width >= 500px) {
         justify-content: flex-start;
       }
 
@@ -149,7 +147,8 @@ body {
         border-radius: 50%;
         padding: 0 5px;
         width: var(--fs-xxl);
-        @media (max-width: 400px) {
+
+        @media (width <= 400px) {
           width: var(--fs-xl);
         }
       }

@@ -6,7 +6,7 @@
     font-size: var(--fs-xxxl);
     text-align: right;
 
-    @media (max-width: 1000px) {
+    @media (width <= 1000px) {
       font-size: var(--fs-xxl);
       text-align: center;
     }
@@ -23,7 +23,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 31%) 25%;
 
-    @media (max-width: 1000px) {
+    @media (width <= 1000px) {
       display: flex;
       flex-direction: column;
     }
@@ -32,9 +32,10 @@
       border-radius: 50%;
       grid-area: right;
       padding: 5px;
-      place-self: right;
+      place-self: end;
       width: 300px;
-      @media (max-width: 1000px) {
+
+      @media (width <= 1000px) {
         width: 150px;
       }
     }
@@ -58,7 +59,7 @@
       grid-area: bottom;
       justify-content: space-around;
 
-      @media (max-width: 1000px) {
+      @media (width <= 1000px) {
         width: 80%;
       }
     }
