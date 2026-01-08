@@ -128,7 +128,7 @@ This is a text summary of [slides for a talk](/talks/2019-06-always-be-updating)
 
 ## Are we building on a house of cards?
 
-![image of worlds largest playing card stack](media/card-stack.jpg)
+![image of worlds largest playing card stack](/slides/2019-06-always-be-updating/media/card-stack.jpg)
 
 https://www.guinnessworldrecords.com/world-records/tallest-house-of-cards
 
@@ -160,7 +160,7 @@ https://www.guinnessworldrecords.com/world-records/tallest-house-of-cards
 
 ## Pull Request Model <i class="fab fa-github"></i>
 
-![screen capture of status checks](media/status-checks.png)
+![screen capture of status checks](/slides/2019-06-always-be-updating/media/status-checks.png)
 
 - Fork an pull
 - PRs
@@ -193,13 +193,13 @@ https://www.guinnessworldrecords.com/world-records/tallest-house-of-cards
 
 ## TravisCI
 
-![screenshot of Travis Building many pull requests](media/travis.png)
+![screenshot of Travis Building many pull requests](/slides/2019-06-always-be-updating/media/travis.png)
 
 ---
 
 ## Azure
 
-![screenshot of azure Build Split Into Chunks](media/azure.png)
+![screenshot of azure Build Split Into Chunks](/slides/2019-06-always-be-updating/media/azure.png)
 
 - Our build can be split into chunks to run faster
 
@@ -207,7 +207,7 @@ https://www.guinnessworldrecords.com/world-records/tallest-house-of-cards
 
 ## Functional Review
 
-![functional review comment says click tests look fine](media/functional-review.png)
+![functional review comment says click tests look fine](/slides/2019-06-always-be-updating/media/functional-review.png)
 
 - Every change needs a testable build
 - We automate this with Netlify
@@ -226,7 +226,7 @@ https://www.guinnessworldrecords.com/world-records/tallest-house-of-cards
 
 ## <i class="fas fa-magic"></i> Magic? <i class="fas fa-magic"></i>
 
-![Harry potter holding a wand for the first time](media/harry-potter.gif)
+![Harry potter holding a wand for the first time](/slides/2019-06-always-be-updating/media/harry-potter.gif)
 
 ## No. Just Good Test Coverage.
 
@@ -241,8 +241,8 @@ https://www.guinnessworldrecords.com/world-records/tallest-house-of-cards
 
 ## Easier to Test with a Solid Foundation
 
-![ember testing docs screenshot](media/ember-testing.png)
-![symfony testing docs screenshot](media/symfony-testing.png)
+![ember testing docs screenshot](/slides/2019-06-always-be-updating/media/ember-testing.png)
+![symfony testing docs screenshot](/slides/2019-06-always-be-updating/media/symfony-testing.png)
 
 - We built on top of Ember.js and Symfony
 - Prominent testing documentation
@@ -268,7 +268,7 @@ https://www.guinnessworldrecords.com/world-records/tallest-house-of-cards
 
 ## Dependabot Handles Updates
 
-![Dependabot Pull Request](media/dependabot.png)
+![Dependabot Pull Request](/slides/2019-06-always-be-updating/media/dependabot.png)
 
 - Every weekday our team wakes up to pull requests from dependabot
 - If tests pass we usually merge them
@@ -299,7 +299,7 @@ update_configs:
 
 ## More than just convenience
 
-![Dependabot PR which indicates a new person did the release](media/dependabot-new-releaser.jpg)
+![Dependabot PR which indicates a new person did the release](/slides/2019-06-always-be-updating/media/dependabot-new-releaser.jpg)
 
 ---
 
@@ -313,7 +313,7 @@ update_configs:
 
 #### <i class="fal fa-database"></i>
 
-![sentry.io logo](media/sentry-logo-black.svg)
+![sentry.io logo](/slides/2019-06-always-be-updating/media/sentry-logo-black.svg)
 ]
 
 - Error reporting as a service

@@ -340,7 +340,7 @@ https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.gi
 
 ### AWS
 
-![Diagram of Ilios AWS Architecture](/media/aws.png)
+![Diagram of Ilios AWS Architecture](/slides/2025-05-ilios-architecture/media/aws.png)
 
 - We rely on AWS services to run. For example RDS instead of our own DB and Fargate instead of Kubernetes
 - again, buy the Bikeshed
@@ -365,13 +365,13 @@ https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.gi
 
 ### Netlify
 
-![Netlify Pull Request Preview](/media/netlify.png)
+![Netlify Pull Request Preview](/slides/2025-05-ilios-architecture/media/netlify.png)
 
 ## The Ilios Architecture, The Frontend
 
 ### Percy
 
-![Percy Pull Request Visual Diff](/media/percy.png)
+![Percy Pull Request Visual Diff](/slides/2025-05-ilios-architecture/media/percy.png)
 
 ## The Ilios Architecture, The Frontend
 
@@ -555,7 +555,7 @@ jobs:
 
 https://github.com/ilios/frontend/blob/2f241c90bc7a737ad01898c05c08f6190337910a/.github/workflows/ci.yml
 
-![Poorly Drawn Lines, mouse says it's time to be productive](/media/productive.png)
+![Poorly Drawn Lines, mouse says it's time to be productive](/slides/2025-05-ilios-architecture/media/productive.png)
 
 https://poorlydrawnlines.com/comic/productive/
 

@@ -273,7 +273,7 @@ https://github.com/ilios/ilios/blob/master/.github/workflows/ci.yml
 
 # Let's Talk About Deployment
 
-![Jackson, a brown and black chihuahua min-pin mix waiting with his toy ball](media/jackson-with-ball.jpg)
+![Jackson, a brown and black chihuahua min-pin mix waiting with his toy ball](/slides/2022-08-github-actions/media/jackson-with-ball.jpg)
 
 # The Many Deploys of Ilios
 
@@ -530,7 +530,7 @@ jobs:
 
 # Push To Docker Hub
 
-![Listing of Ilios build tags showing v3.102.2, v3.102, and v3](./media/docker-hub-tags.png)
+![Listing of Ilios build tags showing v3.102.2, v3.102, and v3](/slides/2022-08-github-actions/media/docker-hub-tags.png)
 
 # Nightly Re-Tag
 

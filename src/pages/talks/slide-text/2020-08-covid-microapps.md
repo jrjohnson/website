@@ -119,7 +119,7 @@ exports.sendReminderEmails = sendReminderEmails;
 
 ### "serverless"
 
-![lambda description: upload code, create a trigger to run it, only pay for what you use](media/lambda.png)
+![lambda description: upload code, create a trigger to run it, only pay for what you use](/slides/2020-08-covid-microapps/media/lambda.png)
 
 ## [AWS Simple Email Service (SES)](https://aws.amazon.com/ses/)
 
@@ -139,7 +139,7 @@ exports.sendReminderEmails = sendReminderEmails;
 
 ## Github
 
-![GME Github Front Page showing code, issue tracker and documentation](media/gme-github.png)
+![GME Github Front Page showing code, issue tracker and documentation](/slides/2020-08-covid-microapps/media/gme-github.png)
 
 ## Github Actions
 

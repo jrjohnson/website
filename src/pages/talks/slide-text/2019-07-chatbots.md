@@ -411,7 +411,7 @@ $ lt --port 3000 -s zorgbort-stage
 your url is: https://zorgbort-stage.localtunnel.me
 ```
 
-![Screenshot of Slack's Interactive setup process](media/slack-interactive.png)
+![Screenshot of Slack's Interactive setup process](/slides/2019-07-chatbots/media/slack-interactive.png)
 
 - The localtunnel NPM module is mad sweet
 - Slack let's you pick any URL to send things to, create a test-bot app and a real one.

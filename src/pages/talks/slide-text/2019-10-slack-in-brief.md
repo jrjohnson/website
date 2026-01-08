@@ -42,21 +42,21 @@ layout: ../../../layouts/ContentLayout.astro
 
 # Do Not Disturb
 
-![notification preferences screenshot](media/pause.png)
-![do not disturb schedule screenshot](media/do-not-disturb.png)
+![notification preferences screenshot](/slides/2019-10-slack-in-brief/media/pause.png)
+![do not disturb schedule screenshot](/slides/2019-10-slack-in-brief/media/do-not-disturb.png)
 
 ---
 
 # Set Your Personal Status
 
-![set status screenshot](media/set-status.png)
+![set status screenshot](/slides/2019-10-slack-in-brief/media/set-status.png)
 
 ---
 
 # Status Clear to Everyone
 
-![status of users appears by their name](media/name-status.png)
-![status of user appears when you message them](media/message-status.png)
+![status of users appears by their name](/slides/2019-10-slack-in-brief/media/name-status.png)
+![status of user appears when you message them](/slides/2019-10-slack-in-brief/media/message-status.png)
 
 ---
 
@@ -66,7 +66,7 @@ layout: ../../../layouts/ContentLayout.astro
 
 # The Watercooler Gets Busy
 
-![threaded discussions](media/threads-redacted.png)
+![threaded discussions](/slides/2019-10-slack-in-brief/media/threads-redacted.png)
 
 ---
 
