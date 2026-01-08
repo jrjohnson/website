@@ -6,12 +6,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:css": "stylelint \"src/styles/**/*.css\"",
+    "lint:css:fix": "stylelint \"src/styles/**/*.css\" --fix\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/pro-solid-svg-icons": "^7.1.0",
     "astro": "^5.16.6"
+  },
+  "devDependencies": {
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^39.0.1"
   }
 }
