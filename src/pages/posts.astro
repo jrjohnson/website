@@ -1,13 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
 import ContentLayout from '../layouts/ContentLayout.astro';
-import '../styles/top-list.css';
 
 const posts = (await getCollection('post')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
+<style>
+  ul {
+    list-style-type: none;
+  }
 
+  li {
+    margin-bottom: 0.25rem;
+  }
+</style>
 <ContentLayout>
   <div class="top-list">
     <h2>Posts I've written collected in one place</h2>
