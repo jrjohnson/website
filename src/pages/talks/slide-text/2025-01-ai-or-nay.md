@@ -1,8 +1,9 @@
 ---
-layout: ../layouts/Layout.astro
+layout: ../../../layouts/Layout.astro
 ---
 
 # AI or Nay?
+
 ## Balancing Distraction and Utility
 
 - I'm Jon Johnson, I work in Education IT at UCSF
@@ -18,10 +19,13 @@ layout: ../layouts/Layout.astro
 - Fair warning, strong personal opinions ahead!
 
 # How Many R's in Strawberry?
+
 - Maybe you've seen this before
 - It's a fun little quirk of the way that large language models work
 - It's also a good starting point for a conversation about the utility of AI
+
 ### How many R‘s are there in the word ‘strawberry’?
+
 - Versa: Greetings, Jon! I'm Versa, how may I help you today?
 - Me: How many R‘s are there in the word ‘strawberry’?
 - Versa: There are two 'R’s in the word ‘strawberry’.
@@ -35,23 +39,30 @@ layout: ../layouts/Layout.astro
 - Why is Versa so sure there are only two R's in Strawberry?
 
 # ChatGPT is Bullshit
+
 ## what occurs in the case of an LLM delivering false utterances is not an unusual or deviant form of the process it usually goes through (as some claim is the case in hallucinations, e.g., disjunctivists about perception). The **very same process occurs when its outputs happen to be true**.
-  Hicks, M.T., Humphries, J. & Slater, J. ChatGPT is bullshit. Ethics Inf Technol 26, 38 (2024). https://doi.org/10.1007/s10676-024-09775-5
+
+Hicks, M.T., Humphries, J. & Slater, J. ChatGPT is bullshit. Ethics Inf Technol 26, 38 (2024). https://doi.org/10.1007/s10676-024-09775-5
+
 - Excuse my French, the title isn't my own
 - Based on a philosophical theory of truth by Harry Frankfurt
 - The core idea is that the model doesn't care what the truth is
 - As I approach using these tools in various ways I always have this in my mind
-- The computer flat out, *does not care*
+- The computer flat out, _does not care_
 
 # Use Cases for Generative AI
+
 # Use Cases for ~~Generative AI~~ Bullshit
+
 - Rubber Ducky
 - Autocomplete
 - Help Reading and Understanding Output
 - Help Writing Code
 
 # First Use Case
+
 ## Rubber Ducky
+
 - Rubber Ducking is a technique a lot of programmers use
 - The idea is that you explain your problem to a rubber duck
 - The act of explaining the problem helps you understand it better
@@ -59,7 +70,9 @@ layout: ../layouts/Layout.astro
 - What are six titles for a blog post about a new way of using modifiers in Ember.js? The modifiers are declared on the class where they are needed and not in a separate class. Each title should be some kind of pun or involve hamsters.
 
 # Second Use Case
+
 ## Autocomplete
+
 - Using CoPilot hooked up to my editor (Code)
 - This is only possible because the code I'm working with is open source
 - I know there are efforts in place to secure licensing for more highly protected data
@@ -72,32 +85,40 @@ layout: ../layouts/Layout.astro
 - What I don't want to have to do is copy and paste a lot of stuff
 
 # Third Use Case
+
 ## Help Understanding Output
+
 - Warp is a command line terminal that is fast and pretty
 - It has been adding a bunch of GenAI features
 - I really like the way it always asks before sharing any data with any model
 - Again, we don't have a good data licensing agreement with them, so if you want to use something like this you have to really understand what's going on
 - Example of some errors I came across when attempting to install Stable Diffusion
 - I've simplified the context some, in a way that won't ever actually work, but it's a good demonstration
-- The model is able to read *way* faster than me and can summarize very well
+- The model is able to read _way_ faster than me and can summarize very well
 - It can also often suggest solutions
 
 # Fourth Use Case
+
 ## Help Writing Code
+
 - Back to Code and Copilot, this time for some more advanced work
 - This is the riskiest demo I have, it's supposed to fail, but it might work
 - Refactor to use luxon instead of moment
 
 # Let's Go Back Through Each Case
+
 ## Talk About What Went Right and What Went Wrong
+
 ### and what we can learn from it
 
 # Help Writing Code
+
 - Exercise extreme caution
 - Tiny errors are magnified in code
 - It takes way longer to figure out where the guess has gone wrong
 
 # Help Understanding Output
+
 - Can be a big help in summarizing huge amounts of information
 - Can often be very helpful in suggesting solutions
 - The quality of those solutions isn't important to the model
@@ -105,22 +126,24 @@ layout: ../layouts/Layout.astro
 - I missed a chance to learn something new
 
 # Autocomplete
+
 - The output depends too much on the input, missing an opportunity to make it better
 - I missed a chance to learn something new
 - Just like with autocomplete in a text, it's often very wrong
 - When it's wrong it can be super distracting and interrupt flow
 
 # Rubber Ducky
+
 - Works great for generating ideas
 - I've missed the chance to connect with a person
   - A person who I could have shared the joy of success with
 - When I'm done I don't feel like I came up with something, I feel like I was given something
 
 # Ballancing the Scales
+
 - I'm still figuring this out
 - I can tell you that I, personally, have found some utility in some usage
 - If you're building your own applications on top of AI, you need to be deeply aware of the experience you're creating for your users
-
 
 # Example of an email I got, that was clearly generated
 
