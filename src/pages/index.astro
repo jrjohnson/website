@@ -1,21 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FaIcon from '../components/FaIcon.astro';
+import SplashScreen from '../components/SplashScreen.astro';
 ---
 
 <Layout>
-	<main class="splash-screen">
-  <h1>Jonathan Johnson</h1>
-  <nav>
-    <ul>
-      <li><a href="posts"><FaIcon iconName="blog" prefix="fas" aria-hidden="false" title="Blog Posts" /> Posts</a></li>
-      <li><a href="talks"><FaIcon iconName="keynote" prefix="fas" aria-hidden="false" title="Talks" /> Talks</a></li>
-      <li><a href="projects"><FaIcon iconName="project-diagram" prefix="fas" aria-hidden="false" title="Projects" /> Projects</a></li>
-      <li><a href="resume"><FaIcon iconName="scroll" prefix="fas" aria-hidden="false" title="Resume" /> Resume</a></li>
-      <li><a href="https://github.com/jrjohnson"><FaIcon iconName="github" prefix="fab" /> Github</a></li>
-      <li><a href="https://www.linkedin.com/in/jonjohnson/"><FaIcon iconName="linkedin" prefix="fab" /> LinkedIn</a></li>
-    </ul>
-    <img class="avatar" src="/media/avatar.png" alt="jon's avatar">
-  </nav>
-</main>
+	<SplashScreen />
 </Layout>

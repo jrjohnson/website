@@ -1,0 +1,20 @@
+---
+import "../styles/splash-screen.css";
+import FaIcon from '../components/FaIcon.astro';
+
+---
+
+<main class="splash-screen">
+  <h1>Jonathan Johnson</h1>
+  <nav>
+    <ul>
+      <li><a href="posts"><FaIcon iconName="blog" prefix="fas" aria-hidden="false" /> Posts</a></li>
+      <li><a href="talks"><FaIcon iconName="keynote" prefix="fas" aria-hidden="false" /> Talks</a></li>
+      <li><a href="projects"><FaIcon iconName="project-diagram" prefix="fas" aria-hidden="false" /> Projects</a></li>
+      <li><a href="resume"><FaIcon iconName="scroll" prefix="fas" aria-hidden="false" /> Resume</a></li>
+      <li><a href="https://github.com/jrjohnson"><FaIcon iconName="github" prefix="fab" /> Github</a></li>
+      <li><a href="https://www.linkedin.com/in/jonjohnson/"><FaIcon iconName="linkedin" prefix="fab" /> LinkedIn</a></li>
+    </ul>
+    <img class="avatar" src="/media/avatar.png" alt="jon's avatar">
+  </nav>
+</main>
