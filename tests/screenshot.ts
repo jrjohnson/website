@@ -15,7 +15,7 @@ const takeScreenshot = async function (page: Page, name: string) {
   const height = viewport.height;
 
   // Generate filename
-  const path = `build/${name}-${browserName}-${width}x${height}.png`;
+  const path = `build/screenshots/${name}-${browserName}-${width}x${height}.png`;
   await page.screenshot({ path, fullPage: true });
 };
 
