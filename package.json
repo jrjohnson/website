@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "pnpm run build && playwright test",
+    "lint": "pnpm run --parallel '/^lint:[^:]+$/'",
     "lint:js": "eslint .",
     "lint:js:fix": "eslint . --fix",
     "lint:css": "stylelint \"src/styles/**/*.css\"",
