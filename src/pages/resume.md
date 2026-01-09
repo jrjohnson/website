@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/ContentLayout.astro
+css: resume.css
 ---
 
 # Jonathan Ryan Johnson
