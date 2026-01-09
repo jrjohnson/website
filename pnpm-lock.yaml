@@ -19,7 +19,7 @@ importers:
         version: 7.1.0
       astro:
         specifier: ^5.16.6
-        version: 5.16.8(rollup@4.55.1)(typescript@5.9.3)
+        version: 5.16.8(@types/node@25.0.5)(rollup@4.55.1)(typescript@5.9.3)
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.2
@@ -29,7 +29,7 @@ importers:
         version: 1.57.0
       '@types/node':
         specifier: ^25.0.3
-        version: 25.0.3
+        version: 25.0.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2
@@ -709,6 +709,9 @@ packages:
 
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
+
+  '@types/node@25.0.5':
+    resolution: {integrity: sha512-FuLxeLuSVOqHPxSN1fkcD8DLU21gAP7nCKqGRJ/FglbCUBs0NYN6TpHcdmyLeh8C0KwGIaZQJSv+OYG+KZz+Gw==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -2079,6 +2082,9 @@ packages:
   uncrypto@0.1.3:
     resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
 
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
 
@@ -2830,6 +2836,10 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
+  '@types/node@25.0.5':
+    dependencies:
+      undici-types: 7.16.0
+
   '@types/unist@3.0.3': {}
 
   '@typescript-eslint/eslint-plugin@8.52.0(@typescript-eslint/parser@8.52.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(typescript@5.9.3)':
@@ -2991,7 +3001,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.16.8(rollup@4.55.1)(typescript@5.9.3):
+  astro@5.16.8(@types/node@25.0.5)(rollup@4.55.1)(typescript@5.9.3):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/internal-helpers': 0.7.5
@@ -3048,8 +3058,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.17.3
       vfile: 6.0.3
-      vite: 6.4.1
-      vitefu: 1.1.1(vite@6.4.1)
+      vite: 6.4.1(@types/node@25.0.5)
+      vitefu: 1.1.1(vite@6.4.1(@types/node@25.0.5))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -4649,6 +4659,8 @@ snapshots:
 
   uncrypto@0.1.3: {}
 
+  undici-types@7.16.0: {}
+
   unified@11.0.5:
     dependencies:
       '@types/unist': 3.0.3
@@ -4739,7 +4751,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@6.4.1:
+  vite@6.4.1(@types/node@25.0.5):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -4748,11 +4760,12 @@ snapshots:
       rollup: 4.55.1
       tinyglobby: 0.2.15
     optionalDependencies:
+      '@types/node': 25.0.5
       fsevents: 2.3.3
 
-  vitefu@1.1.1(vite@6.4.1):
+  vitefu@1.1.1(vite@6.4.1(@types/node@25.0.5)):
     optionalDependencies:
-      vite: 6.4.1
+      vite: 6.4.1(@types/node@25.0.5)
 
   web-namespaces@2.0.1: {}
 
