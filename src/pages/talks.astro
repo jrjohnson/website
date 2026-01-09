@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import ContentLayout from '../layouts/ContentLayout.astro';
-import '../styles/top-list.css';
 
 const talks = (await getCollection('talk')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -17,22 +16,20 @@ const talks = (await getCollection('talk')).sort(
   }
 </style>
 <ContentLayout>
-  <div class="top-list">
-    <h2>Talks</h2>
-    <ul>
-      {talks.map(talk => (
-        <li>
-          [{talk.data.date.toLocaleDateString('en-us', {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            })}]
-          <a href={`/talks/${talk.id}`}>
-           {talk.data.title}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
+  <h2>Talks</h2>
+  <ul>
+    {talks.map(talk => (
+      <li>
+        [{talk.data.date.toLocaleDateString('en-us', {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          })}]
+        <a href={`/talks/${talk.id}`}>
+          {talk.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
 </ContentLayout>
