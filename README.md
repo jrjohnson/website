@@ -7,12 +7,6 @@
 3. Generate PDF from HTML `npx electron-pdf http://localhost:4200/resume-output.html public/media/resume.pdf -p=Letter -m=0` don't use pnpm for this, electron doesn't install
 4. Remove HTML `rm public/resume-output.html`
 
-- [ember.js](https://emberjs.com/)
-- [ember-cli](https://cli.emberjs.com/release/)
-- Development Browser Extensions
-  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
 ## 🚀 Astro Docs
 
 Inside of your Astro project, you'll see the following folders and files:
