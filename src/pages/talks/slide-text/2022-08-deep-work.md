@@ -1,5 +1,6 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
+layout: ../../../layouts/MarkdownLayout.astro
+title: Jumping into Deep Work Text
 ---
 
 # Jumping into Deep Work

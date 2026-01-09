@@ -15,7 +15,7 @@ const talks = (await getCollection('talk')).sort(
     margin-bottom: 0.25rem;
   }
 </style>
-<ContentLayout>
+<ContentLayout title="Talks">
   <h2>Talks</h2>
   <ul>
     {talks.map(talk => (

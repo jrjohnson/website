@@ -1,6 +1,16 @@
 ---
 import "../styles/variables.css";
 import "../styles/layout.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title } = Astro.props;
+const baseTitle = `Jon's Personal Site`;
+
+const pageTitle = title ? `${title} | ${baseTitle}` : baseTitle;
 ---
 
 <!doctype html>
@@ -10,7 +20,7 @@ import "../styles/layout.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jon's Personal Site</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<slot />

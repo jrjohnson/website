@@ -20,7 +20,7 @@ if (!talkData) {
 const { Content } = await render(talkData);
 ---
 
-<ContentLayout>
+<ContentLayout title={talkData.data.title}>
   <h2>{talkData.data.title}</h2>
   <p>{talkData.data.date.toLocaleDateString()}</p>
 

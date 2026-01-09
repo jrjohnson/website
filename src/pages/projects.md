@@ -1,5 +1,6 @@
 ---
-layout: ../layouts/ContentLayout.astro
+layout: ../layouts/MarkdownLayout.astro
+title: Projects
 ---
 
 ## Open Source Projects I've Worked On

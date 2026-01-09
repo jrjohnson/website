@@ -1,5 +1,6 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
+layout: ../../../layouts/MarkdownLayout.astro
+title: Cut Your Team Some Slack Text
 ---
 
 # Cut Your Team Some Slack

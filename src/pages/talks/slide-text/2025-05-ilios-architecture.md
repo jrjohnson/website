@@ -1,5 +1,6 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
+layout: ../../../layouts/MarkdownLayout.astro
+title: Ilios Architecture Text
 ---
 
 # Ilios Architecture
@@ -389,12 +390,12 @@ https://github.com/ilios/ilios/blob/dc8174b62c9fb5e5e9ea77b76207754408eaeefe/.gi
 #### Ember CLI Deploy
 
 ```javascript
-const API_VERSION = require("ilios-common/config/api-version.js");
+const API_VERSION = require('ilios-common/config/api-version.js');
 
 module.exports = function (deployTarget) {
   var ENV = {
-    "s3-index": {
-      region: "us-west-2",
+    's3-index': {
+      region: 'us-west-2',
       filePattern(context) {
         return context.archiveName;
       },
@@ -403,8 +404,8 @@ module.exports = function (deployTarget) {
       },
     },
     brotli: {
-      filePattern: "**/*.{js,css,json,ico,map,xml,txt,svg,eot,ttf,webmanifest}",
-      ignorePattern: "index.json",
+      filePattern: '**/*.{js,css,json,ico,map,xml,txt,svg,eot,ttf,webmanifest}',
+      ignorePattern: 'index.json',
       keep: true,
     },
   };

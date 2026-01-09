@@ -1,5 +1,6 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
+layout: ../../../layouts/MarkdownLayout.astro
+title: Handling Complicated Tasks with a Chatbot Text
 ---
 
 ## Handling Complicated Tasks with a Chatbot
@@ -206,10 +207,10 @@ https://api.slack.com/
 ### Our Hero
 
 ```javascript
-const Botkit = require("botkit");
+const Botkit = require('botkit');
 
 const hal = new Botkit();
-hal.hears("Open the pod bay doors", async (bot, message) => {
+hal.hears('Open the pod bay doors', async (bot, message) => {
   await bot.reply(message, "I'm Sorry Dave, I'm afraid I can't do that.");
 });
 ```
@@ -219,8 +220,8 @@ hal.hears("Open the pod bay doors", async (bot, message) => {
 ## Intelligent Conversation
 
 ```javascript
-const Botkit = require("botkit");
-const Skynet = require("skynet");
+const Botkit = require('botkit');
+const Skynet = require('skynet');
 
 const controller = new Botkit();
 controller.hears(async (bot, message) => {
@@ -253,13 +254,13 @@ controller.hears(async (bot, message) => {
 ```javascript
 module.exports = (bot) => {
   bot.hears(
-    ["start release", "release"],
-    ["direct_message", "direct_mention", "mention"],
-    startRelease
+    ['start release', 'release'],
+    ['direct_message', 'direct_mention', 'mention'],
+    startRelease,
   );
-  bot.on("interactive_message_callback", chooseReleaseType);
-  bot.on("interactive_message_callback", confirmRelease);
-  bot.on("interactive_message_callback", doRelease);
+  bot.on('interactive_message_callback', chooseReleaseType);
+  bot.on('interactive_message_callback', confirmRelease);
+  bot.on('interactive_message_callback', doRelease);
 };
 ```
 
@@ -278,23 +279,23 @@ https://github.com/ucsf-ckm/zorgbort
 const startRelease = async (bot, message) => {
   bot.reply(
     message,
-    createActionReply(":cool: I just need to know:", releaseProject, [
+    createActionReply(':cool: I just need to know:', releaseProject, [
       {
-        name: "project",
-        text: "Which Project?",
-        type: "select",
+        name: 'project',
+        text: 'Which Project?',
+        type: 'select',
         options: [
           {
-            text: "Ilios Frontend",
-            value: "frontend",
+            text: 'Ilios Frontend',
+            value: 'frontend',
           },
           {
-            text: "Ember Simple Charts",
-            value: "simple-charts",
+            text: 'Ember Simple Charts',
+            value: 'simple-charts',
           },
         ],
       },
-    ])
+    ]),
   );
 };
 ```
@@ -311,10 +312,7 @@ https://github.com/ucsf-ckm/zorgbort
 
 ```javascript
 const releaseAndTag = async (owner, repo, releaseType, namer) => {
-  const { nextVersion, currentVersion } = await incrementPackageVersion(
-    dir,
-    releaseType
-  );
+  const { nextVersion, currentVersion } = await incrementPackageVersion(dir, releaseType);
   await commitAndTag(dir, version, releaseName);
   const release = await Github.repos.createRelease({
     owner,
@@ -351,8 +349,8 @@ https://github.com/ucsf-ckm/zorgbort
 
 ```javascript
 await bot.startConversationInChannel(SLACK_CHANNEL_ID);
-await bot.say("The Server is On Fire!!! :fire:");
-await bot.say("Everybody Blame Jon");
+await bot.say('The Server is On Fire!!! :fire:');
+await bot.say('Everybody Blame Jon');
 await bot.say("PS: don't tell Jon!");
 ```
 

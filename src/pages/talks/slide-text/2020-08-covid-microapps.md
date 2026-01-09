@@ -1,5 +1,6 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
+layout: ../../../layouts/MarkdownLayout.astro
+title: 'Microapps: A Covid-19 Case Study Text'
 ---
 
 # [Microapps: A Covid-19 Case Study](https://www.jrjohnson.dev/talks/2020-08-covid-microapps)
@@ -93,8 +94,8 @@ async function sendReminderEmails(BccAddresses = [], CcAddresses = [], Source) {
     Message: {
       Body: getEmailBody(),
       Subject: {
-        Charset: "UTF-8",
-        Data: "Urgent: Completion of GME DAILY Staffing Report Survey",
+        Charset: 'UTF-8',
+        Data: 'Urgent: Completion of GME DAILY Staffing Report Survey',
       },
     },
     Source,
@@ -147,7 +148,7 @@ exports.sendReminderEmails = sendReminderEmails;
 on:
   push:
     tags:
-      - "*"
+      - '*'
   deploy:
     steps:
       - uses: actions/checkout@v1
@@ -178,7 +179,7 @@ provider:
   name: aws
   runtime: nodejs12.x
   iamRoleStatements:
-    - Effect: "Allow"
+    - Effect: 'Allow'
       Action:
         - SES:SendEmail
       Resource: arn:aws:ses:us-west-2:********:identity/*****

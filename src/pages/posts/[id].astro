@@ -20,7 +20,7 @@ if (!postData) {
 const { Content } = await render(postData);
 ---
 
-<ContentLayout>
+<ContentLayout title={postData.data.title}>
   <div>
     <Content />
     <p>Published on: {postData.data.date.toLocaleDateString()}</p>

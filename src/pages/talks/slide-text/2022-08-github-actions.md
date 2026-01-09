@@ -1,5 +1,6 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
+layout: ../../../layouts/MarkdownLayout.astro
+title: Automagic Deployment with Github Actions Text
 ---
 
 # Automagic Deployment with Github Actions
@@ -114,7 +115,7 @@ on:
       - master
   pull_request:
   schedule:
-    - cron: "33 2 * * 1" # weekly, on Monday morning
+    - cron: '33 2 * * 1' # weekly, on Monday morning
 ```
 
 https://github.com/ilios/ilios/blob/master/.github/workflows/ci.yml
@@ -295,7 +296,7 @@ on:
 workflow_dispatch:
   inputs:
     releaseType:
-      description: "Semver Release Type (major,minor,patch)"
+      description: 'Semver Release Type (major,minor,patch)'
 jobs:
   tag:
     steps:
@@ -327,7 +328,7 @@ https://github.com/ilios/common/blob/master/.github/workflows/tag_version.yaml
 on:
   push:
     tags:
-      - "*"
+      - '*'
 
 jobs:
   notes:
@@ -394,7 +395,7 @@ https://github.com/ilios/common/blob/master/.github/workflows/release.yaml
 on:
   push:
     tags:
-      - "*"
+      - '*'
 
 jobs:
   deploy:
