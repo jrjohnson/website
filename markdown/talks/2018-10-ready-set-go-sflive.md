@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  "Ready Set Go: Loading Single Page Apps Fast"
-date:   2018-10-11
+title: 'Ready Set Go: Loading Single Page Apps Fast'
+date: 2018-10-11
 videoURI:
 slidesURI: /slides/2018-10-ready-set-go
 ---

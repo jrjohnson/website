@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "Deploying with Ember.js: a story"
-date:   2017-09-06 02:01:00
+title: 'Deploying with Ember.js: a story'
+date: 2017-09-06 02:01:00
 categories: emberjs deploy
 originalURI: https://blogs.library.ucsf.edu/ckm/2017/09/06/deploying-with-ember-js-a-story/
 ---
-
 
 ## What is this all about?
 
@@ -44,6 +43,7 @@ Because we are constantly adding new features and fixing bugs we need to be able
 We want to ship a magical box to our customers and we want to ship it all the time.
 
 ## Our Journey
+
 ### Starts with a plan on a whiteboard
 
 #### Distribute
@@ -57,9 +57,11 @@ We want to ship a magical box to our customers and we want to ship it all the ti
 #### Consume
 
 1. Download and extract the archive at
-  * a) the most recent version
-  * b) a specific version from the past
-  * c) dev build we want to test
+
+- a) the most recent version
+- b) a specific version from the past
+- c) dev build we want to test
+
 2. Parse the the index file to extract configuration and assets
 3. Serve a modified `index.html` file to users
 
@@ -73,13 +75,14 @@ where we find there is a whole category dedicated to plugins for `ember-cli-depl
 Some investigation and perusal of the `deploy` docs and a few minutes in the `#ec-deploy` channel in the
 [Ember Slack Team](https://embercommunity.slack.com) will lead us to some standard choices and well supported solutions.
 
-* `ember-cli-deploy` is the foundation we can build on
-* `ember-cli-deploy-build` builds our app
-* `ember-cli-deploy-revision-data` can tag and activate versions
-* `ember-cli-deploy-s3` uploads our assets and makes them public in an S3 bucket
+- `ember-cli-deploy` is the foundation we can build on
+- `ember-cli-deploy-build` builds our app
+- `ember-cli-deploy-revision-data` can tag and activate versions
+- `ember-cli-deploy-s3` uploads our assets and makes them public in an S3 bucket
 
 A search for 'archive' in Ember Observer leads us to:
-* `ember-cli-deploy-archive` which takes our build assets and outputs a single tar archive
+
+- `ember-cli-deploy-archive` which takes our build assets and outputs a single tar archive
 
 These combined knock out several of our needs.
 
@@ -87,7 +90,7 @@ Further investigation of `ember-cli-deploy-s3` leads us to it's companion
 `ember-cli-deploy-s3-index` which not only uploads to S3, it also manages versioning and activation.
 
 And while looking around we also stumble upon `ember-cli-deploy-json-config` which conveniently parses our messy
-`index.html` file and outputs nice human and machine readable `JSON` that will be *way easier* for our API server to consume.
+`index.html` file and outputs nice human and machine readable `JSON` that will be _way easier_ for our API server to consume.
 
 Looks like we don't have to write any code at all! Just install and configure some plugins just the way we
 want and in the end just need to run a few instal commands:
@@ -105,9 +108,9 @@ ember install ember-cli-deploy-s3-index
 Which helpfully creates a `config/deploy.js` file for us with some useful defaults:
 
 ```javascript
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   var ENV = {
-    build: {}
+    build: {},
     // include other plugin configuration that applies to all deploy targets here
   };
 
@@ -153,6 +156,7 @@ module.exports = function(deployTarget) {
 ```
 
 Next step is to try it out:
+
 ```
 ember deploy development  --verbose
 ...
@@ -173,14 +177,15 @@ there is a `prefix` option we can use.
 ```
 
 Deploy again and we now have a bucket with
+
 ```
 build.tar:HASH (from our first deploy)
 v1.22/
   build.tar:NEWHASH (from our second deploy)
 ```
 
-That is *exactly* what the Doctor ordered. Check that off our list and lets download that archive and see what it has.
-Hmmm... it has an `index.html` file, but no `index.json` file.  Looking back
+That is _exactly_ what the Doctor ordered. Check that off our list and lets download that archive and see what it has.
+Hmmm... it has an `index.html` file, but no `index.json` file. Looking back
 at the `--verbose` output we can see why
 
 ```
@@ -201,6 +206,7 @@ doing their work inside the `didBuild` hook we just need to swap the order they 
 in the docs at http://ember-cli-deploy.com/docs/v1.0.x/configuration/#advanced-plugin-configuration
 
 Looks like we just add a `pipeline` object to our deploy config like:
+
 ```
 pipeline: {
   runOrder: {
@@ -225,4 +231,4 @@ ecosystem gives me the building blocks I can use to assemble our pipeline in wha
 ideas and strategies fast and with very little friction.
 
 I hope this was a useful overview of one deployment journey. Want to share your own? Tell me about a mistake I made or
-shower me with praise? Leave a comment here or find me at [@jrjohnson_](https://twitter.com/jrjohnson_).
+shower me with praise? Leave a comment here or find me at [@jrjohnson\_](https://twitter.com/jrjohnson_).

@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  "AI or Nay? Balancing Distraction and Utility"
-date:   2025-01-22 12:30:00
+title: 'AI or Nay? Balancing Distraction and Utility'
+date: 2025-01-22 12:30:00
 videoURI:
 slidesURI: /slides/2025-01-ai-or-nay
 slideContentURI: ./slide-text/2025-01-ai-or-nay

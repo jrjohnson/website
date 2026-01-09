@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  "It Takes a Village to Raise an App: How to Get Started Writing Tests Right Now"
-date:   2015-07-14
+title: 'It Takes a Village to Raise an App: How to Get Started Writing Tests Right Now'
+date: 2015-07-14
 eventURI: http://www.meetup.com/Ember-SF/events/221266972/
 videoURI:
 slidesURI: /slides/2015-07-testing-in-emberjs/

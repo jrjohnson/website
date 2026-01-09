@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  Web Development with the Microapplication Pattern
-date:   2017-08-08
+title: Web Development with the Microapplication Pattern
+date: 2017-08-08
 eventURI: http://uccsc.ucsd.edu/program/index.html
 videoURI:
 slidesURI: /slides/2017-08-microapp-pattern
