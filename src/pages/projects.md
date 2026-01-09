@@ -2,6 +2,8 @@
 layout: ../layouts/ContentLayout.astro
 ---
 
+## Open Source Projects I've Worked On
+
 **Ilios Curriculum Management System**
 
 - [Javascript EmberJS Web App](https://github.com/ilios/frontend)
