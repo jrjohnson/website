@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { takeScreenshot } from './screenshot';
 
 test('Posts', async ({ page }) => {
   await page.goto('/posts');
@@ -8,4 +9,6 @@ test('Posts', async ({ page }) => {
   );
   const main = page.getByRole('main');
   await expect(main.getByRole('list')).toHaveCount(1);
+
+  await takeScreenshot(page, 'posts');
 });
