@@ -17,7 +17,7 @@ const postData = await getEntry('post', id);
 if (!postData) {
   throw new Error(`No such post: ${id}`);
 }
-const { Content, headings } = await render(postData);
+const { Content } = await render(postData);
 ---
 
 <ContentLayout>

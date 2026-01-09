@@ -17,7 +17,7 @@ const talkData = await getEntry('talk', id);
 if (!talkData) {
   throw new Error(`No such talk: ${id}`);
 }
-const { Content, headings } = await render(talkData);
+const { Content } = await render(talkData);
 ---
 
 <ContentLayout>

@@ -1,9 +1,9 @@
-import { defineCollection } from "astro:content";
-import { glob, file } from "astro/loaders";
-import { z } from "astro/zod";
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const post = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./markdown/posts" }),
+  loader: glob({ pattern: '**/*.md', base: './markdown/posts' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -12,7 +12,7 @@ const post = defineCollection({
 });
 
 const talk = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./markdown/talks" }),
+  loader: glob({ pattern: '**/*.md', base: './markdown/talks' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
