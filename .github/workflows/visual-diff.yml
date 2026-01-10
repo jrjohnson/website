@@ -24,6 +24,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install
+      - run: pnpm exec playwright install --with-deps
       - name: Capture Screenshots
         run: pnpm run test
       - uses: actions/upload-artifact@v5
@@ -42,6 +43,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install
+      - run: pnpm exec playwright install --with-deps
       - name: Capture Screenshots
         run: pnpm run test
       - uses: actions/upload-artifact@v5
