@@ -7,6 +7,9 @@ concurrency:
   group: visual-diff-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
+env:
+  FONTAWESOME_NPM_AUTH_TOKEN: '${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}'
+
 jobs:
   baseline:
     name: Baseline
