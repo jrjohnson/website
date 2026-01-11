@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  "Putting the dev back in devops"
-date:   2016-04-28
+title: 'Putting the dev back in devops'
+date: 2016-04-28
 eventURI:
 videoURI:
 slidesURI: /slides/2016-04-devops-process

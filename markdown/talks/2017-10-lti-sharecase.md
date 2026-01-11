@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  Delivering Personalized Content to Students
-date:   2017-10-12
+title: Delivering Personalized Content to Students
+date: 2017-10-12
 eventURI: https://sharecase.ucsf.edu/sessions/delivering-personalized-content-students
 videoURI:
 slidesURI: /slides/2017-10-lti

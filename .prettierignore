@@ -1,13 +1,7 @@
-# unconventional js
-/blueprints/*/files/
-
-# compiled output
-/dist/
-
-# misc
-/coverage/
-!.*
-.*/
-
-# ember-try
-/.node_modules.ember-try/
+dist
+node_modules
+.astro
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+public

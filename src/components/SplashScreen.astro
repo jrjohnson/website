@@ -1,0 +1,87 @@
+---
+import FaIcon from '../components/FaIcon.astro';
+---
+<style>
+  main {
+  place-self: center;
+  width: 80%;
+
+  h1 {
+    font-size: var(--fs-xxxl);
+    text-align: right;
+
+    @media (width <= 1000px) {
+      font-size: var(--fs-xxl);
+      text-align: center;
+    }
+  }
+
+  nav {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+      "top top top"
+      "left left right"
+      "left left right"
+      "bottom bottom bottom";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 31%) 25%;
+
+    @media (width <= 1000px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      border-radius: 50%;
+      grid-area: right;
+      padding: 5px;
+      place-self: end;
+      width: 300px;
+
+      @media (width <= 1000px) {
+        width: 150px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        font-size: var(--fs-xl);
+      }
+    }
+
+    ul:nth-of-type(1) {
+      grid-area: left;
+    }
+
+    ul:nth-of-type(2) {
+      display: flex;
+      flex-direction: row;
+      grid-area: bottom;
+      justify-content: space-around;
+
+      @media (width <= 1000px) {
+        width: 80%;
+      }
+    }
+  }
+}
+
+</style>
+<main>
+  <h1>Jonathan Johnson</h1>
+  <nav>
+    <ul>
+      <li><a href="posts"><FaIcon iconName="blog" prefix="fas" aria-hidden="false" /> Posts</a></li>
+      <li><a href="talks"><FaIcon iconName="keynote" prefix="fas" aria-hidden="false" /> Talks</a></li>
+      <li><a href="projects"><FaIcon iconName="project-diagram" prefix="fas" aria-hidden="false" /> Projects</a></li>
+      <li><a href="resume"><FaIcon iconName="scroll" prefix="fas" aria-hidden="false" /> Resume</a></li>
+      <li><a href="https://github.com/jrjohnson"><FaIcon iconName="github" prefix="fab" /> Github</a></li>
+      <li><a href="https://www.linkedin.com/in/jonjohnson/"><FaIcon iconName="linkedin" prefix="fab" /> LinkedIn</a></li>
+    </ul>
+    <img class="avatar" src="/media/avatar.png" alt="jon's avatar">
+  </nav>
+</main>

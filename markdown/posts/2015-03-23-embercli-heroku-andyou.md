@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  "Ember CLI, Heroku, and You"
-date:   2015-03-23 01:15:00
+title: 'Ember CLI, Heroku, and You'
+date: 2015-03-23 01:15:00
 categories: testing emberjs javascript heroku
 originalURI: https://blogs.library.ucsf.edu/ckm/2015/03/23/ember-cli-heroku-and-you/
 ---
 
-**Warning, this is old information and way more work than you need to do.** The solution we are using now is the excellent [heroku-buildpack-ember-cli](https://github.com/tonycoco/heroku-buildpack-ember-cli). 
+**Warning, this is old information and way more work than you need to do.** The solution we are using now is the excellent [heroku-buildpack-ember-cli](https://github.com/tonycoco/heroku-buildpack-ember-cli).
 
-A disclaimer: This is not for use in production. Doing this for a production app would be a bad decision. 
+A disclaimer: This is not for use in production. Doing this for a production app would be a bad decision.
 
-**The problem**: Developers on the [Ilios Project](http://github.com/ilios/frontend "Ilios Project") need to be able to share their changes with other team members. While it is possible to deploy a static Ember CLI app nearly anywhere, we want to include our mock API so everyone is looking at the same data.
+**The problem**: Developers on the [Ilios Project](http://github.com/ilios/frontend 'Ilios Project') need to be able to share their changes with other team members. While it is possible to deploy a static Ember CLI app nearly anywhere, we want to include our mock API so everyone is looking at the same data.
 
-**The solution**: Use Heroku to host an Ember CLI application running its built in Express server. Start by reading Heroku's excellent [Getting Started in NodeJs documentation](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction "Getting Started in NodeJs documentation"). Make sure you set up a demo app as instructed. Now lets create a branch and setup your own Ember CLI app.
+**The solution**: Use Heroku to host an Ember CLI application running its built in Express server. Start by reading Heroku's excellent [Getting Started in NodeJs documentation](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction 'Getting Started in NodeJs documentation'). Make sure you set up a demo app as instructed. Now lets create a branch and setup your own Ember CLI app.
 
 ```bash
 cd [YOUR APP DIRECTORY]
@@ -24,7 +24,7 @@ You will now have a Procfile in your apps root directory. Change the contents to
 
 ```bash
     web: ember serve --port $PORT --live-reload=false
-  ```
+```
 
 This will tell Heroku how to start your Ember CLI app using the port of their choice, and to switch off live-reload. Next we need to insure that npm will install bower for us.
 

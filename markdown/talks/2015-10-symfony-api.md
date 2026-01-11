@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  "Building a Symfony API to support Ember.js (or anything else)"
-date:   2015-10-29
+title: 'Building a Symfony API to support Ember.js (or anything else)'
+date: 2015-10-29
 eventURI: http://sanfrancisco2015.live.symfony.com/speakers#session-1644
 videoURI:
 slidesURI: /slides/2015-10-symfony-api/

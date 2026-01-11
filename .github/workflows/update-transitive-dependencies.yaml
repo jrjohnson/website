@@ -2,11 +2,11 @@ name: Update Transitive Dependencies
 
 on:
   schedule:
-    - cron: "15 15 * * 5" # weekly, on Friday morning (UTC)
+    - cron: '15 15 * * 5' # weekly, on Friday morning (UTC)
   workflow_dispatch: null
 
 env:
-  FONTAWESOME_NPM_AUTH_TOKEN: "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+  FONTAWESOME_NPM_AUTH_TOKEN: '${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}'
 
 jobs:
   update:

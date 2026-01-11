@@ -1,0 +1,16 @@
+---
+import ContentLayout from './ContentLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string,
+    description?: string,
+  }
+}
+const { frontmatter } = Astro.props;
+const { description, title } = frontmatter;
+---
+
+<ContentLayout title={title} description={description}>
+  <slot />
+</ContentLayout>

@@ -1,6 +1,6 @@
 ---
 layout: talk
-title: "Ilios Architecture, Form Follows Function"
+title: 'Ilios Architecture, Form Follows Function'
 date: 2025-05-07 09:00:00
 videoURI:
 slidesURI: /slides/2025-05-ilios-architecture

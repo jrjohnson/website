@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  Microapplications & API First Development
-date:   2017-01-26
+title: Microapplications & API First Development
+date: 2017-01-26
 eventURI: https://www.meetup.com/sf-php/events/234424164/
 videoURI:
 slidesURI: /slides/2017-01-apifirst-microapps
@@ -12,6 +12,7 @@ Microapplications, like microservices, allow organizations to break down fronten
 The Ilios Project (iliosproject.org) is building microapplications to serve the needs of our students using Symfony and EmberJS. Symfony provides a base to serve and organize applications, thanks to Symfony's world-class dependency injection, configuration, and templating capabilities.
 
 Covers:
+
 - Applications hosted with a CDN
 - Parsing index.html
 - Thinking about assets

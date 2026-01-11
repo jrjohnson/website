@@ -1,0 +1,167 @@
+html {
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  color: var(--text-purple);
+  font-family: Yantramanav, sans-serif;
+  height: 100%;
+  padding: 15px;
+
+  @media screen and (width >= 768px) {
+    --fs-huge: 25rem;
+  }
+
+  @media screen and (width >= 1200px) {
+    --fs-huge: 30rem;
+  }
+
+  line-height: calc(4px + 2ex);
+  font-size: 16px;
+
+  @media screen and (width >= 1200px) {
+    font-size: calc(10px + 0.5vw);
+  }
+
+  @media screen and (width >= 1920px) {
+    font-size: 20px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--header-orange);
+  font-family: "Crimson+Text", serif;
+  margin: 0;
+  padding: 0;
+  line-height: calc(4px + 2ex);
+}
+
+h1 {
+  font-size: var(--fs-xxl);
+
+  @media (width <= 400px) {
+    font-size: var(--fs-xl);
+  }
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-xl);
+}
+
+h4 {
+  font-size: var(--fs-large);
+}
+
+h5 {
+  font-size: var(--fs-medium);
+}
+
+h6 {
+  font-size: var(--fs-base);
+}
+
+a {
+  color: var(--link-blue);
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: calc(1px + 3ex);
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--body-background-color);
+  display: grid;
+  grid-template-areas:
+    "header navigation"
+    "main main";
+  grid-template-rows: auto 1fr;
+
+  @media (width < 1000px) {
+    grid-template-areas:
+      "header"
+      "navigation"
+      "main";
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  & > header {
+    border-bottom: 1px solid var(--text-grey);
+    grid-area: header;
+
+    a {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      @media (width >= 500px) {
+        justify-content: flex-start;
+      }
+
+      & img {
+        border-radius: 50%;
+        padding: 0 5px;
+        width: var(--fs-xxl);
+
+        @media (width <= 400px) {
+          width: var(--fs-xl);
+        }
+      }
+    }
+  }
+
+  & > nav {
+    border-bottom: 1px solid var(--text-grey);
+    grid-area: navigation;
+    display: flex;
+    justify-content: flex-end;
+
+    & ul {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+    }
+
+    & li {
+      padding-right: 1rem;
+    }
+  }
+
+  & > main {
+    grid-area: main;
+    min-width: 0;
+    padding: 0.5em 2em;
+  }
+}
+
+a:active,
+a:visited {
+  color: var(--link-blue);
+}

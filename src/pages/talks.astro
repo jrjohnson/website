@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const talks = (await getCollection('talk')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+<style>
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+</style>
+<ContentLayout title="Talks">
+  <h2>Talks</h2>
+  <ul>
+    {talks.map(talk => (
+      <li>
+        [{talk.data.date.toLocaleDateString('en-us', {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          })}]
+        <a href={`/talks/${talk.id}`}>
+          {talk.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</ContentLayout>

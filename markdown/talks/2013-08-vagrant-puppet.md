@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  "Vagrant & Puppet Used to Ensure a Consistent Developer Environment"
-date:   2013-08-05
+title: 'Vagrant & Puppet Used to Ensure a Consistent Developer Environment'
+date: 2013-08-05
 eventURI: https://uccsc.uci.edu/sessions/vagrant-puppet-used-ensure-consistent-developer-environment
 videoURI: http://replay.uci.edu/clients/uccsc/SF09.html
 ---

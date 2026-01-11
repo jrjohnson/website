@@ -1,7 +1,7 @@
 ---
 layout: talk
-title:  "Deliver Content to Students in Moodle, Canvas, and Sakai using AWS Lambda and LTI"
-date:   2018-08-14
+title: 'Deliver Content to Students in Moodle, Canvas, and Sakai using AWS Lambda and LTI'
+date: 2018-08-14
 eventURI: https://uccsc.ucdavis.edu/sessions/delivering-personalized-content-students
 videoURI:
 slidesURI: /slides/2018-08-lti-lambda
