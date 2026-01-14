@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'Cut Your Team Some Slack'
+description: >
+  Mini talk for Learning Innovation Showcase: Using Slack at UCSF
 date: 2019-10-16 12:00:00
 videoURI:
 slidesURI: /slides/2019-10-slack-in-brief

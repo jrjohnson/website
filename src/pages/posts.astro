@@ -5,6 +5,8 @@ import ContentLayout from '../layouts/ContentLayout.astro';
 const posts = (await getCollection('post')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
+const description=`Posts I've written collected in one place`;
+
 ---
 <style>
   ul {
@@ -15,8 +17,8 @@ const posts = (await getCollection('post')).sort(
     margin-bottom: 0.25rem;
   }
 </style>
-<ContentLayout title="Posts">
-  <h2>Posts I've written collected in one place</h2>
+<ContentLayout title="Posts" description={description}>
+  <h2>{description}</h2>
   <ul>
     {posts.map(post => (
       <li>

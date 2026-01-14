@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'Handling Complicated Tasks with a Chatbot'
+description: >
+  Last year out team starting using a chatbot named Zorgbort to handle the lengthy, monotonous, and critical task of deploying our code. The bot is able to take simple commands in slack and run repeatedly awesome tasks for our team so we no longer need to keep track of complicated check lists and deal with the stress of managing important tasks. If you'd like to be able to say @zorgbort deploy the frontend then this talk is for you!
 date: 2019-07-17 14:45:00
 videoURI:
 slidesURI: /slides/2019-07-chatbots

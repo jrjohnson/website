@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'Jumping into Deep Work'
+description: >
+  The members of my team are hard to reach, they almost never answer emails right away, and you won't always find them hanging out in Slack. If you want to schedule a meeting with more than one of us you may need to wait days or weeks to find an available spot. In short we're busy doing Deep Work and freed from the demands of continuous communication our productivity is through the roof!
 date: 2022-11-29 16:00:00
 videoURI:
 slidesURI: /slides/2022-11-deep-work

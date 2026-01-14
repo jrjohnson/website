@@ -4,13 +4,15 @@ import "../styles/layout.css";
 
 interface Props {
   title: string;
-  description?: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { description, title } = Astro.props;
 const baseTitle = `Jon's Personal Site`;
 
 const pageTitle = title ? `${title} | ${baseTitle}` : baseTitle;
+const url = Astro.url.toString();
+const preview = `${Astro.url.origin}/media/preview.png`;
 ---
 
 <!doctype html>
@@ -20,6 +22,11 @@ const pageTitle = title ? `${title} | ${baseTitle}` : baseTitle;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content={url}>
+    <meta property="og:image" content={preview}>
+
 		<title>{pageTitle}</title>
 	</head>
 	<body>

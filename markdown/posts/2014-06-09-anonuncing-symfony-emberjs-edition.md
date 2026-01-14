@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 'Announcing Symfony Ember.js Edition'
+description: >
+  We've spent a lot of time getting the configuration right for setting up Ember.js and EmberData to work with a Symfony backend. So we have decided to release a working example of getting this right:
 date: 2014-08-05 08:11:00
 categories: symfony emberjs javascript php
 originalURI: https://blogs.library.ucsf.edu/ckm/2014/08/05/announcing-symfony-ember-js-edition/

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 'Production Packer Passwords: Securing the Root User'
+description: >
+  Packer is a tool for creating identical machine images for multiple platforms from a single source configuration. It is mostly used to create base images for developers using Vagrant. However it's just as useful for creating virtual machine (VM) images to deploy in production. Using Packer in this way, you can create a consistent starting point for VMs which are then provisioned further with, for example, Puppet or Chef, creating a ready-to-deploy image with your application already installed.
 date: 2014-06-09 17:21:00
 categories: devops vagrant packer
 originalURI: https://blogs.library.ucsf.edu/ckm/2014/06/09/production-packer-passwords-securing-the-root-user/
