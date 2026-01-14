@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: Microapplications with EmberJs
+description: >
+  When building educational technology for UCSF we must be able to respond rapidly to ideas sparked by faculty and students for whom every wasted minute is an obstacle in the path of treating patients and curing disease. At the same time we need to ensure that prototype ideas which gain traction can be scaled to a large audience immediately.
 date: 2017-03-21
 eventURI: https://www.meetup.com/Ember-SF/events/237197671/
 videoURI:

@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'Always Be Updating'
+description: >
+  See how the Ilios Project at UCSF leverages our application tests, Github's Pull Requests, update bots, and automated container builds, to ensure that our small team can keep our application dependencies and OS packages constantly up to date.
 date: 2019-06-18
 videoURI:
 slidesURI: /slides/2019-06-always-be-updating

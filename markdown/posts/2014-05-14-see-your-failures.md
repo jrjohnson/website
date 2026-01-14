@@ -1,6 +1,9 @@
 ---
 layout: post
 title: 'See your failures: Taking screenshots with PhantomJS running Behat tests'
+description: >
+  PhantomJS is a headless browser which, when combined with Behat, can run the same tests you can run in a browser like Chrome or Firefox. Headless testing is faster because it doesn't actually render anything for a user. This makes it ideal for rapid test driven development. 
+  A downside to headless testing is that when it fails it can be hard to see exactly why.  Figuring out whether it is your code or your test that is causing the issue can be extremely frustrating and you might find yourself asking; Why can't I just see it?  The frustration mounts when the same test runs just fine via Selenium in a GUI browser.
 date: 2014-05-14 14:04:00
 categories: testing php
 originalURI: https://blogs.library.ucsf.edu/ckm/2014/05/14/see-your-failures-taking-screenshots-with-phantomjs-running-behat-tests/

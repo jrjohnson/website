@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 'Ember CLI, Heroku, and You'
+description: >
+  Developers on the Ilios Project need to be able to share their changes with other team members. While it is possible to deploy a static Ember CLI app nearly anywhere, we want to include our mock API so everyone is looking at the same data.
 date: 2015-03-23 01:15:00
 categories: testing emberjs javascript heroku
 originalURI: https://blogs.library.ucsf.edu/ckm/2015/03/23/ember-cli-heroku-and-you/

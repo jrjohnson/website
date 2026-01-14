@@ -5,6 +5,7 @@ import ContentLayout from '../layouts/ContentLayout.astro';
 const talks = (await getCollection('talk')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
+const description = "Abstracts and slides for talks I've given";
 ---
 <style>
   ul {
@@ -15,8 +16,9 @@ const talks = (await getCollection('talk')).sort(
     margin-bottom: 0.25rem;
   }
 </style>
-<ContentLayout title="Talks">
+<ContentLayout title="Talks" description={description}>
   <h2>Talks</h2>
+  <p>{description}</p>
   <ul>
     {talks.map(talk => (
       <li>

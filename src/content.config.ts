@@ -6,6 +6,7 @@ const post = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './markdown/posts' }),
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     date: z.coerce.date(),
     originalURI: z.string().url().nullable().optional(),
   }),
@@ -15,6 +16,7 @@ const talk = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './markdown/talks' }),
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     date: z.coerce.date(),
     slidesURI: z.string().nullable().optional(),
     videoURI: z.string().url().nullable().optional(),

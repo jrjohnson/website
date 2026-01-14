@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'From Stuck to Soaring: Taking Aim at Continuous Delivery'
+description: >
+  When we set out to re-write Ilios in 2014 the most important metric we targeted with every decision was confidence. Developers had to be confident in every change, and users needed to be confident in every release. This meant building code on well tested foundations, choosing technologies that favored stable releases over breaking changes, and adopting a culture of agile project management and test driven development.
 date: 2018-08-14
 eventURI: https://uccsc.ucdavis.edu/sessions/stuck-soaring-taking-aim-continuous-delivery
 videoURI:

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 'Deploying with Ember.js: a story'
+description: >
+  This is the story of how we changed our Ember.js application deployment one night while no one was looking. This is not a strictly technical story, and the details may not matter; what is important is the journey we took and the steps you can follow to get your app deploying however you want.
 date: 2017-09-06 02:01:00
 categories: emberjs deploy
 originalURI: https://blogs.library.ucsf.edu/ckm/2017/09/06/deploying-with-ember-js-a-story/

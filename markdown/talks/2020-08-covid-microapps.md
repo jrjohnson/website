@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'Microapps: A Covid-19 Case Study'
+description: >
+  Learn how we used AWS services and Github Actions to deploy a very small (65 line) Node.js script into a rock solid secure production environment quickly in a crisis.
 date: 2020-08-11 16:00:00
 videoURI:
 slidesURI: /slides/2020-08-covid-microapps

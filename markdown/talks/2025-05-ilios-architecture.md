@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'Ilios Architecture, Form Follows Function'
+description: >
+  Asked to talk about the technical architecture of the Ilios Curriculum Management system, I veered sharply into the theoretical. While it is possible to enumerate the current state of the containers, build pipelines, testing services, and cloud runners - I find the why of each choice at least as interesting. So I've attempted here to break down the constraints that led to each choice and how optimizing for forward momentum in an uncertain budget climate has served Ilios so well.
 date: 2025-05-07 09:00:00
 videoURI:
 slidesURI: /slides/2025-05-ilios-architecture

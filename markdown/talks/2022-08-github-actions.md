@@ -1,6 +1,8 @@
 ---
 layout: talk
 title: 'Automagic Deployment with Github Actions'
+description: >
+  Deploying can be a huge hassle for any application and any team. We've tried a bunch of ways to get it right, scripts, chatbots, tags, and manual pushes. We never found a one size fits all solution until we moved to Github Actions. By standardizing on the concept of a workflow, but being flexible about how any specific app was setup we were able to move to a state of one click amazing so anyone on our team can deploy.
 date: 2022-08-16 11:00:00
 videoURI:
 slidesURI: /slides/2022-08-github-actions
