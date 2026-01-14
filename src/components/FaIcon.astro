@@ -14,8 +14,12 @@ export interface Props {
 
 const { iconName, prefix } = Astro.props;
 
-const def = findIconDefinition({ prefix, iconName })
-const i = icon(def)
+const def = findIconDefinition({ prefix, iconName });
+
+if (!def) {
+  throw new Error(`Missing definition for Icon "${iconName}" in "${prefix}"`);
+}
+const i = icon(def);
 
 ---
 
