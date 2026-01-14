@@ -100,14 +100,16 @@ body {
   display: grid;
   grid-template-areas:
     'header navigation'
-    'main main';
+    'main main'
+    'footer footer';
   grid-template-rows: auto 1fr;
 
   @media (width < 1000px) {
     grid-template-areas:
       'header'
       'navigation'
-      'main';
+      'main'
+      'footer';
     grid-template-rows: auto auto 1fr;
     grid-template-columns: 1fr;
   }
@@ -158,6 +160,10 @@ body {
     grid-area: main;
     min-width: 0;
     padding: 0.5em 2em;
+  }
+
+  & > footer {
+    grid-area: footer;
   }
 }
 
