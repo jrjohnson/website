@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ContentLayout from '../layouts/ContentLayout.astro';
+import FaIcon from '../components/FaIcon.astro';
 
 const posts = (await getCollection('post')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -11,9 +12,15 @@ const description=`Posts I've written collected in one place`;
 <style>
   ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
   }
 
   li {
+    margin-bottom: 0.25rem;
+  }
+
+  p {
     margin-bottom: 0.25rem;
   }
 </style>
@@ -22,12 +29,7 @@ const description=`Posts I've written collected in one place`;
   <ul>
     {posts.map(post => (
       <li>
-        [{post.data.date.toLocaleDateString('en-us', {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}]
+        <FaIcon iconName='blog' prefix='fad' />
         <a href={`/posts/${post.id}`}>
         {post.data.title}
         </a>

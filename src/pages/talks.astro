@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ContentLayout from '../layouts/ContentLayout.astro';
+import FaIcon from '../components/FaIcon.astro';
 
 const talks = (await getCollection('talk')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -10,9 +11,15 @@ const description = "Abstracts and slides for talks I've given";
 <style>
   ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
   }
 
   li {
+    margin-bottom: 0.25rem;
+  }
+
+  p {
     margin-bottom: 0.25rem;
   }
 </style>
@@ -22,15 +29,15 @@ const description = "Abstracts and slides for talks I've given";
   <ul>
     {talks.map(talk => (
       <li>
-        [{talk.data.date.toLocaleDateString('en-us', {
+        <FaIcon iconName='microphone-stand' prefix='fad' />
+        <a href={`/talks/${talk.id}`}>
+          {talk.data.title}
+        </a> [{talk.data.date.toLocaleDateString('en-us', {
           weekday: "long",
           year: "numeric",
           month: "long",
           day: "numeric",
           })}]
-        <a href={`/talks/${talk.id}`}>
-          {talk.data.title}
-        </a>
       </li>
     ))}
   </ul>

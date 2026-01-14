@@ -1,5 +1,6 @@
 ---
 import Layout from "./Layout.astro";
+import FaIcon from "../components/FaIcon.astro";
 
 interface Props {
   title: string;
@@ -7,6 +8,17 @@ interface Props {
 }
 const { title, description } = Astro.props;
 ---
+
+<style>
+  footer {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+      justify-content: end;
+    }
+  }
+</style>
 
 <Layout title={title} description={description}>
   <header>
@@ -28,4 +40,12 @@ const { title, description } = Astro.props;
   <main>
     <slot />
   </main>
+  <footer>
+    <nav>
+    <ul>
+      <li><a href="https://github.com/jrjohnson" title="Github"><FaIcon iconName="github" prefix="fab" /></a></li>
+      <li><a href="https://www.linkedin.com/in/jonjohnson/" title="LinkedIn"><FaIcon iconName="linkedin" prefix="fab" /></a></li>
+    </ul>
+  </nav>
+  </footer>
 </Layout>

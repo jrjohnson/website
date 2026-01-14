@@ -39,7 +39,7 @@ h4,
 h5,
 h6 {
   color: var(--header-orange);
-  font-family: "Crimson+Text", serif;
+  font-family: 'Crimson+Text', serif;
   margin: 0;
   padding: 0;
   line-height: calc(4px + 2ex);
@@ -99,15 +99,17 @@ body {
   background-color: var(--body-background-color);
   display: grid;
   grid-template-areas:
-    "header navigation"
-    "main main";
+    'header navigation'
+    'main main'
+    'footer footer';
   grid-template-rows: auto 1fr;
 
   @media (width < 1000px) {
     grid-template-areas:
-      "header"
-      "navigation"
-      "main";
+      'header'
+      'navigation'
+      'main'
+      'footer';
     grid-template-rows: auto auto 1fr;
     grid-template-columns: 1fr;
   }
@@ -159,9 +161,17 @@ body {
     min-width: 0;
     padding: 0.5em 2em;
   }
+
+  & > footer {
+    grid-area: footer;
+  }
 }
 
 a:active,
 a:visited {
   color: var(--link-blue);
+}
+
+@view-transition {
+  navigation: auto;
 }

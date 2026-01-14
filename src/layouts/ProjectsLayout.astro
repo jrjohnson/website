@@ -1,0 +1,41 @@
+---
+import ContentLayout from './ContentLayout.astro';
+import GithubProfile from '../components/GithubProfile.astro';
+
+interface Props {
+  frontmatter: {
+    title: string,
+    description: string,
+  }
+}
+const { frontmatter } = Astro.props;
+const { description, title } = frontmatter;
+---
+
+<style>
+  .github-profile {
+    margin-bottom: 1rem;
+  }
+  div {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      margin-bottom: 0.25rem;
+    }
+  }
+</style>
+
+<ContentLayout title={title} description={description}>
+  <GithubProfile class="github-profile" />
+  <div>
+    <slot />
+  </div>
+</ContentLayout>
