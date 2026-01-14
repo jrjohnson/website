@@ -1,5 +1,6 @@
 ---
 import ContentLayout from './ContentLayout.astro';
+import GithubProfile from '../components/GithubProfile.astro';
 
 interface Props {
   frontmatter: {
@@ -12,6 +13,9 @@ const { description, title } = frontmatter;
 ---
 
 <style>
+  .github-profile {
+    margin-bottom: 1rem;
+  }
   div {
     ul {
       list-style-type: none;
@@ -30,6 +34,7 @@ const { description, title } = frontmatter;
 </style>
 
 <ContentLayout title={title} description={description}>
+  <GithubProfile class="github-profile" />
   <div>
     <slot />
   </div>
