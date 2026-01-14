@@ -3,9 +3,19 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { library, findIconDefinition, icon } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faBlog, faKeynote, faProjectDiagram, faScroll } from '@fortawesome/pro-solid-svg-icons';
+import { faMicrophoneStand, faBlog as faBlogDuotone } from '@fortawesome/pro-duotone-svg-icons';
 import type { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 
-library.add(faGithub, faLinkedin, faBlog, faKeynote, faProjectDiagram, faScroll);
+library.add(
+  faGithub,
+  faLinkedin,
+  faBlog,
+  faKeynote,
+  faProjectDiagram,
+  faScroll,
+  faMicrophoneStand,
+  faBlogDuotone
+);
 
 export interface Props {
   iconName: IconName;
