@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/MarkdownLayout.astro
+layout: ../layouts/ProjectsLayout.astro
 title: Projects
 ---
 
