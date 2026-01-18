@@ -1,4 +1,4 @@
-name: Update Transitive Dependencies
+name: Nightly Rebuild
 
 on:
   schedule:
