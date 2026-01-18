@@ -1,0 +1,16 @@
+name: Update Transitive Dependencies
+
+on:
+  schedule:
+    - cron: '24 13 * * *' # Every morning (UTC)
+  workflow_dispatch: null
+
+env:
+  NETLIFY_BUILD_HOOK_URL: '${{ secrets.NETLIFY_BUILD_HOOK_URL }}'
+
+jobs:
+  trigger:
+    name: Trigger Netlify Rebuild
+    runs-on: macos-latest
+    steps:
+      - run: curl -X POST -d '{}' ${{ env.NETLIFY_BUILD_HOOK_URL }}
