@@ -1,0 +1,5 @@
+# Protect against package ecosystem threats
+minimumReleaseAge: 1440 # only install things that are at least one day old
+blockExoticSubdeps: true # block installing things not from the registry
+trustPolicy: no-downgrade # never install anything where the publication provenance is less than it was
+trustPolicyIgnoreAfter: 43200 # ignore things older than 30 days, chokidar and vite transitive dependency needs this
