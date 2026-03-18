@@ -16,7 +16,11 @@ const takeScreenshot = async function (page: Page, name: string) {
 
   // Generate filename
   const path = `build/screenshots/${name}-${browserName}-${width}x${height}.png`;
-  await page.screenshot({ path, fullPage: true });
+  await page.screenshot({
+    path,
+    fullPage: true,
+    mask: [page.locator('[data-avatar]')],
+  });
 };
 
 export { takeScreenshot };
