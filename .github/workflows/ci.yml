@@ -13,6 +13,9 @@ env:
   FONTAWESOME_NPM_AUTH_TOKEN: '${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}'
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: 'Lint and Test'
