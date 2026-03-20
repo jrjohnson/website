@@ -19,8 +19,8 @@ const talk = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     slidesURI: z.string().nullable().optional(),
-    videoURI: z.string().url().nullable().optional(),
-    eventURI: z.string().url().nullable().optional(),
+    videoURI: z.url().nullable().optional(),
+    eventURI: z.url().nullable().optional(),
     slideContentURI: z.string().nullable().optional(),
   }),
 });
