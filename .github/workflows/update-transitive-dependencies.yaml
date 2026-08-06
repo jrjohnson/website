@@ -7,6 +7,7 @@ on:
 
 env:
   FONTAWESOME_NPM_AUTH_TOKEN: '${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}'
+  PNPM_CONFIG_NPMRC_AUTH_FILE: .npmrc
 
 jobs:
   update:
@@ -15,7 +16,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v5
+      - uses: pnpm/action-setup@v6
         with:
           version: 9
       - uses: actions/setup-node@v6
